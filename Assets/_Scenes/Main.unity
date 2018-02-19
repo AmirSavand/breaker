@@ -370,7 +370,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 951951501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.681, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828554925}
@@ -654,12 +654,28 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.49551198, y: 0.054962397}
-      - {x: 0.000024460256, y: 0.37902737}
-      - {x: -0.5032679, y: 0.06691337}
-      - {x: -0.47082752, y: -0.25024724}
-      - {x: -0.0014449209, y: -0.3796966}
-      - {x: 0.46834436, y: -0.24220538}
+    - - {x: 0.49648216, y: 0.057872772}
+      - {x: 0.43751684, y: 0.06801391}
+      - {x: 0.40036502, y: -0.00085639954}
+      - {x: 0.35511145, y: -0.018215895}
+      - {x: 0.120011374, y: 0.12637305}
+      - {x: 0.086766385, y: 0.37613392}
+      - {x: -0.09151118, y: 0.3755331}
+      - {x: -0.11747438, y: 0.1264832}
+      - {x: -0.36329788, y: -0.01511693}
+      - {x: -0.40572906, y: 0.008419514}
+      - {x: -0.43876722, y: 0.07018447}
+      - {x: -0.49162528, y: 0.06885362}
+      - {x: -0.46694663, y: -0.24733663}
+      - {x: -0.42407635, y: -0.2508664}
+      - {x: -0.4081678, y: -0.21484041}
+      - {x: -0.13498451, y: -0.27994347}
+      - {x: -0.07798042, y: -0.3734076}
+      - {x: 0.07811314, y: -0.37581563}
+      - {x: 0.13482141, y: -0.2772076}
+      - {x: 0.4146109, y: -0.21755219}
+      - {x: 0.42757997, y: -0.24881959}
+      - {x: 0.4654337, y: -0.2499671}
 --- !u!50 &1901890841
 Rigidbody2D:
   serializedVersion: 4
@@ -764,6 +780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2044308062}
   - component: {fileID: 2044308063}
+  - component: {fileID: 2044308064}
   m_Layer: 0
   m_Name: Engine
   m_TagString: Untagged
@@ -830,3 +847,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &2044308064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2044308061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d5d50650a105b42b1e7ef03b68a64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeMin: 0
+  fadeMax: 1
+  fadeRate: 0.1
+  fadeAfter: 0
