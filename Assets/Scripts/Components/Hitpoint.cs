@@ -10,6 +10,9 @@ public class Hitpoint : MonoBehaviour
 	public bool shakeOnDeath = false;
 	public float shakeOnDeathDuration = 0.1f;
 
+	public GameObject destroyObjectOnDeath;
+	public bool destroySelfOnDeath = true;
+
 	public GameObject pieces;
 	public float piecesForce = 50;
 
@@ -22,16 +25,26 @@ public class Hitpoint : MonoBehaviour
 		hitpoints = maxHitpoints;
 
 		// Get inits
-		spriteRenderer = GetComponent<SpriteRenderer> ();
+		spriteRenderer = GetComponentInChildren<SpriteRenderer> ();
 		spriteColor = spriteRenderer.color;
 	}
 
 	public void damage (float amount)
 	{	
+		// Has HP (alive)
+		if (hitpoints > 0) {
+		
+			// Change color to red
+			spriteRenderer.color = Color.red;
+
+			// Revert to original color
+			Invoke ("revertColor", 0.05f);
+		}
+
 		// Deal damage
 		hitpoints = Mathf.Clamp (hitpoints -= amount, 0, maxHitpoints);
 
-		// No HP left
+		// No HP left (dead)
 		if (hitpoints == 0) {
 
 			// Shake camera
@@ -65,18 +78,15 @@ public class Hitpoint : MonoBehaviour
 				Destroy (pieces);
 			}
 
-			// Kill (destroy)
-			Destroy (gameObject);
-		}
+			// If destroys an object on death
+			if (destroyObjectOnDeath) {
+				Destroy (destroyObjectOnDeath);
+			}
 
-		// Damaged but not dead
-		else {
-		
-			// Change color to red
-			spriteRenderer.color = Color.red;
-
-			// Revert to normal color
-			Invoke ("revertColor", 0.05f);
+			// Destroy if should self distruct
+			if (destroySelfOnDeath) {
+				Destroy (gameObject);
+			}
 		}
 	}
 

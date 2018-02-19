@@ -5,11 +5,18 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
 	public float speed = 100;
-	public Rigidbody2D rb;
+
+	private Rigidbody2D rigidBody;
+
+	void Start ()
+	{
+		// Get inits
+		rigidBody = GetComponent<Rigidbody2D> ();
+	}
 
 	void FixedUpdate ()
 	{
 		// Move forward
-		rb.velocity = transform.up * speed * Time.fixedDeltaTime;
+		rigidBody.velocity = transform.up * speed * Time.fixedDeltaTime;
 	}
 }
