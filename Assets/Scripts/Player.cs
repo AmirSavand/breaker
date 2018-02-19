@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 	void Update ()
 	{
 		// Click and fire
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButton (0)) {
 
 			// Fire bullet
 			fire ();
