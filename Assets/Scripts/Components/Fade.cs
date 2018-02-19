@@ -20,10 +20,6 @@ public class Fade : MonoBehaviour
 		InvokeRepeating ("changeAlpha", 0, fadeRate);
 	}
 
-	void Update ()
-	{
-	}
-
 	void changeAlpha ()
 	{
 		// Original color

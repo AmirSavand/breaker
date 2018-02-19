@@ -208,7 +208,7 @@ MonoBehaviour:
   - {fileID: 727337407}
   - {fileID: 1932881533}
   spawnObjects:
-  - {fileID: 1026728158618390, guid: 95737a92ff1a43b4f9e35848b8a1ccb9, type: 2}
+  - {fileID: 1233889903322100, guid: 8ddfef3cd50bf0b4694516b174afc937, type: 2}
   - {fileID: 1479695985172994, guid: d17a4e15432178645a7566622d972df2, type: 2}
   spawnColors:
   - {r: 0, g: 0.7587728, b: 0.8602941, a: 1}
