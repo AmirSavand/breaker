@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 		// Set bullet speed to fire power
 		bullet.GetComponent<Move> ().speed = firePower;
 
-		// Set fire lifetime
+		// Limit fire lifetime
 		Destroy (bullet, fireLifetime);
 
 		// Fire rate cooldown (save last time)
