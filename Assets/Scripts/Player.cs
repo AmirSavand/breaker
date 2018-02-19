@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
 	public float firePower = 500;
 	public float fireDamage = 100;
+	public float fireRate = 1;
+	private float lastTimeFired;
 	public Transform fireFrom;
 	public GameObject fireBullet;
 
@@ -21,6 +23,11 @@ public class Player : MonoBehaviour
 
 	public void fire ()
 	{
+		// Check cooldown
+		if (Time.time - lastTimeFired < fireRate) {
+			return;
+		}
+
 		// Call to rotate to mouse
 		GetComponent<RotateClick> ().rotate ();
 
@@ -29,5 +36,8 @@ public class Player : MonoBehaviour
 
 		// Set bullet speed to fire power
 		bullet.GetComponent<Move> ().speed = firePower;
+
+		// Fire rate cooldown (save last time)
+		lastTimeFired = Time.time;
 	}
 }
