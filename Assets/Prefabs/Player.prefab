@@ -252,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePower: 300
   fireDamage: 50
+  fireLifetime: 1
   fireRate: 0.75
   fireFrom: {fileID: 4135476959132266}
   fireBullet: {fileID: 1012319823202368, guid: 60911e2c64914e349b2800fbcd2764b9, type: 2}

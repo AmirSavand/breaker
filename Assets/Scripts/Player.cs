@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
 	public float firePower = 500;
 	public float fireDamage = 100;
+	public float fireLifetime = 1;
 	public float fireRate = 1;
 	private float lastTimeFired;
 	public Transform fireFrom;
@@ -36,6 +37,9 @@ public class Player : MonoBehaviour
 
 		// Set bullet speed to fire power
 		bullet.GetComponent<Move> ().speed = firePower;
+
+		// Set fire lifetime
+		Destroy (bullet, fireLifetime);
 
 		// Fire rate cooldown (save last time)
 		lastTimeFired = Time.time;
