@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimer: 10
+  spawnTimer: 15
   spawnAfter: 5
   spawnRandomRotation: 1
   spawnRandomColor: 1
@@ -1025,12 +1025,12 @@ MonoBehaviour:
   - {fileID: 1300957380545180, guid: 06ce8b6e6846b654cae4b4e066c991ca, type: 2}
   - {fileID: 1055212287001904, guid: 0f2b238aab66aae46be4c53805a2b3b1, type: 2}
   spawnColors:
-  - {r: 0, g: 0, b: 0, a: 0.039215688}
-  - {r: 1, g: 0, b: 0, a: 0.039215688}
-  - {r: 0.94482756, g: 0, b: 1, a: 0.039215688}
-  - {r: 0, g: 0.46206903, b: 1, a: 0.039215688}
-  - {r: 1, g: 1, b: 0, a: 0.039215688}
-  - {r: 0, g: 1, b: 0.83448267, a: 0.039215688}
+  - {r: 0, g: 0, b: 0, a: 0.078431375}
+  - {r: 1, g: 0, b: 0, a: 0.078431375}
+  - {r: 0.94482756, g: 0, b: 1, a: 0.078431375}
+  - {r: 0, g: 0.46206903, b: 1, a: 0.078431375}
+  - {r: 1, g: 1, b: 0, a: 0.078431375}
+  - {r: 0, g: 1, b: 0.83448267, a: 0.078431375}
 --- !u!1 &2044147495
 GameObject:
   m_ObjectHideFlags: 0
