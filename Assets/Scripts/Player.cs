@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
 		}
 
 		// Call to rotate to mouse
-		GetComponent<RotateClick> ().rotate ();
+		rotate ();
 
 		// Create bullet from fire from position
 		GameObject bullet = Instantiate (fireBullet, fireFrom.transform.position, transform.rotation);
@@ -49,5 +49,13 @@ public class Player : MonoBehaviour
 
 		// Fire rate cooldown (save last time)
 		lastTimeFired = Time.time;
+	}
+
+	public void rotate ()
+	{
+		// Rotate to click position
+		Vector3 mouseScreen = Input.mousePosition;
+		Vector3 mouse = Camera.main.ScreenToWorldPoint (mouseScreen);
+		transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 (mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 	}
 }
