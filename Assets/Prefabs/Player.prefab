@@ -197,10 +197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5eadcf554f88154d9df531967ba09b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 1000
-  maxHitpoints: 1000
-  shakeOnDeath: 1
-  shakeOnDeathDuration: 0.5
+  hitpoints: 200
+  maxHitpoints: 200
+  shakeOnDeathDuration: 0
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1
   pieces: {fileID: 0}

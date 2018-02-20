@@ -7,7 +7,6 @@ public class Hitpoint : MonoBehaviour
 	public float hitpoints = 100;
 	public float maxHitpoints = 100;
 
-	public bool shakeOnDeath = false;
 	public float shakeOnDeathDuration = 0.1f;
 
 	public GameObject destroyObjectOnDeath;
@@ -47,8 +46,8 @@ public class Hitpoint : MonoBehaviour
 		// No HP left (dead)
 		if (hitpoints == 0) {
 
-			// Shake camera
-			if (shakeOnDeath) {
+			// If should shake camera on death
+			if (shakeOnDeathDuration > 0) {
 				Camera.main.GetComponent<CameraShake> ().shake (shakeOnDeathDuration);
 			}
 
@@ -88,6 +87,12 @@ public class Hitpoint : MonoBehaviour
 				Destroy (gameObject);
 			}
 		}
+	}
+
+	public void kill ()
+	{
+		// Damage as much as hitpoint
+		damage (hitpoints);
 	}
 
 	private void revertColor ()

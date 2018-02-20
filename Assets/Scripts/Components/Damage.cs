@@ -8,6 +8,14 @@ public class Damage : MonoBehaviour
 
 	public List<Collider2D> whiteList;
 
+	private Hitpoint hitpoint;
+
+	void Start ()
+	{
+		// Get inits
+		hitpoint = GetComponent<Hitpoint> ();
+	}
+
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		// If it's in white list
@@ -16,16 +24,27 @@ public class Damage : MonoBehaviour
 		}
 		
 		// Get HP controller
-		Hitpoint hitpoint = other.GetComponentInParent<Hitpoint> ();
+		Hitpoint otherHitpoint = other.GetComponentInParent<Hitpoint> ();
 
 		// If target has hitpoint
-		if (hitpoint) {
+		if (otherHitpoint) {
 
 			// Deal damage to target
-			hitpoint.damage (damage);
+			otherHitpoint.damage (damage);
 
-			// Destroy bullet (self) anyway
-			Destroy (gameObject);
+			// If self has hitpoint too (like an object like rock)
+			if (hitpoint) {
+
+				// Kill by hitpoint
+				hitpoint.damage (hitpoint.hitpoints);
+			}
+
+			// No self hitpoint (like a bullet)
+			else {
+				
+				// Destroy self
+				Destroy (gameObject);
+			}
 		}
 	}
 }

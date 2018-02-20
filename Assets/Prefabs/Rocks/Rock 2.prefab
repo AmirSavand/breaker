@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 4526285935096102}
   - component: {fileID: 50591923133469174}
   - component: {fileID: 114458742378167752}
+  - component: {fileID: 114514158333876462}
   - component: {fileID: 114076708889674036}
   m_Layer: 0
   m_Name: Rock 2
@@ -780,7 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5eadcf554f88154d9df531967ba09b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 0
+  hitpoints: 200
   maxHitpoints: 200
   shakeOnDeath: 1
   shakeOnDeathDuration: 0.2
@@ -788,6 +789,19 @@ MonoBehaviour:
   destroySelfOnDeath: 1
   pieces: {fileID: 1400499253232866}
   piecesForce: 40
+--- !u!114 &114514158333876462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087645321316450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0738c9c8776314fb94fa5ccbe8228f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  whiteList: []
 --- !u!212 &212090416912401378
 SpriteRenderer:
   m_ObjectHideFlags: 1

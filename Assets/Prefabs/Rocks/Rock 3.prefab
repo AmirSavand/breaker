@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4700870807892386}
   - component: {fileID: 50168370942303164}
   - component: {fileID: 114140792456235226}
+  - component: {fileID: 114948452370513296}
   - component: {fileID: 114932027240065740}
   m_Layer: 0
   m_Name: Rock 3
@@ -767,7 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5eadcf554f88154d9df531967ba09b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 0
+  hitpoints: 200
   maxHitpoints: 200
   shakeOnDeath: 1
   shakeOnDeathDuration: 0.2
@@ -787,6 +788,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -100
+--- !u!114 &114948452370513296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104457030764958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0738c9c8776314fb94fa5ccbe8228f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  whiteList: []
 --- !u!212 &212018661971063796
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4430875767469972}
   - component: {fileID: 50385659583489176}
   - component: {fileID: 114374287463401368}
+  - component: {fileID: 114996784296670276}
   - component: {fileID: 114286567536780898}
   m_Layer: 0
   m_Name: Rock 4
@@ -779,7 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5eadcf554f88154d9df531967ba09b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 0
+  hitpoints: 200
   maxHitpoints: 200
   shakeOnDeath: 1
   shakeOnDeathDuration: 0.2
@@ -787,6 +788,19 @@ MonoBehaviour:
   destroySelfOnDeath: 1
   pieces: {fileID: 1306068626265512}
   piecesForce: 40
+--- !u!114 &114996784296670276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1034343241817148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0738c9c8776314fb94fa5ccbe8228f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  whiteList: []
 --- !u!212 &212036135963542032
 SpriteRenderer:
   m_ObjectHideFlags: 1
