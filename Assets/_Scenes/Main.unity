@@ -137,8 +137,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 88132233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 2}
-  m_LocalScale: {x: 15, y: 20, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 15, y: 25, z: 1}
   m_Children: []
   m_Father: {fileID: 1826948268}
   m_RootOrder: 0
@@ -396,6 +396,9 @@ MonoBehaviour:
   spawnRandomColor: 1
   spawnObjects:
   - {fileID: 1233889903322100, guid: 8ddfef3cd50bf0b4694516b174afc937, type: 2}
+  - {fileID: 1087645321316450, guid: eebf307040cb47b45880ab8c7dc2ac09, type: 2}
+  - {fileID: 1104457030764958, guid: b02abf75a8d3af1429e5cbf42aa180f7, type: 2}
+  - {fileID: 1034343241817148, guid: a0039b39a491b5e47bf3da1c4faf456e, type: 2}
   spawnColors:
   - {r: 0.89736295, g: 0.66176474, b: 1, a: 1}
   - {r: 0.6397059, g: 0.8837865, b: 1, a: 1}
