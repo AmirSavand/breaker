@@ -55,7 +55,6 @@ GameObject:
   - component: {fileID: 50010270267843412}
   - component: {fileID: 60285751046089028}
   - component: {fileID: 114799567002884684}
-  - component: {fileID: 114675987705923660}
   - component: {fileID: 114623131677040366}
   m_Layer: 0
   m_Name: Player
@@ -204,18 +203,6 @@ MonoBehaviour:
   destroySelfOnDeath: 1
   pieces: {fileID: 0}
   piecesForce: 50
---- !u!114 &114675987705923660
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1902722664372346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb4488be22df0b4f881c55bb109b367, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoRotate: 0
 --- !u!114 &114799567002884684
 MonoBehaviour:
   m_ObjectHideFlags: 1

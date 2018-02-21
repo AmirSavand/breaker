@@ -18,6 +18,8 @@ public class Hitpoint : MonoBehaviour
 	private SpriteRenderer spriteRenderer;
 	private Color spriteColor;
 
+	private Cam cam;
+
 	void Start ()
 	{
 		// Set HP to max HP
@@ -26,6 +28,7 @@ public class Hitpoint : MonoBehaviour
 		// Get inits
 		spriteRenderer = GetComponentInChildren<SpriteRenderer> ();
 		spriteColor = spriteRenderer.color;
+		cam = Camera.main.GetComponent<Cam> ();
 	}
 
 	public void damage (float amount)
