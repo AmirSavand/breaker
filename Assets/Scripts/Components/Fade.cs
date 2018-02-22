@@ -10,6 +10,10 @@ public class Fade : MonoBehaviour
 	public float fadeRate = 0.1f;
 	public float fadeAfter = 0;
 
+	public bool fadeSmooth = false;
+	public Color fadeSmoothToColor;
+
+	private Color color;
 	private SpriteRenderer spriteRenderer;
 	private Image image;
 
@@ -18,29 +22,38 @@ public class Fade : MonoBehaviour
 		// Get inits
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		image = GetComponent<Image> ();
+		color = spriteRenderer ? spriteRenderer.color : image.color;
 
 		// Start changing alpha
-		InvokeRepeating ("changeAlpha", 0, fadeRate);
+		if (!fadeSmooth) {
+			InvokeRepeating ("changeAlpha", 0, fadeRate);
+		}
+	}
+
+	void Update ()
+	{
+		// Fade toggle smooth color
+		if (fadeSmooth) {
+			setColor (Color.Lerp (color, fadeSmoothToColor, Mathf.PingPong (Time.time, 1)));
+		}
 	}
 
 	void changeAlpha ()
 	{
-		Color color = new Color ();
+		// Change color with new alpha
+		setColor (new Color (color.r, color.g, color.b, Mathf.Clamp (Random.value, fadeMin, fadeMax)));
+	}
 
-		// Original color
+	void setColor (Color colorToSet)
+	{
+		// For sprite
 		if (spriteRenderer) {
-			color = spriteRenderer.color;
-		} else if (image) {
-			color = image.color;
+			spriteRenderer.color = colorToSet;
 		}
 
-		Color toColor = new Color (color.r, color.g, color.b, Mathf.Clamp (Random.value, fadeMin, fadeMax));
-
-		// Change alpha color
-		if (spriteRenderer) {
-			spriteRenderer.color = toColor;
-		} else if (image) {
-			image.color = toColor;
+		// For image
+		else {
+			image.color = colorToSet;
 		}
 	}
 }

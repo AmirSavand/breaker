@@ -292,8 +292,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeMin: 0
   fadeMax: 1
-  fadeRate: 0.1
+  fadeRate: 1
   fadeAfter: 0
+  fadeSmooth: 1
+  fadeSmoothToColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &244210679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,11 +430,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643b3cc0aa3ba8f4bb20d4828aee6d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   gameUI: {fileID: 0}
   pauseUI: {fileID: 0}
+  loseUI: {fileID: 0}
   versionText: {fileID: 1460788482}
   timeText: {fileID: 0}
-  gameTime: 0
 --- !u!4 &425684339
 Transform:
   m_ObjectHideFlags: 0
@@ -598,6 +601,8 @@ MonoBehaviour:
   fadeMax: 1
   fadeRate: 0.1
   fadeAfter: 0
+  fadeSmooth: 0
+  fadeSmoothToColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &798220723
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +975,8 @@ MonoBehaviour:
   fadeMax: 1
   fadeRate: 0.1
   fadeAfter: 0
+  fadeSmooth: 0
+  fadeSmoothToColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1086367212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1061,8 @@ MonoBehaviour:
   fadeMax: 1
   fadeRate: 0.1
   fadeAfter: 0
+  fadeSmooth: 0
+  fadeSmoothToColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1127186043
 GameObject:
   m_ObjectHideFlags: 0
