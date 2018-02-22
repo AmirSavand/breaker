@@ -51,7 +51,7 @@ public class Hitpoint : MonoBehaviour
 
 			// If should shake camera on death
 			if (shakeOnDeathDuration > 0) {
-				Camera.main.GetComponent<Cam> ().shake (shakeOnDeathDuration);
+				cam.shake (shakeOnDeathDuration);
 			}
 
 			// If has death peice
