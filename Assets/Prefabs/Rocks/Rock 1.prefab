@@ -795,7 +795,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 200
   maxHitpoints: 200
-  shakeOnDeath: 1
   shakeOnDeathDuration: 0.2
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1

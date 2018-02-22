@@ -112,7 +112,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1728960998740898}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -178,8 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 0
   maxHitpoints: 100
-  shakeOnDeath: 0
-  shakeOnDeathDuration: 0.1
+  shakeOnDeathDuration: 0
   destroyObjectOnDeath: {fileID: 1654684366770934}
   destroySelfOnDeath: 0
   pieces: {fileID: 0}
