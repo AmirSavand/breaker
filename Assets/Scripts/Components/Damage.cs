@@ -6,8 +6,6 @@ public class Damage : MonoBehaviour
 {
 	public float damage = 100;
 
-	public GameObject issuer;
-
 	public List<Collider2D> whiteList;
 
 	private Hitpoint hitpoint;
@@ -32,13 +30,13 @@ public class Damage : MonoBehaviour
 		if (otherHitpoint) {
 
 			// Deal damage to target
-			otherHitpoint.damage (damage, issuer);
+			otherHitpoint.damage (damage);
 
 			// If self has hitpoint too (like an object like rock)
 			if (hitpoint) {
 
 				// Kill by hitpoint
-				hitpoint.damage (hitpoint.hitpoints, gameObject);
+				hitpoint.damage (hitpoint.hitpoints);
 			}
 
 			// No self hitpoint (like a bullet)

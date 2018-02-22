@@ -4,15 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public enum GameStates
+{
+	Menu,
+	Run,
+	Pause,
+	Lose
+}
+
 public class Game : MonoBehaviour
 {
+	public Player player;
+
 	public GameObject gameUI;
 	public GameObject pauseUI;
+	public GameObject loseUI;
 
 	public Text versionText;
-
 	public Text timeText;
-	public float gameTime;
+	public static Text coinsText;
+
+	public static GameStates state;
+	public static float gameTime;
+	public static int coins;
 
 	private Cam cam;
 
@@ -28,36 +42,63 @@ public class Game : MonoBehaviour
 		if (versionText) {
 			versionText.text = "Version " + Application.version;
 		}
+
+		// Set state to Run if in game scene
+		if (SceneManager.GetActiveScene ().name == "Game") {
+			state = GameStates.Run;
+
+			// Get game inits
+			coinsText = GameObject.Find ("Coin Text").GetComponent<Text> ();
+		}
+	
+		// Otherwise game is in menu
+		else {
+			state = GameStates.Menu;
+		}
 	}
 
 	void Update ()
 	{
-		// If in game
-		if (getCurrentScene () == "Game") {
+		// If in game (not menu)
+		if (state != GameStates.Menu) {
 
 			// Pressed pause/back button
 			if (Input.GetButtonDown ("Cancel")) {
 
-				// If game is paused, resume
-				if (isGamePaused ()) {
-					resumeGame ();
-				}
+				// If game is paused, resume it
+				// if (state == GameStates.Pause) {
+				// 	resumeGame ();
+				// }
 
-				// If game is resumed, pause
-				else {
+				// If game is running, pause it
+				if (state == GameStates.Run) {
 					pauseGame ();
 				}
 			}
 
-			// Increase game time
-			gameTime += Time.deltaTime;
+			// Game is running
+			if (state == GameStates.Run) {
 
-			// Get game time minutes and seconds
-			int minutes = Mathf.FloorToInt (gameTime / 60);
-			int seconds = Mathf.FloorToInt (gameTime % 60);
+				// Increase game time
+				gameTime += Time.deltaTime;
 
-			// Update time text (UI)
-			timeText.text = string.Format ("{0:0}:{1:00}", minutes, seconds);
+				// Get game time minutes and seconds
+				int minutes = Mathf.FloorToInt (gameTime / 60);
+				int seconds = Mathf.FloorToInt (gameTime % 60);
+
+				// Update time text (UI)
+				timeText.text = string.Format ("{0:0}:{1:00}", minutes, seconds);
+			}
+
+			// If player is destroyed
+			if (!player) {
+
+				// Update state
+				state = GameStates.Lose;
+			
+				// Update UI (since state is updated)
+				toggleUI ();
+			}
 		}
 	}
 
@@ -75,18 +116,24 @@ public class Game : MonoBehaviour
 
 	public void pauseGame ()
 	{
+		// Update state
+		state = GameStates.Pause;
+
 		// Stop time
 		Time.timeScale = 0;
 
-		// Toggle UIs
-		toggleUI ();
-
 		// Stop camera shake
 		cam.shakeDuration = 0;
+
+		// Toggle UIs
+		toggleUI ();
 	}
 
 	public void resumeGame ()
 	{
+		// Update state
+		state = GameStates.Run;
+
 		// Resume time
 		Time.timeScale = 1;
 
@@ -94,22 +141,19 @@ public class Game : MonoBehaviour
 		toggleUI ();
 	}
 
-	public bool isGamePaused ()
-	{
-		// If time is stopped, game is paused
-		return Time.timeScale == 0;
-	}
-
-	public string getCurrentScene ()
-	{
-		// Return name of current active scene
-		return SceneManager.GetActiveScene ().name;
-	}
-
 	public void toggleUI ()
 	{
-		// Toggle UI visibility based on game state (pause/running)
-		pauseUI.SetActive (isGamePaused ());
-		// gameUI.SetActive (!isGamePaused ());
+		pauseUI.SetActive (state == GameStates.Pause);
+		gameUI.SetActive (state != GameStates.Lose);
+		loseUI.SetActive (state == GameStates.Lose);
+	}
+
+	public static void giveCoin (int amount)
+	{
+		// Add coins
+		Game.coins += amount;
+
+		// Update UI
+		Game.coinsText.text = amount.ToString ();
 	}
 }

@@ -769,7 +769,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
-  issuer: {fileID: 0}
   whiteList: []
 --- !u!114 &114716263366396394
 MonoBehaviour:
@@ -801,7 +800,7 @@ MonoBehaviour:
   destroySelfOnDeath: 1
   pieces: {fileID: 1035932961258328}
   piecesForce: 40
-  deathCoin: 0
+  deathCoins: 0
   textToUpdate: {fileID: 0}
 --- !u!212 &212181201608749234
 SpriteRenderer:

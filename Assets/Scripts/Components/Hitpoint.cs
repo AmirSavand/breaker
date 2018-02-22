@@ -16,7 +16,7 @@ public class Hitpoint : MonoBehaviour
 	public GameObject pieces;
 	public float piecesForce = 50;
 
-	public int deathCoin;
+	public int deathCoins;
 
 	private SpriteRenderer spriteRenderer;
 	private Color spriteColor;
@@ -36,7 +36,7 @@ public class Hitpoint : MonoBehaviour
 		cam = Camera.main.GetComponent<Cam> ();
 	}
 
-	public void damage (float amount, GameObject issuer = null)
+	public void damage (float amount)
 	{	
 		// Has HP (alive)
 		if (hitpoints > 0) {
@@ -100,17 +100,17 @@ public class Hitpoint : MonoBehaviour
 				Destroy (gameObject);
 			}
 
-			// Gives coins on death (and has an issuer (player))
-			if (deathCoin > 0 && issuer != null) {
-				issuer.GetComponent<Player> ().giveCoin (deathCoin);
+			// Gives coins on death
+			if (deathCoins > 0) {
+				Game.giveCoin (deathCoins);
 			}
 		}
 	}
 
-	public void kill (GameObject issuer = null)
+	public void kill ()
 	{
 		// Damage as much as hitpoint
-		damage (hitpoints, issuer);
+		damage (hitpoints);
 	}
 
 	private void revertColor ()

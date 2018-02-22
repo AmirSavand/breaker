@@ -915,7 +915,7 @@ MonoBehaviour:
   destroySelfOnDeath: 1
   pieces: {fileID: 1881027578813252}
   piecesForce: 40
-  deathCoin: 2
+  deathCoins: 2
   textToUpdate: {fileID: 0}
 --- !u!114 &114376651373979562
 MonoBehaviour:
@@ -944,7 +944,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
-  issuer: {fileID: 0}
   whiteList: []
 --- !u!114 &114398907406411102
 MonoBehaviour:
