@@ -64,7 +64,7 @@ public class Hitpoint : MonoBehaviour
 				cam.shake (shakeOnDeathDuration);
 			}
 
-			// If has death peice
+			// If has death piece
 			if (pieces) {
 
 				// Activate
@@ -73,10 +73,10 @@ public class Hitpoint : MonoBehaviour
 				// Detach from this object
 				pieces.transform.parent = null;
 
-				// For each peice
+				// For each piece
 				foreach (Rigidbody2D piece in pieces.GetComponentsInChildren<Rigidbody2D>()) {
 
-					// Create explosion like force for that peice
+					// Create explosion like force for that piece
 					piece.AddForce (new Vector2 (Random.Range (-5, 5), Random.Range (-5, 5)) * piecesForce);
 
 					// Set color
@@ -86,7 +86,7 @@ public class Hitpoint : MonoBehaviour
 					piece.transform.parent = null;
 				}
 
-				// Destroy the peice holder too
+				// Destroy the piece holder too
 				Destroy (pieces);
 			}
 
