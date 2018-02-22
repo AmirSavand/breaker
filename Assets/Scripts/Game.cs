@@ -14,6 +14,8 @@ public enum GameStates
 
 public class Game : MonoBehaviour
 {
+	public static Game Instance;
+
 	public Player player;
 
 	public GameObject gameUI;
@@ -27,6 +29,7 @@ public class Game : MonoBehaviour
 	public static GameStates state;
 	public static float gameTime;
 	public static int coins;
+	public static int score;
 
 	private Cam cam;
 
@@ -38,17 +41,24 @@ public class Game : MonoBehaviour
 		// Reset time scale
 		Time.timeScale = 1;
 
+		// Reset static variables
+		gameTime = 0;
+		coins = 0;
+		score = 0;
+
 		// Set version to text (Menu)
 		if (versionText) {
 			versionText.text = "Version " + Application.version;
 		}
 
-		// Set state to Run if in game scene
+		// In game scene
 		if (SceneManager.GetActiveScene ().name == "Game") {
+
+			// Set to run since first state in this scene is Run
 			state = GameStates.Run;
 
 			// Get game inits
-			coinsText = GameObject.Find ("Coin Text").GetComponent<Text> ();
+			Game.coinsText = GameObject.Find ("Coin Text").GetComponent<Text> ();
 		}
 	
 		// Otherwise game is in menu
@@ -82,22 +92,18 @@ public class Game : MonoBehaviour
 				// Increase game time
 				gameTime += Time.deltaTime;
 
-				// Get game time minutes and seconds
-				int minutes = Mathf.FloorToInt (gameTime / 60);
-				int seconds = Mathf.FloorToInt (gameTime % 60);
-
 				// Update time text (UI)
-				timeText.text = string.Format ("{0:0}:{1:00}", minutes, seconds);
+				timeText.text = getGameTimeFormat ();
 			}
 
 			// If player is destroyed
-			if (!player) {
+			if (!player && state != GameStates.Lose) {
 
 				// Update state
 				state = GameStates.Lose;
 			
-				// Update UI (since state is updated)
-				toggleUI ();
+				// Show loss screen after a while
+				Invoke ("showLoss", 2);
 			}
 		}
 	}
@@ -155,5 +161,44 @@ public class Game : MonoBehaviour
 
 		// Update UI
 		Game.coinsText.text = amount.ToString ();
+	}
+
+	string getGameTimeFormat ()
+	{
+
+		// Get game time minutes and seconds
+		int minutes = Mathf.FloorToInt (gameTime / 60);
+		int seconds = Mathf.FloorToInt (gameTime % 60);
+
+		// Return formatted text like 0:01
+		return string.Format ("{0:0}:{1:00}", minutes, seconds);
+	}
+
+	void showLoss ()
+	{
+		// Update UI (since state is updated)
+		toggleUI ();
+
+		// Calculate score
+		score += Mathf.FloorToInt (gameTime * 10);
+		score += coins * 100;
+
+		// Update results
+		GameObject.Find ("Time Result Text").GetComponent<Text> ().text = "Time\n" + getGameTimeFormat ();
+		GameObject.Find ("Coin Result Text").GetComponent<Text> ().text = "Coins\n+" + coins;
+		GameObject.Find ("Score Result Text").GetComponent<Text> ().text = score.ToString ();
+
+		// Save coins to storage
+		Storage.coins += coins;
+
+		// New high score?
+		if (Storage.highScore < score) {
+
+			// Save high score to storage
+			Storage.highScore = score;
+
+			// Set text so player will know
+			GameObject.Find ("High Score Result Text").GetComponent<Text> ().text = "New High Score";
+		}
 	}
 }
