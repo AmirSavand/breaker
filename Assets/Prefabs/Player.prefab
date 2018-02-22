@@ -203,6 +203,8 @@ MonoBehaviour:
   destroySelfOnDeath: 1
   pieces: {fileID: 0}
   piecesForce: 50
+  deathCoin: 0
+  textToUpdate: {fileID: 0}
 --- !u!114 &114799567002884684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,6 +222,8 @@ MonoBehaviour:
   fireRate: 0.75
   fireFrom: {fileID: 4135476959132266}
   fireBullet: {fileID: 1012319823202368, guid: 60911e2c64914e349b2800fbcd2764b9, type: 2}
+  coins: 0
+  coinsText: {fileID: 0}
 --- !u!212 &212140066908327434
 SpriteRenderer:
   m_ObjectHideFlags: 1

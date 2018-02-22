@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class Player : MonoBehaviour
 	private float lastTimeFired;
 	public Transform fireFrom;
 	public GameObject fireBullet;
+
+	public int coins;
+	public Text coinsText;
 
 	void Update ()
 	{
@@ -41,6 +45,9 @@ public class Player : MonoBehaviour
 		// Create bullet from fire from position
 		GameObject bullet = Instantiate (fireBullet, fireFrom.transform.position, transform.rotation);
 
+		// Set bullet issuer
+		bullet.GetComponent<Damage> ().issuer = gameObject;
+
 		// Set bullet speed to fire power
 		bullet.GetComponent<Move> ().speed = firePower;
 
@@ -57,5 +64,14 @@ public class Player : MonoBehaviour
 		Vector3 mouseScreen = Input.mousePosition;
 		Vector3 mouse = Camera.main.ScreenToWorldPoint (mouseScreen);
 		transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 (mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
+	}
+
+	public void giveCoin (int amount)
+	{
+		// Add coins
+		coins += amount;
+
+		// Update UI
+		coinsText.text = coins.ToString ();
 	}
 }

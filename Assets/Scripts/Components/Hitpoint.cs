@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hitpoint : MonoBehaviour
 {
@@ -15,8 +16,12 @@ public class Hitpoint : MonoBehaviour
 	public GameObject pieces;
 	public float piecesForce = 50;
 
+	public int deathCoin;
+
 	private SpriteRenderer spriteRenderer;
 	private Color spriteColor;
+
+	public Text textToUpdate;
 
 	private Cam cam;
 
@@ -31,7 +36,7 @@ public class Hitpoint : MonoBehaviour
 		cam = Camera.main.GetComponent<Cam> ();
 	}
 
-	public void damage (float amount)
+	public void damage (float amount, GameObject issuer = null)
 	{	
 		// Has HP (alive)
 		if (hitpoints > 0) {
@@ -45,6 +50,11 @@ public class Hitpoint : MonoBehaviour
 
 		// Deal damage
 		hitpoints = Mathf.Clamp (hitpoints -= amount, 0, maxHitpoints);
+
+		// If has a text to update
+		if (textToUpdate) {
+			textToUpdate.text = Mathf.FloorToInt (hitpoints / maxHitpoints * 100).ToString ();
+		}
 
 		// No HP left (dead)
 		if (hitpoints == 0) {
@@ -89,13 +99,18 @@ public class Hitpoint : MonoBehaviour
 			if (destroySelfOnDeath) {
 				Destroy (gameObject);
 			}
+
+			// Gives coins on death (and has an issuer (player))
+			if (deathCoin > 0 && issuer != null) {
+				issuer.GetComponent<Player> ().giveCoin (deathCoin);
+			}
 		}
 	}
 
-	public void kill ()
+	public void kill (GameObject issuer = null)
 	{
 		// Damage as much as hitpoint
-		damage (hitpoints);
+		damage (hitpoints, issuer);
 	}
 
 	private void revertColor ()

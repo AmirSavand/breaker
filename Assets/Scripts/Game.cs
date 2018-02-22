@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
+	public GameObject gameUI;
+	public GameObject pauseUI;
+
 	public Text versionText;
-	public GameObject canvasObject;
+
+	public Text timeText;
+	public float gameTime;
 
 	private Cam cam;
 
@@ -27,18 +32,32 @@ public class Game : MonoBehaviour
 
 	void Update ()
 	{
-		// Pressed pause/back button
-		if (Input.GetButtonDown ("Cancel")) {
+		// If in game
+		if (getCurrentScene () == "Game") {
 
-			// If game is paused, resume
-			if (isGamePaused ()) {
-				resumeGame ();
+			// Pressed pause/back button
+			if (Input.GetButtonDown ("Cancel")) {
+
+				// If game is paused, resume
+				if (isGamePaused ()) {
+					resumeGame ();
+				}
+
+				// If game is resumed, pause
+				else {
+					pauseGame ();
+				}
 			}
 
-			// If game is resumed, pause
-			else {
-				pauseGame ();
-			}
+			// Increase game time
+			gameTime += Time.deltaTime;
+
+			// Get game time minutes and seconds
+			int minutes = Mathf.FloorToInt (gameTime / 60);
+			int seconds = Mathf.FloorToInt (gameTime % 60);
+
+			// Update time text (UI)
+			timeText.text = string.Format ("{0:0}:{1:00}", minutes, seconds);
 		}
 	}
 
@@ -59,8 +78,8 @@ public class Game : MonoBehaviour
 		// Stop time
 		Time.timeScale = 0;
 
-		// Toggle canvas visbility
-		canvasObject.SetActive (isGamePaused ());
+		// Toggle UIs
+		toggleUI ();
 
 		// Stop camera shake
 		cam.shakeDuration = 0;
@@ -71,13 +90,26 @@ public class Game : MonoBehaviour
 		// Resume time
 		Time.timeScale = 1;
 
-		// Toggle canvas visbility
-		canvasObject.SetActive (isGamePaused ());
+		// Toggle UIs
+		toggleUI ();
 	}
 
 	public bool isGamePaused ()
 	{
 		// If time is stopped, game is paused
 		return Time.timeScale == 0;
+	}
+
+	public string getCurrentScene ()
+	{
+		// Return name of current active scene
+		return SceneManager.GetActiveScene ().name;
+	}
+
+	public void toggleUI ()
+	{
+		// Toggle UI visibility based on game state (pause/running)
+		pauseUI.SetActive (isGamePaused ());
+		// gameUI.SetActive (!isGamePaused ());
 	}
 }
