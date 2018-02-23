@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 60285751046089028}
   - component: {fileID: 114799567002884684}
   - component: {fileID: 114623131677040366}
+  - component: {fileID: 114557792938192034}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -365,7 +366,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902722664372346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4427218804363720}
@@ -1278,6 +1279,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18404847, y: 0.24982548}
   m_EdgeRadius: 0
+--- !u!114 &114557792938192034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902722664372346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ffc8de408c7114ea63a4c66a255c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 1
+  stopRange: 0.015
+  destroyTarget: 1
 --- !u!114 &114602514754875736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1293,6 +1309,8 @@ MonoBehaviour:
   fadeMax: 1
   fadeRate: 0.1
   fadeAfter: 0
+  fadeSmooth: 0
+  fadeSmoothToColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114623131677040366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1304,8 +1322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5eadcf554f88154d9df531967ba09b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 200
-  maxHitpoints: 200
+  hitpoints: 100
+  maxHitpoints: 100
   shakeOnDeathDuration: 0.2
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1
