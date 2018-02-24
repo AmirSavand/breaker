@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 114557792938192034}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -590,7 +590,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902722664372346}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1291,9 +1291,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  targetTag: 
   speed: 1
+  moveAfter: 0
   stopRange: 0.015
-  destroyTarget: 1
+  destroyTargetOnRange: 1
+  destroySelfOnRange: 0
+  resetVelocity: 0
 --- !u!114 &114602514754875736
 MonoBehaviour:
   m_ObjectHideFlags: 1
