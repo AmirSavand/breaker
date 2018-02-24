@@ -200,5 +200,8 @@ public class Game : MonoBehaviour
 			// Set text so player will know
 			GameObject.Find ("High Score Result Text").GetComponent<Text> ().text = "New High Score";
 		}
+
+		// Update save data
+		Storage.save ();
 	}
 }

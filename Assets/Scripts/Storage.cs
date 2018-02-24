@@ -19,5 +19,19 @@ public class Storage : MonoBehaviour
 		if (FindObjectsOfType (GetType ()).Length > 1) {
 			Destroy (gameObject);
 		}
+
+		// Load all data
+		coins = PlayerPrefs.GetInt ("coins");
+		highScore = PlayerPrefs.GetInt ("highScore");
+	}
+
+	public static void save ()
+	{
+		// Set all data
+		PlayerPrefs.SetInt ("coins", coins);
+		PlayerPrefs.SetInt ("highScore", highScore);
+
+		// Save to disk
+		PlayerPrefs.Save ();
 	}
 }
