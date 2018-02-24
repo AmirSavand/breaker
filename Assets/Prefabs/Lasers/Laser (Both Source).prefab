@@ -245,6 +245,8 @@ MonoBehaviour:
   destroySelfOnDeath: 0
   pieces: {fileID: 0}
   piecesForce: 50
+  deathCoins: 0
+  textToUpdate: {fileID: 0}
 --- !u!114 &114552575704218096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,6 +265,8 @@ MonoBehaviour:
   destroySelfOnDeath: 0
   pieces: {fileID: 0}
   piecesForce: 50
+  deathCoins: 0
+  textToUpdate: {fileID: 0}
 --- !u!114 &114725976541283834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e3304902ec66549a194a16312ce61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -100
+  directionSpeed: {x: 0, y: -2}
 --- !u!212 &212520231766931904
 SpriteRenderer:
   m_ObjectHideFlags: 1

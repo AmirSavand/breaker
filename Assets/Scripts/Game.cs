@@ -22,6 +22,9 @@ public class Game : MonoBehaviour
 	public GameObject pauseUI;
 	public GameObject loseUI;
 
+	public string[] startMessages;
+	public TextMesh startMessageTMesh;
+
 	public Text versionText;
 	public Text timeText;
 	public static Text coinsText;
@@ -49,6 +52,13 @@ public class Game : MonoBehaviour
 		// Set version to text (Menu)
 		if (versionText) {
 			versionText.text = "Version " + Application.version;
+		}
+
+		// Random message and start text object
+		if (startMessageTMesh != null && startMessages.Length > 0) {
+
+			// Set text to a random message
+			startMessageTMesh.text = startMessages [Random.Range (0, startMessages.Length)].Replace ("\\n", "\n");
 		}
 
 		// In game scene

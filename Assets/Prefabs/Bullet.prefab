@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4242770536359008}
   - component: {fileID: 212144590246225562}
-  - component: {fileID: 50750100265445150}
   - component: {fileID: 70896920335257506}
   - component: {fileID: 114452573703314326}
   - component: {fileID: 114588048743427480}
@@ -44,26 +43,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50750100265445150
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1012319823202368}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!70 &70896920335257506
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -90,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e3304902ec66549a194a16312ce61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  directionSpeed: {x: 0, y: 0}
 --- !u!114 &114588048743427480
 MonoBehaviour:
   m_ObjectHideFlags: 1

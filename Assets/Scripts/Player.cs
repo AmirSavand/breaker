@@ -42,8 +42,8 @@ public class Player : MonoBehaviour
 		// Create bullet from fire from position
 		GameObject bullet = Instantiate (fireBullet, fireFrom.transform.position, transform.rotation);
 
-		// Set bullet speed to fire power
-		bullet.GetComponent<Move> ().speed = firePower;
+		// Set bullet speed to fire power (up times power)
+		bullet.GetComponent<Move> ().directionSpeed = bullet.transform.up * firePower;
 
 		// Limit fire lifetime
 		Destroy (bullet, fireLifetime);

@@ -1375,7 +1375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20a0529a8b2d5a41bde908d1b6bd5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePower: 300
+  firePower: 6
   fireDamage: 50
   fireLifetime: 1
   fireRate: 0.75

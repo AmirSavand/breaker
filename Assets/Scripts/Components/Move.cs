@@ -4,19 +4,44 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-	public float speed = 100;
+	public Vector2 directionSpeed;
+	public float startAfter;
+	public float stopAfter;
+	public bool stopMoving = false;
 
-	private Rigidbody2D rigidBody;
 
 	void Start ()
 	{
-		// Get inits
-		rigidBody = GetComponent<Rigidbody2D> ();
+		// Start the script
+		if (startAfter != 0) {
+			Invoke ("start", startAfter);
+		}
+
+		// Stop the script
+		if (stopAfter != 0) {
+			Invoke ("stop", stopAfter);
+		}
 	}
 
-	void FixedUpdate ()
+	void Update ()
 	{
-		// Move forward
-		rigidBody.velocity = transform.up * speed * Time.fixedDeltaTime;
+		// Should be moving
+		if (!stopMoving) {
+		
+			// Move to direction
+			transform.position = transform.position + new Vector3 (directionSpeed.x, directionSpeed.y, 0) * Time.deltaTime;
+		}
+	}
+
+	void stop ()
+	{
+		// Set to true so Update() won't execute anymore
+		stopMoving = true;
+	}
+
+	void start ()
+	{
+		// Set to false so Update() executes
+		stopMoving = false;
 	}
 }
