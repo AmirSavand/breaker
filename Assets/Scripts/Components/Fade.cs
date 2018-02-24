@@ -26,7 +26,7 @@ public class Fade : MonoBehaviour
 
 		// Start changing alpha
 		if (!fadeSmooth) {
-			InvokeRepeating ("changeAlpha", 0, fadeRate);
+			InvokeRepeating ("changeAlpha", fadeAfter, fadeRate);
 		}
 	}
 

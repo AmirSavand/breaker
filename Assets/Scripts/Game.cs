@@ -160,7 +160,7 @@ public class Game : MonoBehaviour
 		Game.coins += amount;
 
 		// Update UI
-		Game.coinsText.text = amount.ToString ();
+		Game.coinsText.text = Game.coins.ToString ();
 	}
 
 	string getGameTimeFormat ()
