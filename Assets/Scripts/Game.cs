@@ -280,4 +280,13 @@ public class Game : MonoBehaviour
 		menuState = GameMenuStates.Menu;
 		toggleUI ();
 	}
+
+	public void takeScreenshot ()
+	{
+		// Take a screenshot
+		ScreenCapture.CaptureScreenshot (System.IO.Path.Combine (Application.persistentDataPath, "breaker-screenshot.png"));
+
+		// Open screenshot
+		Application.OpenURL (System.IO.Path.Combine (Application.persistentDataPath, "breaker-screenshot.png"));
+	}
 }
