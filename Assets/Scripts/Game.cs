@@ -12,9 +12,30 @@ public enum GameStates
 	Lose
 }
 
+public enum GameMenuStates
+{
+	Menu,
+	Stat
+}
+
 public class Game : MonoBehaviour
 {
 	public Player player;
+
+	[Header ("UI objecs")]
+	public GameObject gameUI;
+	public GameObject pauseUI;
+	public GameObject loseUI;
+	[Space ()]
+	public GameObject menuUI;
+	public GameObject statUI;
+
+	[Header ("UI texts")]
+	public Text timeText;
+	public Text starsText;
+	public Text hitpointsText;
+	[Space ()]
+	public Text versionText;
 
 	[Header ("Floating text")]
 	public GameObject textFloat;
@@ -22,26 +43,16 @@ public class Game : MonoBehaviour
 	public Color textFloatScoreColor;
 	public Color textFloatHitpointColor;
 
-	[Header ("Main UI objecs")]
-	public GameObject gameUI;
-	public GameObject pauseUI;
-	public GameObject loseUI;
-
 	[Header ("Start message")]
 	public string[] startMessages;
 	public TextMesh startMessageTMesh;
 
-	[Header ("Game variables")]
+	[Header ("Level variables")]
 	public Color[] backgroundColors;
-
-	[Header ("UI texts")]
-	public Text versionText;
-	public Text timeText;
-	public Text starsText;
-	public Text hitpointsText;
 
 	[Header ("Game resources")]
 	public GameStates state;
+	public GameMenuStates menuState;
 	public float gameTime;
 	public int stars;
 	public int score;
@@ -111,6 +122,19 @@ public class Game : MonoBehaviour
 				Invoke ("showLoss", 2);
 			}
 		}
+
+		// If in menu
+		if (state == GameStates.Menu) {
+		
+			// Pressed pause/back button
+			if (Input.GetButtonDown ("Cancel")) {
+
+				// Show menu if in stat
+				if (menuState == GameMenuStates.Stat) {
+					showMenu ();
+				}
+			}
+		}
 	}
 
 	public void startGame ()
@@ -154,9 +178,18 @@ public class Game : MonoBehaviour
 
 	public void toggleUI ()
 	{
-		pauseUI.SetActive (state == GameStates.Pause);
-		gameUI.SetActive (state != GameStates.Lose);
-		loseUI.SetActive (state == GameStates.Lose);
+		// In game
+		if (state != GameStates.Menu) {
+			pauseUI.SetActive (state == GameStates.Pause);
+			gameUI.SetActive (state != GameStates.Lose);
+			loseUI.SetActive (state == GameStates.Lose);
+		}
+
+		// In menu
+		else {
+			menuUI.SetActive (menuState == GameMenuStates.Menu);
+			statUI.SetActive (menuState == GameMenuStates.Stat);
+		}
 	}
 
 	public void giveStar (int amount, Vector3 position)
@@ -232,5 +265,19 @@ public class Game : MonoBehaviour
 
 		// Update save data
 		Storage.save ();
+	}
+
+	public void showStat ()
+	{
+		// Show state and update UI
+		menuState = GameMenuStates.Stat;
+		toggleUI ();
+	}
+
+	public void showMenu ()
+	{
+		// Show menu and update UI
+		menuState = GameMenuStates.Menu;
+		toggleUI ();
 	}
 }
