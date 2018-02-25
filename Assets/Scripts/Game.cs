@@ -284,9 +284,9 @@ public class Game : MonoBehaviour
 	public void takeScreenshot ()
 	{
 		// Take a screenshot
-		ScreenCapture.CaptureScreenshot (System.IO.Path.Combine (Application.persistentDataPath, "breaker-screenshot.png"));
+		ScreenCapture.CaptureScreenshot (System.IO.Path.Combine (Application.persistentDataPath, "screenshot.png"));
 
 		// Open screenshot
-		Application.OpenURL ("file://" + System.IO.Path.Combine (Application.persistentDataPath, "breaker-screenshot.png"));
+		Application.OpenURL (System.IO.Path.Combine (Application.persistentDataPath, "screenshot.png"));
 	}
 }
