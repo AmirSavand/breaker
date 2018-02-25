@@ -14,6 +14,8 @@ public class Stat : MonoBehaviour
 	public Image shipModelImage;
 	public Text shipHitpoints;
 	public Text shipDamage;
+	public Text shipFireRate;
+	public Text shipFirePower;
 
 	void OnEnable ()
 	{
@@ -26,5 +28,7 @@ public class Stat : MonoBehaviour
 		shipModelImage.sprite = game.player.GetComponentInChildren<SpriteRenderer> ().sprite;
 		shipHitpoints.text = game.player.GetComponent<Hitpoint> ().maxHitpoints.ToString ();
 		shipDamage.text = game.player.fireDamage.ToString ();
+		shipFireRate.text = game.player.fireRate.ToString ();
+		shipFirePower.text = game.player.firePower.ToString ();
 	}
 }

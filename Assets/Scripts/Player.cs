@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-	public float firePower = 500;
+	public float firePower = 2;
 	public float fireDamage = 100;
 	public float fireLifetime = 1;
 	public float fireRate = 1;
