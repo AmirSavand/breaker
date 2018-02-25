@@ -16,25 +16,31 @@ public class Game : MonoBehaviour
 {
 	public Player player;
 
+	[Header ("Floating text")]
 	public GameObject textFloat;
 	public Color textFloatStarColor;
 	public Color textFloatScoreColor;
 	public Color textFloatHitpointColor;
 
+	[Header ("Main UI objecs")]
 	public GameObject gameUI;
 	public GameObject pauseUI;
 	public GameObject loseUI;
 
+	[Header ("Start message")]
 	public string[] startMessages;
 	public TextMesh startMessageTMesh;
 
+	[Header ("Game variables")]
 	public Color[] backgroundColors;
 
+	[Header ("UI texts")]
 	public Text versionText;
 	public Text timeText;
 	public Text starsText;
 	public Text hitpointsText;
 
+	[Header ("Game resources")]
 	public GameStates state;
 	public float gameTime;
 	public int stars;
