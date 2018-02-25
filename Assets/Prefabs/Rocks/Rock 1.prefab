@@ -231,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438373173354440}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.029999971, y: -0.13399982, z: 0}
+  m_LocalPosition: {x: 0.21300006, y: -0.045999765, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4558709693790112}
@@ -244,7 +244,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1165800140244528}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.20400003, y: 0.23699999, z: 0}
+  m_LocalPosition: {x: -0.020999938, y: 0.32500005, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4558709693790112}
@@ -257,7 +257,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1884612600091546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.451, y: 0.14300013, z: 0}
+  m_LocalPosition: {x: -0.26799992, y: 0.23100019, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4558709693790112}
@@ -283,7 +283,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746636904966374}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.36300007, y: -0.18900013, z: 0}
+  m_LocalPosition: {x: -0.17999998, y: -0.10100007, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4558709693790112}
@@ -296,7 +296,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651152929199968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.032000005, y: 0.04799986, z: 0}
+  m_LocalPosition: {x: 0.151, y: 0.136, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4558709693790112}
@@ -309,7 +309,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1482745636093140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16600004, y: -0.11199999, z: 0}
+  m_LocalPosition: {x: 0.01700005, y: -0.02399993, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4558709693790112}
@@ -322,7 +322,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1233889903322100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9283118, y: 2.6233382, z: 0}
+  m_LocalPosition: {x: 6.5197334, y: 3.2906752, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4327111188976346}
@@ -359,7 +359,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1058632494492384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.26100007, y: 0.05000019, z: 0}
+  m_LocalPosition: {x: -0.07799998, y: 0.13800025, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4558709693790112}
@@ -372,7 +372,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777765216599742}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12100008, y: -0.3340001, z: 0}
+  m_LocalPosition: {x: 0.062000006, y: -0.24600005, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4558709693790112}
@@ -385,7 +385,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1998839154870442}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.446, y: -0.03399992, z: 0}
+  m_LocalPosition: {x: -0.26299992, y: 0.05400014, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4558709693790112}
@@ -798,7 +798,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 200
   maxHitpoints: 200
-  shakeOnDeathDuration: 0.2
+  isDead: 0
+  shakeOnDeathDuration: 0
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1
   pieces: {fileID: 1035932961258328}
@@ -806,7 +807,8 @@ MonoBehaviour:
   deathCoins: 0
   deathScore: 50
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
-  updateCoinsText: 0
+  enableDamageTextFloat: 0
+  updateHitpointText: 0
 --- !u!212 &212053501111088072
 SpriteRenderer:
   m_ObjectHideFlags: 1

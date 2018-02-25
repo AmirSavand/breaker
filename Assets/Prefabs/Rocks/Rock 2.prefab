@@ -231,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400499253232866}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.049, y: -0.992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4908961187917210}
@@ -279,7 +279,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1863196739460592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.020999908, y: 0.7279998, z: 0}
+  m_LocalPosition: {x: -0.004, y: 0.777, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4127555873953250}
@@ -305,7 +305,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1087645321316450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.4543695, y: 3.4694707, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4445302211236664}
@@ -786,7 +786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 200
   maxHitpoints: 200
-  shakeOnDeathDuration: 0.2
+  isDead: 0
+  shakeOnDeathDuration: 0
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1
   pieces: {fileID: 1400499253232866}
@@ -794,7 +795,8 @@ MonoBehaviour:
   deathCoins: 0
   deathScore: 100
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
-  updateCoinsText: 0
+  enableDamageTextFloat: 0
+  updateHitpointText: 0
 --- !u!114 &114514158333876462
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1047,7 +1047,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 200
   maxHitpoints: 200
-  shakeOnDeathDuration: 0.2
+  isDead: 0
+  shakeOnDeathDuration: 0
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1
   pieces: {fileID: 1898274125960070}
@@ -1056,7 +1057,7 @@ MonoBehaviour:
   deathScore: 0
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 0
-  updateCoinsText: 0
+  updateHitpointText: 0
 --- !u!114 &114681714296470320
 MonoBehaviour:
   m_ObjectHideFlags: 1
