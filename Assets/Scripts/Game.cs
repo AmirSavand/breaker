@@ -181,7 +181,7 @@ public class Game : MonoBehaviour
 		createTextFloat ("+" + amount, textFloatScoreColor, position);
 	}
 
-	string getGameTimeFormat ()
+	public string getGameTimeFormat ()
 	{
 		// Get game time minutes and seconds
 		int minutes = Mathf.FloorToInt (gameTime / 60);

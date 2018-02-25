@@ -689,11 +689,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  textFloat: {fileID: 0}
+  textFloatCoinColor: {r: 0, g: 0, b: 0, a: 0}
+  textFloatScoreColor: {r: 0, g: 0, b: 0, a: 0}
+  textFloatHitpointColor: {r: 0, g: 0, b: 0, a: 0}
   gameUI: {fileID: 0}
   pauseUI: {fileID: 0}
   loseUI: {fileID: 0}
+  startMessages: []
+  startMessageTMesh: {fileID: 0}
   versionText: {fileID: 1460788482}
   timeText: {fileID: 0}
+  coinsText: {fileID: 0}
+  hitpointsText: {fileID: 0}
+  state: 0
+  gameTime: 0
+  coins: 0
+  score: 0
 --- !u!4 &425684339
 Transform:
   m_ObjectHideFlags: 0
