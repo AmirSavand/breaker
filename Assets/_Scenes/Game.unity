@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 241745100}
   - component: {fileID: 241745099}
   m_Layer: 5
-  m_Name: Coin Result Text
+  m_Name: Star Result Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 311533660}
   - component: {fileID: 311533662}
   m_Layer: 5
-  m_Name: Coin Image Holder
+  m_Name: Star Image Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1647333395}
   textFloat: {fileID: 1733095893293126, guid: d964257ffd323934eb7b035b9127cee3, type: 2}
-  textFloatCoinColor: {r: 1, g: 0.8758622, b: 0, a: 1}
+  textFloatStarColor: {r: 1, g: 0.8758622, b: 0, a: 1}
   textFloatScoreColor: {r: 0.74264705, g: 0.7632353, b: 1, a: 1}
   textFloatHitpointColor: {r: 1, g: 0.2794118, b: 0.2794118, a: 1}
   gameUI: {fileID: 733927012}
@@ -1029,11 +1029,11 @@ MonoBehaviour:
   - {r: 0.16470589, g: 0.1764706, b: 0.2, a: 1}
   versionText: {fileID: 0}
   timeText: {fileID: 34255419}
-  coinsText: {fileID: 1338535593}
+  starsText: {fileID: 1338535593}
   hitpointsText: {fileID: 1374577262}
-  state: 0
+  state: 1
   gameTime: 0
-  coins: 0
+  stars: 0
   score: 0
 --- !u!1 &471335202
 GameObject:
@@ -2508,7 +2508,7 @@ GameObject:
   - component: {fileID: 1163745717}
   - component: {fileID: 1163745716}
   m_Layer: 5
-  m_Name: Coin Image
+  m_Name: Star Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2782,7 +2782,7 @@ GameObject:
   - component: {fileID: 1329987164}
   - component: {fileID: 1329987165}
   m_Layer: 5
-  m_Name: Coins
+  m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2855,7 +2855,7 @@ GameObject:
   - component: {fileID: 1338535593}
   - component: {fileID: 1338535595}
   m_Layer: 5
-  m_Name: Coin Text
+  m_Name: Star Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

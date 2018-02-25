@@ -17,7 +17,7 @@ public class Game : MonoBehaviour
 	public Player player;
 
 	public GameObject textFloat;
-	public Color textFloatCoinColor;
+	public Color textFloatStarColor;
 	public Color textFloatScoreColor;
 	public Color textFloatHitpointColor;
 
@@ -32,12 +32,12 @@ public class Game : MonoBehaviour
 
 	public Text versionText;
 	public Text timeText;
-	public Text coinsText;
+	public Text starsText;
 	public Text hitpointsText;
 
 	public GameStates state;
 	public float gameTime;
-	public int coins;
+	public int stars;
 	public int score;
 
 	private Cam cam;
@@ -64,18 +64,6 @@ public class Game : MonoBehaviour
 
 		// Random background
 		Camera.main.backgroundColor = backgroundColors [Random.Range (0, backgroundColors.Length)];
-
-		// In game scene
-		if (SceneManager.GetActiveScene ().name == "Game") {
-
-			// Set to run since first state in this scene is Run
-			state = GameStates.Run;
-		}
-	
-		// Otherwise game is in menu
-		else {
-			state = GameStates.Menu;
-		}
 	}
 
 	void Update ()
@@ -165,21 +153,21 @@ public class Game : MonoBehaviour
 		loseUI.SetActive (state == GameStates.Lose);
 	}
 
-	public void giveCoin (int amount, Vector3 position)
+	public void giveStar (int amount, Vector3 position)
 	{
-		// Add coins
-		coins += amount;
+		// Add stars
+		stars += amount;
 
 		// Update UI
-		coinsText.text = coins.ToString ();
+		starsText.text = stars.ToString ();
 
 		// Text float
-		createTextFloat ("+" + amount, textFloatCoinColor, position);
+		createTextFloat ("+" + amount, textFloatStarColor, position);
 	}
 
 	public void giveScore (int amount, Vector3 position)
 	{
-		// Add coins
+		// Add stars
 		score += amount;
 
 		// Text float
@@ -216,15 +204,15 @@ public class Game : MonoBehaviour
 
 		// Calculate score
 		score += Mathf.FloorToInt (gameTime * 10);
-		score += coins * 100;
+		score += stars * 100;
 
 		// Update results
 		GameObject.Find ("Time Result Text").GetComponent<Text> ().text = "Time\n" + getGameTimeFormat ();
-		GameObject.Find ("Coin Result Text").GetComponent<Text> ().text = "Coins\n+" + coins;
+		GameObject.Find ("Star Result Text").GetComponent<Text> ().text = "Stars\n+" + stars;
 		GameObject.Find ("Score Result Text").GetComponent<Text> ().text = score.ToString ();
 
-		// Save coins to storage
-		Storage.coins += coins;
+		// Save stars to storage
+		Storage.stars += stars;
 
 		// New high score?
 		if (Storage.highScore < score) {

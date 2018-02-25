@@ -1053,7 +1053,7 @@ MonoBehaviour:
   destroySelfOnDeath: 1
   pieces: {fileID: 1898274125960070}
   piecesForce: 40
-  deathCoins: 1
+  deathStars: 1
   deathScore: 0
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 0

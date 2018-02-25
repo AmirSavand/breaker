@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Storage : MonoBehaviour
 {
-	// Coins are collected in game then added once player is dead
-	public static int coins;
+	// Stars are collected in game then added once player is dead
+	public static int stars;
 
 	// Highest score that player got in a single game
 	public static int highScore;
@@ -21,14 +21,14 @@ public class Storage : MonoBehaviour
 		}
 
 		// Load all data
-		coins = PlayerPrefs.GetInt ("coins");
+		stars = PlayerPrefs.GetInt ("stars");
 		highScore = PlayerPrefs.GetInt ("highScore");
 	}
 
 	public static void save ()
 	{
 		// Set all data
-		PlayerPrefs.SetInt ("coins", coins);
+		PlayerPrefs.SetInt ("stars", stars);
 		PlayerPrefs.SetInt ("highScore", highScore);
 
 		// Save to disk

@@ -17,7 +17,7 @@ public class Hitpoint : MonoBehaviour
 	public GameObject pieces;
 	public float piecesForce = 50;
 
-	public int deathCoins;
+	public int deathStars;
 	public int deathScore;
 	public Vector3 deathTextFloatOffset = new Vector3 (0, 0, 0);
 	public bool enableDamageTextFloat = false;
@@ -116,9 +116,9 @@ public class Hitpoint : MonoBehaviour
 			// Already dead but not destroyed
 			if (!isDead) {
 
-				// Gives coins on death
-				if (deathCoins > 0) {
-					game.giveCoin (deathCoins, transform.position + deathTextFloatOffset);
+				// Gives stars on death
+				if (deathStars > 0) {
+					game.giveStar (deathStars, transform.position + deathTextFloatOffset);
 				}
 
 				// Gives score on death
