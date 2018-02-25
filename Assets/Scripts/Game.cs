@@ -14,9 +14,12 @@ public enum GameStates
 
 public class Game : MonoBehaviour
 {
-	public static Game Instance;
-
 	public Player player;
+
+	public GameObject textFloat;
+	public Color textFloatCoinColor;
+	public Color textFloatScoreColor;
+	public Color textFloatHitpointColor;
 
 	public GameObject gameUI;
 	public GameObject pauseUI;
@@ -27,12 +30,13 @@ public class Game : MonoBehaviour
 
 	public Text versionText;
 	public Text timeText;
-	public static Text coinsText;
+	public Text coinsText;
+	public Text hitpointsText;
 
-	public static GameStates state;
-	public static float gameTime;
-	public static int coins;
-	public static int score;
+	public GameStates state;
+	public float gameTime;
+	public int coins;
+	public int score;
 
 	private Cam cam;
 
@@ -43,11 +47,6 @@ public class Game : MonoBehaviour
 
 		// Reset time scale
 		Time.timeScale = 1;
-
-		// Reset static variables
-		gameTime = 0;
-		coins = 0;
-		score = 0;
 
 		// Set version to text (Menu)
 		if (versionText) {
@@ -66,9 +65,6 @@ public class Game : MonoBehaviour
 
 			// Set to run since first state in this scene is Run
 			state = GameStates.Run;
-
-			// Get game inits
-			Game.coinsText = GameObject.Find ("Coin Text").GetComponent<Text> ();
 		}
 	
 		// Otherwise game is in menu
@@ -164,24 +160,48 @@ public class Game : MonoBehaviour
 		loseUI.SetActive (state == GameStates.Lose);
 	}
 
-	public static void giveCoin (int amount)
+	public void giveCoin (int amount, Vector3 position)
 	{
 		// Add coins
-		Game.coins += amount;
+		coins += amount;
 
 		// Update UI
-		Game.coinsText.text = Game.coins.ToString ();
+		coinsText.text = coins.ToString ();
+
+		// Text float
+		createTextFloat ("+" + amount, textFloatCoinColor, position);
+	}
+
+	public void giveScore (int amount, Vector3 position)
+	{
+		// Add coins
+		score += amount;
+
+		// Text float
+		createTextFloat ("+" + amount, textFloatScoreColor, position);
 	}
 
 	string getGameTimeFormat ()
 	{
-
 		// Get game time minutes and seconds
 		int minutes = Mathf.FloorToInt (gameTime / 60);
 		int seconds = Mathf.FloorToInt (gameTime % 60);
 
 		// Return formatted text like 0:01
 		return string.Format ("{0:0}:{1:00}", minutes, seconds);
+	}
+
+	public GameObject createTextFloat (string text, Color color, Vector3 position)
+	{
+		// Floating text
+		GameObject instance = Instantiate (textFloat, position, new Quaternion ());
+
+		// Set to score color and amount
+		instance.GetComponent<TextMesh> ().color = color;
+		instance.GetComponent<TextMesh> ().text = text;
+
+		// Return the clone
+		return instance;
 	}
 
 	void showLoss ()

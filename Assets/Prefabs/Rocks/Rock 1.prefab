@@ -782,6 +782,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionSpeed: {x: 0, y: -2}
+  startAfter: 0
+  stopAfter: 0
+  stopMoving: 0
 --- !u!114 &114893531667231646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -801,7 +804,9 @@ MonoBehaviour:
   pieces: {fileID: 1035932961258328}
   piecesForce: 40
   deathCoins: 0
-  textToUpdate: {fileID: 0}
+  deathScore: 50
+  deathTextFloatOffset: {x: 0, y: 0, z: 0}
+  updateCoinsText: 0
 --- !u!212 &212053501111088072
 SpriteRenderer:
   m_ObjectHideFlags: 1

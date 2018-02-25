@@ -358,7 +358,7 @@ RectTransform:
   - {fileID: 292704592}
   - {fileID: 1531722813}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 456617264}
   m_Layer: 0
   m_Name: Game
-  m_TagString: Untagged
+  m_TagString: Game
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -981,6 +981,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1647333395}
+  textFloat: {fileID: 1733095893293126, guid: d964257ffd323934eb7b035b9127cee3, type: 2}
+  textFloatCoinColor: {r: 1, g: 0.8758622, b: 0, a: 1}
+  textFloatScoreColor: {r: 0.74264705, g: 0.7632353, b: 1, a: 1}
+  textFloatHitpointColor: {r: 1, g: 0.2794118, b: 0.2794118, a: 1}
   gameUI: {fileID: 733927012}
   pauseUI: {fileID: 292704591}
   loseUI: {fileID: 1531722812}
@@ -993,6 +997,12 @@ MonoBehaviour:
   startMessageTMesh: {fileID: 2039559593}
   versionText: {fileID: 0}
   timeText: {fileID: 34255419}
+  coinsText: {fileID: 1338535593}
+  hitpointsText: {fileID: 1374577262}
+  state: 0
+  gameTime: 0
+  coins: 0
+  score: 0
 --- !u!1 &471335202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2431,7 +2441,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4045907142879116, guid: 7377a228b92ec86448d27e7ae9c79a8d, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114557792938192034, guid: 7377a228b92ec86448d27e7ae9c79a8d,
         type: 2}
@@ -2440,9 +2450,14 @@ Prefab:
       objectReference: {fileID: 1476660381}
     - target: {fileID: 114623131677040366, guid: 7377a228b92ec86448d27e7ae9c79a8d,
         type: 2}
-      propertyPath: textToUpdate
-      value: 
-      objectReference: {fileID: 1374577262}
+      propertyPath: hitpoints
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114623131677040366, guid: 7377a228b92ec86448d27e7ae9c79a8d,
+        type: 2}
+      propertyPath: maxHitpoints
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7377a228b92ec86448d27e7ae9c79a8d, type: 2}
   m_IsPrefabParent: 0
@@ -3360,7 +3375,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1771452169
 MonoBehaviour:
@@ -3407,7 +3422,7 @@ Transform:
   - {fileID: 2039559592}
   - {fileID: 2031335264}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1871873700
 GameObject:

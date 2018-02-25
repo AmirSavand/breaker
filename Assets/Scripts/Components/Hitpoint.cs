@@ -7,6 +7,7 @@ public class Hitpoint : MonoBehaviour
 {
 	public float hitpoints = 100;
 	public float maxHitpoints = 100;
+	public bool isDead = false;
 
 	public float shakeOnDeathDuration = 0.1f;
 
@@ -17,13 +18,17 @@ public class Hitpoint : MonoBehaviour
 	public float piecesForce = 50;
 
 	public int deathCoins;
+	public int deathScore;
+	public Vector3 deathTextFloatOffset = new Vector3 (0, 0, 0);
+	public bool enableDamageTextFloat = false;
 
 	private SpriteRenderer spriteRenderer;
 	private Color spriteColor;
 
-	public Text textToUpdate;
+	public bool updateHitpointText = false;
 
 	private Cam cam;
+	private Game game;
 
 	void Start ()
 	{
@@ -31,9 +36,10 @@ public class Hitpoint : MonoBehaviour
 		hitpoints = maxHitpoints;
 
 		// Get inits
+		cam = Camera.main.GetComponent<Cam> ();
+		game = GameObject.FindWithTag ("Game").GetComponent<Game> ();
 		spriteRenderer = GetComponentInChildren<SpriteRenderer> ();
 		spriteColor = spriteRenderer.color;
-		cam = Camera.main.GetComponent<Cam> ();
 	}
 
 	public void damage (float amount)
@@ -46,14 +52,21 @@ public class Hitpoint : MonoBehaviour
 
 			// Revert to original color
 			Invoke ("revertColor", 0.05f);
+
+			// Show hit text float
+			if (enableDamageTextFloat) {
+
+				// Show damage text float
+				game.createTextFloat ("-" + amount, game.textFloatHitpointColor, transform.position);
+			}
 		}
 
 		// Deal damage
 		hitpoints = Mathf.Clamp (hitpoints -= amount, 0, maxHitpoints);
 
 		// If has a text to update
-		if (textToUpdate) {
-			textToUpdate.text = Mathf.FloorToInt (hitpoints / maxHitpoints * 100).ToString ();
+		if (updateHitpointText) {
+			game.hitpointsText.text = Mathf.FloorToInt (hitpoints / maxHitpoints * 100).ToString ();
 		}
 
 		// No HP left (dead)
@@ -100,10 +113,22 @@ public class Hitpoint : MonoBehaviour
 				Destroy (gameObject);
 			}
 
-			// Gives coins on death
-			if (deathCoins > 0) {
-				Game.giveCoin (deathCoins);
+			// Already dead but not destroyed
+			if (!isDead) {
+
+				// Gives coins on death
+				if (deathCoins > 0) {
+					game.giveCoin (deathCoins, transform.position + deathTextFloatOffset);
+				}
+
+				// Gives score on death
+				if (deathScore > 0) {
+					game.giveScore (deathScore, transform.position + deathTextFloatOffset);
+				}
 			}
+
+			// Store life status
+			isDead = true;
 		}
 	}
 

@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049733057791252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 2.84, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4795559608633104}
@@ -139,7 +139,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.455
+  m_Radius: 0.45
 --- !u!61 &61335122760199812
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -184,7 +184,9 @@ MonoBehaviour:
   pieces: {fileID: 0}
   piecesForce: 50
   deathCoins: 0
-  textToUpdate: {fileID: 0}
+  deathScore: 500
+  deathTextFloatOffset: {x: -1, y: 0, z: 0}
+  updateCoinsText: 0
 --- !u!114 &114050185649633232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,6 +199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionSpeed: {x: 0, y: -2}
+  startAfter: 0
+  stopAfter: 0
+  stopMoving: 0
 --- !u!114 &114506534176435052
 MonoBehaviour:
   m_ObjectHideFlags: 1

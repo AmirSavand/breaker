@@ -1172,7 +1172,10 @@ MonoBehaviour:
   pieces: {fileID: 1773433278474022}
   piecesForce: 40
   deathCoins: 4
-  textToUpdate: {fileID: 0}
+  deathScore: 0
+  deathTextFloatOffset: {x: 0, y: 0, z: 0}
+  enableDamageTextFloat: 0
+  updateCoinsText: 0
 --- !u!114 &114053503070400068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1223,6 +1226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionSpeed: {x: 0, y: -2}
+  startAfter: 0
+  stopAfter: 0
+  stopMoving: 0
 --- !u!114 &114342794405082954
 MonoBehaviour:
   m_ObjectHideFlags: 1
