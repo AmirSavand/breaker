@@ -28,6 +28,8 @@ public class Game : MonoBehaviour
 	public string[] startMessages;
 	public TextMesh startMessageTMesh;
 
+	public Color[] backgroundColors;
+
 	public Text versionText;
 	public Text timeText;
 	public Text coinsText;
@@ -59,6 +61,9 @@ public class Game : MonoBehaviour
 			// Set text to a random message
 			startMessageTMesh.text = startMessages [Random.Range (0, startMessages.Length)].Replace ("\\n", "\n");
 		}
+
+		// Random background
+		Camera.main.backgroundColor = backgroundColors [Random.Range (0, backgroundColors.Length)];
 
 		// In game scene
 		if (SceneManager.GetActiveScene ().name == "Game") {

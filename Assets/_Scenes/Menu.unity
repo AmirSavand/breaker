@@ -698,6 +698,8 @@ MonoBehaviour:
   loseUI: {fileID: 0}
   startMessages: []
   startMessageTMesh: {fileID: 0}
+  backgroundColors:
+  - {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 1}
   versionText: {fileID: 1460788482}
   timeText: {fileID: 0}
   coinsText: {fileID: 0}
