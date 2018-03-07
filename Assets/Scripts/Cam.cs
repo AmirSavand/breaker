@@ -26,9 +26,14 @@ public class Cam : MonoBehaviour
 		}
 	}
 
-	public void shake (float duration = 0.1f)
+	public void shake (float duration = 0.1f, bool vibrate = false)
 	{
 		// Set shake duration
 		shakeDuration = duration;
+
+		// Vibrate
+		if (vibrate) {
+			Handheld.Vibrate ();
+		}
 	}
 }

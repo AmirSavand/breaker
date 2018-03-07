@@ -15,8 +15,9 @@ public class Hitpoint : MonoBehaviour
 	public AudioSource hitSound;
 	public AudioSource deathSound;
 
-	[Header ("Screen shake")]
+	[Header ("Screen shake and vibrate")]
 	public float shakeOnDeathDuration = 0.1f;
+	public bool vibrateOnDeath = false;
 
 	[Header ("Destroy")]
 	public GameObject destroyObjectOnDeath;
