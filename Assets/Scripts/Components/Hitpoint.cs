@@ -5,28 +5,37 @@ using UnityEngine.UI;
 
 public class Hitpoint : MonoBehaviour
 {
+	[Header ("Hitpoint")]
 	public float hitpoints = 100;
 	public float maxHitpoints = 100;
 	public bool isDead = false;
 
+	[Header ("Sound")]
+	public AudioSource deathSound;
+	public AudioSource hitSound;
+
+	[Header ("Screen shake")]
 	public float shakeOnDeathDuration = 0.1f;
 
+	[Header ("Destroy")]
 	public GameObject destroyObjectOnDeath;
 	public bool destroySelfOnDeath = true;
 
+	[Header ("Pieces")]
 	public GameObject pieces;
 	public float piecesForce = 50;
 
+	[Header ("Death reward and text")]
 	public int deathStars;
 	public int deathScore;
 	public Vector3 deathTextFloatOffset = new Vector3 (0, 0, 0);
 	public bool enableDamageTextFloat = false;
 
-	private SpriteRenderer spriteRenderer;
-	private Color spriteColor;
-
+	[Header ("Global text")]
 	public bool updateHitpointText = false;
 
+	private SpriteRenderer spriteRenderer;
+	private Color spriteColor;
 	private Cam cam;
 	private Game game;
 
@@ -59,6 +68,11 @@ public class Hitpoint : MonoBehaviour
 				// Show damage text float
 				game.createTextFloat ("-" + amount, game.textFloatHitpointColor, transform.position);
 			}
+
+			// Hit sound
+			if (hitSound) {
+				hitSound.Play ();
+			}
 		}
 
 		// Deal damage
@@ -71,6 +85,25 @@ public class Hitpoint : MonoBehaviour
 
 		// No HP left (dead)
 		if (hitpoints == 0) {
+
+			// Is about to die
+			if (!isDead) {
+
+				// Gives stars on death
+				if (deathStars > 0) {
+					game.giveStar (deathStars, transform.position + deathTextFloatOffset);
+				}
+
+				// Gives score on death
+				if (deathScore > 0) {
+					game.giveScore (deathScore, transform.position + deathTextFloatOffset);
+				}
+
+				// Death sound
+				if (deathSound) {
+					deathSound.Play ();
+				}
+			}
 
 			// If should shake camera on death
 			if (shakeOnDeathDuration > 0) {
@@ -111,20 +144,6 @@ public class Hitpoint : MonoBehaviour
 			// Destroy if should self distruct
 			if (destroySelfOnDeath) {
 				Destroy (gameObject);
-			}
-
-			// Already dead but not destroyed
-			if (!isDead) {
-
-				// Gives stars on death
-				if (deathStars > 0) {
-					game.giveStar (deathStars, transform.position + deathTextFloatOffset);
-				}
-
-				// Gives score on death
-				if (deathScore > 0) {
-					game.giveScore (deathScore, transform.position + deathTextFloatOffset);
-				}
 			}
 
 			// Store life status
