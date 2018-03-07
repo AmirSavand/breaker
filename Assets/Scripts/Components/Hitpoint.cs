@@ -117,7 +117,7 @@ public class Hitpoint : MonoBehaviour
 
 			// If should shake camera on death
 			if (shakeOnDeathDuration > 0) {
-				cam.shake (shakeOnDeathDuration);
+				cam.shake (shakeOnDeathDuration, vibrateOnDeath);
 			}
 
 			// If has death piece
