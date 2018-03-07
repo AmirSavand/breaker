@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4774111986912152}
   - component: {fileID: 50483029889473202}
+  - component: {fileID: 82730353707285224}
   - component: {fileID: 114084062852749540}
   m_Layer: 0
   m_Name: Laser (Left Source)
@@ -165,6 +166,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 0.2}
   m_EdgeRadius: 0
+--- !u!82 &82730353707285224
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728960998740898}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f2d11d1752c750b41af21f906d4cf2d5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114038610529654708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,15 +259,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 0
   maxHitpoints: 100
+  isDead: 0
+  audioHolder: {fileID: 0}
+  hitSound: {fileID: 0}
+  deathSound: {fileID: 82730353707285224}
   shakeOnDeathDuration: 0
   destroyObjectOnDeath: {fileID: 1654684366770934}
   destroySelfOnDeath: 0
   pieces: {fileID: 0}
   piecesForce: 50
-  deathCoins: 0
+  deathStars: 0
   deathScore: 500
   deathTextFloatOffset: {x: 1, y: 0, z: 0}
-  updateCoinsText: 0
+  enableDamageTextFloat: 0
+  updateHitpointText: 0
 --- !u!114 &114084062852749540
 MonoBehaviour:
   m_ObjectHideFlags: 1

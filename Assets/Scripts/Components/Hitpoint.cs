@@ -104,8 +104,10 @@ public class Hitpoint : MonoBehaviour
 				if (deathSound) {
 
 					// Sperate the holder then destroy after audio finished
-					audioHolder.transform.parent = null;
-					Destroy (audioHolder, deathSound.clip.length);
+					if (audioHolder) {
+						audioHolder.transform.parent = null;
+						Destroy (audioHolder, deathSound.clip.length);
+					}
 
 					// Play the audio then destroy the holder
 					deathSound.Play ();
