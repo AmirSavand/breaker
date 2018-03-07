@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 	private float lastTimeFired;
 	public Transform fireFrom;
 	public GameObject fireBullet;
+	public AudioSource fireSound;
 
 	void Update ()
 	{
@@ -35,6 +36,9 @@ public class Player : MonoBehaviour
 		if (Time.time - lastTimeFired < fireRate) {
 			return;
 		}
+
+		// Fire sound
+		fireSound.Play ();
 
 		// Call to rotate to mouse
 		rotate ();

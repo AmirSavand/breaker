@@ -320,6 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4045907142879116}
   - component: {fileID: 50010270267843412}
+  - component: {fileID: 82279045499676378}
   - component: {fileID: 60285751046089028}
   - component: {fileID: 114799567002884684}
   - component: {fileID: 114623131677040366}
@@ -1308,6 +1309,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18404847, y: 0.24982548}
   m_EdgeRadius: 0
+--- !u!82 &82279045499676378
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902722664372346}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 911c55c84250fca4fbd6c8d6bad2efe1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114557792938192034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1358,12 +1439,14 @@ MonoBehaviour:
   hitpoints: 100
   maxHitpoints: 100
   isDead: 0
+  deathSound: {fileID: 0}
+  hitSound: {fileID: 0}
   shakeOnDeathDuration: 0.2
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1
   pieces: {fileID: 1904999010152942}
   piecesForce: 100
-  deathCoins: 0
+  deathStars: 0
   deathScore: 0
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 1
@@ -1385,6 +1468,7 @@ MonoBehaviour:
   fireRate: 0.75
   fireFrom: {fileID: 4135476959132266}
   fireBullet: {fileID: 1012319823202368, guid: 60911e2c64914e349b2800fbcd2764b9, type: 2}
+  fireSound: {fileID: 82279045499676378}
 --- !u!212 &212069883011103334
 SpriteRenderer:
   m_ObjectHideFlags: 1

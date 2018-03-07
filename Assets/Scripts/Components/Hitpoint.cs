@@ -11,8 +11,9 @@ public class Hitpoint : MonoBehaviour
 	public bool isDead = false;
 
 	[Header ("Sound")]
-	public AudioSource deathSound;
+	public GameObject audioHolder;
 	public AudioSource hitSound;
+	public AudioSource deathSound;
 
 	[Header ("Screen shake")]
 	public float shakeOnDeathDuration = 0.1f;
@@ -101,6 +102,12 @@ public class Hitpoint : MonoBehaviour
 
 				// Death sound
 				if (deathSound) {
+
+					// Sperate the holder then destroy after audio finished
+					audioHolder.transform.parent = null;
+					Destroy (audioHolder, deathSound.clip.length);
+
+					// Play the audio then destroy the holder
 					deathSound.Play ();
 				}
 			}
