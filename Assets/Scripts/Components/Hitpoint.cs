@@ -157,7 +157,8 @@ public class Hitpoint : MonoBehaviour
 			// Destroy if should self distruct
 			if (destroySelfOnDeath) {
 				if (explosionParticle) {
-					Instantiate (explosionParticle, transform.position, transform.rotation);
+					GameObject explosionObject = Instantiate (explosionParticle, transform.position, transform.rotation);
+					Destroy (explosionObject, explosionObject.GetComponent<ParticleSystem> ().main.duration);
 				}
 				Destroy (gameObject);
 			}
