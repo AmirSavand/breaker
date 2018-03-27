@@ -23,6 +23,9 @@ public class Hitpoint : MonoBehaviour
 	public GameObject destroyObjectOnDeath;
 	public bool destroySelfOnDeath = true;
 
+	[Header ("Particle system")]
+	public GameObject explosionParticle;
+
 	[Header ("Pieces")]
 	public GameObject pieces;
 	public float piecesForce = 50;
@@ -153,6 +156,10 @@ public class Hitpoint : MonoBehaviour
 
 			// Destroy if should self distruct
 			if (destroySelfOnDeath) {
+				if (explosionParticle)
+				{
+					Instantiate (explosionParticle, transform.position, transform.rotation);
+				}
 				Destroy (gameObject);
 			}
 
