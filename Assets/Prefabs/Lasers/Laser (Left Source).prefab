@@ -150,7 +150,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -264,8 +264,10 @@ MonoBehaviour:
   hitSound: {fileID: 0}
   deathSound: {fileID: 82730353707285224}
   shakeOnDeathDuration: 0
+  vibrateOnDeath: 0
   destroyObjectOnDeath: {fileID: 1654684366770934}
   destroySelfOnDeath: 0
+  explosionParticle: {fileID: 0}
   pieces: {fileID: 0}
   piecesForce: 50
   deathStars: 0
