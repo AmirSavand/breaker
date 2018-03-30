@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destroy : MonoBehaviour {
+public class Destroy : MonoBehaviour
+{
+	public bool destroyAfterParticle = false;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void Start ()
+	{
+		// Destroy after particle duration
+		if (destroyAfterParticle) {
+			Destroy (gameObject, GetComponent<ParticleSystem> ().main.duration);
+		}
 	}
 }
