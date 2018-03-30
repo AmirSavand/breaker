@@ -1228,7 +1228,6 @@ MonoBehaviour:
   backgroundColors:
   - {r: 0.07058824, g: 0.0627451, b: 0.07058824, a: 1}
   - {r: 0.16470589, g: 0.1764706, b: 0.2, a: 1}
-  - {r: 0.20392157, g: 0.28627452, b: 0.36862746, a: 1}
   state: 1
   menuState: 0
   gameTime: 0
