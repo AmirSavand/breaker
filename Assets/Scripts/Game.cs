@@ -57,6 +57,9 @@ public class Game : MonoBehaviour
 	public int stars;
 	public int score;
 
+	[Header ("Tracks")]
+	public AudioSource backgroundMusic;
+
 	private Cam cam;
 
 	void Start ()
@@ -160,6 +163,9 @@ public class Game : MonoBehaviour
 		// Stop camera shake
 		cam.shakeDuration = 0;
 
+		// Pause music
+		backgroundMusic.Pause ();
+
 		// Toggle UIs
 		toggleUI ();
 	}
@@ -171,6 +177,9 @@ public class Game : MonoBehaviour
 
 		// Resume time
 		Time.timeScale = 1;
+
+		// Pause music
+		backgroundMusic.UnPause ();
 
 		// Toggle UIs
 		toggleUI ();
