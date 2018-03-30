@@ -965,8 +965,11 @@ MonoBehaviour:
   hitSound: {fileID: 82153343074866168}
   deathSound: {fileID: 82982334491205596}
   shakeOnDeathDuration: 0
+  vibrateOnDeath: 0
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1
+  explosionParticle: {fileID: 1409214437665598, guid: 4cb0beb57a6355f4b867d5dc0fab132b,
+    type: 2}
   pieces: {fileID: 1378605772900530}
   piecesForce: 40
   deathStars: 0
