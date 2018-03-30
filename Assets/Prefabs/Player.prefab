@@ -1637,6 +1637,8 @@ MonoBehaviour:
   vibrateOnDeath: 1
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1
+  explosionParticle: {fileID: 1794217032749808, guid: 8586a4a905597bf4bbdc69a36f5dca2b,
+    type: 2}
   pieces: {fileID: 1904999010152942}
   piecesForce: 100
   deathStars: 0
