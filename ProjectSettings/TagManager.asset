@@ -43,3 +43,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Stars
+    uniqueID: 2077529247
+    locked: 0
+  - name: Shapes
+    uniqueID: 2469104173
+    locked: 0
+  - name: Rocks
+    uniqueID: 290018689
+    locked: 0
+  - name: Bullets
+    uniqueID: 996906281
+    locked: 0
+  - name: Player
+    uniqueID: 1195534965
+    locked: 0
+  - name: Lasers
+    uniqueID: 3706902503
+    locked: 0
+  - name: UI
+    uniqueID: 3302733511
+    locked: 0
