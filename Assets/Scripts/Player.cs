@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
 
 	public void fire ()
 	{
+		// Call to rotate to mouse
+		rotate ();
+
 		// Check cooldown
 		if (Time.time - lastTimeFired < fireRate) {
 			return;
@@ -39,9 +42,6 @@ public class Player : MonoBehaviour
 
 		// Fire sound
 		fireSound.Play ();
-
-		// Call to rotate to mouse
-		rotate ();
 
 		// Create bullet from fire from position
 		GameObject bullet = Instantiate (fireBullet, fireFrom.transform.position, transform.rotation);
