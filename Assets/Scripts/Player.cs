@@ -16,12 +16,6 @@ public class Player : MonoBehaviour
     public GameObject laser;
     public AudioSource fireSound;
 
-    void Start ()
-    {
-        enableLaser ();
-        Invoke ("disableLaser", laserLifeTime);
-    }
-
     void Update ()
     {
         // Click and fire
@@ -67,6 +61,7 @@ public class Player : MonoBehaviour
     public void enableLaser ()
     {
         laser.SetActive (true);
+        Invoke ("disableLaser", laserLifeTime);
     }
 
     public void disableLaser ()
