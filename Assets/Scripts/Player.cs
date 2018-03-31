@@ -10,8 +10,10 @@ public class Player : MonoBehaviour
     public float fireLifetime = 1;
     public float fireRate = 1;
     private float lastTimeFired;
+	public float laserLifeTime;
     public Transform fireFrom;
-    public GameObject fireBullet;
+	public GameObject fireBullet;
+	public GameObject fireLaser;
     public AudioSource fireSound;
 
     void Update ()
@@ -55,6 +57,14 @@ public class Player : MonoBehaviour
         // Fire rate cooldown (save last time)
         lastTimeFired = Time.time;
     }
+
+	public void laser ()
+	{
+		// Create laser from fire from position
+		GameObject laser = Instantiate (fireLaser, fireFrom.transform.position, transform.rotation);
+
+		Destroy (laser, laserLifeTime);
+	}
 
     public void rotate ()
     {
