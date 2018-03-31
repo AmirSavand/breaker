@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float fireLifetime = 1;
     public float fireRate = 1;
     private float lastTimeFired;
-    public float laserLifeTime;
+    public float laserDuration;
     public Transform fireFrom;
     public GameObject fireBullet;
     public GameObject laser;
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
     public void enableLaser ()
     {
         laser.SetActive (true);
-        Invoke ("disableLaser", laserLifeTime);
+        Invoke ("disableLaser", laserDuration);
     }
 
     public void disableLaser ()
