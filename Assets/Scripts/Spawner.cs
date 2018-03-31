@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
 
         // Decrease factor
         if (decreaseTimer > 0) {
-            InvokeRepeating ("spawnFaster", 0, decreaseTimer);
+            InvokeRepeating ("spawnFaster", spawnAfter, decreaseTimer);
         }
     }
 
