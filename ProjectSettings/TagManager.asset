@@ -40,9 +40,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Stars
     uniqueID: 2077529247
     locked: 0
@@ -61,6 +58,6 @@ TagManager:
   - name: Lasers
     uniqueID: 3706902503
     locked: 0
-  - name: UI
-    uniqueID: 3302733511
+  - name: Default
+    uniqueID: 0
     locked: 0
