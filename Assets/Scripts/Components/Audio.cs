@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Audio : MonoBehaviour
 {
-	void Start ()
-	{
-		Debug.Log (GetComponents<AudioSource> ());
-	}
+    void Start ()
+    {
+        Debug.Log (GetComponents<AudioSource> ());
+    }
 }

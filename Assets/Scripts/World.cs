@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class World : MonoBehaviour
 {
-	void OnTriggerExit2D (Collider2D other)
-	{
-		// Destroy parents too
-		if (other.transform.parent != null) {
-			Destroy (other.transform.parent.gameObject);
-		}
+    void OnTriggerExit2D (Collider2D other)
+    {
+        // Destroy parents too
+        if (other.transform.parent != null) {
+            Destroy (other.transform.parent.gameObject);
+        }
 
 		// Destroy everything that leaves the world
 		else {
-			Destroy (other.gameObject);
-		}
-	}
+            Destroy (other.gameObject);
+        }
+    }
 }
