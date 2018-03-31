@@ -10,11 +10,12 @@ public class Player : MonoBehaviour
     public float fireLifetime = 1;
     public float fireRate = 1;
     private float lastTimeFired;
-    public float laserDuration;
     public Transform fireFrom;
     public GameObject fireBullet;
-    public GameObject laser;
     public AudioSource fireSound;
+
+    public float laserDuration;
+    public GameObject laser;
 
     void Update ()
     {
