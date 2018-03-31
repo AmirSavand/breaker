@@ -1027,6 +1027,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 15
   spawnAfter: 15
+  decreaseTimer: 30
+  decreaseFactor: 0.5
+  decreaseFactorMin: 8
   spawnRandomRotation: 0
   spawnRandomColor: 0
   spawnObjects:
@@ -1330,7 +1333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &471335203
 Transform:
   m_ObjectHideFlags: 0
@@ -1366,6 +1369,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 2.5
   spawnAfter: 0
+  decreaseTimer: 15
+  decreaseFactor: 0.1
+  decreaseFactorMin: 0.6
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
@@ -1855,6 +1861,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 3
   spawnAfter: 0
+  decreaseTimer: 0
+  decreaseFactor: 0
+  decreaseFactorMin: 0
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
@@ -1878,6 +1887,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 3
   spawnAfter: 1.5
+  decreaseTimer: 0
+  decreaseFactor: 0
+  decreaseFactorMin: 0
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
@@ -4377,6 +4389,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 15
   spawnAfter: 5
+  decreaseTimer: 0
+  decreaseFactor: 0
+  decreaseFactorMin: 0
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
