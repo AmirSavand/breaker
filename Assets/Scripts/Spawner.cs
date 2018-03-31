@@ -6,8 +6,14 @@ public class Spawner : MonoBehaviour
 {
     public float spawnTimer = 5;
     public float spawnAfter = 0;
+
+    public float decreaseTimer;
+    public float decreaseFactor;
+    public float decreaseFactorMin;
+
     public bool spawnRandomRotation = true;
     public bool spawnRandomColor = true;
+
     public GameObject[] spawnObjects;
     public Color[] spawnColors;
 
@@ -19,7 +25,12 @@ public class Spawner : MonoBehaviour
         spawnPoints = GetComponentsInChildren<Transform> ();
 
         // Start spawining
-        InvokeRepeating ("spawn", spawnAfter, spawnTimer);
+        Invoke ("spawn", spawnAfter);
+
+        // Decrease factor
+        if (decreaseTimer > 0) {
+            InvokeRepeating ("spawnFaster", 0, decreaseTimer);
+        }
     }
 
     void spawn ()
@@ -40,5 +51,14 @@ public class Spawner : MonoBehaviour
         if (spawnRandomRotation) {
             spawnInstance.transform.GetChild (0).GetComponent<Transform> ().eulerAngles = new Vector3 (0, 0, Random.Range (0, 360));
         }
+
+        // Respawn again
+        Invoke ("spawn", spawnTimer);
+    }
+
+    void spawnFaster ()
+    {
+        // Decrease timer results in faster spawns (clamp to minimum)
+        spawnTimer = Mathf.Clamp (spawnTimer - decreaseFactor, decreaseFactorMin, spawnTimer);
     }
 }
