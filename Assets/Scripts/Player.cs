@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     public GameObject fireBullet;
     public AudioSource fireSound;
 
+    public float laserDuration;
+    public GameObject laser;
+
     void Update ()
     {
         // Click and fire
@@ -54,6 +57,17 @@ public class Player : MonoBehaviour
 
         // Fire rate cooldown (save last time)
         lastTimeFired = Time.time;
+    }
+
+    public void enableLaser ()
+    {
+        laser.SetActive (true);
+        Invoke ("disableLaser", laserDuration);
+    }
+
+    public void disableLaser ()
+    {
+        laser.SetActive (false);
     }
 
     public void rotate ()
