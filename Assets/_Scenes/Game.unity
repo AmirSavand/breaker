@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 15
   spawnAfter: 15
-  decreaseTimer: 30
+  decreaseTimer: 25
   decreaseFactor: 0.5
   decreaseFactorMin: 8
   spawnRandomRotation: 0
@@ -1369,7 +1369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 2.5
   spawnAfter: 0
-  decreaseTimer: 30
+  decreaseTimer: 25
   decreaseFactor: 0.2
   decreaseFactorMin: 1
   spawnRandomRotation: 1
