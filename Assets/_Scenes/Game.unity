@@ -1333,7 +1333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &471335203
 Transform:
   m_ObjectHideFlags: 0
@@ -1369,9 +1369,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 2.5
   spawnAfter: 0
-  decreaseTimer: 15
-  decreaseFactor: 0.1
-  decreaseFactorMin: 0.6
+  decreaseTimer: 30
+  decreaseFactor: 0.2
+  decreaseFactorMin: 1
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
