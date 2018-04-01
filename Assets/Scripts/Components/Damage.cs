@@ -5,6 +5,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     public float damage = 100;
+    public string damageTagOnly;
 
     public List<Collider2D> whiteList;
 
@@ -18,8 +19,13 @@ public class Damage : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D other)
     {
-        // If it's in white list
+        // Skip white listed collider
         if (whiteList.Contains (other)) {
+            return;
+        }
+
+        // Skip if not tag only
+        if (damageTagOnly.Length > 0 && !other.CompareTag (damageTagOnly)) {
             return;
         }
 		
