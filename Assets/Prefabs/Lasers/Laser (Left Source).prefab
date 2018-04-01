@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 500
+  damageTagOnly: Player
   whiteList:
   - {fileID: 58804882784633472}
 --- !u!212 &212186340494356498
@@ -336,7 +337,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -588064793
-  m_SortingLayer: 6
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9c327f3b5723efe41b8adba214bdcf75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -380,7 +381,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -588064793
-  m_SortingLayer: 6
+  m_SortingLayer: -1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1131ef6ea0241684db727377d3fbdd28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
