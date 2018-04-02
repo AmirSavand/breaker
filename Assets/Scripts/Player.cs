@@ -52,6 +52,9 @@ public class Player : MonoBehaviour
         // Set bullet speed to fire power (up times power)
         bullet.GetComponent<Move> ().directionSpeed = bullet.transform.up * firePower;
 
+        // Set bullet damage to fire damage
+        bullet.GetComponent<Damage> ().damage = fireDamage;
+
         // Limit fire lifetime
         Destroy (bullet, fireLifetime);
 
