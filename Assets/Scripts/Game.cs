@@ -15,7 +15,8 @@ public enum GameStates
 public enum GameMenuStates
 {
     Menu,
-    Stat
+    Stat,
+    Shop
 }
 
 public class Game : MonoBehaviour
@@ -29,6 +30,7 @@ public class Game : MonoBehaviour
     [Space ()]
     public GameObject menuUI;
     public GameObject statUI;
+    public GameObject shopUI;
 
     [Header ("UI texts")]
     public Text timeText;
@@ -198,6 +200,7 @@ public class Game : MonoBehaviour
 		else {
             menuUI.SetActive (menuState == GameMenuStates.Menu);
             statUI.SetActive (menuState == GameMenuStates.Stat);
+            shopUI.SetActive (menuState == GameMenuStates.Shop);
         }
     }
 
@@ -276,6 +279,13 @@ public class Game : MonoBehaviour
         Storage.save ();
     }
 
+    public void showMenu ()
+    {
+        // Show menu and update UI
+        menuState = GameMenuStates.Menu;
+        toggleUI ();
+    }
+
     public void showStat ()
     {
         // Show state and update UI
@@ -283,10 +293,10 @@ public class Game : MonoBehaviour
         toggleUI ();
     }
 
-    public void showMenu ()
+    public void showShop ()
     {
-        // Show menu and update UI
-        menuState = GameMenuStates.Menu;
+        // Show shop and update UI
+        menuState = GameMenuStates.Shop;
         toggleUI ();
     }
 

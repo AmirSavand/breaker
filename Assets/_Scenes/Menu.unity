@@ -1818,6 +1818,7 @@ MonoBehaviour:
   loseUI: {fileID: 0}
   menuUI: {fileID: 1700752606}
   statUI: {fileID: 1022426651}
+  shopUI: {fileID: 1122758738}
   timeText: {fileID: 0}
   starsText: {fileID: 0}
   hitpointsText: {fileID: 0}
@@ -2160,7 +2161,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 425684338}
-        m_MethodName: showStat
+        m_MethodName: showShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
