@@ -4,11 +4,25 @@ using UnityEngine;
 
 public class Storage : MonoBehaviour
 {
-    // Stars are collected in game then added once player is dead
+    /**
+     * Current player's ship
+     */
+    public static int ship;
+
+    /**
+     * Stars are collected in game then added once player is dead
+     */
     public static int stars;
 
-    // Highest score that player got in a single game
+    /**
+     * Highest score that player got in a single game
+     */
     public static int highScore;
+
+    /**
+     * Other custom data
+     */
+    public static Dictionary<string, int> data = new Dictionary<string, int> ();
 
     void Awake ()
     {
@@ -21,15 +35,25 @@ public class Storage : MonoBehaviour
         }
 
         // Load all data
+        ship = PlayerPrefs.GetInt ("ship");
         stars = PlayerPrefs.GetInt ("stars");
         highScore = PlayerPrefs.GetInt ("highScore");
     }
 
-    public static void save ()
+    /**
+     * Commit all data to storage
+     */
+    public static void Save ()
     {
         // Set all data
+        PlayerPrefs.SetInt ("ship", ship);
         PlayerPrefs.SetInt ("stars", stars);
         PlayerPrefs.SetInt ("highScore", highScore);
+
+        // Set all dict data
+        foreach (KeyValuePair<string, int> item in data) {
+            PlayerPrefs.SetInt (item.Key, item.Value);
+        }
 
         // Save to disk
         PlayerPrefs.Save ();
