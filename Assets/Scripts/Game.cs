@@ -23,6 +23,8 @@ public class Game : MonoBehaviour
 {
     public Player player;
 
+    public GameObject[] ships;
+
     [Header ("UI objecs")]
     public GameObject gameUI;
     public GameObject pauseUI;
@@ -118,7 +120,7 @@ public class Game : MonoBehaviour
             }
 
             // If player is destroyed
-            if (!player && state != GameStates.Lose) {
+            if (!player.ship && state != GameStates.Lose) {
 
                 // Update state
                 state = GameStates.Lose;
@@ -276,7 +278,7 @@ public class Game : MonoBehaviour
         }
 
         // Update save data
-        Storage.save ();
+        Storage.Save ();
     }
 
     public void showMenu ()
