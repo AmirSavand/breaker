@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Stat : MonoBehaviour
 {
     public Game game;
+    public Ship ship;
 
     public Text starsText;
     public Text highScoreText;
@@ -17,6 +18,12 @@ public class Stat : MonoBehaviour
     public Text shipFireRate;
     public Text shipFirePower;
 
+    void Awake ()
+    {
+        // Get current ship
+        ship = game.ships [Storage.ship].GetComponent<Ship> ();
+    }
+
     void OnEnable ()
     {
         // Set vars
@@ -24,11 +31,11 @@ public class Stat : MonoBehaviour
         highScoreText.text = Storage.highScore.ToString ();
 
         // Set ship vars
-        shipText.text = game.player.GetComponentInChildren<SpriteRenderer> ().sprite.name;
-        shipModelImage.sprite = game.player.GetComponentInChildren<SpriteRenderer> ().sprite;
-        shipHitpoints.text = game.player.GetComponent<Hitpoint> ().maxHitpoints.ToString ();
-        shipDamage.text = game.player.fireDamage.ToString ();
-        shipFireRate.text = game.player.fireRate.ToString ();
-        shipFirePower.text = game.player.firePower.ToString ();
+        shipText.text = ship.GetComponentInChildren<SpriteRenderer> ().sprite.name;
+        shipModelImage.sprite = ship.GetComponentInChildren<SpriteRenderer> ().sprite;
+        shipHitpoints.text = ship.GetComponent<Hitpoint> ().maxHitpoints.ToString ();
+        shipDamage.text = ship.fireDamage.ToString ();
+        shipFireRate.text = ship.fireRate.ToString ();
+        shipFirePower.text = ship.firePower.ToString ();
     }
 }
