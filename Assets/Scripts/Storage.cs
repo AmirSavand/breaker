@@ -33,8 +33,6 @@ public class Storage : MonoBehaviour
         ship = PlayerPrefs.GetInt ("ship");
         stars = PlayerPrefs.GetInt ("stars");
         highScore = PlayerPrefs.GetInt ("highScore");
-
-        stars = 5000;
     }
 
     /**
