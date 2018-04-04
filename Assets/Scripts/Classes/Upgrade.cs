@@ -51,17 +51,8 @@ public class Upgrade : MonoBehaviour
 
     void Start ()
     {
-        // Check for storage key
-        if (Storage.data.ContainsKey (getStorageKey ())) {
-
-            // Load stock from storage
-            stock = Storage.data [getStorageKey ()];
-        }
-
-        // Add the storage key
-        else {
-            Storage.data.Add (getStorageKey (), stock);
-        }
+        // Load stock from storage
+        stock = PlayerPrefs.GetInt (getStorageKey ());
     }
 
     /**
@@ -79,10 +70,10 @@ public class Upgrade : MonoBehaviour
             Storage.stars -= getPrice ();
 
             // Save to storage
-            Storage.data [getStorageKey ()] = stock;
+            PlayerPrefs.SetInt (getStorageKey (), stock);
 
             // Save storage
-            Storage.Save ();
+            PlayerPrefs.Save ();
 
             // Succesfully upgraded
             return;

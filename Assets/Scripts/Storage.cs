@@ -19,11 +19,6 @@ public class Storage : MonoBehaviour
      */
     public static int highScore;
 
-    /**
-     * Other custom data
-     */
-    public static Dictionary<string, int> data = new Dictionary<string, int> ();
-
     void Awake ()
     {
         // Keep it between scenes
@@ -38,6 +33,8 @@ public class Storage : MonoBehaviour
         ship = PlayerPrefs.GetInt ("ship");
         stars = PlayerPrefs.GetInt ("stars");
         highScore = PlayerPrefs.GetInt ("highScore");
+
+        stars = 5000;
     }
 
     /**
@@ -49,11 +46,6 @@ public class Storage : MonoBehaviour
         PlayerPrefs.SetInt ("ship", ship);
         PlayerPrefs.SetInt ("stars", stars);
         PlayerPrefs.SetInt ("highScore", highScore);
-
-        // Set all dict data
-        foreach (KeyValuePair<string, int> item in data) {
-            PlayerPrefs.SetInt (item.Key, item.Value);
-        }
 
         // Save to disk
         PlayerPrefs.Save ();
