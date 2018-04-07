@@ -12,13 +12,6 @@ public enum GameStates
     Lose
 }
 
-public enum GameMenuStates
-{
-    Menu,
-    Stat,
-    Shop
-}
-
 public class Game : MonoBehaviour
 {
     public Player player;
@@ -56,7 +49,6 @@ public class Game : MonoBehaviour
 
     [Header ("Game resources")]
     public GameStates state;
-    public GameMenuStates menuState;
     public float gameTime;
     public int stars;
     public int score;
@@ -129,19 +121,6 @@ public class Game : MonoBehaviour
                 Invoke ("showLoss", 2);
             }
         }
-
-        // If in menu
-        if (state == GameStates.Menu) {
-		
-            // Pressed pause/back button
-            if (Input.GetButtonDown ("Cancel")) {
-
-                // Show menu if in stat
-                if (menuState == GameMenuStates.Stat) {
-                    showMenu ();
-                }
-            }
-        }
     }
 
     public void startGame ()
@@ -196,13 +175,6 @@ public class Game : MonoBehaviour
             pauseUI.SetActive (state == GameStates.Pause);
             gameUI.SetActive (state != GameStates.Lose);
             loseUI.SetActive (state == GameStates.Lose);
-        }
-
-		// In menu
-		else {
-            menuUI.SetActive (menuState == GameMenuStates.Menu);
-            statUI.SetActive (menuState == GameMenuStates.Stat);
-            shopUI.SetActive (menuState == GameMenuStates.Shop);
         }
     }
 
@@ -279,27 +251,6 @@ public class Game : MonoBehaviour
 
         // Update save data
         Storage.Save ();
-    }
-
-    public void showMenu ()
-    {
-        // Show menu and update UI
-        menuState = GameMenuStates.Menu;
-        toggleUI ();
-    }
-
-    public void showStat ()
-    {
-        // Show state and update UI
-        menuState = GameMenuStates.Stat;
-        toggleUI ();
-    }
-
-    public void showShop ()
-    {
-        // Show shop and update UI
-        menuState = GameMenuStates.Shop;
-        toggleUI ();
     }
 
     public void takeScreenshot ()
