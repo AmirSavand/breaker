@@ -67,7 +67,7 @@ public class Upgrade : MonoBehaviour
             stock++;
 
             // Decrease stars
-            Storage.stars -= getPrice ();
+            Storage.Stars -= getPrice ();
 
             // Save to storage
             PlayerPrefs.SetInt (getStorageKey (), stock);
@@ -128,6 +128,6 @@ public class Upgrade : MonoBehaviour
      */
     public bool isAffordable ()
     {
-        return Storage.stars >= getPrice ();
+        return Storage.Stars >= getPrice ();
     }
 }

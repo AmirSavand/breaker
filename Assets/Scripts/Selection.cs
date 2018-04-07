@@ -19,13 +19,13 @@ public class Selection : MonoBehaviour
     public void updateButtons ()
     {
         // Show current ship
-        current.sprite = game.ships [Storage.ship].GetComponentInChildren<SpriteRenderer> ().sprite;
+        current.sprite = game.ships [Storage.Ship].GetComponentInChildren<SpriteRenderer> ().sprite;
 
         // If current ship is the first, hide prev button
-        prev.SetActive (Storage.ship != 0);
+        prev.SetActive (Storage.Ship != 0);
 
         // If current ship is the last, hide next button
-        next.SetActive (Storage.ship != game.ships.Length - 1);
+        next.SetActive (Storage.Ship != game.ships.Length - 1);
     }
 
     /**
@@ -34,7 +34,7 @@ public class Selection : MonoBehaviour
     public void showNext ()
     {
         // Set current ship to next one
-        Storage.ship++;
+        Storage.Ship++;
         Storage.Save ();
 
         // Update buttons state
@@ -47,7 +47,7 @@ public class Selection : MonoBehaviour
     public void showPrev ()
     {
         // Set current ship to prev one
-        Storage.ship--;
+        Storage.Ship--;
         Storage.Save ();
 
         // Update buttons state

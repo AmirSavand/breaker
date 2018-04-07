@@ -19,7 +19,7 @@ public class Shop : MonoBehaviour
     void Start ()
     {
         // Init vars
-        currentShipUpgrades = GameObject.Find ("Upgrades/" + game.ships [Storage.ship].name).GetComponentsInChildren<Upgrade> ();
+        currentShipUpgrades = GameObject.Find ("Upgrades/" + game.ships [Storage.Ship].name).GetComponentsInChildren<Upgrade> ();
 
         // Create all upgrade buttons
         foreach (Upgrade upgrade in currentShipUpgrades) {

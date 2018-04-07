@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     void Start ()
     {
         // Load current ship
-        ship = Instantiate (game.ships [Storage.ship], transform).GetComponent<Ship> ();
+        ship = Instantiate (game.ships [Storage.Ship], transform).GetComponent<Ship> ();
     }
 
     void Update ()

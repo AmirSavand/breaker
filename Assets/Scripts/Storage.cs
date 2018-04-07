@@ -7,17 +7,17 @@ public class Storage : MonoBehaviour
     /**
      * Current player's ship
      */
-    public static int ship;
+    public static int Ship;
 
     /**
      * Stars are collected in game then added once player is dead
      */
-    public static int stars;
+    public static int Stars;
 
     /**
      * Highest score that player got in a single game
      */
-    public static int highScore;
+    public static int HighScore;
 
     void Awake ()
     {
@@ -30,9 +30,9 @@ public class Storage : MonoBehaviour
         }
 
         // Load all data
-        ship = PlayerPrefs.GetInt ("ship");
-        stars = PlayerPrefs.GetInt ("stars");
-        highScore = PlayerPrefs.GetInt ("highScore");
+        Ship = PlayerPrefs.GetInt ("ship");
+        Stars = PlayerPrefs.GetInt ("stars");
+        HighScore = PlayerPrefs.GetInt ("highScore");
     }
 
     /**
@@ -41,9 +41,9 @@ public class Storage : MonoBehaviour
     public static void Save ()
     {
         // Set all data
-        PlayerPrefs.SetInt ("ship", ship);
-        PlayerPrefs.SetInt ("stars", stars);
-        PlayerPrefs.SetInt ("highScore", highScore);
+        PlayerPrefs.SetInt ("ship", Ship);
+        PlayerPrefs.SetInt ("stars", Stars);
+        PlayerPrefs.SetInt ("high-score", HighScore);
 
         // Save to disk
         PlayerPrefs.Save ();

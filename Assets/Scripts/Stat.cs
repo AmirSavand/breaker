@@ -21,14 +21,14 @@ public class Stat : MonoBehaviour
     void Awake ()
     {
         // Get current ship
-        ship = game.ships [Storage.ship].GetComponent<Ship> ();
+        ship = game.ships [Storage.Ship].GetComponent<Ship> ();
     }
 
     void OnEnable ()
     {
         // Set vars
-        starsText.text = Storage.stars.ToString ();
-        highScoreText.text = Storage.highScore.ToString ();
+        starsText.text = Storage.Stars.ToString ();
+        highScoreText.text = Storage.HighScore.ToString ();
 
         // Set ship vars
         shipText.text = ship.GetComponentInChildren<SpriteRenderer> ().sprite.name;

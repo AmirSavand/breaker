@@ -265,13 +265,13 @@ public class Game : MonoBehaviour
         GameObject.Find ("Score Result Text").GetComponent<Text> ().text = score.ToString ();
 
         // Save stars to storage
-        Storage.stars += stars;
+        Storage.Stars += stars;
 
         // New high score?
-        if (Storage.highScore < score) {
+        if (Storage.HighScore < score) {
 
             // Save high score to storage
-            Storage.highScore = score;
+            Storage.HighScore = score;
 
             // Set text so player will know
             GameObject.Find ("High Score Result Text").GetComponent<Text> ().text = "New High Score";
