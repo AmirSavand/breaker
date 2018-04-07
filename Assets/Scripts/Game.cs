@@ -76,7 +76,7 @@ public class Game : MonoBehaviour
 
         // Set version to text (Menu)
         if (versionText) {
-            versionText.text = "Version " + Application.version;
+            versionText.text = Application.version;
         }
 
         // Random message and start text object
