@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1734180340838076}
   m_IsPrefabParent: 1
+--- !u!1 &1064482783076466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4309921309292490}
+  m_Layer: 0
+  m_Name: Blue Ship
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1325477998823162
 GameObject:
   m_ObjectHideFlags: 1
@@ -22,6 +37,38 @@ GameObject:
   - component: {fileID: 114553526459787058}
   m_Layer: 0
   m_Name: Fire Rate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1381514515544332
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4251599131811052}
+  - component: {fileID: 114199165451165088}
+  m_Layer: 0
+  m_Name: Hitpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1505320569899406
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4712246619546148}
+  - component: {fileID: 114351363458296726}
+  m_Layer: 0
+  m_Name: Fire Power
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,6 +90,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1669474492634238
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4139492096903100}
+  - component: {fileID: 114993056586240352}
+  m_Layer: 0
+  m_Name: Damage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1734180340838076
 GameObject:
   m_ObjectHideFlags: 0
@@ -53,6 +116,22 @@ GameObject:
   - component: {fileID: 4622386452305978}
   m_Layer: 0
   m_Name: Upgrades
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1752934433580206
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4268173583188874}
+  - component: {fileID: 114283685073266568}
+  m_Layer: 0
+  m_Name: Fire Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4280361196371154}
   m_Layer: 0
-  m_Name: Blue Ship
+  m_Name: Green Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,6 +184,45 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4139492096903100
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669474492634238}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4309921309292490}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4251599131811052
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1381514515544332}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4309921309292490}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4268173583188874
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752934433580206}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4309921309292490}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4280361196371154
 Transform:
   m_ObjectHideFlags: 1
@@ -119,6 +237,23 @@ Transform:
   - {fileID: 4314005454092834}
   - {fileID: 4570136111435896}
   - {fileID: 4907200439379612}
+  m_Father: {fileID: 4622386452305978}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4309921309292490
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064482783076466}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4251599131811052}
+  - {fileID: 4139492096903100}
+  - {fileID: 4268173583188874}
+  - {fileID: 4712246619546148}
   m_Father: {fileID: 4622386452305978}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -158,9 +293,23 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4309921309292490}
   - {fileID: 4280361196371154}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4712246619546148
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1505320569899406}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4309921309292490}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4907200439379612
 Transform:
@@ -188,6 +337,66 @@ Transform:
   m_Father: {fileID: 4280361196371154}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114199165451165088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1381514515544332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: hitpoint
+  title: Hitpoints
+  description: Ship hitpoints, upgrade this to survive incoming damages.
+  icon: {fileID: 21300000, guid: e71d1b030b932824b8d602057a362829, type: 3}
+  amount: 20
+  price: 50
+  pricePerStock: 50
+  stock: 0
+  maxStock: 10
+--- !u!114 &114283685073266568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752934433580206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: fire-rate
+  title: Fire Rate
+  description: Firing speed, upgrade this to shoot faster.
+  icon: {fileID: 21300000, guid: c29d05ce70443754f8511a2f07a23c35, type: 3}
+  amount: -0.1
+  price: 100
+  pricePerStock: 100
+  stock: 0
+  maxStock: 3
+--- !u!114 &114351363458296726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1505320569899406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: fire-power
+  title: Fire Power
+  description: Fire projectile speed, upgrade this to shoot faster bullets.
+  icon: {fileID: 21300000, guid: 325c4bcd047c048458a656d2caa3ad3f, type: 3}
+  amount: 2
+  price: 150
+  pricePerStock: 80
+  stock: 0
+  maxStock: 8
 --- !u!114 &114411677395641878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,3 +477,23 @@ MonoBehaviour:
   pricePerStock: 80
   stock: 0
   maxStock: 8
+--- !u!114 &114993056586240352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669474492634238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: damage
+  title: Damage
+  description: Ship bullet damage, upgrade this to deal more damage to threats.
+  icon: {fileID: 21300000, guid: 60f1703efe3f7d640bc66cb47ea902f9, type: 3}
+  amount: 25
+  price: 50
+  pricePerStock: 80
+  stock: 0
+  maxStock: 10
