@@ -18,14 +18,11 @@ public class Stat : MonoBehaviour
     public Text shipFireRate;
     public Text shipFirePower;
 
-    void Awake ()
+    void OnEnable ()
     {
         // Get current ship
         ship = game.ships [Storage.Ship].GetComponent<Ship> ();
-    }
 
-    void OnEnable ()
-    {
         // Set vars
         starsText.text = Storage.Stars.ToString ();
         highScoreText.text = Storage.HighScore.ToString ();
