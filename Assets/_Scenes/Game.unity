@@ -869,7 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8758622, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1279,7 +1279,6 @@ MonoBehaviour:
   - {r: 0.07058824, g: 0.0627451, b: 0.07058824, a: 1}
   - {r: 0.16470589, g: 0.1764706, b: 0.2, a: 1}
   state: 1
-  menuState: 0
   gameTime: 0
   stars: 0
   score: 0
@@ -4884,7 +4883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.2794118, b: 0.2794118, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
