@@ -16,11 +16,19 @@ public class Shop : MonoBehaviour
     private Upgrade[] currentShipUpgrades;
     private Dictionary<Button, Upgrade> upgradeButtons = new Dictionary<Button, Upgrade> ();
 
-    void Start ()
+    void OnEnable ()
     {
-        // Init vars
+        // Get upgrades of current ship
         currentShipUpgrades = GameObject.Find ("Upgrades/" + game.ships [Storage.Ship].name).GetComponentsInChildren<Upgrade> ();
 
+        // Delete existing (old) upgrade buttons
+        foreach (KeyValuePair<Button, Upgrade> item in upgradeButtons) {
+            Destroy (item.Key.gameObject);
+        }
+
+        // Reset upgrade buttons dict
+        upgradeButtons.Clear ();
+            
         // Create all upgrade buttons
         foreach (Upgrade upgrade in currentShipUpgrades) {
 
