@@ -7,9 +7,6 @@ public class Tab : MonoBehaviour
 {
     public Button button;
     public GameObject tabObject;
-    public Color activeColor;
-    public Color deactiveColor;
-    public bool isActive = false;
 
     void Start ()
     {
@@ -22,14 +19,8 @@ public class Tab : MonoBehaviour
         // Reset all other tabs first
         Views.ResetTabs ();
 
-        // Activate tab
-        isActive = true;
-
-        // Set to active color
-        ColorBlock colors = button.colors;
-        colors.normalColor = activeColor;
-        colors.highlightedColor = activeColor;
-        button.colors = colors;
+        // Active tab (button)
+        button.interactable = false;
 
         // Show tab object
         if (tabObject) {
@@ -39,16 +30,10 @@ public class Tab : MonoBehaviour
 
     public void deactivate ()
     {
-        // Activate tab
-        isActive = false;
+        // Deactive tab (button)
+        button.interactable = true;
 
-        // Set to active color
-        ColorBlock colors = button.colors;
-        colors.normalColor = deactiveColor;
-        colors.highlightedColor = deactiveColor;
-        button.colors = colors;
-
-        // Show tab object
+        // Hide tab object
         if (tabObject) {
             tabObject.SetActive (false);
         }

@@ -820,9 +820,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 285669848}
   tabObject: {fileID: 1022426651}
-  activeColor: {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 0.78431374}
-  deactiveColor: {r: 0, g: 0, b: 0, a: 0.19607843}
-  isActive: 0
 --- !u!114 &285669848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,7 +842,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0.19607843}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.19607843}
     m_PressedColor: {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 0.78431374}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 0.78431374}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3022,7 +3019,6 @@ MonoBehaviour:
   upgradeList: {fileID: 1956777172}
   upgradeButton: {fileID: 1325540706797964, guid: d89138b3072f16f428f5c5b677145b79,
     type: 2}
-  availableColor: {r: 0.034482718, g: 1, b: 0, a: 1}
   unavailableColor: {r: 1, g: 0.4, b: 0, a: 1}
   maxColor: {r: 0.74264705, g: 0.7632353, b: 1, a: 1}
 --- !u!114 &1122758743
@@ -3937,8 +3933,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0.19607843}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.19607843}
-    m_PressedColor: {r: 0.105882354, g: 0.10980392, b: 0.1882353, a: 0.8627451}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 0.78431374}
+    m_DisabledColor: {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 0.78431374}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4003,9 +3999,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1413739520}
   tabObject: {fileID: 1122758738}
-  activeColor: {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 0.78431374}
-  deactiveColor: {r: 0, g: 0, b: 0, a: 0.19607843}
-  isActive: 0
 --- !u!1 &1448593485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5265,10 +5258,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 0.78431374}
-    m_HighlightedColor: {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 0.78431374}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.19607843}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.19607843}
     m_PressedColor: {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 0.78431374}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 0.78431374}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -5280,7 +5273,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1879967147}
   m_OnClick:
     m_PersistentCalls:
@@ -5333,9 +5326,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1879967146}
   tabObject: {fileID: 0}
-  activeColor: {r: 0.10980392, g: 0.11764706, b: 0.20784314, a: 0.78431374}
-  deactiveColor: {r: 0, g: 0, b: 0, a: 0.19607843}
-  isActive: 0
 --- !u!1 &1915719285
 GameObject:
   m_ObjectHideFlags: 0
@@ -5476,7 +5466,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 165, y: 160}
+  m_CellSize: {x: 165, y: 215}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 1
   m_ConstraintCount: 2

@@ -9,12 +9,11 @@ public class Shop : MonoBehaviour
     public GameObject upgradeList;
     public GameObject upgradeButton;
 
-    public Color availableColor;
     public Color unavailableColor;
     public Color maxColor;
 
     private Upgrade[] currentShipUpgrades;
-    private Dictionary<Button, Upgrade> upgradeButtons = new Dictionary<Button, Upgrade> ();
+    private Dictionary<GameObject, Upgrade> upgradeObjects = new Dictionary<GameObject, Upgrade> ();
 
     void OnEnable ()
     {
@@ -22,29 +21,30 @@ public class Shop : MonoBehaviour
         currentShipUpgrades = GameObject.Find ("Upgrades/" + game.ships [Storage.Ship].name).GetComponentsInChildren<Upgrade> ();
 
         // Delete existing (old) upgrade buttons
-        foreach (KeyValuePair<Button, Upgrade> item in upgradeButtons) {
+        foreach (KeyValuePair<GameObject, Upgrade> item in upgradeObjects) {
             Destroy (item.Key.gameObject);
         }
 
         // Reset upgrade buttons dict
-        upgradeButtons.Clear ();
+        upgradeObjects.Clear ();
             
         // Create all upgrade buttons
         foreach (Upgrade upgrade in currentShipUpgrades) {
 
-            // Add button
-            Button button = Instantiate (upgradeButton, upgradeList.transform).GetComponent<Button> ();
+            // Add upgrade object and get button
+            GameObject upgradeObject = Instantiate (upgradeButton, upgradeList.transform);
+            Button button = upgradeObject.GetComponentInChildren<Button> ();
 
             // Store button
-            upgradeButtons.Add (button, upgrade);
+            upgradeObjects.Add (upgradeObject, upgrade);
 
             // Set button values
-            updateButton (upgrade, button);
+            updateButton (upgradeObject, upgrade);
 
             // Set button events
             button.onClick.AddListener (upgrade.upgrade);
             button.onClick.AddListener (updateButtonStates);
-            button.onClick.AddListener (() => updateButton (upgrade, button));
+            button.onClick.AddListener (() => updateButton (upgradeObject, upgrade));
         }
 
         // Update all button states
@@ -54,26 +54,19 @@ public class Shop : MonoBehaviour
     /**
      * Update button texts
      */
-    void updateButton (Upgrade upgrade, Button button)
+    void updateButton (GameObject upgradeObject, Upgrade upgrade)
     {
-        // Set price
-        button.transform.GetComponentInChildren<Text> ().text = upgrade.getPrice ().ToString ();
+        // Get button
+        Button button = upgradeObject.GetComponentInChildren<Button> ();
 
-        // Set bar
-        button.transform.GetComponentInChildren<Slider> ().value = upgrade.getStockPercentage ();
+        // Set price, bar and icon
+        upgradeObject.GetComponentInChildren<Text> ().text = upgrade.getPrice ().ToString ();
+        upgradeObject.GetComponentInChildren<Slider> ().value = upgrade.getStockPercentage ();
+        upgradeObject.transform.Find ("Container/Icon").GetComponent<Image> ().sprite = upgrade.icon;
 
-        // Set icon
-        button.transform.Find ("Container/Icon").GetComponent<Image> ().sprite = upgrade.icon;
-
-        // Is fully upgraded
-        if (upgrade.isOutOfStock ()) {
-
-            // Hide cost
-            button.transform.Find ("Container/Cost").gameObject.SetActive (false);
-
-            // Show full text
-            button.transform.Find ("Container/Full").gameObject.SetActive (true);
-        }
+        // Hide cost and show full text (if out of stock)
+        button.transform.Find ("Cost").gameObject.SetActive (!upgrade.isOutOfStock ());
+        button.transform.Find ("Full").gameObject.SetActive (upgrade.isOutOfStock ());
     }
 
     /**
@@ -82,14 +75,12 @@ public class Shop : MonoBehaviour
     void updateButtonStates ()
     {
         // All buttons
-        foreach (KeyValuePair<Button, Upgrade> item in upgradeButtons) {
+        foreach (KeyValuePair<GameObject, Upgrade> item in upgradeObjects) {
 
-            // Get button and its upgrade
-            Button button = item.Key;
+            // Get vars
+            Button button = item.Key.GetComponentInChildren<Button> ();
             Upgrade upgrade = item.Value;
-
-            // Set avilable color
-            button.GetComponent<Image> ().color = availableColor;
+            ColorBlock colors = button.colors;
 
             // Is fully upgraded
             if (upgrade.isOutOfStock ()) {
@@ -97,19 +88,22 @@ public class Shop : MonoBehaviour
                 // Disable click
                 button.interactable = false;
 
-                // Set color to max
-                button.GetComponent<Image> ().color = maxColor;
+                // Set disabled color to max color
+                colors.disabledColor = maxColor;
             }
 
             // Available and affordable
             else if (!upgrade.isAffordable ()) {
 
-                // Set color to unavailable
-                button.GetComponent<Image> ().color = unavailableColor;
-
                 // Disable click
                 button.interactable = false;
+
+                // Set disabled color to unavailable color
+                colors.disabledColor = unavailableColor;
             }
+
+            // Update colors
+            button.colors = colors;
         }
     }
 }
