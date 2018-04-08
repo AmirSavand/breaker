@@ -73,7 +73,7 @@ public class Upgrade : MonoBehaviour
             PlayerPrefs.SetInt (getStorageKey (), stock);
 
             // Save storage
-            PlayerPrefs.Save ();
+            Storage.Save ();
 
             // Succesfully upgraded
             return;
