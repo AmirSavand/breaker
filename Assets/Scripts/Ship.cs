@@ -31,10 +31,18 @@ public class Ship : MonoBehaviour
         }
 
         // Load all upgrades
-        fireDamage += upgrades ["damage"].getAmount ();
-        firePower += upgrades ["fire-power"].getAmount ();
-        fireRate += upgrades ["fire-rate"].getAmount ();
-        hitpoint.maxHitpoints += upgrades ["hitpoint"].getAmount ();
+        fireDamage += getUpgrade ("damage").getAmount ();
+        firePower += getUpgrade ("fire-power").getAmount ();
+        fireRate += getUpgrade ("fire-rate").getAmount ();
+        hitpoint.maxHitpoints += getUpgrade ("hitpoint").getAmount ();
+    }
+
+    /**
+     * Get upgrade object by slug without ship name
+     */
+    public Upgrade getUpgrade (string slug)
+    {
+        return upgrades [shipName + "-" + slug];
     }
 
     /**
