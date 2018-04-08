@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slug: hitpoint
+  slug: blue-ship-hitpoint
   title: Hitpoints
   description: Ship hitpoints, upgrade this to survive incoming damages.
   icon: {fileID: 21300000, guid: e71d1b030b932824b8d602057a362829, type: 3}
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slug: fire-rate
+  slug: blue-ship-fire-rate
   title: Fire Rate
   description: Firing speed, upgrade this to shoot faster.
   icon: {fileID: 21300000, guid: c29d05ce70443754f8511a2f07a23c35, type: 3}
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slug: fire-power
+  slug: blue-ship-fire-power
   title: Fire Power
   description: Fire projectile speed, upgrade this to shoot faster bullets.
   icon: {fileID: 21300000, guid: 325c4bcd047c048458a656d2caa3ad3f, type: 3}
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slug: damage
+  slug: green-ship-damage
   title: Damage
   description: Ship bullet damage, upgrade this to deal more damage to threats.
   icon: {fileID: 21300000, guid: 60f1703efe3f7d640bc66cb47ea902f9, type: 3}
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slug: fire-rate
+  slug: green-ship-fire-rate
   title: Fire Rate
   description: Firing speed, upgrade this to shoot faster.
   icon: {fileID: 21300000, guid: c29d05ce70443754f8511a2f07a23c35, type: 3}
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slug: hitpoint
+  slug: green-ship-hitpoint
   title: Hitpoints
   description: Ship hitpoints, upgrade this to survive incoming damages.
   icon: {fileID: 21300000, guid: e71d1b030b932824b8d602057a362829, type: 3}
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slug: fire-power
+  slug: green-ship-fire-power
   title: Fire Power
   description: Fire projectile speed, upgrade this to shoot faster bullets.
   icon: {fileID: 21300000, guid: 325c4bcd047c048458a656d2caa3ad3f, type: 3}
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slug: damage
+  slug: blue-ship-damage
   title: Damage
   description: Ship bullet damage, upgrade this to deal more damage to threats.
   icon: {fileID: 21300000, guid: 60f1703efe3f7d640bc66cb47ea902f9, type: 3}
