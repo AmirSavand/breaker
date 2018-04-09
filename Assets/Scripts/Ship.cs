@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Ship : MonoBehaviour
 {
+    public string shipSlug;
     public string shipName;
     public string shipDetails;
 
@@ -40,9 +41,9 @@ public class Ship : MonoBehaviour
     /**
      * Get upgrade object by slug without ship name
      */
-    public Upgrade getUpgrade (string slug)
+    public Upgrade getUpgrade (string upgradeSlug)
     {
-        return upgrades [shipName + "-" + slug];
+        return upgrades [shipSlug + "-" + upgradeSlug];
     }
 
     /**
