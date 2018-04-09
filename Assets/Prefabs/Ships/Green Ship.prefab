@@ -1649,7 +1649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 0
-  maxHitpoints: 200
+  maxHitpoints: 50
   isDead: 0
   audioHolder: {fileID: 1799206179520370}
   hitSound: {fileID: 82601515235926014}
@@ -1712,11 +1712,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777c3b27fe784714aadecf0bf0d450f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipSlug: green-ship
   shipName: Green Ship
   shipDetails: 
-  firePower: 15
+  firePower: 6
   fireDamage: 50
-  fireRate: 0.35
+  fireRate: 0.7
   fireFrom: {fileID: 4191554620532232}
   fireBullet: {fileID: 1588667070780538, guid: f7191f75c0c67f844b3b0c926470bae0, type: 2}
   fireSound: {fileID: 82578571037545214}

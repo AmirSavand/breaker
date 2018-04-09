@@ -352,11 +352,11 @@ MonoBehaviour:
   title: Hitpoints
   description: Ship hitpoints, upgrade this to survive incoming damages.
   icon: {fileID: 21300000, guid: e71d1b030b932824b8d602057a362829, type: 3}
-  amount: 20
+  amount: 30
   price: 50
-  pricePerStock: 50
+  pricePerStock: 25
   stock: 0
-  maxStock: 10
+  maxStock: 30
 --- !u!114 &114283685073266568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -372,11 +372,11 @@ MonoBehaviour:
   title: Fire Rate
   description: Firing speed, upgrade this to shoot faster.
   icon: {fileID: 21300000, guid: c29d05ce70443754f8511a2f07a23c35, type: 3}
-  amount: -0.1
-  price: 100
+  amount: -0.05
+  price: 200
   pricePerStock: 100
   stock: 0
-  maxStock: 3
+  maxStock: 6
 --- !u!114 &114351363458296726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -392,11 +392,11 @@ MonoBehaviour:
   title: Fire Power
   description: Fire projectile speed, upgrade this to shoot faster bullets.
   icon: {fileID: 21300000, guid: 325c4bcd047c048458a656d2caa3ad3f, type: 3}
-  amount: 2
-  price: 150
-  pricePerStock: 80
+  amount: 1
+  price: 75
+  pricePerStock: 25
   stock: 0
-  maxStock: 8
+  maxStock: 14
 --- !u!114 &114411677395641878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -412,11 +412,11 @@ MonoBehaviour:
   title: Damage
   description: Ship bullet damage, upgrade this to deal more damage to threats.
   icon: {fileID: 21300000, guid: 60f1703efe3f7d640bc66cb47ea902f9, type: 3}
-  amount: 25
-  price: 50
-  pricePerStock: 80
+  amount: 10
+  price: 75
+  pricePerStock: 50
   stock: 0
-  maxStock: 10
+  maxStock: 25
 --- !u!114 &114553526459787058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -432,11 +432,11 @@ MonoBehaviour:
   title: Fire Rate
   description: Firing speed, upgrade this to shoot faster.
   icon: {fileID: 21300000, guid: c29d05ce70443754f8511a2f07a23c35, type: 3}
-  amount: -0.1
-  price: 100
-  pricePerStock: 100
+  amount: -0.05
+  price: 400
+  pricePerStock: 200
   stock: 0
-  maxStock: 3
+  maxStock: 8
 --- !u!114 &114585398651134066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -452,11 +452,11 @@ MonoBehaviour:
   title: Hitpoints
   description: Ship hitpoints, upgrade this to survive incoming damages.
   icon: {fileID: 21300000, guid: e71d1b030b932824b8d602057a362829, type: 3}
-  amount: 20
-  price: 50
+  amount: 15
+  price: 75
   pricePerStock: 50
   stock: 0
-  maxStock: 10
+  maxStock: 30
 --- !u!114 &114975175173756644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -472,11 +472,11 @@ MonoBehaviour:
   title: Fire Power
   description: Fire projectile speed, upgrade this to shoot faster bullets.
   icon: {fileID: 21300000, guid: 325c4bcd047c048458a656d2caa3ad3f, type: 3}
-  amount: 2
-  price: 150
-  pricePerStock: 80
+  amount: 1
+  price: 100
+  pricePerStock: 50
   stock: 0
-  maxStock: 8
+  maxStock: 24
 --- !u!114 &114993056586240352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -492,8 +492,8 @@ MonoBehaviour:
   title: Damage
   description: Ship bullet damage, upgrade this to deal more damage to threats.
   icon: {fileID: 21300000, guid: 60f1703efe3f7d640bc66cb47ea902f9, type: 3}
-  amount: 25
+  amount: 15
   price: 50
-  pricePerStock: 80
+  pricePerStock: 25
   stock: 0
-  maxStock: 10
+  maxStock: 30

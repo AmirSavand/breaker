@@ -1650,10 +1650,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777c3b27fe784714aadecf0bf0d450f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipSlug: blue-ship
   shipName: Blue Ship
   shipDetails: 
   firePower: 6
-  fireDamage: 100
+  fireDamage: 50
   fireRate: 0.7
   fireFrom: {fileID: 4826415687123432}
   fireBullet: {fileID: 1012319823202368, guid: 60911e2c64914e349b2800fbcd2764b9, type: 2}
