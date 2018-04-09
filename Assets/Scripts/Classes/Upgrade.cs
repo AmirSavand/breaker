@@ -52,7 +52,7 @@ public class Upgrade : MonoBehaviour
     void Start ()
     {
         // Load stock from storage
-        stock = PlayerPrefs.GetInt (getStorageKey ());
+        stock = Mathf.Clamp (PlayerPrefs.GetInt (getStorageKey ()), 0, maxStock);
     }
 
     /**
