@@ -23,6 +23,9 @@ public class Stat : MonoBehaviour
         // Get current ship
         ship = game.ships [Storage.Ship].GetComponent<Ship> ();
 
+        // Load ship upgrades
+        ship.loadUpgrades ();
+
         // Set vars
         starsText.text = Storage.Stars.ToString ();
         highScoreText.text = Storage.HighScore.ToString ();
