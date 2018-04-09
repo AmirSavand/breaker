@@ -23,6 +23,22 @@ public class Ship : MonoBehaviour
 
     void Start ()
     {
+        loadUpgrades ();
+    }
+
+    /**
+     * Get upgrade object by slug without ship name
+     */
+    public Upgrade getUpgrade (string upgradeSlug)
+    {
+        return upgrades [shipSlug + "-" + upgradeSlug];
+    }
+
+    /**
+     * Load upgrades from upgrade objects
+     */
+    public void loadUpgrades ()
+    {
         // Init vars
         hitpoint = GetComponent<Hitpoint> ();
 
@@ -36,14 +52,6 @@ public class Ship : MonoBehaviour
         firePower += getUpgrade ("fire-power").getAmount ();
         fireRate += getUpgrade ("fire-rate").getAmount ();
         hitpoint.maxHitpoints += getUpgrade ("hitpoint").getAmount ();
-    }
-
-    /**
-     * Get upgrade object by slug without ship name
-     */
-    public Upgrade getUpgrade (string upgradeSlug)
-    {
-        return upgrades [shipSlug + "-" + upgradeSlug];
     }
 
     /**
