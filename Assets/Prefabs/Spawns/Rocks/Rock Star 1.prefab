@@ -557,7 +557,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1096120414181380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7742507, y: -2.0952222, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4397409432294200}
@@ -1236,8 +1236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5eadcf554f88154d9df531967ba09b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 200
-  maxHitpoints: 200
+  hitpoints: 0
+  maxHitpoints: 100
   isDead: 0
   audioHolder: {fileID: 1986483941793202}
   hitSound: {fileID: 82463428894379932}
