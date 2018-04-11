@@ -5,7 +5,23 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - audioMixer: {fileID: 24100000, guid: 2e169437230385a488872b06ef3c6109, type: 2}
+  - gameUI: {instanceID: 0}
+  - pauseUI: {instanceID: 0}
+  - loseUI: {instanceID: 0}
+  - menuUI: {instanceID: 0}
+  - statUI: {instanceID: 0}
+  - shopUI: {instanceID: 0}
+  - timeText: {instanceID: 0}
+  - starsText: {instanceID: 0}
+  - hitpointsText: {instanceID: 0}
+  - versionText: {instanceID: 0}
+  - textFloat: {instanceID: 0}
+  - startMessageTMesh: {instanceID: 0}
+  - backgroundMusic: {instanceID: 0}
+  - selectSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

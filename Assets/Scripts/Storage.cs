@@ -19,6 +19,11 @@ public class Storage : MonoBehaviour
      */
     public static int HighScore;
 
+    public static int MasterVolume;
+    public static int MusicVolume;
+    public static int EffectsVolume;
+    public static int MenuVolume;
+
     void Awake ()
     {
         // Keep it between scenes
@@ -29,10 +34,16 @@ public class Storage : MonoBehaviour
             Destroy (gameObject);
         }
 
-        // Load all data
-        Ship = PlayerPrefs.GetInt ("ship");
-        Stars = PlayerPrefs.GetInt ("stars");
-        HighScore = PlayerPrefs.GetInt ("highScore");
+        // Load stats
+        Ship = PlayerPrefs.GetInt ("stat-ship");
+        Stars = PlayerPrefs.GetInt ("stat-stars");
+        HighScore = PlayerPrefs.GetInt ("stat-high-score");
+
+        // Load volumes
+        MasterVolume = PlayerPrefs.GetInt ("volume-master");
+        MusicVolume = PlayerPrefs.GetInt ("volume-music");
+        EffectsVolume = PlayerPrefs.GetInt ("volume-effects");
+        MenuVolume = PlayerPrefs.GetInt ("volume-menu");
     }
 
     /**
@@ -40,10 +51,16 @@ public class Storage : MonoBehaviour
      */
     public static void Save ()
     {
-        // Set all data
-        PlayerPrefs.SetInt ("ship", Ship);
-        PlayerPrefs.SetInt ("stars", Stars);
-        PlayerPrefs.SetInt ("high-score", HighScore);
+        // Set stats
+        PlayerPrefs.SetInt ("stat-ship", Ship);
+        PlayerPrefs.SetInt ("stat-stars", Stars);
+        PlayerPrefs.SetInt ("stat-high-score", HighScore);
+
+        // Set volumes
+        PlayerPrefs.SetInt ("volume-master", MasterVolume);
+        PlayerPrefs.SetInt ("volume-music", MusicVolume);
+        PlayerPrefs.SetInt ("volume-effects", EffectsVolume);
+        PlayerPrefs.SetInt ("volume-menu", MenuVolume);
 
         // Save to disk
         PlayerPrefs.Save ();

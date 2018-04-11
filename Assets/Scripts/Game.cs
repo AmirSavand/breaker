@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public enum GameStates
@@ -18,6 +19,8 @@ public class Game : MonoBehaviour
 
     public GameObject[] ships;
 
+    public AudioMixer audioMixer;
+    
     [Header ("UI objecs")]
     public GameObject gameUI;
     public GameObject pauseUI;
@@ -81,6 +84,12 @@ public class Game : MonoBehaviour
 
         // Random background
         Camera.main.backgroundColor = backgroundColors [Random.Range (0, backgroundColors.Length)];
+
+        // Load audio mixer values
+        audioMixer.SetFloat ("masterVol", (float)Storage.MasterVolume);
+        audioMixer.SetFloat ("musicVol", (float)Storage.MusicVolume);
+        audioMixer.SetFloat ("effectsVol", (float)Storage.EffectsVolume);
+        audioMixer.SetFloat ("menuVol", (float)Storage.MenuVolume);
     }
 
     void Update ()
