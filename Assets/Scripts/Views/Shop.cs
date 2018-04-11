@@ -53,7 +53,7 @@ public class Shop : MonoBehaviour
 
             // Add upgrade object and get button
             GameObject instance = Instantiate (upgradeObject, upgradeList.transform);
-            Button button = upgradeObject.GetComponentInChildren<Button> ();
+            Button button = instance.GetComponentInChildren<Button> ();
 
             // Store button
             upgradeObjects.Add (instance, upgrade);
