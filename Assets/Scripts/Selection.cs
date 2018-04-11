@@ -7,6 +7,8 @@ public class Selection : MonoBehaviour
 {
     public Game game;
     public Image current;
+    public Button play;
+    public GameObject locked;
     public GameObject next;
     public GameObject prev;
 
@@ -20,6 +22,10 @@ public class Selection : MonoBehaviour
     {
         // Show current ship
         current.sprite = game.ships [Storage.Ship].GetComponentInChildren<SpriteRenderer> ().sprite;
+
+        // Disable play button and show lock image if current ship is not unlocked
+        play.interactable = game.ships [Storage.Ship].GetComponent<Ship> ().isUnlocked ();
+        locked.SetActive (!play.interactable);
 
         // If current ship is the first, hide prev button
         prev.SetActive (Storage.Ship != 0);
