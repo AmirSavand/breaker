@@ -240,9 +240,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 88132233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5edf427c9dd8e114fbc9dad300b219fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 5607c2249c4e5ae42a8102e6b94a75b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyAfterParticle: 0
+  destroyExitTriggers: 1
+  destroyExitTriggersTagOnly: 
 --- !u!61 &88132237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -682,6 +685,75 @@ Transform:
   m_Father: {fileID: 471335203}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &274327356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 274327357}
+  - component: {fileID: 274327359}
+  - component: {fileID: 274327358}
+  m_Layer: 0
+  m_Name: World (Bullet Range)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &274327357
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 274327356}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 6, y: 10, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1826948268}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &274327358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 274327356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5607c2249c4e5ae42a8102e6b94a75b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfterParticle: 0
+  destroyExitTriggers: 1
+  destroyExitTriggersTagOnly: Bullet
+--- !u!61 &274327359
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 274327356}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &292704591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,9 +1174,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 15
   spawnAfter: 15
-  decreaseTimer: 25
-  decreaseFactor: 0.5
-  decreaseFactorMin: 8
+  spawnSpeed: 2
+  decreaseSpawnTimer: 25
+  decreaseSpawnFactor: 0.5
+  decreaseSpawnFactorMin: 4
+  increaseSpeedTimer: 30
+  increaseSpeedFactor: 0.25
+  increaseSpeedFactorMax: 8
   spawnRandomRotation: 0
   spawnRandomColor: 0
   spawnObjects:
@@ -1307,6 +1383,11 @@ MonoBehaviour:
   - Stay Sharp
   - Proceed With\nCaution
   - Maximum\nEffort
+  - Break Them\nAll
+  - You Got This
+  - You Can
+  - Be Effective
+  - Game Time
   startMessageTMesh: {fileID: 2039559593}
   backgroundColors:
   - {r: 0.07058824, g: 0.0627451, b: 0.07058824, a: 1}
@@ -1447,9 +1528,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 2.5
   spawnAfter: 0
-  decreaseTimer: 25
-  decreaseFactor: 0.2
-  decreaseFactorMin: 1
+  spawnSpeed: 2
+  decreaseSpawnTimer: 25
+  decreaseSpawnFactor: 0.2
+  decreaseSpawnFactorMin: 0.5
+  increaseSpeedTimer: 30
+  increaseSpeedFactor: 0.25
+  increaseSpeedFactorMax: 10
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
@@ -1939,9 +2024,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 3
   spawnAfter: 0
-  decreaseTimer: 0
-  decreaseFactor: 0
-  decreaseFactorMin: 0
+  spawnSpeed: 1
+  decreaseSpawnTimer: 0
+  decreaseSpawnFactor: 0
+  decreaseSpawnFactorMin: 0
+  increaseSpeedTimer: 0
+  increaseSpeedFactor: 0
+  increaseSpeedFactorMax: 0
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
@@ -1965,9 +2054,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 3
   spawnAfter: 1.5
-  decreaseTimer: 0
-  decreaseFactor: 0
-  decreaseFactorMin: 0
+  spawnSpeed: 1
+  decreaseSpawnTimer: 0
+  decreaseSpawnFactor: 0
+  decreaseSpawnFactorMin: 0
+  increaseSpeedTimer: 0
+  increaseSpeedFactor: 0
+  increaseSpeedFactorMax: 0
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
@@ -2355,7 +2448,7 @@ Transform:
   - {fileID: 471335203}
   - {fileID: 369167048}
   m_Father: {fileID: 1826948268}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &926205198
 GameObject:
@@ -3707,7 +3800,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1826948268}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1531722812
 GameObject:
@@ -4228,6 +4321,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 88132234}
+  - {fileID: 274327357}
   - {fileID: 910219887}
   - {fileID: 1476660381}
   - {fileID: 2039559592}
@@ -4605,9 +4699,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 15
   spawnAfter: 5
-  decreaseTimer: 0
-  decreaseFactor: 0
-  decreaseFactorMin: 0
+  spawnSpeed: 1
+  decreaseSpawnTimer: 0
+  decreaseSpawnFactor: 0
+  decreaseSpawnFactorMin: 0
+  increaseSpeedTimer: 0
+  increaseSpeedFactor: 0
+  increaseSpeedFactorMax: 0
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
@@ -4649,7 +4747,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1826948268}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2039559591
 GameObject:
@@ -4661,6 +4759,7 @@ GameObject:
   - component: {fileID: 2039559592}
   - component: {fileID: 2039559594}
   - component: {fileID: 2039559593}
+  - component: {fileID: 2039559597}
   - component: {fileID: 2039559596}
   - component: {fileID: 2039559595}
   - component: {fileID: 2039559598}
@@ -4682,7 +4781,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1826948268}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!102 &2039559593
 TextMesh:
@@ -4777,8 +4876,28 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9900002, y: 0.56250006}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &2039559597
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2039559591}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &2039559598
 MonoBehaviour:
   m_ObjectHideFlags: 0
