@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     public Game game;
+
     public GameObject upgradeList;
-    public GameObject upgradeButton;
+    public GameObject upgradeObject;
+
+    public GameObject shipList;
+    public GameObject shipObject;
 
     public Color unavailableColor;
     public Color maxColor;
@@ -15,7 +19,23 @@ public class Shop : MonoBehaviour
     private Upgrade[] currentShipUpgrades;
     private Dictionary<GameObject, Upgrade> upgradeObjects = new Dictionary<GameObject, Upgrade> ();
 
+    private Item[] shipItems;
+    private Dictionary<GameObject, Item> shipObjects = new Dictionary<GameObject, Item> ();
+
+    void Start ()
+    {
+        setupShips ();
+    }
+
     void OnEnable ()
+    {
+        setupUpgrades ();
+    }
+
+    /**
+     * Initial upgrades
+     */
+    void setupUpgrades ()
     {
         // Get upgrades of current ship
         currentShipUpgrades = GameObject.Find ("Upgrades/" + game.ships [Storage.Ship].name).GetComponentsInChildren<Upgrade> ();
@@ -27,24 +47,24 @@ public class Shop : MonoBehaviour
 
         // Reset upgrade buttons dict
         upgradeObjects.Clear ();
-            
+
         // Create all upgrade buttons
         foreach (Upgrade upgrade in currentShipUpgrades) {
 
             // Add upgrade object and get button
-            GameObject upgradeObject = Instantiate (upgradeButton, upgradeList.transform);
+            GameObject instance = Instantiate (upgradeObject, upgradeList.transform);
             Button button = upgradeObject.GetComponentInChildren<Button> ();
 
             // Store button
-            upgradeObjects.Add (upgradeObject, upgrade);
+            upgradeObjects.Add (instance, upgrade);
 
             // Set button values
-            updateButton (upgradeObject, upgrade);
+            updateUpgradeButton (instance, upgrade);
 
             // Set button events
             button.onClick.AddListener (upgrade.upgrade);
             button.onClick.AddListener (updateButtonStates);
-            button.onClick.AddListener (() => updateButton (upgradeObject, upgrade));
+            button.onClick.AddListener (() => updateUpgradeButton (instance, upgrade));
         }
 
         // Update all button states
@@ -54,7 +74,7 @@ public class Shop : MonoBehaviour
     /**
      * Update button texts
      */
-    void updateButton (GameObject upgradeObject, Upgrade upgrade)
+    void updateUpgradeButton (GameObject upgradeObject, Upgrade upgrade)
     {
         // Get button
         Button button = upgradeObject.GetComponentInChildren<Button> ();
@@ -104,6 +124,42 @@ public class Shop : MonoBehaviour
 
             // Update colors
             button.colors = colors;
+        }
+    }
+
+    /**
+     * Initial ships
+     */
+    void setupShips ()
+    {
+        // Get ship items
+        shipItems = GameObject.Find ("Ship Items").GetComponentsInChildren<Item> ();
+
+        // Delete existing (old) item buttons
+        foreach (KeyValuePair<GameObject, Item> item in shipObjects) {
+            Destroy (item.Key.gameObject);
+        }
+
+        // Reset ship buttons dict
+        shipObjects.Clear ();
+
+        // Create all ship buttons
+        foreach (Item item in shipItems) {
+
+            // Add ship item
+            GameObject instance = Instantiate (shipObject, shipList.transform);
+
+            // Store it
+            shipObjects.Add (instance, item);
+
+            // Show lock/unlock
+            instance.transform.Find ("Lock").gameObject.SetActive (!item.isUnlocked ());
+            instance.transform.Find ("Unlock").gameObject.SetActive (item.isUnlocked ());
+
+            // Set icon, name and description
+            instance.transform.Find ("Icon").GetComponent<Image> ().sprite = item.icon;
+            instance.transform.Find ("Detail/Name").GetComponent<Text> ().text = item.title;
+            instance.transform.Find ("Detail/Description").GetComponent<Text> ().text = item.description;
         }
     }
 }
