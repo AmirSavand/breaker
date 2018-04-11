@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 0
-  maxHitpoints: 100
+  maxHitpoints: 50
   isDead: 0
   audioHolder: {fileID: 0}
   hitSound: {fileID: 0}
