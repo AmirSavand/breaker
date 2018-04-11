@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Stat : MonoBehaviour
 {
     public Game game;
-    public Ship ship;
 
     public Text starsText;
     public Text highScoreText;
@@ -18,24 +17,35 @@ public class Stat : MonoBehaviour
     public Text shipFireRate;
     public Text shipFirePower;
 
+    private Ship ship;
+
     void OnEnable ()
     {
+        // Show stats
+        updateStats ();
+    }
+
+    /**
+     * Show/update stats
+     */
+    public void updateStats ()
+    {
+        // Set vars
+        starsText.text = Storage.Stars.ToString ();
+        highScoreText.text = Storage.HighScore.ToString ();
+
         // Get current ship
         ship = game.ships [Storage.Ship].GetComponent<Ship> ();
 
         // Load ship upgrades
         ship.loadUpgrades ();
 
-        // Set vars
-        starsText.text = Storage.Stars.ToString ();
-        highScoreText.text = Storage.HighScore.ToString ();
-
         // Set ship vars
         shipText.text = ship.GetComponentInChildren<SpriteRenderer> ().sprite.name;
         shipModelImage.sprite = ship.GetComponentInChildren<SpriteRenderer> ().sprite;
-        shipHitpoints.text = ship.GetComponent<Hitpoint> ().maxHitpoints.ToString ();
-        shipDamage.text = ship.fireDamage.ToString ();
-        shipFireRate.text = ship.fireRate.ToString ();
-        shipFirePower.text = ship.firePower.ToString ();
+        shipHitpoints.text = (ship.GetComponent<Hitpoint> ().maxHitpoints + +ship.getUpgrade ("hitpoint").getAmount ()).ToString ();
+        shipDamage.text = (ship.fireDamage + ship.getUpgrade ("damage").getAmount ()).ToString ();
+        shipFireRate.text = (ship.fireRate + +ship.getUpgrade ("fire-rate").getAmount ()).ToString ();
+        shipFirePower.text = (ship.firePower + +ship.getUpgrade ("fire-power").getAmount ()).ToString ();
     }
 }
