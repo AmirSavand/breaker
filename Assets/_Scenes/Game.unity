@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 88132237}
   - component: {fileID: 88132236}
   m_Layer: 0
-  m_Name: World
+  m_Name: Range (Everything)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 274327359}
   - component: {fileID: 274327358}
   m_Layer: 0
-  m_Name: World (Bullet Range)
+  m_Name: Range (Bullet)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
