@@ -62,12 +62,12 @@ public class Upgrade : MonoBehaviour
     {
         // Upgrade available
         if (!isOutOfStock () && isAffordable ()) {
-            
-            // Increase stock
-            stock++;
 
             // Decrease stars
             Storage.Stars -= getPrice ();
+
+            // Increase stock
+            stock++;
 
             // Save to storage
             PlayerPrefs.SetInt (getStorageKey (), stock);
@@ -88,7 +88,7 @@ public class Upgrade : MonoBehaviour
      */
     public int getPrice ()
     {
-        return (int)(price + (stock * pricePerStock));
+        return price + (stock * pricePerStock);
     }
 
     /**
@@ -124,7 +124,7 @@ public class Upgrade : MonoBehaviour
     }
 
     /**
-     * Does playe have enough coins
+     * Does playe have enough stars
      */
     public bool isAffordable ()
     {
