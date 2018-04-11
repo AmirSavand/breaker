@@ -53,8 +53,9 @@ public class Game : MonoBehaviour
     public int stars;
     public int score;
 
-    [Header ("Tracks")]
+    [Header ("Audio")]
     public AudioSource backgroundMusic;
+    public AudioSource selectSound;
 
     private Cam cam;
 
@@ -149,6 +150,9 @@ public class Game : MonoBehaviour
         // Pause music
         backgroundMusic.Pause ();
 
+        // Select sound
+        selectSound.Play ();
+
         // Toggle UIs
         toggleUI ();
     }
@@ -163,6 +167,9 @@ public class Game : MonoBehaviour
 
         // Pause music
         backgroundMusic.UnPause ();
+
+        // Select sound
+        selectSound.Play ();
 
         // Toggle UIs
         toggleUI ();
