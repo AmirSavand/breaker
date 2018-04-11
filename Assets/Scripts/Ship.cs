@@ -51,7 +51,6 @@ public class Ship : MonoBehaviour
         // Reset upgrades dict
         upgrades.Clear ();
 
-
         // Save all upgrades
         foreach (Upgrade upgrade in GameObject.Find ("Upgrades/" + shipName).GetComponentsInChildren<Upgrade> ()) {
             upgrades.Add (upgrade.slug, upgrade);   
