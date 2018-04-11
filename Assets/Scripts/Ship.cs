@@ -55,6 +55,14 @@ public class Ship : MonoBehaviour
     }
 
     /**
+     * Check if ship is unlocked from storage
+     */
+    public bool isUnlocked ()
+    {
+        return GameObject.Find ("Ship Items/" + name).GetComponent<Item> ().isUnlocked ();
+    }
+
+    /**
      * Attempt to fire a bullet
      */
     public void fire ()
