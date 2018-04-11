@@ -9,7 +9,6 @@ public class Move : MonoBehaviour
     public float stopAfter;
     public bool stopMoving = false;
 
-
     void Start ()
     {
         // Start the script
