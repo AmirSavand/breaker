@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Selection : MonoBehaviour
 {
     public Game game;
+    public AudioSource sound;
     public Image current;
     public Button play;
     public GameObject locked;
@@ -15,10 +16,10 @@ public class Selection : MonoBehaviour
     void Start ()
     {
         // Update buttons
-        updateButtons ();
+        onSelect ();
     }
 
-    public void updateButtons ()
+    public void onSelect ()
     {
         // Show current ship
         current.sprite = game.ships [Storage.Ship].GetComponentInChildren<SpriteRenderer> ().sprite;
@@ -32,6 +33,9 @@ public class Selection : MonoBehaviour
 
         // If current ship is the last, hide next button
         next.SetActive (Storage.Ship != game.ships.Length - 1);
+
+        // Play sound
+        sound.Play ();
     }
 
     /**
@@ -44,7 +48,7 @@ public class Selection : MonoBehaviour
         Storage.Save ();
 
         // Update buttons state
-        updateButtons ();
+        onSelect ();
     }
 
     /**
@@ -57,6 +61,6 @@ public class Selection : MonoBehaviour
         Storage.Save ();
 
         // Update buttons state
-        updateButtons ();
+        onSelect ();
     }
 }
