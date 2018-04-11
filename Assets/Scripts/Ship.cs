@@ -23,7 +23,16 @@ public class Ship : MonoBehaviour
 
     void Start ()
     {
+        // Init vars
+        hitpoint = GetComponent<Hitpoint> ();
+
         loadUpgrades ();
+
+        // Set all upgrades
+        fireDamage += getUpgrade ("damage").getAmount ();
+        firePower += getUpgrade ("fire-power").getAmount ();
+        fireRate += getUpgrade ("fire-rate").getAmount ();
+        hitpoint.maxHitpoints += getUpgrade ("hitpoint").getAmount ();
     }
 
     /**
@@ -35,23 +44,18 @@ public class Ship : MonoBehaviour
     }
 
     /**
-     * Load upgrades from upgrade objects
+     * Load upgrades and store them
      */
     public void loadUpgrades ()
     {
-        // Init vars
-        hitpoint = GetComponent<Hitpoint> ();
+        // Reset upgrades dict
+        upgrades.Clear ();
+
 
         // Save all upgrades
         foreach (Upgrade upgrade in GameObject.Find ("Upgrades/" + shipName).GetComponentsInChildren<Upgrade> ()) {
             upgrades.Add (upgrade.slug, upgrade);   
         }
-
-        // Load all upgrades
-        fireDamage += getUpgrade ("damage").getAmount ();
-        firePower += getUpgrade ("fire-power").getAmount ();
-        fireRate += getUpgrade ("fire-rate").getAmount ();
-        hitpoint.maxHitpoints += getUpgrade ("hitpoint").getAmount ();
     }
 
     /**
