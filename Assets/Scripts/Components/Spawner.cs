@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
     public float spawnAfter = 0;
     public float spawnSpeed = 2;
 
+    public int spawnDeathStars = 0;
+
     public float decreaseSpawnTimer;
     public float decreaseSpawnFactor;
     public float decreaseSpawnFactorMin;
@@ -15,6 +17,10 @@ public class Spawner : MonoBehaviour
     public float increaseSpeedTimer;
     public float increaseSpeedFactor;
     public float increaseSpeedFactorMax;
+
+    public float increaseDeathStarsTimer;
+    public int increaseDeathStarsFactor;
+    public int increaseDeathStarsFactorMax;
 
     public bool spawnRandomRotation = true;
     public bool spawnRandomColor = true;
@@ -34,12 +40,17 @@ public class Spawner : MonoBehaviour
 
         // Start decreasing spawn timer
         if (decreaseSpawnTimer > 0) {
-            InvokeRepeating ("decreaseSpawn", spawnAfter, decreaseSpawnTimer);
+            InvokeRepeating ("decreaseSpawn", spawnAfter + decreaseSpawnTimer, decreaseSpawnTimer);
         }
 
         // Start increasing spawn speed
         if (increaseSpeedTimer > 0) {
-            InvokeRepeating ("increaseSpeed", spawnAfter, increaseSpeedTimer);
+            InvokeRepeating ("increaseSpeed", spawnAfter + increaseSpeedTimer, increaseSpeedTimer);
+        }
+
+        // Start increasing death star
+        if (increaseDeathStarsTimer > 0) {
+            InvokeRepeating ("increaseDeathStars", spawnAfter + increaseDeathStarsTimer, increaseDeathStarsTimer);
         }
     }
 
@@ -54,9 +65,15 @@ public class Spawner : MonoBehaviour
 
         // Spawn object on spawn point
         GameObject instance = Instantiate (spawnObject, spawnPoint.position, spawnPoint.rotation) as GameObject;
+        Hitpoint instanceHitpoint = instance.GetComponent<Hitpoint> ();
 
         // Set speed
         instance.GetComponent<Move> ().directionSpeed.y = -spawnSpeed;
+
+        // Set death star
+        if (spawnDeathStars > 0 && instanceHitpoint != null && instanceHitpoint.deathStars > 0) {
+            instanceHitpoint.deathStars += spawnDeathStars;
+        }
 
         // Set random color
         if (spawnRandomColor) {
@@ -73,7 +90,7 @@ public class Spawner : MonoBehaviour
     }
 
     /**
-     * Decrease timer results in faster spawns (clamp to minimum)
+     * Decrease spawn timer results in faster spawns (clamp to minimum)
      */
     void decreaseSpawn ()
     {
@@ -81,10 +98,18 @@ public class Spawner : MonoBehaviour
     }
 
     /**
-     * Increase speed results in faster spawn movement (clamp to max)
+     * Increase speed results in faster spawn speed (clamp to max)
      */
     void increaseSpeed ()
     {
         spawnSpeed = Mathf.Clamp (spawnSpeed + increaseSpeedFactor, spawnSpeed, increaseSpeedFactorMax);
+    }
+
+    /**
+     * Increase death star (clamp to max)
+     */
+    void increaseDeathStars ()
+    {
+        spawnDeathStars = Mathf.Clamp (spawnDeathStars + increaseDeathStarsFactor, spawnDeathStars, increaseDeathStarsFactorMax);
     }
 }

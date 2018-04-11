@@ -1175,12 +1175,16 @@ MonoBehaviour:
   spawnTimer: 15
   spawnAfter: 15
   spawnSpeed: 2
+  spawnDeathStars: 0
   decreaseSpawnTimer: 25
   decreaseSpawnFactor: 0.5
   decreaseSpawnFactorMin: 4
   increaseSpeedTimer: 30
   increaseSpeedFactor: 0.25
   increaseSpeedFactorMax: 8
+  increaseDeathStarsTimer: 0
+  increaseDeathStarsFactor: 0
+  increaseDeathStarsFactorMax: 0
   spawnRandomRotation: 0
   spawnRandomColor: 0
   spawnObjects:
@@ -1529,12 +1533,16 @@ MonoBehaviour:
   spawnTimer: 2.5
   spawnAfter: 0
   spawnSpeed: 2
+  spawnDeathStars: 0
   decreaseSpawnTimer: 25
   decreaseSpawnFactor: 0.2
   decreaseSpawnFactorMin: 0.5
   increaseSpeedTimer: 30
   increaseSpeedFactor: 0.25
   increaseSpeedFactorMax: 10
+  increaseDeathStarsTimer: 20
+  increaseDeathStarsFactor: 1
+  increaseDeathStarsFactorMax: 30
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
@@ -2025,12 +2033,16 @@ MonoBehaviour:
   spawnTimer: 3
   spawnAfter: 0
   spawnSpeed: 1
+  spawnDeathStars: 0
   decreaseSpawnTimer: 0
   decreaseSpawnFactor: 0
   decreaseSpawnFactorMin: 0
   increaseSpeedTimer: 0
   increaseSpeedFactor: 0
   increaseSpeedFactorMax: 0
+  increaseDeathStarsTimer: 0
+  increaseDeathStarsFactor: 0
+  increaseDeathStarsFactorMax: 0
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
@@ -2055,12 +2067,16 @@ MonoBehaviour:
   spawnTimer: 3
   spawnAfter: 1.5
   spawnSpeed: 1
+  spawnDeathStars: 0
   decreaseSpawnTimer: 0
   decreaseSpawnFactor: 0
   decreaseSpawnFactorMin: 0
   increaseSpeedTimer: 0
   increaseSpeedFactor: 0
   increaseSpeedFactorMax: 0
+  increaseDeathStarsTimer: 0
+  increaseDeathStarsFactor: 0
+  increaseDeathStarsFactorMax: 0
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
@@ -4700,12 +4716,16 @@ MonoBehaviour:
   spawnTimer: 15
   spawnAfter: 5
   spawnSpeed: 1
+  spawnDeathStars: 0
   decreaseSpawnTimer: 0
   decreaseSpawnFactor: 0
   decreaseSpawnFactorMin: 0
   increaseSpeedTimer: 0
   increaseSpeedFactor: 0
   increaseSpeedFactorMax: 0
+  increaseDeathStarsTimer: 0
+  increaseDeathStarsFactor: 0
+  increaseDeathStarsFactorMax: 0
   spawnRandomRotation: 1
   spawnRandomColor: 1
   spawnObjects:
