@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     public Game game;
+    public Text starsText;
 
     public GameObject upgradeList;
     public GameObject upgradeObject;
@@ -15,6 +16,8 @@ public class Shop : MonoBehaviour
 
     public Color unavailableColor;
     public Color maxColor;
+
+    private Ship currentShip;
 
     private Upgrade[] currentShipUpgrades;
     private Dictionary<GameObject, Upgrade> upgradeObjects = new Dictionary<GameObject, Upgrade> ();
@@ -29,7 +32,19 @@ public class Shop : MonoBehaviour
 
     void OnEnable ()
     {
+        // Init var
+        currentShip = game.ships [Storage.Ship].GetComponent<Ship> ();
+
         setupUpgrades ();
+        updateStars ();
+    }
+
+    /**
+     * Update stars text to current stars
+     */
+    void updateStars ()
+    {
+        starsText.text = Storage.Stars.ToString ();
     }
 
     /**
@@ -63,12 +78,13 @@ public class Shop : MonoBehaviour
 
             // Set button events
             button.onClick.AddListener (upgrade.upgrade);
-            button.onClick.AddListener (updateButtonStates);
+            button.onClick.AddListener (updateStars);
+            button.onClick.AddListener (updateUpgradeButtonsState);
             button.onClick.AddListener (() => updateUpgradeButton (instance, upgrade));
         }
 
         // Update all button states
-        updateButtonStates ();
+        updateUpgradeButtonsState ();
     }
 
     /**
@@ -84,15 +100,16 @@ public class Shop : MonoBehaviour
         upgradeObject.GetComponentInChildren<Slider> ().value = upgrade.getStockPercentage ();
         upgradeObject.transform.Find ("Container/Icon").GetComponent<Image> ().sprite = upgrade.icon;
 
-        // Hide cost and show full text (if out of stock)
-        button.transform.Find ("Cost").gameObject.SetActive (!upgrade.isOutOfStock ());
-        button.transform.Find ("Full").gameObject.SetActive (upgrade.isOutOfStock ());
+        // Shop the right button text
+        button.transform.Find ("Cost").gameObject.SetActive (currentShip.isUnlocked () && !upgrade.isOutOfStock ());
+        button.transform.Find ("Full").gameObject.SetActive (currentShip.isUnlocked () && upgrade.isOutOfStock ());
+        button.transform.Find ("Lock").gameObject.SetActive (!currentShip.isUnlocked ());
     }
 
     /**
      * Update all upgrade buttons state and color only
      */
-    void updateButtonStates ()
+    void updateUpgradeButtonsState ()
     {
         // All buttons
         foreach (KeyValuePair<GameObject, Upgrade> item in upgradeObjects) {
@@ -112,8 +129,8 @@ public class Shop : MonoBehaviour
                 colors.disabledColor = maxColor;
             }
 
-            // Available and affordable
-            else if (!upgrade.isAffordable ()) {
+            // Is not affordable or not unlocked
+            else if (!upgrade.isAffordable () || !currentShip.isUnlocked ()) {
 
                 // Disable click
                 button.interactable = false;
