@@ -177,6 +177,13 @@ public class Hitpoint : MonoBehaviour
         damage (hitpoints);
     }
 
+    public void setMaxHitpoints (float value)
+    {
+        // Set max hitpoints and current hitpoins to value
+        maxHitpoints = value;
+        hitpoints = value;
+    }
+
     private void revertColor ()
     {
         // Set to original color

@@ -131,6 +131,11 @@ public class Game : MonoBehaviour
                 Invoke ("showLoss", 2);
             }
         }
+
+        // If press Print take a screenshot (debug)
+        if (Input.GetKeyDown (KeyCode.PageUp)) {
+            takeScreenshot ();
+        }
     }
 
     public void startGame ()

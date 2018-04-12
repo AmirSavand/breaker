@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0738c9c8776314fb94fa5ccbe8228f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 50
   damageTagOnly: Player
   whiteList: []
 --- !u!212 &212224084415773842

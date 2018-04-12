@@ -1130,9 +1130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimer: 15
   spawnAfter: 15
+  spawnTimer: 15
   spawnSpeed: 2
+  spawnHitpoints: 0
   spawnDeathStars: 0
   decreaseSpawnTimer: 25
   decreaseSpawnFactor: 0.5
@@ -1140,6 +1141,9 @@ MonoBehaviour:
   increaseSpeedTimer: 30
   increaseSpeedFactor: 0.25
   increaseSpeedFactorMax: 8
+  increaseHitpointsTimer: 30
+  increaseHitpointsFactor: 25
+  increaseHitpointsFactorMax: 475
   increaseDeathStarsTimer: 0
   increaseDeathStarsFactor: 0
   increaseDeathStarsFactorMax: 0
@@ -1574,9 +1578,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimer: 2.5
   spawnAfter: 0
+  spawnTimer: 2.5
   spawnSpeed: 2
+  spawnHitpoints: 0
   spawnDeathStars: 0
   decreaseSpawnTimer: 25
   decreaseSpawnFactor: 0.2
@@ -1584,6 +1589,9 @@ MonoBehaviour:
   increaseSpeedTimer: 30
   increaseSpeedFactor: 0.25
   increaseSpeedFactorMax: 10
+  increaseHitpointsTimer: 15
+  increaseHitpointsFactor: 25
+  increaseHitpointsFactorMax: 450
   increaseDeathStarsTimer: 20
   increaseDeathStarsFactor: 1
   increaseDeathStarsFactorMax: 30
@@ -2074,9 +2082,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimer: 3
   spawnAfter: 0
+  spawnTimer: 3
   spawnSpeed: 1
+  spawnHitpoints: 0
   spawnDeathStars: 0
   decreaseSpawnTimer: 0
   decreaseSpawnFactor: 0
@@ -2084,6 +2093,9 @@ MonoBehaviour:
   increaseSpeedTimer: 0
   increaseSpeedFactor: 0
   increaseSpeedFactorMax: 0
+  increaseHitpointsTimer: 0
+  increaseHitpointsFactor: 0
+  increaseHitpointsFactorMax: 0
   increaseDeathStarsTimer: 0
   increaseDeathStarsFactor: 0
   increaseDeathStarsFactorMax: 0
@@ -2108,9 +2120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimer: 3
   spawnAfter: 1.5
+  spawnTimer: 3
   spawnSpeed: 1
+  spawnHitpoints: 0
   spawnDeathStars: 0
   decreaseSpawnTimer: 0
   decreaseSpawnFactor: 0
@@ -2118,6 +2131,9 @@ MonoBehaviour:
   increaseSpeedTimer: 0
   increaseSpeedFactor: 0
   increaseSpeedFactorMax: 0
+  increaseHitpointsTimer: 0
+  increaseHitpointsFactor: 0
+  increaseHitpointsFactorMax: 0
   increaseDeathStarsTimer: 0
   increaseDeathStarsFactor: 0
   increaseDeathStarsFactorMax: 0
@@ -4753,9 +4769,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimer: 15
   spawnAfter: 5
+  spawnTimer: 15
   spawnSpeed: 1
+  spawnHitpoints: 0
   spawnDeathStars: 0
   decreaseSpawnTimer: 0
   decreaseSpawnFactor: 0
@@ -4763,6 +4780,9 @@ MonoBehaviour:
   increaseSpeedTimer: 0
   increaseSpeedFactor: 0
   increaseSpeedFactorMax: 0
+  increaseHitpointsTimer: 0
+  increaseHitpointsFactor: 0
+  increaseHitpointsFactorMax: 0
   increaseDeathStarsTimer: 0
   increaseDeathStarsFactor: 0
   increaseDeathStarsFactorMax: 0

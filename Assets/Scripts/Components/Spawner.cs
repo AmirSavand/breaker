@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public float spawnAfter;
     public float spawnTimer = 5;
-    public float spawnAfter = 0;
     public float spawnSpeed = 2;
+    public float spawnHitpoints;
 
     public int spawnDeathStars = 0;
 
@@ -17,6 +18,10 @@ public class Spawner : MonoBehaviour
     public float increaseSpeedTimer;
     public float increaseSpeedFactor;
     public float increaseSpeedFactorMax;
+
+    public float increaseHitpointsTimer;
+    public float increaseHitpointsFactor;
+    public float increaseHitpointsFactorMax;
 
     public float increaseDeathStarsTimer;
     public int increaseDeathStarsFactor;
@@ -48,6 +53,11 @@ public class Spawner : MonoBehaviour
             InvokeRepeating ("increaseSpeed", spawnAfter + increaseSpeedTimer, increaseSpeedTimer);
         }
 
+        // Start increasing hitpoints
+        if (increaseHitpointsTimer > 0) {
+            InvokeRepeating ("increaseHitpoints", spawnAfter + increaseHitpointsTimer, increaseHitpointsTimer);
+        }
+
         // Start increasing death star
         if (increaseDeathStarsTimer > 0) {
             InvokeRepeating ("increaseDeathStars", spawnAfter + increaseDeathStarsTimer, increaseDeathStarsTimer);
@@ -69,6 +79,17 @@ public class Spawner : MonoBehaviour
 
         // Set speed
         instance.GetComponent<Move> ().directionSpeed.y = -spawnSpeed;
+
+        // Set hitpoints
+        if (spawnHitpoints > 0) {
+
+            // Find all hitpoints
+            foreach (Hitpoint hitpoint in instance.GetComponentsInChildren<Hitpoint>()) {
+            
+                // Set hitpoints to current spawn hitpoints
+                hitpoint.setMaxHitpoints (hitpoint.hitpoints + spawnHitpoints);
+            }
+        }
 
         // Set death star
         if (spawnDeathStars > 0 && instanceHitpoint != null && instanceHitpoint.deathStars > 0) {
@@ -103,6 +124,14 @@ public class Spawner : MonoBehaviour
     void increaseSpeed ()
     {
         spawnSpeed = Mathf.Clamp (spawnSpeed + increaseSpeedFactor, spawnSpeed, increaseSpeedFactorMax);
+    }
+
+    /**
+     * Increase hitpoints results in tankier spawns (clamp to max)
+     */
+    void increaseHitpoints ()
+    {
+        spawnHitpoints = Mathf.Clamp (spawnHitpoints + increaseHitpointsFactor, spawnHitpoints, increaseHitpointsFactorMax);
     }
 
     /**
