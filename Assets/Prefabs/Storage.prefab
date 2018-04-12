@@ -688,7 +688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: blue-ship
   title: Blue Ship
-  description: Normal one. Medium firing and strenth.
+  description: Medium stats with high hitpoints.
   icon: {fileID: 21300000, guid: 965fb3c5368a0f6408dbe98a4fdc7e46, type: 3}
   unlocked: 1
 --- !u!114 &114172932923892172
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: green-ship
   title: Green Ship
-  description: Fast shooter. Weaker in damage and hitpoint.
+  description: Fast shooter but weaker in damage and hitpoint.
   icon: {fileID: 21300000, guid: 03a0812aae466274cba279632bd41908, type: 3}
   unlocked: 0
 --- !u!114 &114434937168900856
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: red-ship
   title: Red Ship
-  description: Tanky one. Fast firing, high damage but low hitpoint.
+  description: High damage and fast shooter but low hitpoins.
   icon: {fileID: 21300000, guid: 464b42fd5d6bc1a4e96e256f2482e99b, type: 3}
   unlocked: 0
 --- !u!114 &114946756195535536
