@@ -78,7 +78,9 @@ public class Spawner : MonoBehaviour
         Hitpoint instanceHitpoint = instance.GetComponent<Hitpoint> ();
 
         // Set speed
-        instance.GetComponent<Move> ().directionSpeed.y = -spawnSpeed;
+        if (spawnSpeed > 0) {
+            instance.GetComponent<Move> ().directionSpeed.y = -spawnSpeed;
+        }
 
         // Set hitpoints
         if (spawnHitpoints > 0) {
