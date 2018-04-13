@@ -25,14 +25,19 @@ public class Player : MonoBehaviour
                 return;
             }
 
-            // Don't fire and rotate if mouse is over ship
+            // Mouse not over the ship
             if (!isMouseOver ()) {
-             
-                // Rotate to mouse
-                rotate ();
 
-                // Fire bullet
+                faceMouse ();
                 ship.fire ();
+                ship.shield.active = false;
+            }
+
+            // Mouse over ship
+            else {
+
+                // Activate shield if has at least 1 second energy
+                ship.shield.active = ship.shield.energy > 1;
             }
         }
     }
@@ -41,12 +46,6 @@ public class Player : MonoBehaviour
     {
         // Turn up
         transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler (0, 0, 0), Time.deltaTime);
-    }
-
-    void OnMouseDown ()
-    {
-        // Activate shield if has at least 1 second energy
-        ship.shield.active = ship.shield.energy > 1;
     }
 
     /**
@@ -59,9 +58,11 @@ public class Player : MonoBehaviour
         return GetComponent<Collider2D> ().bounds.Contains (mouse);
     }
 
-    public void rotate ()
+    /**
+     * Instantly turn and face where mouse/finger is
+     */
+    public void faceMouse ()
     {
-        // Rotate to click position
         Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
         Vector3 pos = transform.position;
         transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 (mouse.y - pos.y, mouse.x - pos.x) * Mathf.Rad2Deg - 90);
