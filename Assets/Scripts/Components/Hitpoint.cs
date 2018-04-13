@@ -66,21 +66,25 @@ public class Hitpoint : MonoBehaviour
         if (hitpoints > 0) {
 		
             // Change color to red
-            spriteRenderer.color = Color.red;
+            spriteRenderer.color = hitColor;
 
             // Revert to original color
             Invoke ("revertColor", 0.05f);
 
-            // Show hit text float
-            if (enableDamageTextFloat) {
+            // No hitsound and text float for invulnerables
+            if (!isInvulnerable) {
+                
+                // Show hit text float
+                if (enableDamageTextFloat) {
 
-                // Show damage text float
-                game.createTextFloat ("-" + amount, game.textFloatHitpointColor, transform.position);
-            }
+                    // Show damage text float
+                    game.createTextFloat ("-" + amount, game.textFloatHitpointColor, transform.position);
+                }
 
-            // Hit sound
-            if (hitSound) {
-                hitSound.Play ();
+                // Hit sound
+                if (hitSound) {
+                    hitSound.Play ();
+                }
             }
         }
 
