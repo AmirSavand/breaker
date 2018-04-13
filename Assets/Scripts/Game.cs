@@ -18,6 +18,7 @@ public class Game : MonoBehaviour
     public Player player;
 
     public GameObject[] ships;
+    public GameObject[] enemyShips;
 
     public AudioMixer audioMixer;
     
