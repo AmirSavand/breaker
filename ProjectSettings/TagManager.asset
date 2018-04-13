@@ -7,6 +7,8 @@ TagManager:
   - Game
   - Storage
   - Bullet
+  - Enemy
+  - Enemy Point
   layers:
   - Default
   - TransparentFX
@@ -53,7 +55,7 @@ TagManager:
   - name: Bullets
     uniqueID: 996906281
     locked: 0
-  - name: Player
+  - name: Ships
     uniqueID: 1195534965
     locked: 0
   - name: Lasers
