@@ -7,7 +7,8 @@ public class Ship : MonoBehaviour
 {
     public string shipSlug;
     public string shipName;
-    public string shipDetails;
+
+    public bool useUpgrades = true;
 
     public float firePower = 6;
     public float fireDamage = 50;
@@ -26,13 +27,11 @@ public class Ship : MonoBehaviour
         // Init vars
         hitpoint = GetComponent<Hitpoint> ();
 
-        loadUpgrades ();
-
-        // Set all upgrades
-        fireDamage += getUpgrade ("damage").getAmount ();
-        firePower += getUpgrade ("fire-power").getAmount ();
-        fireRate += getUpgrade ("fire-rate").getAmount ();
-        hitpoint.maxHitpoints += getUpgrade ("hitpoint").getAmount ();
+        // Upgrades
+        if (useUpgrades) {
+            loadUpgrades ();
+            applyUpgrades ();
+        }
     }
 
     /**
@@ -55,6 +54,18 @@ public class Ship : MonoBehaviour
         foreach (Upgrade upgrade in GameObject.Find ("Upgrades/" + shipName).GetComponentsInChildren<Upgrade> ()) {
             upgrades.Add (upgrade.slug, upgrade);   
         }
+    }
+
+    /**
+     * Apply all loaded/stored upgrades
+     */
+    public void applyUpgrades ()
+    {
+        // Set all upgrades
+        fireDamage += getUpgrade ("damage").getAmount ();
+        firePower += getUpgrade ("fire-power").getAmount ();
+        fireRate += getUpgrade ("fire-rate").getAmount ();
+        hitpoint.maxHitpoints += getUpgrade ("hitpoint").getAmount ();
     }
 
     /**
@@ -89,5 +100,15 @@ public class Ship : MonoBehaviour
 
         // Fire rate cooldown (save last time)
         lastTimeFired = Time.time;
+    }
+
+    /**
+     * Rotate and face a target
+     */
+    public void lookAt (Transform target)
+    {
+        Vector3 dir = target.position - transform.position;
+        float angle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis (angle - 90, Vector3.forward);
     }
 }
