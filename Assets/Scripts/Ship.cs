@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class Ship : MonoBehaviour
 {
+    [Header ("Ship")]
     public string shipSlug;
     public string shipName;
-
+    [Space ()]
     public bool useUpgrades = true;
 
+    [Header ("Fire")]
     public float firePower = 6;
     public float fireDamage = 50;
     public float fireRate = 0.7f;
@@ -19,6 +21,9 @@ public class Ship : MonoBehaviour
 
     private float lastTimeFired;
 
+    [Header ("Attachments")]
+    public Shield shield;
+
     private Hitpoint hitpoint;
     private Dictionary<string, Upgrade> upgrades = new Dictionary<string, Upgrade> ();
 
@@ -26,6 +31,7 @@ public class Ship : MonoBehaviour
     {
         // Init vars
         hitpoint = GetComponent<Hitpoint> ();
+        shield = GetComponent<Shield> ();
 
         // Upgrades
         if (useUpgrades) {

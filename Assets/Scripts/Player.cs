@@ -39,6 +39,12 @@ public class Player : MonoBehaviour
         transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler (0, 0, 0), Time.deltaTime);
     }
 
+    void OnMouseDown ()
+    {
+        // Activate shield
+        ship.shield.active = true;
+    }
+
     public void rotate ()
     {
         // Rotate to click position
