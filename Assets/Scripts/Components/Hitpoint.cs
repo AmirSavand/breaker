@@ -6,9 +6,13 @@ using UnityEngine.UI;
 public class Hitpoint : MonoBehaviour
 {
     [Header ("Hitpoint")]
-    public float hitpoints = 100;
+    public float hitpoints;
     public float maxHitpoints = 100;
+
+    public bool isInvulnerable = false;
     public bool isDead = false;
+
+    public Color hitColor = Color.red;
 
     [Header ("Sound")]
     public GameObject audioHolder;
@@ -80,8 +84,10 @@ public class Hitpoint : MonoBehaviour
             }
         }
 
-        // Deal damage
-        hitpoints = Mathf.Clamp (hitpoints -= amount, 0, maxHitpoints);
+        // Deal damage (if not invulnerable)
+        if (!isInvulnerable) {
+            hitpoints = Mathf.Clamp (hitpoints -= amount, 0, maxHitpoints);
+        }
 
         // If has a text to update
         if (updateHitpointText) {
