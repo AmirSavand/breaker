@@ -1854,9 +1854,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shield: {fileID: 1811966254073270}
   active: 0
-  energy: 0
-  maxEnergy: 10
-  energyGainFactor: 0.5
+  duration: 0
+  maxDuration: 5
+  durationRestoreFactor: 0.25
 --- !u!212 &212096789943352448
 SpriteRenderer:
   m_ObjectHideFlags: 1

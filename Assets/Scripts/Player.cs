@@ -36,8 +36,8 @@ public class Player : MonoBehaviour
             // Mouse over ship
             else {
 
-                // Activate shield if has at least 1 second energy
-                ship.shield.active = ship.shield.energy > 1;
+                // Activate shield if has at least 1 second duration
+                ship.shield.active = ship.shield.duration > 1;
             }
         }
     }

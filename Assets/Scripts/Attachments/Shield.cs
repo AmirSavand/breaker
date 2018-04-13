@@ -8,9 +8,9 @@ public class Shield : MonoBehaviour
     public GameObject shield;
     public bool active = false;
 
-    public float energy;
-    public float maxEnergy = 10;
-    public float energyGainFactor = 1;
+    public float duration;
+    public float maxDuration = 5;
+    public float durationRestoreFactor = 1;
 
     private Hitpoint hitpoint;
     private Vector3 activeScale;
@@ -19,7 +19,7 @@ public class Shield : MonoBehaviour
     void Awake ()
     {
         // Init vars
-        energy = maxEnergy;
+        duration = maxDuration;
         hitpoint = GetComponent<Hitpoint> ();
         activeScale = shield.transform.localScale;
         deactiveScale = new Vector3 (0, 0, 1);
@@ -34,7 +34,7 @@ public class Shield : MonoBehaviour
     void Update ()
     {
         // If active and no energy, deactivate
-        if (active && energy == 0) {
+        if (active && duration == 0) {
             active = false;
         }
 
@@ -48,6 +48,6 @@ public class Shield : MonoBehaviour
         hitpoint.isInvulnerable = active;
 
         // Reduce/Gain energy
-        energy = Mathf.Clamp (energy + Time.deltaTime * (active ? -1 : energyGainFactor), 0, maxEnergy);
+        duration = Mathf.Clamp (duration + Time.deltaTime * (active ? -1 : durationRestoreFactor), 0, maxDuration);
     }
 }

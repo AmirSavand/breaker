@@ -1752,9 +1752,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shield: {fileID: 1184065805268502}
   active: 0
-  energy: 0
-  maxEnergy: 10
-  energyGainFactor: 0.5
+  duration: 0
+  maxDuration: 5
+  durationRestoreFactor: 0.25
 --- !u!114 &114982998743099526
 MonoBehaviour:
   m_ObjectHideFlags: 1
