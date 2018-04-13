@@ -41,8 +41,8 @@ public class Player : MonoBehaviour
 
     void OnMouseDown ()
     {
-        // Activate shield
-        ship.shield.active = true;
+        // Activate shield if has at least 1 second energy
+        ship.shield.active = ship.shield.energy > 1;
     }
 
     public void rotate ()
