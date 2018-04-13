@@ -1753,6 +1753,7 @@ MonoBehaviour:
   fireFrom: {fileID: 4826415687123432}
   fireBullet: {fileID: 1012319823202368, guid: 60911e2c64914e349b2800fbcd2764b9, type: 2}
   fireSound: {fileID: 82391265723026210}
+  shield: {fileID: 0}
 --- !u!114 &114315075090626536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1766,6 +1767,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shield: {fileID: 1116903588471096}
   active: 0
+  energy: 0
+  maxEnergy: 10
+  energyGainFactor: 0.5
 --- !u!114 &114550812044484934
 MonoBehaviour:
   m_ObjectHideFlags: 1
