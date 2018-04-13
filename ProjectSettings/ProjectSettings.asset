@@ -126,7 +126,7 @@ PlayerSettings:
     16:10: 0
     16:9: 1
     Others: 0
-  bundleVersion: 0.10
+  bundleVersion: 0.11 Alpha
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -159,7 +159,7 @@ PlayerSettings:
   androidMaxAspectRatio: 9.16
   applicationIdentifier:
     Android: com.SavandBros.Breaker
-    Standalone: com.AmirSavand.Breaker
+    Standalone: com.SavandBros.Breaker
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
