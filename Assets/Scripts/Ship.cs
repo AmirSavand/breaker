@@ -91,12 +91,16 @@ public class Ship : MonoBehaviour
 
         // Create bullet from fire from position
         GameObject bullet = Instantiate (fireBullet, fireFrom.transform.position, transform.rotation);
+        Damage bulletDamage = bullet.GetComponent<Damage> ();
 
         // Set bullet speed to fire power (up times power)
         bullet.GetComponent<Move> ().directionSpeed = bullet.transform.up * firePower;
 
         // Set bullet damage to fire damage
-        bullet.GetComponent<Damage> ().damage = fireDamage;
+        bulletDamage.damage = fireDamage;
+
+        // Add ship hitpoints to white list of bullet damage
+        bulletDamage.whiteList.AddRange (GetComponentsInChildren<Collider2D> ());
 
         // Fire rate cooldown (save last time)
         lastTimeFired = Time.time;
