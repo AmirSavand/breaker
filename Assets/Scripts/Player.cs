@@ -25,11 +25,15 @@ public class Player : MonoBehaviour
                 return;
             }
 
-            // Rotate to mouse
-            rotate ();
+            // Don't fire and rotate if mouse is over ship
+            if (!isMouseOver ()) {
+             
+                // Rotate to mouse
+                rotate ();
 
-            // Fire bullet
-            ship.fire ();
+                // Fire bullet
+                ship.fire ();
+            }
         }
     }
 
@@ -45,11 +49,20 @@ public class Player : MonoBehaviour
         ship.shield.active = ship.shield.energy > 1;
     }
 
+    /**
+     * Check if player mouse/finger is on the ship
+     */
+    public bool isMouseOver ()
+    {
+        Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+        mouse.z = transform.position.z;
+        return GetComponent<Collider2D> ().bounds.Contains (mouse);
+    }
+
     public void rotate ()
     {
         // Rotate to click position
-        Vector3 mouseScreen = Input.mousePosition;
-        Vector3 mouse = Camera.main.ScreenToWorldPoint (mouseScreen);
+        Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
         Vector3 pos = transform.position;
         transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 (mouse.y - pos.y, mouse.x - pos.x) * Mathf.Rad2Deg - 90);
     }
