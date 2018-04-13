@@ -1654,7 +1654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipSlug: blue-ship
   shipName: Blue Ship
-  shipDetails: 
+  useUpgrades: 0
   firePower: 6
   fireDamage: 50
   fireRate: 0.7
