@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
 
             // Mouse not over the ship
             if (!isMouseOver ()) {
-
                 faceMouse ();
                 ship.fire ();
                 ship.shield.active = false;
