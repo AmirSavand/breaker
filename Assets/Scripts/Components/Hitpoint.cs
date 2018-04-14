@@ -34,7 +34,7 @@ public class Hitpoint : MonoBehaviour
     public GameObject pieces;
     public float piecesForce = 50;
 
-    [Header ("Death reward and text")]
+    [Header ("Death rewards and texts")]
     public int deathStars;
     public int deathScore;
     public Vector3 deathTextFloatOffset = new Vector3 (0, 0, 0);
