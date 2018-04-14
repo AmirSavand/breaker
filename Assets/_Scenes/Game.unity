@@ -2719,7 +2719,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4870433807392264, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4870433807392264, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2771,8 +2771,7 @@ Prefab:
     - target: {fileID: 1756421344450700, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: -2349822300998112484, guid: 0000000000000000d000000000000000,
-        type: 0}
+      objectReference: {fileID: 0}
     - target: {fileID: 1756421344450700, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
       propertyPath: m_Name
       value: Shield Text
