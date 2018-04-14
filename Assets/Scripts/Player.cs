@@ -21,13 +21,13 @@ public class Player : MonoBehaviour
 
     void Update ()
     {
+        // Check if game is running
+        if (game.state != GameStates.Run) {
+            return;
+        }
+
         // On mouse click
         if (Input.GetMouseButton (0)) {
-
-            // Check if game is running
-            if (game.state != GameStates.Run) {
-                return;
-            }
 
             // Mouse not over the ship
             if (!isMouseOver ()) {
