@@ -27,7 +27,7 @@ public class Ship : MonoBehaviour
     private Hitpoint hitpoint;
     private Dictionary<string, Upgrade> upgrades = new Dictionary<string, Upgrade> ();
 
-    void Start ()
+    void Awake ()
     {
         // Init vars
         hitpoint = GetComponent<Hitpoint> ();

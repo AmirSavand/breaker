@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Shield : MonoBehaviour
 {
     public GameObject shield;
     public bool active = false;
+    public bool protecting = false;
 
     public float duration;
     public float maxDuration = 5;
     public float durationRestoreFactor = 1;
+    public float durationCriticalPercentage = 10;
+
+    public TextMesh text;
 
     private Hitpoint hitpoint;
     private Vector3 activeScale;
@@ -38,16 +41,34 @@ public class Shield : MonoBehaviour
             active = false;
         }
 
+        // Protecting only if duration has at least %10
+        protecting = active && getDurationPercentage () > durationCriticalPercentage;
+
         // Scale to (de)active size
-        Vector3 scaleTo = active ? activeScale : deactiveScale;
+        Vector3 scaleTo = protecting ? activeScale : deactiveScale;
 
         // Smooth scaling up/down
         shield.transform.localScale = Vector3.Lerp (shield.transform.localScale, scaleTo, 10 * Time.deltaTime);
 
-        // Make ship (in)vulnerable
-        hitpoint.isInvulnerable = active;
+        // Make ship invulnerable if shield is protecting
+        hitpoint.isInvulnerable = protecting;
 
         // Reduce/Gain energy
         duration = Mathf.Clamp (duration + Time.deltaTime * (active ? -1 : durationRestoreFactor), 0, maxDuration);
+
+        // Duration text
+        if (text) {
+
+            // Set percentage
+            text.text = getDurationPercentage ().ToString ();
+
+            // Show the text if duration is critical
+            text.gameObject.SetActive (getDurationPercentage () != 100);
+        }
+    }
+
+    public int getDurationPercentage ()
+    {
+        return (int)(duration / maxDuration * 100);
     }
 }

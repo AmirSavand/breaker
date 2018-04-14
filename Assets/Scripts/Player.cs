@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,10 +8,15 @@ public class Player : MonoBehaviour
 
     public Ship ship;
 
+    public TextMesh shieldText;
+
     void Start ()
     {
         // Load current ship
         ship = Instantiate (game.ships [Storage.Ship], transform).GetComponent<Ship> ();
+
+        // Set ship vars
+        ship.shield.text = shieldText;
     }
 
     void Update ()
@@ -37,15 +41,15 @@ public class Player : MonoBehaviour
             else {
 
                 // Activate shield if has at least 1 second duration
-                ship.shield.active = ship.shield.duration > 1;
+                ship.shield.active = ship.shield.duration > 0;
             }
         }
     }
 
     void FixedUpdate ()
     {
-        // Turn up
-        transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler (0, 0, 0), Time.deltaTime);
+        // Face ship up
+        ship.transform.rotation = Quaternion.Lerp (ship.transform.rotation, Quaternion.Euler (0, 0, 0), Time.deltaTime);
     }
 
     /**
@@ -64,7 +68,7 @@ public class Player : MonoBehaviour
     public void faceMouse ()
     {
         Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-        Vector3 pos = transform.position;
-        transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 (mouse.y - pos.y, mouse.x - pos.x) * Mathf.Rad2Deg - 90);
+        Vector3 pos = ship.transform.position;
+        ship.transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 (mouse.y - pos.y, mouse.x - pos.x) * Mathf.Rad2Deg - 90);
     }
 }
