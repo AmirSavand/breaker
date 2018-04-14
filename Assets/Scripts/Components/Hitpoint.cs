@@ -187,6 +187,12 @@ public class Hitpoint : MonoBehaviour
         damage (hitpoints);
     }
 
+    public void heal (float value)
+    {
+        // Heal and clamp (0, max hp)
+        hitpoints = Mathf.Clamp (hitpoints + value, 1, maxHitpoints);
+    }
+
     public void setMaxHitpoints (float value)
     {
         // Set max hitpoints and current hitpoins to value

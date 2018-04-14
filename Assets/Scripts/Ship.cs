@@ -129,8 +129,8 @@ public class Ship : MonoBehaviour
         // Hitpoint
         if (bonus.title == "Hitpoint") {
         
-            // Give hitpoint
-            hitpoint.hitpoints += bonus.amount;
+            // Give hitpoint (heal)
+            hitpoint.heal (bonus.amount);
         }
 
         // Max fire rate
