@@ -2719,7 +2719,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4870433807392264, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4870433807392264, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2755,27 +2755,6 @@ Prefab:
       propertyPath: game
       value: 
       objectReference: {fileID: 456617264}
-    - target: {fileID: 4655194764133244, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4655194764133244, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 102650071340239652, guid: fea3bbee2c6b29e409df48228d3bf2a5,
-        type: 2}
-      propertyPath: m_Text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1756421344450700, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1756421344450700, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
-      propertyPath: m_Name
-      value: Shield Text
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
   m_IsPrefabParent: 0
@@ -2856,18 +2835,18 @@ MonoBehaviour:
   spawnSpeed: 0
   spawnHitpoints: 0
   spawnDeathStars: 0
-  decreaseSpawnTimer: 0
-  decreaseSpawnFactor: 0
-  decreaseSpawnFactorMin: 0
+  decreaseSpawnTimer: 15
+  decreaseSpawnFactor: 0.5
+  decreaseSpawnFactorMin: 10
   increaseSpeedTimer: 0
   increaseSpeedFactor: 0
   increaseSpeedFactorMax: 0
-  increaseHitpointsTimer: 0
-  increaseHitpointsFactor: 0
-  increaseHitpointsFactorMax: 0
-  increaseDeathStarsTimer: 0
-  increaseDeathStarsFactor: 0
-  increaseDeathStarsFactorMax: 0
+  increaseHitpointsTimer: 30
+  increaseHitpointsFactor: 25
+  increaseHitpointsFactorMax: 450
+  increaseDeathStarsTimer: 15
+  increaseDeathStarsFactor: 1
+  increaseDeathStarsFactorMax: 30
   spawnRandomRotation: 0
   spawnRandomColor: 0
   spawnObjects:
