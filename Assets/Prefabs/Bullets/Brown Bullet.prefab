@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
-  damageTagOnly: 
+  damageTagOnly: Player
   whiteList: []
 --- !u!212 &212794900114235934
 SpriteRenderer:
