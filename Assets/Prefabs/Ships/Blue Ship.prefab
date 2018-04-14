@@ -1753,9 +1753,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shield: {fileID: 1116903588471096}
   active: 0
+  protecting: 0
   duration: 0
-  maxDuration: 5
+  maxDuration: 1
   durationRestoreFactor: 0.25
+  durationCriticalPercentage: 10
   text: {fileID: 0}
 --- !u!114 &114550812044484934
 MonoBehaviour:
