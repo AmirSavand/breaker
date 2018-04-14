@@ -16,6 +16,7 @@ public class Stat : MonoBehaviour
     public Text shipDamage;
     public Text shipFireRate;
     public Text shipFirePower;
+    public Text shipShield;
 
     private Ship ship;
 
@@ -43,9 +44,10 @@ public class Stat : MonoBehaviour
         // Set ship vars
         shipText.text = ship.GetComponentInChildren<SpriteRenderer> ().sprite.name;
         shipModelImage.sprite = ship.GetComponentInChildren<SpriteRenderer> ().sprite;
-        shipHitpoints.text = (ship.GetComponent<Hitpoint> ().maxHitpoints + +ship.getUpgrade ("hitpoint").getAmount ()).ToString ();
+        shipHitpoints.text = (ship.hitpoint.maxHitpoints + ship.getUpgrade ("hitpoint").getAmount ()).ToString ();
         shipDamage.text = (ship.fireDamage + ship.getUpgrade ("damage").getAmount ()).ToString ();
-        shipFireRate.text = (ship.fireRate + +ship.getUpgrade ("fire-rate").getAmount ()).ToString ();
-        shipFirePower.text = (ship.firePower + +ship.getUpgrade ("fire-power").getAmount ()).ToString ();
+        shipFireRate.text = (ship.fireRate + ship.getUpgrade ("fire-rate").getAmount ()).ToString ();
+        shipFirePower.text = (ship.firePower + ship.getUpgrade ("fire-power").getAmount ()).ToString ();
+        shipShield.text = ship.shield.maxDuration + " Sec";
     }
 }

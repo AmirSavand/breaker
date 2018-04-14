@@ -1867,7 +1867,8 @@ MonoBehaviour:
   fireFrom: {fileID: 4191554620532232}
   fireBullet: {fileID: 1588667070780538, guid: f7191f75c0c67f844b3b0c926470bae0, type: 2}
   fireSound: {fileID: 82578571037545214}
-  shield: {fileID: 0}
+  shield: {fileID: 114282528065551400}
+  hitpoint: {fileID: 114445806617768746}
 --- !u!212 &212025437310944460
 SpriteRenderer:
   m_ObjectHideFlags: 1

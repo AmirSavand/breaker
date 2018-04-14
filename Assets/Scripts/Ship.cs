@@ -24,15 +24,13 @@ public class Ship : MonoBehaviour
     [Header ("Attachments")]
     public Shield shield;
 
-    private Hitpoint hitpoint;
+    [Header ("Hitpoint")]
+    public Hitpoint hitpoint;
+
     private Dictionary<string, Upgrade> upgrades = new Dictionary<string, Upgrade> ();
 
     void Awake ()
     {
-        // Init vars
-        hitpoint = GetComponent<Hitpoint> ();
-        shield = GetComponent<Shield> ();
-
         // Upgrades
         if (useUpgrades) {
             loadUpgrades ();
