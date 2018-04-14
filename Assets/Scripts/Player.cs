@@ -48,7 +48,9 @@ public class Player : MonoBehaviour
     void FixedUpdate ()
     {
         // Face ship up
-        ship.transform.rotation = Quaternion.Lerp (ship.transform.rotation, Quaternion.Euler (0, 0, 0), Time.deltaTime);
+        if (ship) {
+            ship.transform.rotation = Quaternion.Lerp (ship.transform.rotation, Quaternion.Euler (0, 0, 0), Time.deltaTime);
+        }
     }
 
     /**
