@@ -5,29 +5,30 @@ using UnityEngine.UI;
 
 public class Ship : MonoBehaviour
 {
-    [Header ("Ship")]
+    // Ship
     public string shipSlug;
     public string shipName;
-    [Space ()]
-    public bool useUpgrades = true;
 
-    [Header ("Fire")]
+    // Fire
     public float firePower = 6;
     public float fireDamage = 50;
     public float fireRate = 0.7f;
     public Transform fireFrom;
     public GameObject fireBullet;
     public AudioSource fireSound;
-
     private float lastTimeFired;
 
-    [Header ("Attachments")]
+    // Components
     public Shield shield;
-
-    [Header ("Hitpoint")]
     public Hitpoint hitpoint;
 
+    // Upgrades
+    public bool useUpgrades = true;
     private Dictionary<string, Upgrade> upgrades = new Dictionary<string, Upgrade> ();
+
+    // Bonus
+    private Bonus currentBonus;
+    private float bonusRevertValue;
 
     void Awake ()
     {
@@ -118,5 +119,60 @@ public class Ship : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         float angle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis (angle - 90, Vector3.forward);
+    }
+
+    /**
+     * Give and activate bonus to ship
+     */
+    public void applyBonus (Bonus bonus)
+    {
+        // Hitpoint
+        if (bonus.title == "Hitpoint") {
+        
+            // Give hitpoint
+            hitpoint.hitpoints += bonus.amount;
+        }
+
+        // Max fire rate
+        if (bonus.title == "Max Fire Rate") {
+
+            // Set fire rate and save current
+            bonusRevertValue = fireRate;
+            fireRate = bonus.amount;
+        }
+
+        // High damage
+        if (bonus.title == "High Damage") {
+
+            // Set fire rate and save current
+            bonusRevertValue = fireRate;
+            fireRate = bonus.amount;
+        }
+
+        // Duration bonus
+        if (bonus.type == BonusType.Duration) {
+
+            // Store it
+            currentBonus = bonus;
+
+            // Revert after duration
+            Invoke ("revertBonus", bonus.duration);
+        }
+    }
+
+    /**
+     * Revert ship stats and remove bonus
+     */
+    public void revertBonus ()
+    {
+        // Max fire rate
+        if (currentBonus.title == "Max Fire Rate") {
+            fireRate = bonusRevertValue;
+        }
+
+        // High damage
+        if (currentBonus.title == "High Damage") {
+            fireDamage = bonusRevertValue;
+        }
     }
 }
