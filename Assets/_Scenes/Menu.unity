@@ -1903,6 +1903,7 @@ MonoBehaviour:
   - {fileID: 1432264726996372, guid: 74cb8b598f5bf1648b783e3014e52f2f, type: 2}
   - {fileID: 1267855900584990, guid: 74582e98c69731c4fb969cec966679a8, type: 2}
   - {fileID: 1243187612017736, guid: 21afaebffbd3f574a804fa13a7309c40, type: 2}
+  enemyShips: []
   audioMixer: {fileID: 24100000, guid: 2e169437230385a488872b06ef3c6109, type: 2}
   gameUI: {fileID: 0}
   pauseUI: {fileID: 0}
