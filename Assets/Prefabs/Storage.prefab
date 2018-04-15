@@ -1048,7 +1048,7 @@ MonoBehaviour:
   color: {r: 0, g: 1, b: 0.6275861, a: 1}
   title: Max Fire Rate
   duration: 8
-  amount: 0.2
+  amount: 0.1
 --- !u!114 &114833856845050284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   color: {r: 1, g: 0.2794118, b: 0.2794118, a: 1}
-  title: Hitpoint Restore
+  title: Hitpoint
   duration: 0
   amount: 100
 --- !u!114 &114835331223591326
