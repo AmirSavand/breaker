@@ -35,6 +35,7 @@ public class Hitpoint : MonoBehaviour
     public float piecesForce = 50;
 
     [Header ("Death rewards and texts")]
+    public Bonus deathBonus;
     public int deathStars;
     public int deathScore;
     public Vector3 deathTextFloatOffset = new Vector3 (0, 0, 0);
@@ -125,6 +126,16 @@ public class Hitpoint : MonoBehaviour
 
                     // Play the audio then destroy the holder
                     deathSound.Play ();
+                }
+
+                // Death bonus
+                if (deathBonus) {
+
+                    // Apply bonus to ship
+                    game.player.ship.applyBonus (deathBonus);
+
+                    // Show text of bonus
+                    game.createTextFloat (deathBonus.title, deathBonus.color, transform.position);
                 }
             }
 
