@@ -4,29 +4,35 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [Header ("Spawn")]
     public float spawnAfter;
     public float spawnTimer = 5;
     public float spawnSpeed = 2;
     public float spawnHitpoints;
-
     public int spawnDeathStars = 0;
 
+    [Header ("Spawm time")]
     public float decreaseSpawnTimer;
     public float decreaseSpawnFactor;
     public float decreaseSpawnFactorMin;
 
+    [Header ("Spawm speed")]
     public float increaseSpeedTimer;
     public float increaseSpeedFactor;
     public float increaseSpeedFactorMax;
 
+    [Header ("Spawm hitpoints")]
     public float increaseHitpointsTimer;
     public float increaseHitpointsFactor;
     public float increaseHitpointsFactorMax;
 
+    [Header ("Spawm death stars")]
     public float increaseDeathStarsTimer;
     public int increaseDeathStarsFactor;
     public int increaseDeathStarsFactorMax;
 
+    [Header ("Spawm random")]
+    public bool spawnRandomBonus = false;
     public bool spawnRandomRotation = true;
     public bool spawnRandomColor = true;
 
@@ -106,6 +112,13 @@ public class Spawner : MonoBehaviour
         // Set random rotation
         if (spawnRandomRotation) {
             instance.transform.GetChild (0).GetComponent<Transform> ().eulerAngles = new Vector3 (0, 0, Random.Range (0, 360));
+        }
+
+        // Set random bonus (and color)
+        if (spawnRandomBonus) {
+            Bonus[] bonuses = GameObject.FindGameObjectWithTag ("Storage").GetComponentsInChildren<Bonus> ();
+            instanceHitpoint.deathBonus = bonuses [Random.Range (0, bonuses.Length)];
+            instance.GetComponentInChildren<SpriteRenderer> ().color = instanceHitpoint.deathBonus.color;
         }
 
         // Respawn again
