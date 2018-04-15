@@ -145,8 +145,8 @@ public class Ship : MonoBehaviour
         if (bonus.title == "High Damage") {
 
             // Set fire rate and save current
-            bonusRevertValue = fireRate;
-            fireRate = bonus.amount;
+            bonusRevertValue = fireDamage;
+            fireDamage = bonus.amount;
         }
 
         // Duration bonus
