@@ -133,7 +133,7 @@ public class Hitpoint : MonoBehaviour
                     game.player.ship.applyBonus (deathBonus);
 
                     // Show text of bonus
-                    game.createTextFloat (deathBonus.title, deathBonus.color, transform.position);
+                    game.createTextFloat (deathBonus.floatText, deathBonus.color, transform.position);
                 }
             }
 
