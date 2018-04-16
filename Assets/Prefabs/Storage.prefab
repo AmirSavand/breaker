@@ -871,6 +871,7 @@ MonoBehaviour:
   type: 1
   color: {r: 1, g: 0.4, b: 0, a: 1}
   title: High Damage
+  floatText: +Damge
   duration: 5
   amount: 800
 --- !u!114 &114434937168900856
@@ -1047,6 +1048,7 @@ MonoBehaviour:
   type: 1
   color: {r: 0, g: 1, b: 0.6275861, a: 1}
   title: Max Fire Rate
+  floatText: +Fire Rate
   duration: 5
   amount: 0.1
 --- !u!114 &114833856845050284
@@ -1063,6 +1065,7 @@ MonoBehaviour:
   type: 0
   color: {r: 1, g: 0.2794118, b: 0.2794118, a: 1}
   title: Hitpoint
+  floatText: +Hitpoints
   duration: 0
   amount: 100
 --- !u!114 &114835331223591326

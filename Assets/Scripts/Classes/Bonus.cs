@@ -15,6 +15,8 @@ public class Bonus : MonoBehaviour
 
     public string title;
 
+    public string floatText;
+
     public float duration;
 
     public float amount;
