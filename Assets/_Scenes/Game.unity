@@ -3661,12 +3661,12 @@ MonoBehaviour:
   spawnSpeed: 2
   spawnHitpoints: 0
   spawnDeathStars: 0
-  decreaseSpawnTimer: 25
-  decreaseSpawnFactor: 0.2
-  decreaseSpawnFactorMin: 0.5
-  increaseSpeedTimer: 30
+  decreaseSpawnTimer: 40
+  decreaseSpawnFactor: 0.5
+  decreaseSpawnFactorMin: 10
+  increaseSpeedTimer: 40
   increaseSpeedFactor: 0.25
-  increaseSpeedFactorMax: 10
+  increaseSpeedFactorMax: 6
   increaseHitpointsTimer: 15
   increaseHitpointsFactor: 25
   increaseHitpointsFactorMax: 450
