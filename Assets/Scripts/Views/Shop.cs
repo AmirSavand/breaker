@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
-    public Game game;
     public Text starsText;
 
     public GameObject upgradeList;
@@ -17,6 +16,8 @@ public class Shop : MonoBehaviour
     public Color unavailableColor;
     public Color maxColor;
 
+    private Utility utility;
+
     private Ship currentShip;
 
     private Upgrade[] currentShipUpgrades;
@@ -24,6 +25,12 @@ public class Shop : MonoBehaviour
 
     private Item[] shipItems;
     private Dictionary<GameObject, Item> shipObjects = new Dictionary<GameObject, Item> ();
+
+    void Awake ()
+    {
+        // Get inits
+        utility = Utility.GetInstance ();
+    }
 
     void Start ()
     {
@@ -33,7 +40,7 @@ public class Shop : MonoBehaviour
     void OnEnable ()
     {
         // Init var
-        currentShip = game.ships [Storage.Ship].GetComponent<Ship> ();
+        currentShip = utility.getSelectedShip ();
 
         setupUpgrades ();
         updateStars ();
@@ -53,7 +60,7 @@ public class Shop : MonoBehaviour
     void setupUpgrades ()
     {
         // Get upgrades of current ship
-        currentShipUpgrades = GameObject.Find ("Upgrades/" + game.ships [Storage.Ship].name).GetComponentsInChildren<Upgrade> ();
+        currentShipUpgrades = GameObject.Find ("Upgrades/" + currentShip.name).GetComponentsInChildren<Upgrade> ();
 
         // Delete existing (old) upgrade buttons
         foreach (KeyValuePair<GameObject, Upgrade> item in upgradeObjects) {

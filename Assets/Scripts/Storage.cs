@@ -5,24 +5,40 @@ using UnityEngine;
 public class Storage : MonoBehaviour
 {
     /**
-     * Current player's ship
-     */
-    public static int Ship;
-
-    /**
-     * Stars are collected in game then added once player is dead
+     * Stars are collected in game then added once player is dead.
      */
     public static int Stars;
 
     /**
-     * Highest score that player got in a single game
+     * Highest score that player got in a single game.
      */
     public static int HighScore;
 
-    public static int MasterVolume;
-    public static int MusicVolume;
-    public static int EffectsVolume;
-    public static int MenuVolume;
+    /**
+     * Current player's ship.
+     */
+    public static int Ship;
+
+    /**
+     * Volume of Master audio mixer group.
+     */
+    public static int VolumeMaster;
+
+    /**
+     * Volume of Music audio mixer group.
+     */
+    public static int VolumeMusic;
+
+    /**
+     * Volume of Effects audio mixer group.
+     */
+    public static int VolumEffects;
+
+    
+    /**
+     * Volume of Menu audio mixer group.
+     */
+    public static int VolumeMenu;
 
     void Awake ()
     {
@@ -40,14 +56,14 @@ public class Storage : MonoBehaviour
         HighScore = PlayerPrefs.GetInt ("stat-high-score");
 
         // Load volumes
-        MasterVolume = PlayerPrefs.GetInt ("volume-master");
-        MusicVolume = PlayerPrefs.GetInt ("volume-music");
-        EffectsVolume = PlayerPrefs.GetInt ("volume-effects");
-        MenuVolume = PlayerPrefs.GetInt ("volume-menu");
+        VolumeMaster = PlayerPrefs.GetInt ("volume-master");
+        VolumeMusic = PlayerPrefs.GetInt ("volume-music");
+        VolumEffects = PlayerPrefs.GetInt ("volume-effects");
+        VolumeMenu = PlayerPrefs.GetInt ("volume-menu");
     }
 
     /**
-     * Commit all data to storage
+     * Commit all data to storage.
      */
     public static void Save ()
     {
@@ -57,10 +73,10 @@ public class Storage : MonoBehaviour
         PlayerPrefs.SetInt ("stat-high-score", HighScore);
 
         // Set volumes
-        PlayerPrefs.SetInt ("volume-master", MasterVolume);
-        PlayerPrefs.SetInt ("volume-music", MusicVolume);
-        PlayerPrefs.SetInt ("volume-effects", EffectsVolume);
-        PlayerPrefs.SetInt ("volume-menu", MenuVolume);
+        PlayerPrefs.SetInt ("volume-master", VolumeMaster);
+        PlayerPrefs.SetInt ("volume-music", VolumeMusic);
+        PlayerPrefs.SetInt ("volume-effects", VolumEffects);
+        PlayerPrefs.SetInt ("volume-menu", VolumeMenu);
 
         // Save to disk
         PlayerPrefs.Save ();

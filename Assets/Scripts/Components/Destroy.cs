@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Destroy : MonoBehaviour
 {
@@ -9,11 +10,19 @@ public class Destroy : MonoBehaviour
     public bool destroyExitTriggers = false;
     public string destroyExitTriggersTagOnly;
 
+    public GameObject destroyObjectOnClick;
+    public Button button;
+
     void Start ()
     {
         // Destroy after particle duration
         if (destroyAfterParticle) {
             Destroy (gameObject, GetComponent<ParticleSystem> ().main.duration);
+        }
+
+        // Set button to destroy game object
+        if (destroyObjectOnClick) {
+            button.onClick.AddListener (destroyObject);
         }
     }
 
@@ -38,5 +47,13 @@ public class Destroy : MonoBehaviour
         else {
             Destroy (other.transform.parent.gameObject);
         }
+    }
+
+    /**
+     * Destroy the game object
+     */
+    public void destroyObject ()
+    {
+        Destroy (destroyObjectOnClick);
     }
 }

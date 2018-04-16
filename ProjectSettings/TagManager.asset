@@ -4,11 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Game
   - Storage
   - Bullet
   - Enemy
   - Enemy Point
+  - Utility
+  - Scene
   layers:
   - Default
   - TransparentFX

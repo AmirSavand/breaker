@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Selection : MonoBehaviour
 {
-    public Game game;
     public AudioSource sound;
     public Image current;
     public Button play;
@@ -13,8 +12,13 @@ public class Selection : MonoBehaviour
     public GameObject next;
     public GameObject prev;
 
+    private Utility utility;
+
     void Start ()
     {
+        // Init vars
+        utility = Utility.GetInstance ();
+
         // Update buttons
         onSelect ();
     }
@@ -22,17 +26,17 @@ public class Selection : MonoBehaviour
     public void onSelect ()
     {
         // Show current ship
-        current.sprite = game.ships [Storage.Ship].GetComponentInChildren<SpriteRenderer> ().sprite;
+        current.sprite = utility.getSelectedShip ().GetComponentInChildren<SpriteRenderer> ().sprite;
 
         // Disable play button and show lock image if current ship is not unlocked
-        play.interactable = game.ships [Storage.Ship].GetComponent<Ship> ().isUnlocked ();
+        play.interactable = utility.getSelectedShip ().isUnlocked ();
         locked.SetActive (!play.interactable);
 
         // If current ship is the first, hide prev button
         prev.SetActive (Storage.Ship != 0);
 
         // If current ship is the last, hide next button
-        next.SetActive (Storage.Ship != game.ships.Length - 1);
+        next.SetActive (Storage.Ship != utility.shipsPlayer.Length - 1);
 
         // Play sound
         sound.Play ();

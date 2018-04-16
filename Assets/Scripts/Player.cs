@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Game game;
-
     public Ship ship;
 
     public TextMesh shieldText;
     public TextMesh bonusText;
 
+    private Utility utility;
+
     void Start ()
     {
+        // Init vars
+        utility = Utility.GetInstance ();
+
         // Load current ship
-        ship = Instantiate (game.ships [Storage.Ship], transform).GetComponent<Ship> ();
+        ship = Instantiate (utility.getSelectedShip ().gameObject, transform).GetComponent<Ship> ();
 
         // Set ship vars
         ship.shield.text = shieldText;
@@ -23,7 +26,7 @@ public class Player : MonoBehaviour
     void Update ()
     {
         // Game is running
-        if (game.state == GameStates.Run) {
+        if (utility.mode.state == ModeStates.Run) {
 
             // On mouse click
             if (Input.GetMouseButton (0)) {

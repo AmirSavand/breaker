@@ -44,10 +44,9 @@ public class Hitpoint : MonoBehaviour
     [Header ("Global text")]
     public bool updatesGlobalHitpointText = false;
 
+    private Utility utility;
     private SpriteRenderer spriteRenderer;
     private Color spriteColor;
-    private Cam cam;
-    private Game game;
 
     void Start ()
     {
@@ -55,8 +54,7 @@ public class Hitpoint : MonoBehaviour
         hitpoints = maxHitpoints;
 
         // Get inits
-        cam = Camera.main.GetComponent<Cam> ();
-        game = GameObject.FindWithTag ("Game").GetComponent<Game> ();
+        utility = Utility.GetInstance ();
         spriteRenderer = GetComponentInChildren<SpriteRenderer> ();
         spriteColor = spriteRenderer.color;
     }
@@ -79,7 +77,7 @@ public class Hitpoint : MonoBehaviour
                 if (enableDamageTextFloat) {
 
                     // Show damage text float
-                    game.createTextFloat ("-" + amount, game.textFloatHitpointColor, transform.position);
+                    utility.createTextFloat ("-" + amount, utility.colorHitpoint, transform.position);
                 }
 
                 // Hit sound
@@ -105,12 +103,12 @@ public class Hitpoint : MonoBehaviour
 
                 // Gives stars on death
                 if (deathStars > 0) {
-                    game.giveStar (deathStars, transform.position + deathTextFloatOffset);
+                    utility.mode.giveStar (deathStars, transform.position + deathTextFloatOffset);
                 }
 
                 // Gives score on death
                 if (deathScore > 0) {
-                    game.giveScore (deathScore, transform.position + deathTextFloatOffset);
+                    utility.mode.giveScore (deathScore, transform.position + deathTextFloatOffset);
                 }
 
                 // Death sound
@@ -130,16 +128,16 @@ public class Hitpoint : MonoBehaviour
                 if (deathBonus) {
 
                     // Apply bonus to ship
-                    game.player.ship.applyBonus (deathBonus);
+                    utility.mode.player.ship.applyBonus (deathBonus);
 
                     // Show text of bonus
-                    game.createTextFloat (deathBonus.floatText, deathBonus.color, transform.position);
+                    utility.createTextFloat (deathBonus.floatText, deathBonus.color, transform.position);
                 }
             }
 
             // If should shake camera on death
             if (shakeOnDeathDuration > 0) {
-                cam.shake (shakeOnDeathDuration, vibrateOnDeath);
+                utility.cam.shake (shakeOnDeathDuration, vibrateOnDeath);
             }
 
             // If has death piece
@@ -220,7 +218,7 @@ public class Hitpoint : MonoBehaviour
     public void updateHitpoinText ()
     {
         if (updatesGlobalHitpointText) {
-            game.hitpointsText.text = Mathf.FloorToInt (hitpoints / maxHitpoints * 100).ToString ();
+            utility.mode.hitpointsText.text = Mathf.FloorToInt (hitpoints / maxHitpoints * 100).ToString ();
         }   
     }
 

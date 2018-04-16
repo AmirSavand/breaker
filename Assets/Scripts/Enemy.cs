@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float switchMoveTimer = 5;
 
-    private Game game;
+    private Utility utility;
     private Ship ship;
     private MoveTo moveTo;
     private GameObject[] movePoints;
@@ -14,8 +14,8 @@ public class Enemy : MonoBehaviour
     void Start ()
     {
         // Init ship
-        game = GameObject.FindGameObjectWithTag ("Game").GetComponent<Game> ();
-        ship = Instantiate (game.enemyShips [Random.Range (0, game.enemyShips.Length)], transform).GetComponent<Ship> ();
+        utility = Utility.GetInstance ();
+        ship = Instantiate (utility.shipsEnemy [Random.Range (0, utility.shipsEnemy.Length)].gameObject, transform).GetComponent<Ship> ();
         moveTo = GetComponent<MoveTo> ();
         movePoints = GameObject.FindGameObjectsWithTag ("Enemy Point");
 
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
         ship.fire ();
 
         // Look at player
-        ship.lookAt (game.player.transform);
+        ship.lookAt (utility.mode.player.transform);
     }
 
     /**

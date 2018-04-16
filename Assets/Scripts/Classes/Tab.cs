@@ -8,8 +8,13 @@ public class Tab : MonoBehaviour
     public Button button;
     public GameObject tabObject;
 
+    private Utility utility;
+
     void Start ()
     {
+        // Get init
+        utility = Utility.GetInstance ();
+
         // Set onClick event
         button.onClick.AddListener (activate);
     }
@@ -26,6 +31,9 @@ public class Tab : MonoBehaviour
         if (tabObject) {
             tabObject.SetActive (true);
         }
+
+        // Play sound
+        utility.selectSound.Play ();
     }
 
     public void deactivate ()

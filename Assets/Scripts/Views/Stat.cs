@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Stat : MonoBehaviour
 {
-    public Game game;
-
     public Text starsText;
     public Text highScoreText;
 
@@ -36,7 +34,7 @@ public class Stat : MonoBehaviour
         highScoreText.text = Storage.HighScore.ToString ();
 
         // Get current ship
-        ship = game.ships [Storage.Ship].GetComponent<Ship> ();
+        ship = Utility.GetInstance ().getSelectedShip ();
 
         // Load ship upgrades
         ship.loadUpgrades ();

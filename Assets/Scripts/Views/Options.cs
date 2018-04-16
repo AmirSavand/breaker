@@ -35,25 +35,25 @@ public class Options : MonoBehaviour
 
     public void setMasterVol (float value)
     {
-        Storage.MasterVolume = (int)value;
+        Storage.VolumeMaster = (int)value;
         audioMixer.SetFloat ("masterVol", value);
     }
 
     public void setMusicVol (float value)
     {
-        Storage.MusicVolume = (int)value;
+        Storage.VolumeMusic = (int)value;
         audioMixer.SetFloat ("musicVol", value);
     }
 
     public void setEffectsVol (float value)
     {
-        Storage.EffectsVolume = (int)value;
+        Storage.VolumEffects = (int)value;
         audioMixer.SetFloat ("effectsVol", value);
     }
 
     public void setMenuVol (float value)
     {
-        Storage.MenuVolume = (int)value;
+        Storage.VolumeMenu = (int)value;
         audioMixer.SetFloat ("menuVol", value);
     }
 }
