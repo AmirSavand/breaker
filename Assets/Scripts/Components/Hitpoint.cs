@@ -42,7 +42,7 @@ public class Hitpoint : MonoBehaviour
     public bool enableDamageTextFloat = false;
 
     [Header ("Global text")]
-    public bool updateHitpointText = false;
+    public bool updatesGlobalHitpointText = false;
 
     private SpriteRenderer spriteRenderer;
     private Color spriteColor;
@@ -94,10 +94,8 @@ public class Hitpoint : MonoBehaviour
             hitpoints = Mathf.Clamp (hitpoints -= amount, 0, maxHitpoints);
         }
 
-        // If has a text to update
-        if (updateHitpointText) {
-            game.hitpointsText.text = Mathf.FloorToInt (hitpoints / maxHitpoints * 100).ToString ();
-        }
+        // Text update (UI)
+        updateHitpoinText ();
 
         // No HP left (dead)
         if (hitpoints == 0) {
@@ -192,16 +190,21 @@ public class Hitpoint : MonoBehaviour
         }
     }
 
+    /**
+     * Damage as much as hitpoint
+     */
     public void kill ()
     {
-        // Damage as much as hitpoint
         damage (hitpoints);
     }
 
+    /**
+     * Heal and clamp (0, max hp)
+     */
     public void heal (float value)
     {
-        // Heal and clamp (0, max hp)
         hitpoints = Mathf.Clamp (hitpoints + value, 1, maxHitpoints);
+        updateHitpoinText ();
     }
 
     public void setMaxHitpoints (float value)
@@ -209,6 +212,16 @@ public class Hitpoint : MonoBehaviour
         // Set max hitpoints and current hitpoins to value
         maxHitpoints = value;
         hitpoints = value;
+    }
+
+    /**
+     * Update the global hitpoint text if should
+     */
+    public void updateHitpoinText ()
+    {
+        if (updatesGlobalHitpointText) {
+            game.hitpointsText.text = Mathf.FloorToInt (hitpoints / maxHitpoints * 100).ToString ();
+        }   
     }
 
     private void revertColor ()
