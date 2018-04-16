@@ -1783,11 +1783,12 @@ MonoBehaviour:
   explosionParticle: {fileID: 0}
   pieces: {fileID: 0}
   piecesForce: 50
+  deathBonus: {fileID: 0}
   deathStars: 0
   deathScore: 0
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 0
-  updateHitpointText: 0
+  updatesGlobalHitpointText: 0
 --- !u!114 &114716263532753976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1801,7 +1802,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipSlug: red-ship
   shipName: Red Ship
-  useUpgrades: 1
   firePower: 6
   fireDamage: 50
   fireRate: 0.7
@@ -1810,6 +1810,7 @@ MonoBehaviour:
   fireSound: {fileID: 82226244530956890}
   shield: {fileID: 114824426935516994}
   hitpoint: {fileID: 114725652341912138}
+  useUpgrades: 1
 --- !u!114 &114725652341912138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1837,11 +1838,12 @@ MonoBehaviour:
     type: 2}
   pieces: {fileID: 1537950827152274}
   piecesForce: 100
+  deathBonus: {fileID: 0}
   deathStars: 0
   deathScore: 0
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 1
-  updateHitpointText: 1
+  updatesGlobalHitpointText: 1
 --- !u!114 &114824426935516994
 MonoBehaviour:
   m_ObjectHideFlags: 1
