@@ -126,6 +126,12 @@ public class Ship : MonoBehaviour
      */
     public void applyBonus (Bonus bonus)
     {
+        // Revert the current bonus first if it's a duration bonus
+        if (currentBonus && bonus.type == BonusType.Duration) {
+            CancelInvoke ();
+            revertBonus ();
+        }
+
         // Hitpoint
         if (bonus.title == "Hitpoint") {
         
@@ -152,10 +158,8 @@ public class Ship : MonoBehaviour
         // Duration bonus
         if (bonus.type == BonusType.Duration) {
 
-            // Store it
+            // Store it and invoke revert
             currentBonus = bonus;
-
-            // Revert after duration
             Invoke ("revertBonus", bonus.duration);
         }
     }
