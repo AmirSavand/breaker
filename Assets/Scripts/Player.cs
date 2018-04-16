@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Ship ship;
 
     public TextMesh shieldText;
+    public TextMesh bonusText;
 
     void Start ()
     {
@@ -21,27 +22,37 @@ public class Player : MonoBehaviour
 
     void Update ()
     {
-        // Check if game is running
-        if (game.state != GameStates.Run) {
-            return;
-        }
+        // Game is running
+        if (game.state == GameStates.Run) {
 
-        // On mouse click
-        if (Input.GetMouseButton (0)) {
+            // On mouse click
+            if (Input.GetMouseButton (0)) {
 
-            // Mouse not over the ship
-            if (!isMouseOver ()) {
-                faceMouse ();
-                ship.fire ();
-                ship.shield.active = false;
+                // Mouse not over the ship
+                if (!isMouseOver ()) {
+                    faceMouse ();
+                    ship.fire ();
+                    ship.shield.active = false;
+                }
+
+                // Mouse over ship
+                else {
+
+                    // Activate shield if has at least 1 second duration
+                    ship.shield.active = ship.shield.duration > 0;
+                }
             }
 
-            // Mouse over ship
-            else {
+            // Has a bonus currently
+            if (ship.currentBonus) {
 
-                // Activate shield if has at least 1 second duration
-                ship.shield.active = ship.shield.duration > 0;
+                // Show bonus text
+                bonusText.text = ship.currentBonus.title;
+                bonusText.color = ship.currentBonus.color;
             }
+
+            // Show bonus text if has one currently
+            bonusText.gameObject.SetActive (ship.currentBonus);
         }
     }
 

@@ -27,7 +27,7 @@ public class Ship : MonoBehaviour
     private Dictionary<string, Upgrade> upgrades = new Dictionary<string, Upgrade> ();
 
     // Bonus
-    private Bonus currentBonus;
+    public Bonus currentBonus;
     private float bonusRevertValue;
 
     void Awake ()
@@ -178,5 +178,8 @@ public class Ship : MonoBehaviour
         if (currentBonus.title == "High Damage") {
             fireDamage = bonusRevertValue;
         }
+
+        // Clear bonus
+        currentBonus = null;
     }
 }
