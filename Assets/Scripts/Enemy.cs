@@ -32,11 +32,15 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        // Always fire
-        ship.fire ();
+        // If game is running
+        if (utility.mode.state == ModeStates.Run) {
 
-        // Look at player
-        ship.lookAt (utility.mode.player.transform);
+            // Always fire
+            ship.fire ();
+
+            // Look at player's ship
+            ship.lookAt (utility.mode.player.ship.transform);
+        }
     }
 
     /**
