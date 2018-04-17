@@ -796,7 +796,8 @@ AudioSource:
   m_GameObject: {fileID: 1168374611440516}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243678785651583286, guid: 2e169437230385a488872b06ef3c6109,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 3a5cfad8cdd303540a5b83fd9d48f6e0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -991,7 +992,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 0
   maxHitpoints: 100
+  isInvulnerable: 0
   isDead: 0
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
   audioHolder: {fileID: 1168374611440516}
   hitSound: {fileID: 82802706178950932}
   deathSound: {fileID: 82513097138013228}
@@ -1003,11 +1006,12 @@ MonoBehaviour:
     type: 2}
   pieces: {fileID: 1035932961258328}
   piecesForce: 40
+  deathBonus: {fileID: 0}
   deathStars: 0
   deathScore: 50
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 0
-  updateHitpointText: 0
+  updatesGlobalHitpointText: 0
 --- !u!212 &212053501111088072
 SpriteRenderer:
   m_ObjectHideFlags: 1
