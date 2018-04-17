@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 
 public class Shop : MonoBehaviour
 {
+    [TextArea ()]
+    public string shipsInfo;
+    
     public Text starsText;
 
     public GameObject upgradeList;
@@ -189,5 +192,13 @@ public class Shop : MonoBehaviour
             instance.transform.Find ("Detail/Name").GetComponent<Text> ().text = item.title;
             instance.transform.Find ("Detail/Description").GetComponent<Text> ().text = item.description;
         }
+    }
+
+    /**
+     * Show ships info
+     */
+    public void showShipsInfo ()
+    {
+        utility.createPopup ("Ships", shipsInfo);
     }
 }
