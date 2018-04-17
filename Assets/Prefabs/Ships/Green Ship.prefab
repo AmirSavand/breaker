@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 114952721037866396}
   - component: {fileID: 114445806617768746}
   - component: {fileID: 114282528065551400}
+  - component: {fileID: 114158627102200220}
   m_Layer: 0
   m_Name: Green Ship
   m_TagString: Player
@@ -1718,6 +1719,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114158627102200220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267855900584990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ffc8de408c7114ea63a4c66a255c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetTag: 
+  speed: 2
+  moveAfter: 0
+  stopRange: 0
+  destroyTargetOnRange: 0
+  destroySelfOnRange: 0
+  resetVelocity: 0
 --- !u!114 &114282528065551400
 MonoBehaviour:
   m_ObjectHideFlags: 1

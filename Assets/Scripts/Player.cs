@@ -10,6 +10,10 @@ public class Player : MonoBehaviour
     public TextMesh shieldText;
     public TextMesh bonusText;
 
+    public Transform movePointMiddle;
+    public Transform movePointLeft;
+    public Transform movePointRight;
+
     private Utility utility;
 
     void Start ()
@@ -57,6 +61,19 @@ public class Player : MonoBehaviour
 
             // Show bonus text if has one currently
             bonusText.gameObject.SetActive (ship.currentBonus);
+
+            // Move point based on device rotation (no rotation, stay middle)
+            Transform movePoint = movePointMiddle;
+
+            // Rotated phone enough?
+            if (Mathf.Abs (Input.acceleration.x) > 0.3f) {
+
+                // Set move point to righ/left
+                movePoint = Input.acceleration.x > 0 ? movePointRight : movePointLeft;
+            }
+
+            // Set ship to move to point
+            ship.GetComponent<MoveTo> ().target = movePoint;
         }
 
         // Hide attachment texts if lost
@@ -65,8 +82,10 @@ public class Player : MonoBehaviour
 
     void FixedUpdate ()
     {
-        // Face ship up
-        if (ship) {
+        // Game is running
+        if (utility.mode.state == ModeStates.Run) {
+
+            // Face up 
             ship.transform.rotation = Quaternion.Lerp (ship.transform.rotation, Quaternion.Euler (0, 0, 0), Time.deltaTime);
         }
     }

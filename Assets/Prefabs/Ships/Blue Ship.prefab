@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 114195875109159520}
   - component: {fileID: 114562265760396212}
   - component: {fileID: 114315075090626536}
+  - component: {fileID: 114420868822510502}
   m_Layer: 0
   m_Name: Blue Ship
   m_TagString: Player
@@ -1762,6 +1763,25 @@ MonoBehaviour:
   durationRestoreFactor: 0.25
   durationCriticalPercentage: 10
   text: {fileID: 0}
+--- !u!114 &114420868822510502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1432264726996372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ffc8de408c7114ea63a4c66a255c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetTag: 
+  speed: 2
+  moveAfter: 0
+  stopRange: 0
+  destroyTargetOnRange: 0
+  destroySelfOnRange: 0
+  resetVelocity: 0
 --- !u!114 &114550812044484934
 MonoBehaviour:
   m_ObjectHideFlags: 1
