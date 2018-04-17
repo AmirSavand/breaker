@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20a0529a8b2d5a41bde908d1b6bd5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  game: {fileID: 0}
   ship: {fileID: 0}
+  texts: {fileID: 1648773544228560}
   shieldText: {fileID: 102318790349503048}
   bonusText: {fileID: 102650071340239652}

@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public Ship ship;
 
+    public GameObject texts;
     public TextMesh shieldText;
     public TextMesh bonusText;
 
@@ -57,6 +58,9 @@ public class Player : MonoBehaviour
             // Show bonus text if has one currently
             bonusText.gameObject.SetActive (ship.currentBonus);
         }
+
+        // Hide attachment texts if lost
+        texts.SetActive (utility.mode.state != ModeStates.Lose);
     }
 
     void FixedUpdate ()
