@@ -17,7 +17,7 @@ public class Upgrade : MonoBehaviour
     /**
      * Information about the upgrade (used in UI)
      */
-    public string description;
+    [TextArea] public string description;
 
     /**
      * Upgrade icon (used in UI)
@@ -129,5 +129,13 @@ public class Upgrade : MonoBehaviour
     public bool isAffordable ()
     {
         return Storage.Stars >= getPrice ();
+    }
+
+    /**
+     * Show popup with info
+     */
+    public void popup ()
+    {
+        Utility.GetInstance ().createPopup (title, description);
     }
 }

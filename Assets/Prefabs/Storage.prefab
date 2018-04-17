@@ -767,7 +767,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: green-ship-fire-power
   title: Fire Power
-  description: Fire projectile speed, upgrade this to shoot faster bullets.
+  description: 'Ship fire projectile speed.
+
+
+    Upgrade this to shoot faster bullets.'
   icon: {fileID: 21300000, guid: 325c4bcd047c048458a656d2caa3ad3f, type: 3}
   amount: 1
   price: 100
@@ -787,7 +790,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: green-ship-hitpoint
   title: Hitpoints
-  description: Ship hitpoints, upgrade this to survive incoming damages.
+  description: 'Ship hitpoints.
+
+
+    Upgrade this to survive incoming damages.'
   icon: {fileID: 21300000, guid: e71d1b030b932824b8d602057a362829, type: 3}
   amount: 15
   price: 75
@@ -823,7 +829,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: red-ship-fire-power
   title: Fire Power
-  description: Fire projectile speed, upgrade this to shoot faster bullets.
+  description: 'Ship fire projectile speed.
+
+
+    Upgrade this to shoot faster bullets.'
   icon: {fileID: 21300000, guid: 325c4bcd047c048458a656d2caa3ad3f, type: 3}
   amount: 1
   price: 125
@@ -887,7 +896,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: green-ship-damage
   title: Damage
-  description: Ship bullet damage, upgrade this to deal more damage to threats.
+  description: 'Ship bullet damage.
+
+
+    Upgrade this to deal more damage to threats.'
   icon: {fileID: 21300000, guid: 60f1703efe3f7d640bc66cb47ea902f9, type: 3}
   amount: 6
   price: 75
@@ -907,7 +919,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: blue-ship-fire-rate
   title: Fire Rate
-  description: Firing speed, upgrade this to shoot faster.
+  description: 'Ship firing speed.
+
+
+    Upgrade this to shoot faster.'
   icon: {fileID: 21300000, guid: c29d05ce70443754f8511a2f07a23c35, type: 3}
   amount: -0.05
   price: 200
@@ -927,7 +942,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: blue-ship-fire-power
   title: Fire Power
-  description: Fire projectile speed, upgrade this to shoot faster bullets.
+  description: 'Ship fire projectile speed.
+
+
+    Upgrade this to shoot faster bullets.'
   icon: {fileID: 21300000, guid: 325c4bcd047c048458a656d2caa3ad3f, type: 3}
   amount: 1
   price: 75
@@ -947,7 +965,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: red-ship-hitpoint
   title: Hitpoints
-  description: Ship hitpoints, upgrade this to survive incoming damages.
+  description: 'Ship hitpoints.
+
+
+    Upgrade this to survive incoming damages.'
   icon: {fileID: 21300000, guid: e71d1b030b932824b8d602057a362829, type: 3}
   amount: 10
   price: 100
@@ -967,7 +988,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: red-ship-damage
   title: Damage
-  description: Ship bullet damage, upgrade this to deal more damage to threats.
+  description: 'Ship bullet damage.
+
+
+    Upgrade this to deal more damage to threats.'
   icon: {fileID: 21300000, guid: 60f1703efe3f7d640bc66cb47ea902f9, type: 3}
   amount: 15
   price: 100
@@ -987,7 +1011,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: green-ship-fire-rate
   title: Fire Rate
-  description: Firing speed, upgrade this to shoot faster.
+  description: 'Ship firing speed.
+
+
+    Upgrade this to shoot faster.'
   icon: {fileID: 21300000, guid: c29d05ce70443754f8511a2f07a23c35, type: 3}
   amount: -0.05
   price: 300
@@ -1007,7 +1034,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: blue-ship-hitpoint
   title: Hitpoints
-  description: Ship hitpoints, upgrade this to survive incoming damages.
+  description: 'Ship hitpoints.
+
+
+    Upgrade this to survive incoming damages.'
   icon: {fileID: 21300000, guid: e71d1b030b932824b8d602057a362829, type: 3}
   amount: 38
   price: 50
@@ -1027,7 +1057,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: red-ship-fire-rate
   title: Fire Rate
-  description: Firing speed, upgrade this to shoot faster.
+  description: 'Ship firing speed.
+
+
+    Upgrade this to shoot faster.'
   icon: {fileID: 21300000, guid: c29d05ce70443754f8511a2f07a23c35, type: 3}
   amount: -0.05
   price: 400
@@ -1097,7 +1130,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: blue-ship-damage
   title: Damage
-  description: Ship bullet damage, upgrade this to deal more damage to threats.
+  description: 'Ship bullet damage.
+
+
+    Upgrade this to deal more damage to threats.'
   icon: {fileID: 21300000, guid: 60f1703efe3f7d640bc66cb47ea902f9, type: 3}
   amount: 10
   price: 50

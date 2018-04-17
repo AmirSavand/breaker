@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Shop : MonoBehaviour
 {
@@ -75,7 +76,7 @@ public class Shop : MonoBehaviour
 
             // Add upgrade object and get button
             GameObject instance = Instantiate (upgradeObject, upgradeList.transform);
-            Button button = instance.GetComponentInChildren<Button> ();
+            Button button = instance.transform.Find ("Container/Button").GetComponent<Button> ();
 
             // Store button
             upgradeObjects.Add (instance, upgrade);
@@ -88,6 +89,9 @@ public class Shop : MonoBehaviour
             button.onClick.AddListener (updateStars);
             button.onClick.AddListener (updateUpgradeButtonsState);
             button.onClick.AddListener (() => updateUpgradeButton (instance, upgrade));
+
+            // Set info button event
+            instance.transform.Find ("Info Button").GetComponent<Button> ().onClick.AddListener (upgrade.popup);
         }
 
         // Update all button states

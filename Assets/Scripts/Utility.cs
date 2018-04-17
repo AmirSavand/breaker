@@ -32,13 +32,13 @@ public class Utility : MonoBehaviour
     [Space ()]
 
     // Transforms
-    public Transform modals;
+    public Transform popups;
 
     [Space ()]
 
     // Prefabs
     public GameObject prefabTextFloat;
-    public GameObject prefabModal;
+    public GameObject prefabPopup;
 
     [Space ()]
 
@@ -105,7 +105,7 @@ public class Utility : MonoBehaviour
     }
 
     /**
-     * Instantiate a text float
+     * Instantiate a text float.
      */
     public void createTextFloat (string text, Color color, Vector3 position)
     {
@@ -119,12 +119,19 @@ public class Utility : MonoBehaviour
     }
 
     /**
-     * Instantiate a modal in modals
+     * Instantiate a modal in modals with sound.
      */
-    public void createModal ()
+    public void createPopup (string title, string content)
     {
         // Instantiate from prefab
-        Instantiate (prefabModal, modals);
+        Transform instance = Instantiate (prefabPopup, popups).GetComponent<Transform> ();
+
+        // Set properties
+        instance.transform.Find ("Dialog/Header/Text").GetComponent<Text> ().text = title;
+        instance.transform.Find ("Dialog/Content/Text").GetComponent<Text> ().text = content;
+
+        // Play sound
+        selectSound.Play ();
     }
 
     /**

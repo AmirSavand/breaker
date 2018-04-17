@@ -52,7 +52,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243834328785510020, guid: 2e169437230385a488872b06ef3c6109,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: e74dc27757047d04b864ebc8398e6236, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.8
   m_Pitch: 1
@@ -233,10 +233,11 @@ MonoBehaviour:
   - {fileID: 114716263532753976, guid: 21afaebffbd3f574a804fa13a7309c40, type: 2}
   shipsEnemy:
   - {fileID: 114137050538759638, guid: 6a0b04b30bae645499265272b066a1fd, type: 2}
-  modals: {fileID: 0}
+  popups: {fileID: 0}
   prefabTextFloat: {fileID: 1733095893293126, guid: d964257ffd323934eb7b035b9127cee3,
     type: 2}
-  prefabModal: {fileID: 0}
+  prefabPopup: {fileID: 1773445577143416, guid: 8933b642c701340469efdcf210c480e2,
+    type: 2}
   colorStar: {r: 1, g: 0.8758622, b: 0, a: 1}
   colorScore: {r: 0.74264705, g: 0.7632353, b: 1, a: 1}
   colorHitpoint: {r: 1, g: 0.2794118, b: 0.2794118, a: 1}

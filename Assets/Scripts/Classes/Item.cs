@@ -61,5 +61,13 @@ public class Item : MonoBehaviour
     {
         return unlocked == 1;
     }
+
+    /**
+     * Show popup with info
+     */
+    public void popup ()
+    {
+        Utility.GetInstance ().createPopup (title, description);
+    }
 }
 
