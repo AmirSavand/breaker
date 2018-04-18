@@ -111,7 +111,7 @@ public class Shop : MonoBehaviour
 
         // Set price, bar and icon
         upgradeObject.GetComponentInChildren<Text> ().text = upgrade.getPrice ().ToString ();
-        upgradeObject.transform.Find ("Container/Icon/Level").GetComponent<Image> ().fillAmount = upgrade.getStockPercentage () * 100;
+        upgradeObject.transform.Find ("Container/Icon/Level").GetComponent<Image> ().fillAmount = upgrade.getStockPercentage () / 100;
         upgradeObject.transform.Find ("Container/Icon").GetComponent<Image> ().sprite = upgrade.icon;
 
         // Shop the right button text
