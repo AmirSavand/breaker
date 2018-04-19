@@ -1,3 +1,3 @@
-# Breaker
+# Breakers Force
 
-Simple one finger shooting arcade game.
+One finger shooting space game with unique modes and levels.
