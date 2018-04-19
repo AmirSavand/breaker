@@ -6991,7 +6991,7 @@ GameObject:
   - component: {fileID: 1460788483}
   - component: {fileID: 1460788482}
   m_Layer: 5
-  m_Name: Version Text
+  m_Name: Version
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7012,8 +7012,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -130}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchoredPosition: {x: 0, y: -110}
+  m_SizeDelta: {x: -40, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1460788482
 MonoBehaviour:
@@ -8310,7 +8310,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -80}
-  m_SizeDelta: {x: 0, y: 80}
+  m_SizeDelta: {x: -40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690608087
 MonoBehaviour:
@@ -8333,7 +8333,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: fc68a5b4552da0c4087f9402f408e8a2, type: 3}
-    m_FontSize: 50
+    m_FontSize: 1
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
@@ -8344,7 +8344,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Breaker
+  m_Text: Breakers Force
 --- !u!222 &1690608088
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8362,8 +8362,8 @@ MonoBehaviour:
   m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.20392157, g: 0.28627452, b: 0.36862746, a: 1}
-  m_EffectDistance: {x: 2, y: -2}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectDistance: {x: 5, y: -2}
   m_UseGraphicAlpha: 1
 --- !u!1 &1700752606
 GameObject:
