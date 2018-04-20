@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 0
-  maxHitpoints: 100
+  maxHitpoints: 50
   isInvulnerable: 0
   isDead: 0
   hitColor: {r: 1, g: 0, b: 0, a: 1}
