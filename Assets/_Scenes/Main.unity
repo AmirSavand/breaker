@@ -3450,7 +3450,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ship
+  m_Text: Breaker
 --- !u!222 &755015791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4332,10 +4332,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c083e0535bbfa4d45a6c292c425f25dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipsInfo: 'List of all ships that can be unlocked.
+  shipsInfo: 'List of all Breakers that can be unlocked.
 
 
-    To unlock ships you must break a hidden high score for each.'
+    To unlock Breakers you must break a hidden high score for each.'
   starsText: {fileID: 1926255680}
   upgradeList: {fileID: 398214668}
   upgradeObject: {fileID: 1325540706797964, guid: d89138b3072f16f428f5c5b677145b79,
@@ -10002,7 +10002,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ships
+  m_Text: Breakers
 --- !u!222 &2097026607
 CanvasRenderer:
   m_ObjectHideFlags: 0
