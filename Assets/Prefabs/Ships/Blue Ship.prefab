@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 114420868822510502}
   m_Layer: 0
   m_Name: Blue Ship
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
