@@ -1753,8 +1753,8 @@ MonoBehaviour:
   active: 0
   protecting: 0
   duration: 0
-  maxDuration: 1
-  durationRestoreFactor: 0.25
+  maxDuration: 3
+  durationRestoreFactor: 0.1
   durationCriticalPercentage: 10
   text: {fileID: 0}
 --- !u!114 &114445806617768746
