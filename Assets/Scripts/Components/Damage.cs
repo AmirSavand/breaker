@@ -25,7 +25,7 @@ public class Damage : MonoBehaviour
         }
 
         // Skip if not tag only
-        if (damageTagOnly.Length > 0 && !other.CompareTag (damageTagOnly)) {
+        if (damageTagOnly.Length > 0 && other.tag != damageTagOnly && other.transform.root.tag != damageTagOnly) {
             return;
         }
 		
