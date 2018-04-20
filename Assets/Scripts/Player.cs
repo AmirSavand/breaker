@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         ship.shield.text = shieldText;
     }
 
-    void Update ()
+    void LateUpdate ()
     {
         // Game is running
         if (utility.mode.state == ModeStates.Run) {

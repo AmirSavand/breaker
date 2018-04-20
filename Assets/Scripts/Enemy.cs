@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
         InvokeRepeating ("switchMoveTarget", 0, switchMoveTimer);
     }
 
-    void Update ()
+    void LateUpdate ()
     {
         // Destry enemy if has no ship
         if (!ship) {
@@ -38,8 +38,8 @@ public class Enemy : MonoBehaviour
             // Always fire
             ship.fire ();
 
-            // Look at player's ship
-            ship.lookAt (utility.mode.player.ship.transform);
+            // Look at player
+            ship.lookAt (utility.mode.player.transform);
         }
     }
 
