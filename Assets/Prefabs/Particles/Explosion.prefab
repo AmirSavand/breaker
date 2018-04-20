@@ -54,6 +54,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyAfterParticle: 1
+  destroyExitTriggers: 0
+  destroyExitTriggersTagOnly: 
+  destroyObjectOnClick: {fileID: 0}
+  button: {fileID: 0}
 --- !u!198 &198764448683996780
 ParticleSystem:
   m_ObjectHideFlags: 1
