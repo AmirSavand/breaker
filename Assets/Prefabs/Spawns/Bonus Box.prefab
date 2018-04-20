@@ -35,9 +35,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4750618032570264}
+  - component: {fileID: 50356963252485270}
   - component: {fileID: 82460324025931914}
   - component: {fileID: 114992933811100340}
   - component: {fileID: 114778053961182416}
+  - component: {fileID: 114222516476337870}
   m_Layer: 0
   m_Name: Bonus Box
   m_TagString: Untagged
@@ -54,7 +56,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4202395947051318}
   - component: {fileID: 212912817033485922}
-  - component: {fileID: 50538080930844724}
   - component: {fileID: 60751729282142304}
   m_Layer: 0
   m_Name: Model
@@ -104,13 +105,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50538080930844724
+--- !u!50 &50356963252485270
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1945400567620008}
+  m_GameObject: {fileID: 1494016192740322}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -316,6 +317,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114222516476337870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1494016192740322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0738c9c8776314fb94fa5ccbe8228f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  damageTagOnly: Player
+  whiteList: []
 --- !u!114 &114778053961182416
 MonoBehaviour:
   m_ObjectHideFlags: 1
