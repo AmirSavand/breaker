@@ -70,7 +70,12 @@ public class Hitpoint : MonoBehaviour
             // Revert to original color
             Invoke ("revertColor", 0.05f);
 
-            // No hitsound and text float for invulnerables
+            // Hit sound
+            if (hitSound) {
+                hitSound.Play ();
+            }
+
+            // No hit text float for invulnerables
             if (!isInvulnerable) {
                 
                 // Show hit text float
@@ -78,11 +83,6 @@ public class Hitpoint : MonoBehaviour
 
                     // Show damage text float
                     utility.createTextFloat ("-" + amount, utility.colorHitpoint, transform.position);
-                }
-
-                // Hit sound
-                if (hitSound) {
-                    hitSound.Play ();
                 }
             }
         }
