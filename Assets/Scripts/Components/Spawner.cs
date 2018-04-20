@@ -95,7 +95,7 @@ public class Spawner : MonoBehaviour
             foreach (Hitpoint hitpoint in instance.GetComponentsInChildren<Hitpoint>()) {
             
                 // Set hitpoints to current spawn hitpoints
-                hitpoint.setMaxHitpoints (hitpoint.hitpoints + spawnHitpoints);
+                hitpoint.setMaxHitpoints (hitpoint.maxHitpoints + spawnHitpoints);
             }
         }
 
