@@ -139,7 +139,8 @@ public class Utility : MonoBehaviour
      */
     public void takeScreenshot ()
     {
-        ScreenCapture.CaptureScreenshot (System.IO.Path.Combine (Application.persistentDataPath, "screenshot.png"));
-        Application.OpenURL (System.IO.Path.Combine (Application.persistentDataPath, "screenshot.png"));
+        string fileName = "screenshot-" + System.DateTime.Now.ToString ("HH-mm-ss") + ".png";
+        ScreenCapture.CaptureScreenshot (System.IO.Path.Combine (Application.persistentDataPath, fileName));
+        //Application.OpenURL (System.IO.Path.Combine (Application.persistentDataPath, fileName));
     }
 }
