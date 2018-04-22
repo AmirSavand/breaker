@@ -4,47 +4,53 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-	public float damage = 100;
+    public float damage = 100;
+    public string damageTagOnly;
 
-	public List<Collider2D> whiteList;
+    public List<Collider2D> whiteList;
 
-	private Hitpoint hitpoint;
+    private Hitpoint hitpoint;
 
-	void Start ()
-	{
-		// Get inits
-		hitpoint = GetComponent<Hitpoint> ();
-	}
+    void Start ()
+    {
+        // Get inits
+        hitpoint = GetComponent<Hitpoint> ();
+    }
 
-	void OnTriggerEnter2D (Collider2D other)
-	{
-		// If it's in white list
-		if (whiteList.Contains (other)) {
-			return;
-		}
+    void OnTriggerEnter2D (Collider2D other)
+    {
+        // Skip white listed collider
+        if (whiteList.Contains (other)) {
+            return;
+        }
+
+        // Skip if not tag only
+        if (damageTagOnly.Length > 0 && other.tag != damageTagOnly && other.transform.root.tag != damageTagOnly) {
+            return;
+        }
 		
-		// Get HP controller
-		Hitpoint otherHitpoint = other.GetComponentInParent<Hitpoint> ();
+        // Get HP controller
+        Hitpoint otherHitpoint = other.GetComponentInParent<Hitpoint> ();
 
-		// If target has hitpoint
-		if (otherHitpoint) {
+        // If target has hitpoint
+        if (otherHitpoint) {
 
-			// Deal damage to target
-			otherHitpoint.damage (damage);
+            // Deal damage to target
+            otherHitpoint.damage (damage);
 
-			// If self has hitpoint too (like an object like rock)
-			if (hitpoint) {
+            // If self has hitpoint too (like an object like rock)
+            if (hitpoint) {
 
-				// Kill by hitpoint
-				hitpoint.damage (hitpoint.hitpoints);
-			}
+                // Kill by hitpoint
+                hitpoint.damage (hitpoint.hitpoints);
+            }
 
 			// No self hitpoint (like a bullet)
 			else {
 				
-				// Destroy self
-				Destroy (gameObject);
-			}
-		}
-	}
+                // Destroy self
+                Destroy (gameObject);
+            }
+        }
+    }
 }

@@ -5,181 +5,226 @@ using UnityEngine.UI;
 
 public class Hitpoint : MonoBehaviour
 {
-	[Header ("Hitpoint")]
-	public float hitpoints = 100;
-	public float maxHitpoints = 100;
-	public bool isDead = false;
+    [Header ("Hitpoint")]
+    public float hitpoints;
+    public float maxHitpoints = 100;
 
-	[Header ("Sound")]
-	public GameObject audioHolder;
-	public AudioSource hitSound;
-	public AudioSource deathSound;
+    public bool isInvulnerable = false;
+    public bool isDead = false;
 
-	[Header ("Screen shake and vibrate")]
-	public float shakeOnDeathDuration = 0.1f;
-	public bool vibrateOnDeath = false;
+    public Color hitColor = Color.red;
 
-	[Header ("Destroy")]
-	public GameObject destroyObjectOnDeath;
-	public bool destroySelfOnDeath = true;
+    [Header ("Sound")]
+    public GameObject audioHolder;
+    public AudioSource hitSound;
+    public AudioSource deathSound;
 
-	[Header ("Particle system")]
-	public GameObject explosionParticle;
+    [Header ("Screen shake and vibrate")]
+    public float shakeOnDeathDuration = 0.1f;
+    public bool vibrateOnDeath = false;
 
-	[Header ("Pieces")]
-	public GameObject pieces;
-	public float piecesForce = 50;
+    [Header ("Destroy")]
+    public GameObject destroyObjectOnDeath;
+    public bool destroySelfOnDeath = true;
 
-	[Header ("Death reward and text")]
-	public int deathStars;
-	public int deathScore;
-	public Vector3 deathTextFloatOffset = new Vector3 (0, 0, 0);
-	public bool enableDamageTextFloat = false;
+    [Header ("Particle system")]
+    public GameObject explosionParticle;
 
-	[Header ("Global text")]
-	public bool updateHitpointText = false;
+    [Header ("Pieces")]
+    public GameObject pieces;
+    public float piecesForce = 50;
 
-	private SpriteRenderer spriteRenderer;
-	private Color spriteColor;
-	private Cam cam;
-	private Game game;
+    [Header ("Death rewards and texts")]
+    public Bonus deathBonus;
+    public int deathStars;
+    public int deathScore;
+    public Vector3 deathTextFloatOffset = new Vector3 (0, 0, 0);
+    public bool enableDamageTextFloat = false;
 
-	void Start ()
-	{
-		// Set HP to max HP
-		hitpoints = maxHitpoints;
+    [Header ("Global text")]
+    public bool updatesGlobalHitpointText = false;
 
-		// Get inits
-		cam = Camera.main.GetComponent<Cam> ();
-		game = GameObject.FindWithTag ("Game").GetComponent<Game> ();
-		spriteRenderer = GetComponentInChildren<SpriteRenderer> ();
-		spriteColor = spriteRenderer.color;
-	}
+    private Utility utility;
+    private SpriteRenderer spriteRenderer;
+    private Color spriteColor;
 
-	public void damage (float amount)
-	{	
-		// Has HP (alive)
-		if (hitpoints > 0) {
+    void Start ()
+    {
+        // Set HP to max HP
+        hitpoints = maxHitpoints;
+
+        // Get inits
+        utility = Utility.GetInstance ();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer> ();
+        spriteColor = spriteRenderer.color;
+    }
+
+    public void damage (float amount)
+    {	
+        // Has HP (alive)
+        if (hitpoints > 0) {
 		
-			// Change color to red
-			spriteRenderer.color = Color.red;
+            // Change color to red
+            spriteRenderer.color = hitColor;
 
-			// Revert to original color
-			Invoke ("revertColor", 0.05f);
+            // Revert to original color
+            Invoke ("revertColor", 0.05f);
 
-			// Show hit text float
-			if (enableDamageTextFloat) {
+            // Hit sound
+            if (hitSound) {
+                hitSound.Play ();
+            }
 
-				// Show damage text float
-				game.createTextFloat ("-" + amount, game.textFloatHitpointColor, transform.position);
-			}
+            // No hit text float for invulnerables
+            if (!isInvulnerable) {
+                
+                // Show hit text float
+                if (enableDamageTextFloat) {
 
-			// Hit sound
-			if (hitSound) {
-				hitSound.Play ();
-			}
-		}
+                    // Show damage text float
+                    utility.createTextFloat ("-" + amount, utility.colorHitpoint, transform.position);
+                }
+            }
+        }
 
-		// Deal damage
-		hitpoints = Mathf.Clamp (hitpoints -= amount, 0, maxHitpoints);
+        // Deal damage (if not invulnerable)
+        if (!isInvulnerable) {
+            hitpoints = Mathf.Clamp (hitpoints -= amount, 0, maxHitpoints);
+        }
 
-		// If has a text to update
-		if (updateHitpointText) {
-			game.hitpointsText.text = Mathf.FloorToInt (hitpoints / maxHitpoints * 100).ToString ();
-		}
+        // Text update (UI)
+        updateHitpoinText ();
 
-		// No HP left (dead)
-		if (hitpoints == 0) {
+        // No HP left (dead)
+        if (hitpoints == 0) {
 
-			// Is about to die
-			if (!isDead) {
+            // Is about to die
+            if (!isDead) {
 
-				// Gives stars on death
-				if (deathStars > 0) {
-					game.giveStar (deathStars, transform.position + deathTextFloatOffset);
-				}
+                // Gives stars on death
+                if (deathStars > 0) {
+                    utility.mode.giveStar (deathStars, transform.position + deathTextFloatOffset);
+                }
 
-				// Gives score on death
-				if (deathScore > 0) {
-					game.giveScore (deathScore, transform.position + deathTextFloatOffset);
-				}
+                // Gives score on death
+                if (deathScore > 0) {
+                    utility.mode.giveScore (deathScore, transform.position + deathTextFloatOffset);
+                }
 
-				// Death sound
-				if (deathSound) {
+                // Death sound
+                if (deathSound) {
 
-					// Sperate the holder then destroy after audio finished
-					if (audioHolder) {
-						audioHolder.transform.parent = null;
-						Destroy (audioHolder, deathSound.clip.length);
-					}
+                    // Sperate the holder then destroy after audio finished
+                    if (audioHolder) {
+                        audioHolder.transform.parent = null;
+                        Destroy (audioHolder, deathSound.clip.length);
+                    }
 
-					// Play the audio then destroy the holder
-					deathSound.Play ();
-				}
-			}
+                    // Play the audio then destroy the holder
+                    deathSound.Play ();
+                }
 
-			// If should shake camera on death
-			if (shakeOnDeathDuration > 0) {
-				cam.shake (shakeOnDeathDuration, vibrateOnDeath);
-			}
+                // Death bonus
+                if (deathBonus) {
 
-			// If has death piece
-			if (pieces) {
+                    // Apply bonus to ship
+                    utility.mode.player.ship.applyBonus (deathBonus);
 
-				// Activate
-				pieces.SetActive (true);
+                    // Show text of bonus
+                    utility.createTextFloat (deathBonus.floatText, deathBonus.color, transform.position);
+                }
+            }
 
-				// Detach from this object
-				pieces.transform.parent = null;
+            // If should shake camera on death
+            if (shakeOnDeathDuration > 0) {
+                utility.cam.shake (shakeOnDeathDuration, vibrateOnDeath);
+            }
 
-				// For each piece
-				foreach (Rigidbody2D piece in pieces.GetComponentsInChildren<Rigidbody2D>()) {
+            // If has death piece
+            if (pieces) {
 
-					// Create explosion like force for that piece
-					piece.AddForce (new Vector2 (Random.Range (-5, 5), Random.Range (-5, 5)) * piecesForce);
+                // Activate
+                pieces.SetActive (true);
 
-					// Set color
-					piece.GetComponent<SpriteRenderer> ().color = spriteColor;
+                // Detach from this object
+                pieces.transform.parent = null;
 
-					// Detatch piece too
-					piece.transform.parent = null;
-				}
+                // For each piece
+                foreach (Rigidbody2D piece in pieces.GetComponentsInChildren<Rigidbody2D>()) {
 
-				// Destroy the piece holder too
-				Destroy (pieces);
-			}
+                    // Create explosion like force for that piece
+                    piece.AddForce (new Vector2 (Random.Range (-5, 5), Random.Range (-5, 5)) * piecesForce);
 
-			// If destroys an object on death
-			if (destroyObjectOnDeath) {
-				Destroy (destroyObjectOnDeath);
-			}
+                    // Set color
+                    piece.GetComponent<SpriteRenderer> ().color = spriteColor;
 
-			// Destroy if should self distruct
-			if (destroySelfOnDeath) {
+                    // Detatch piece too
+                    piece.transform.parent = null;
+                }
 
-				// If has explosion particle
-				if (explosionParticle) {
-					Instantiate (explosionParticle, transform.position, transform.rotation);
-				}
+                // Destroy the piece holder too
+                Destroy (pieces);
+            }
 
-				// Destroy self
-				Destroy (gameObject);
-			}
+            // If destroys an object on death
+            if (destroyObjectOnDeath) {
+                Destroy (destroyObjectOnDeath);
+            }
 
-			// Store life status
-			isDead = true;
-		}
-	}
+            // Destroy if should self distruct
+            if (destroySelfOnDeath) {
 
-	public void kill ()
-	{
-		// Damage as much as hitpoint
-		damage (hitpoints);
-	}
+                // If has explosion particle
+                if (explosionParticle) {
+                    Instantiate (explosionParticle, transform.position, transform.rotation);
+                }
 
-	private void revertColor ()
-	{
-		// Set to original color
-		spriteRenderer.color = spriteColor;
-	}
+                // Destroy self
+                Destroy (gameObject);
+            }
+
+            // Store life status
+            isDead = true;
+        }
+    }
+
+    /**
+     * Damage as much as hitpoint
+     */
+    public void kill ()
+    {
+        damage (hitpoints);
+    }
+
+    /**
+     * Heal and clamp (0, max hp)
+     */
+    public void heal (float value)
+    {
+        hitpoints = Mathf.Clamp (hitpoints + value, 1, maxHitpoints);
+        updateHitpoinText ();
+    }
+
+    public void setMaxHitpoints (float value)
+    {
+        // Set max hitpoints and current hitpoins to value
+        maxHitpoints = value;
+        hitpoints = value;
+    }
+
+    /**
+     * Update the global hitpoint text if should
+     */
+    public void updateHitpoinText ()
+    {
+        if (updatesGlobalHitpointText) {
+            utility.mode.hitpointsText.text = Mathf.FloorToInt (hitpoints / maxHitpoints * 100).ToString ();
+        }   
+    }
+
+    private void revertColor ()
+    {
+        // Set to original color
+        spriteRenderer.color = spriteColor;
+    }
 }

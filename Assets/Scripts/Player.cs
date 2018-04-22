@@ -1,66 +1,112 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-	public float firePower = 2;
-	public float fireDamage = 100;
-	public float fireLifetime = 1;
-	public float fireRate = 1;
-	private float lastTimeFired;
-	public Transform fireFrom;
-	public GameObject fireBullet;
-	public AudioSource fireSound;
+    public Ship ship;
 
-	void Update ()
-	{
-		// Click and fire
-		if (Input.GetMouseButton (0)) {
+    public GameObject texts;
+    public TextMesh shieldText;
+    public TextMesh bonusText;
 
-			// Fire bullet
-			fire ();
-		}
-	}
+    public Transform movePointMiddle;
+    public Transform movePointLeft;
+    public Transform movePointRight;
 
-	void FixedUpdate ()
-	{
-		// Turn up
-		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler (0, 0, 0), Time.deltaTime);
-	}
+    private Utility utility;
 
-	public void fire ()
-	{
-		// Call to rotate to mouse
-		rotate ();
+    void Start ()
+    {
+        // Init vars
+        utility = Utility.GetInstance ();
 
-		// Check cooldown
-		if (Time.time - lastTimeFired < fireRate) {
-			return;
-		}
+        // Load current ship
+        ship = Instantiate (utility.getSelectedShip ().gameObject, transform).GetComponent<Ship> ();
 
-		// Fire sound
-		fireSound.Play ();
+        // Set ship vars
+        ship.shield.text = shieldText;
+    }
 
-		// Create bullet from fire from position
-		GameObject bullet = Instantiate (fireBullet, fireFrom.transform.position, transform.rotation);
+    void LateUpdate ()
+    {
+        // Game is running
+        if (utility.mode.state == ModeStates.Run) {
 
-		// Set bullet speed to fire power (up times power)
-		bullet.GetComponent<Move> ().directionSpeed = bullet.transform.up * firePower;
+            // On mouse click
+            if (Input.GetMouseButton (0)) {
 
-		// Limit fire lifetime
-		Destroy (bullet, fireLifetime);
+                // Mouse not over the ship
+                if (!isMouseOver ()) {
+                    faceMouse ();
+                    ship.fire ();
+                    ship.shield.active = false;
+                }
 
-		// Fire rate cooldown (save last time)
-		lastTimeFired = Time.time;
-	}
+                // Mouse over ship
+                else {
 
-	public void rotate ()
-	{
-		// Rotate to click position
-		Vector3 mouseScreen = Input.mousePosition;
-		Vector3 mouse = Camera.main.ScreenToWorldPoint (mouseScreen);
-		transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 (mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
-	}
+                    // Activate shield if has at least 1 second duration
+                    ship.shield.active = ship.shield.duration > 0;
+                }
+            }
+
+            // Has a bonus currently
+            if (ship.currentBonus) {
+
+                // Show bonus text
+                bonusText.text = ship.currentBonus.title;
+                bonusText.color = ship.currentBonus.color;
+            }
+
+            // Show bonus text if has one currently
+            bonusText.gameObject.SetActive (ship.currentBonus);
+
+            // Move point based on device rotation (no rotation, stay middle)
+            Transform movePoint = movePointMiddle;
+
+            // Rotated phone enough?
+            if (Mathf.Abs (Input.acceleration.x) > 0.3f) {
+
+                // Set move point to righ/left
+                movePoint = Input.acceleration.x > 0 ? movePointRight : movePointLeft;
+            }
+
+            // Set ship to move to point
+            ship.GetComponent<MoveTo> ().target = movePoint;
+        }
+
+        // Hide attachment texts if lost
+        texts.SetActive (utility.mode.state != ModeStates.Lose);
+    }
+
+    void FixedUpdate ()
+    {
+        // Game is running
+        if (utility.mode.state == ModeStates.Run) {
+
+            // Face up 
+            ship.transform.rotation = Quaternion.Lerp (ship.transform.rotation, Quaternion.Euler (0, 0, 0), Time.deltaTime);
+        }
+    }
+
+    /**
+     * Check if player mouse/finger is on the ship
+     */
+    public bool isMouseOver ()
+    {
+        Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+        mouse.z = transform.position.z;
+        return GetComponent<Collider2D> ().bounds.Contains (mouse);
+    }
+
+    /**
+     * Instantly turn and face where mouse/finger is
+     */
+    public void faceMouse ()
+    {
+        Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+        Vector3 pos = ship.transform.position;
+        ship.transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 (mouse.y - pos.y, mouse.x - pos.x) * Mathf.Rad2Deg - 90);
+    }
 }
