@@ -2212,6 +2212,7 @@ MonoBehaviour:
   title: Easy
   player: {fileID: 1306549050}
   state: 0
+  spawners: {fileID: 910219886}
   time: 0
   stars: 0
   score: 0

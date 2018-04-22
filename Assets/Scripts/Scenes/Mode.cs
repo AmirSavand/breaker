@@ -20,6 +20,7 @@ public class Mode : MonoBehaviour
 
     public Player player;
     public ModeStates state;
+    public GameObject spawners;
     public float time;
     public int stars;
     public int score;
@@ -73,6 +74,12 @@ public class Mode : MonoBehaviour
 
             // Update state
             state = ModeStates.Lose;
+
+            // Stop music
+            utility.sceneMusic.Stop ();
+
+            // Destroy all spawners
+            Destroy (spawners.gameObject);
 
             // Show loss screen after a moment
             Invoke ("lose", 2);
