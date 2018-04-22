@@ -62,6 +62,9 @@ public class Player : MonoBehaviour
             // Show bonus text if has one currently
             bonusText.gameObject.SetActive (ship.currentBonus);
 
+            /**
+             * This features is disabled for now till next update.
+
             // Move point based on device rotation (no rotation, stay middle)
             Transform movePoint = movePointMiddle;
 
@@ -74,6 +77,7 @@ public class Player : MonoBehaviour
 
             // Set ship to move to point
             ship.GetComponent<MoveTo> ().target = movePoint;
+            */
         }
 
         // Hide attachment texts if lost
