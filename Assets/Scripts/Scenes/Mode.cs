@@ -35,6 +35,7 @@ public class Mode : MonoBehaviour
 
     public Color[] backgroundColors;
 
+    [TextArea ()]
     public string[] startMessages;
     public TextMesh startMessageTextMesh;
 
@@ -46,7 +47,7 @@ public class Mode : MonoBehaviour
         utility = Utility.GetInstance ();
         
         // Random start message
-        startMessageTextMesh.text = startMessages [Random.Range (0, startMessages.Length)].Replace ("\\n", "\n");
+        startMessageTextMesh.text = startMessages [Random.Range (0, startMessages.Length)];
 
         // Random background color
         Camera.main.backgroundColor = backgroundColors [Random.Range (0, backgroundColors.Length)];
