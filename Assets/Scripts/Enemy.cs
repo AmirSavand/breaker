@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 
     void Start ()
     {
-        // Init ship
+        // Init vars
         utility = Utility.GetInstance ();
         ship = Instantiate (utility.shipsEnemy [Random.Range (0, utility.shipsEnemy.Length)].gameObject, transform).GetComponent<Ship> ();
         moveTo = GetComponent<MoveTo> ();
@@ -35,11 +35,11 @@ public class Enemy : MonoBehaviour
         // If game is running
         if (utility.mode.state == ModeStates.Run) {
 
-            // Always fire
-            ship.fire ();
-
             // Look at player
-            ship.lookAt (utility.mode.player.transform);
+            ship.lookAt (utility.mode.player.ship.transform);
+
+            // Keep firing
+            ship.fire ();
         }
     }
 
