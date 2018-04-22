@@ -677,7 +677,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Coins
+  m_Text: 'Stars
 
     +250'
 --- !u!222 &241745101
