@@ -96,8 +96,8 @@ public class Player : MonoBehaviour
     public bool isMouseOver ()
     {
         Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-        mouse.z = transform.position.z;
-        return GetComponent<Collider2D> ().bounds.Contains (mouse);
+        mouse.z = ship.transform.position.z;
+        return ship.GetComponent<Collider2D> ().bounds.Contains (mouse);
     }
 
     /**
