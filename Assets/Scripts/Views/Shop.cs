@@ -38,16 +38,23 @@ public class Shop : MonoBehaviour
 
     void Start ()
     {
+        // Called only once
         setupShips ();
     }
 
     void OnEnable ()
     {
-        // Init var
-        currentShip = utility.getSelectedShip ();
+        // Current ship is changed
+        if (currentShip != utility.getSelectedShip ()) {
 
-        setupUpgrades ();
+            // Get current ship and setup upgrade items
+            currentShip = utility.getSelectedShip ();
+            setupUpgrades ();
+        }
+
+        // Called everytime shop is viewed
         updateStars ();
+        updateUpgradeButtonsState ();
     }
 
     /**
