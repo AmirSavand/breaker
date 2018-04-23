@@ -1785,6 +1785,11 @@ Prefab:
       propertyPath: popups
       value: 
       objectReference: {fileID: 1729350100}
+    - target: {fileID: 82490955150558330, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cdd94a90d56292245bb62fea8ce460a1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86d7ed2237397154c927a6f4187bb2d9, type: 2}
   m_IsPrefabParent: 0
