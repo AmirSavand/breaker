@@ -127,6 +127,9 @@ public class Mode : MonoBehaviour
             GameObject.Find ("High Score Result Text").GetComponent<Text> ().text = "New High Score";
         }
 
+        // Update mode score
+        GameObject.Find (utility.sceneActive).GetComponent<Classes.Mode> ().saveScore (score);
+
         // Update save data
         Storage.Save ();
     }
