@@ -7,7 +7,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - audioMixer: {fileID: 24100000, guid: 2e169437230385a488872b06ef3c6109, type: 2}
-  executionOrder: 0
+  executionOrder: -100
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 
