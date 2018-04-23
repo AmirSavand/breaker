@@ -183,6 +183,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1390366415690030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4718110167771060}
+  m_Layer: 0
+  m_Name: Modes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1397172370297086
 GameObject:
   m_ObjectHideFlags: 1
@@ -341,6 +356,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1833795671331848
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4613351282605078}
+  - component: {fileID: 114832037516595290}
+  m_Layer: 0
+  m_Name: Mode Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1855565442512506
 GameObject:
   m_ObjectHideFlags: 1
@@ -352,6 +383,22 @@ GameObject:
   - component: {fileID: 114172932923892172}
   m_Layer: 0
   m_Name: Fire Power
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1882363077519164
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4146528261850856}
+  - component: {fileID: 114384879511453106}
+  m_Layer: 0
+  m_Name: Mode Easy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -487,6 +534,19 @@ Transform:
   m_Father: {fileID: 4800895049236266}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4146528261850856
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882363077519164}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4718110167771060}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4162416987227546
 Transform:
   m_ObjectHideFlags: 1
@@ -543,6 +603,7 @@ Transform:
   - {fileID: 4660729199452960}
   - {fileID: 4579416854722942}
   - {fileID: 4800895049236266}
+  - {fileID: 4718110167771060}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -631,6 +692,19 @@ Transform:
   m_Father: {fileID: 4289998385491118}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4613351282605078
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833795671331848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4718110167771060}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4637103604992278
 Transform:
   m_ObjectHideFlags: 1
@@ -659,6 +733,21 @@ Transform:
   - {fileID: 4431126196546966}
   m_Father: {fileID: 4289998385491118}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4718110167771060
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390366415690030}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4613351282605078}
+  - {fileID: 4146528261850856}
+  m_Father: {fileID: 4289998385491118}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4751476998977116
 Transform:
@@ -883,6 +972,25 @@ MonoBehaviour:
   floatText: +Damge
   duration: 5
   amount: 800
+--- !u!114 &114384879511453106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882363077519164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eefefbbc88a3086438d4e08ff6196264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: mode-easy
+  sceneName: Mode Easy
+  modeName: Easy
+  highScore: 0
+  scoreBronze: 50000
+  scoreSilver: 75000
+  scoreGold: 100000
+  isUnlocked: 0
 --- !u!114 &114434937168900856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1084,6 +1192,25 @@ MonoBehaviour:
   floatText: +Fire Rate
   duration: 5
   amount: 0.1
+--- !u!114 &114832037516595290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833795671331848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eefefbbc88a3086438d4e08ff6196264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: mode-tutorial
+  sceneName: Mode Tutorial
+  modeName: Tutorial
+  highScore: 0
+  scoreBronze: 1000
+  scoreSilver: 2000
+  scoreGold: 3000
+  isUnlocked: 0
 --- !u!114 &114833856845050284
 MonoBehaviour:
   m_ObjectHideFlags: 1
