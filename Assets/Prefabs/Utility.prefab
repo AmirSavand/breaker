@@ -222,6 +222,7 @@ MonoBehaviour:
   sceneMain: Main
   scenesMode:
   - Mode Easy
+  - Mode Tutorial
   ships:
   - {fileID: 114195875109159520, guid: 74cb8b598f5bf1648b783e3014e52f2f, type: 2}
   - {fileID: 114952721037866396, guid: 74582e98c69731c4fb969cec966679a8, type: 2}
