@@ -20,7 +20,6 @@ public class Utility : MonoBehaviour
     // Scenes
     public string sceneActive;
     public string sceneMain;
-    public string[] scenesMode;
 
     [Space ()]
 
@@ -89,7 +88,7 @@ public class Utility : MonoBehaviour
     }
 
     /**
-     * Load prepeared scene (scenes: sceneMain, sceneLevels).
+     * Load a scene by name.
      */
     public void loadScene (string name)
     {
@@ -141,6 +140,5 @@ public class Utility : MonoBehaviour
     {
         string fileName = "screenshot-" + System.DateTime.Now.ToString ("HH-mm-ss") + ".png";
         ScreenCapture.CaptureScreenshot (System.IO.Path.Combine (Application.persistentDataPath, fileName));
-        //Application.OpenURL (System.IO.Path.Combine (Application.persistentDataPath, fileName));
     }
 }
