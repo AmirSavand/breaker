@@ -8,9 +8,15 @@ using UnityEngine.UI;
  */
 public class Main : MonoBehaviour
 {
+    public GameObject modeList;
+    public GameObject modeObject;
+
+    public Classes.Mode[] modes;
+
     public Text version;
 
     private Utility utility;
+    private bool loadedModes;
 
     void Start ()
     {
@@ -19,14 +25,46 @@ public class Main : MonoBehaviour
 
         // Set version to current build version
         version.text = Application.version;
+
+        // Prepare modes
+        setupModes ();
     }
 
     /**
-     * Load first mode (easy)
+     * Setup modes item for selection and show the right trophy.
      */
-    public void startMode ()
+    public void setupModes ()
     {
-        utility.loadScene (utility.scenesMode [0]);
+        // For all modes
+        foreach (Classes.Mode mode in modes) {
+        
+            // Create mode button
+            GameObject instance = Instantiate (modeObject, modeList.transform);
+
+            // Button click loads mode
+            instance.GetComponent<Button> ().onClick.AddListener (() => utility.loadScene (mode.sceneName));
+
+            // Set mode name
+            instance.GetComponentInChildren<Text> ().text = mode.modeName;
+
+            // Set trophies
+            if (mode.isBronzeUnlocked ()) {
+                Transform trophy = instance.transform.Find ("Trophies/Bronze");
+                trophy.GetComponent<Image> ().color = Color.white;
+                trophy.GetComponent<Shadow> ().enabled = true;
+            }
+
+            if (mode.isSilverUnlocked ()) {
+                Transform trophy = instance.transform.Find ("Trophies/Silver");
+                trophy.GetComponent<Image> ().color = Color.white;
+                trophy.GetComponent<Shadow> ().enabled = true;
+            }
+
+            if (mode.isGoldUnlocked ()) {
+                Transform trophy = instance.transform.Find ("Trophies/Gold");
+                trophy.GetComponent<Image> ().color = Color.white;
+                trophy.GetComponent<Shadow> ().enabled = true;
+            }
+        }
     }
 }
-
