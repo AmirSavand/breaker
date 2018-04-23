@@ -40,3 +40,5 @@ MonoBehaviour:
     m_Color: {r: 0, g: 1, b: 0.6275861, a: 1}
   - m_Name: Available
     m_Color: {r: 0.034482718, g: 1, b: 0, a: 1}
+  - m_Name: Trophy (Not Earned)
+    m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
