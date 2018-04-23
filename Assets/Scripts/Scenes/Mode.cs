@@ -179,8 +179,8 @@ public class Mode : MonoBehaviour
      */
     public void pause ()
     {
-        // Check if game is paused
-        if (state == ModeStates.Pause) {
+        // Check if game is running
+        if (state != ModeStates.Run) {
             return;
         }
 
