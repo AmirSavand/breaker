@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Hitpoint : MonoBehaviour
 {
@@ -43,6 +44,9 @@ public class Hitpoint : MonoBehaviour
 
     [Header ("Global text")]
     public bool updatesGlobalHitpointText = false;
+
+    [Header ("Event")]
+    public UnityEvent onDeath;
 
     private Utility utility;
     private SpriteRenderer spriteRenderer;
@@ -133,6 +137,9 @@ public class Hitpoint : MonoBehaviour
                     // Show text of bonus
                     utility.createTextFloat (deathBonus.floatText, deathBonus.color, transform.position);
                 }
+
+                // On death events
+                onDeath.Invoke ();
             }
 
             // If should shake camera on death

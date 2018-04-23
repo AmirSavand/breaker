@@ -16,24 +16,37 @@ public enum ModeStates
  */
 public class Mode : MonoBehaviour
 {
-    public string title;
-
     public Player player;
     public ModeStates state;
     public GameObject spawners;
+
+    [Space ()]
+
     public float time;
     public int stars;
     public int score;
+
+    [Space ()]
+
+    public float timeScoreFactor = 10;
+
+    [Space ()]
 
     public GameObject runUI;
     public GameObject pauseUI;
     public GameObject loseUI;
 
+    [Space ()]
+
     public Text timeText;
     public Text starsText;
     public Text hitpointsText;
 
+    [Space ()]
+
     public Color[] backgroundColors;
+
+    [Space ()]
 
     [TextArea ()]
     public string[] startMessages;
@@ -73,17 +86,8 @@ public class Mode : MonoBehaviour
         // If player's ship is destroyed
         if (!player.ship && state != ModeStates.Lose) {
 
-            // Update state
-            state = ModeStates.Lose;
-
-            // Stop music
-            utility.sceneMusic.Stop ();
-
-            // Destroy all spawners
-            Destroy (spawners.gameObject);
-
-            // Show loss screen after a moment
-            Invoke ("lose", 2);
+            // Lose
+            lose ();
         }
 
         // If press PageUp take a screenshot
@@ -93,9 +97,27 @@ public class Mode : MonoBehaviour
     }
 
     /**
+     * Make player lose
+     */
+    public void lose ()
+    {
+        // Update state
+        state = ModeStates.Lose;
+
+        // Stop music
+        utility.sceneMusic.Stop ();
+
+        // Destroy all spawners
+        Destroy (spawners.gameObject);
+
+        // Show loss screen after a moment
+        Invoke ("gameOver", 2);
+    }
+
+    /**
      * Show loss UI and stats
      */
-    void lose ()
+    void gameOver ()
     {
         // Check if lost
         if (state != ModeStates.Lose) {
@@ -106,7 +128,7 @@ public class Mode : MonoBehaviour
         updateUI ();
 
         // Calculate score
-        score += (int)time * 10;
+        score += (int)(time * timeScoreFactor);
         score += stars * 100;
 
         // Update results

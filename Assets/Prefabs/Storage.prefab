@@ -1207,9 +1207,9 @@ MonoBehaviour:
   sceneName: Mode Tutorial
   modeName: Tutorial
   highScore: 0
-  scoreBronze: 1000
-  scoreSilver: 2000
-  scoreGold: 3000
+  scoreBronze: 100
+  scoreSilver: 200
+  scoreGold: 300
   isUnlocked: 0
 --- !u!114 &114833856845050284
 MonoBehaviour:

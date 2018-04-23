@@ -33,23 +33,16 @@ public class Player : MonoBehaviour
         // Game is running
         if (utility.mode.state == ModeStates.Run) {
 
-            // On mouse click
-            if (Input.GetMouseButton (0)) {
+            // On mouse click and not on ship
+            if (Input.GetMouseButton (0) && !isMouseOver ()) {
 
-                // Mouse not over the ship
-                if (!isMouseOver ()) {
-                    faceMouse ();
-                    ship.fire ();
-                    ship.shield.active = false;
-                }
-
-                // Mouse over ship
-                else {
-
-                    // Activate shield if has at least 1 second duration
-                    ship.shield.active = ship.shield.duration > 0;
-                }
+                // Ship faces mouse and shoots
+                faceMouse ();
+                ship.fire ();
             }
+
+            // Activate shield if has at least 1 second duration and mouse is over it
+            ship.shield.active = isMouseOver () && ship.shield.duration > 0;
 
             // Has a bonus currently
             if (ship.currentBonus) {
@@ -86,10 +79,8 @@ public class Player : MonoBehaviour
 
     void FixedUpdate ()
     {
-        // Game is running
-        if (utility.mode.state == ModeStates.Run) {
-
-            // Face up 
+        // Face up 
+        if (ship) {
             ship.transform.rotation = Quaternion.Lerp (ship.transform.rotation, Quaternion.Euler (0, 0, 0), Time.deltaTime);
         }
     }
@@ -101,7 +92,7 @@ public class Player : MonoBehaviour
     {
         Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
         mouse.z = ship.transform.position.z;
-        return ship.GetComponent<Collider2D> ().bounds.Contains (mouse);
+        return ship.GetComponent<Collider2D> ().bounds.Contains (mouse) && Input.GetMouseButton (0);
     }
 
     /**
