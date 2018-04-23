@@ -99,7 +99,7 @@ public class Mode : MonoBehaviour
     /**
      * Make player lose
      */
-    public void lose ()
+    void lose ()
     {
         // Update state
         state = ModeStates.Lose;
@@ -108,7 +108,9 @@ public class Mode : MonoBehaviour
         utility.sceneMusic.Stop ();
 
         // Destroy all spawners
-        Destroy (spawners.gameObject);
+        if (spawners) {
+            Destroy (spawners.gameObject);
+        }
 
         // Show loss screen after a moment
         Invoke ("gameOver", 2);
