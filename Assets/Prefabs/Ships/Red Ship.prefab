@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 114716263532753976}
   - component: {fileID: 114725652341912138}
   - component: {fileID: 114824426935516994}
-  - component: {fileID: 114853563086209706}
   m_Layer: 0
   m_Name: Red Ship
   m_TagString: Untagged
@@ -1873,6 +1872,11 @@ MonoBehaviour:
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 0
   updatesGlobalHitpointText: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114716263532753976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1929,6 +1933,11 @@ MonoBehaviour:
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 1
   updatesGlobalHitpointText: 1
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114824426935516994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1948,25 +1957,6 @@ MonoBehaviour:
   durationRestoreFactor: 0.2
   durationCriticalPercentage: 10
   text: {fileID: 0}
---- !u!114 &114853563086209706
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1243187612017736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ffc8de408c7114ea63a4c66a255c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetTag: 
-  speed: 2
-  moveAfter: 0
-  stopRange: 0
-  destroyTargetOnRange: 0
-  destroySelfOnRange: 0
-  resetVelocity: 0
 --- !u!212 &212096789943352448
 SpriteRenderer:
   m_ObjectHideFlags: 1

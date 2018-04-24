@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
             }
 
             // Set ship to move to point
-            ship.GetComponent<MoveTo> ().target = movePoint;
+            GetComponent<MoveTo> ().target = movePoint;
             */
         }
 
@@ -91,8 +91,8 @@ public class Player : MonoBehaviour
     public bool isMouseOver ()
     {
         Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-        mouse.z = ship.transform.position.z;
-        return ship.GetComponent<Collider2D> ().bounds.Contains (mouse) && Input.GetMouseButton (0);
+        mouse.z = transform.position.z;
+        return GetComponent<Collider2D> ().bounds.Contains (mouse) && Input.GetMouseButton (0);
     }
 
     /**

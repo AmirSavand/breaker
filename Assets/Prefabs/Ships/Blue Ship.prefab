@@ -199,7 +199,6 @@ GameObject:
   - component: {fileID: 114195875109159520}
   - component: {fileID: 114562265760396212}
   - component: {fileID: 114315075090626536}
-  - component: {fileID: 114420868822510502}
   m_Layer: 0
   m_Name: Blue Ship
   m_TagString: Untagged
@@ -504,7 +503,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1432264726996372}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1845,25 +1844,6 @@ MonoBehaviour:
   durationRestoreFactor: 0.2
   durationCriticalPercentage: 10
   text: {fileID: 0}
---- !u!114 &114420868822510502
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1432264726996372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ffc8de408c7114ea63a4c66a255c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetTag: 
-  speed: 2
-  moveAfter: 0
-  stopRange: 0
-  destroyTargetOnRange: 0
-  destroySelfOnRange: 0
-  resetVelocity: 0
 --- !u!114 &114550812044484934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1914,6 +1894,11 @@ MonoBehaviour:
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 1
   updatesGlobalHitpointText: 1
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114587812079431722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1977,6 +1962,11 @@ MonoBehaviour:
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 0
   updatesGlobalHitpointText: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &212131265815326294
 SpriteRenderer:
   m_ObjectHideFlags: 1
