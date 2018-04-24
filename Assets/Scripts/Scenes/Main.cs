@@ -41,29 +41,43 @@ public class Main : MonoBehaviour
             // Create mode button
             GameObject instance = Instantiate (modeObject, modeList.transform);
 
-            // Button click loads mode
-            instance.GetComponent<Button> ().onClick.AddListener (() => utility.loadScene (mode.sceneName));
-
             // Set mode name
             instance.GetComponentInChildren<Text> ().text = mode.modeName;
 
-            // Set trophies
-            if (mode.isBronzeUnlocked ()) {
-                Transform trophy = instance.transform.Find ("Trophies/Bronze");
-                trophy.GetComponent<Image> ().color = Color.white;
-                trophy.GetComponent<Shadow> ().enabled = true;
+            // Is locked?
+            if (!mode.isUnlocked) {
+
+                // Disable button
+                instance.GetComponent<Button> ().interactable = false;
+
+                // Remove trophies
+                Destroy (instance.transform.Find ("Trophies").gameObject);
             }
 
-            if (mode.isSilverUnlocked ()) {
-                Transform trophy = instance.transform.Find ("Trophies/Silver");
-                trophy.GetComponent<Image> ().color = Color.white;
-                trophy.GetComponent<Shadow> ().enabled = true;
-            }
+            // Unlocked, show trophies
+            else {
 
-            if (mode.isGoldUnlocked ()) {
-                Transform trophy = instance.transform.Find ("Trophies/Gold");
-                trophy.GetComponent<Image> ().color = Color.white;
-                trophy.GetComponent<Shadow> ().enabled = true;
+                // Button click loads mode
+                instance.GetComponent<Button> ().onClick.AddListener (() => utility.loadScene (mode.sceneName));
+
+                // Set trophies
+                if (mode.isBronzeUnlocked ()) {
+                    Transform trophy = instance.transform.Find ("Trophies/Bronze");
+                    trophy.GetComponent<Image> ().color = Color.white;
+                    trophy.GetComponent<Shadow> ().enabled = true;
+                }
+
+                if (mode.isSilverUnlocked ()) {
+                    Transform trophy = instance.transform.Find ("Trophies/Silver");
+                    trophy.GetComponent<Image> ().color = Color.white;
+                    trophy.GetComponent<Shadow> ().enabled = true;
+                }
+
+                if (mode.isGoldUnlocked ()) {
+                    Transform trophy = instance.transform.Find ("Trophies/Gold");
+                    trophy.GetComponent<Image> ().color = Color.white;
+                    trophy.GetComponent<Shadow> ().enabled = true;
+                }
             }
         }
     }
