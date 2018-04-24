@@ -206,6 +206,6 @@ public class Shop : MonoBehaviour
      */
     public void showShipsInfo ()
     {
-        utility.createPopup ("Ships", shipsInfo);
+        utility.createPopup ("Brekaers", shipsInfo);
     }
 }
