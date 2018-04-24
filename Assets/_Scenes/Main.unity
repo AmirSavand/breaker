@@ -10689,6 +10689,56 @@ Prefab:
       propertyPath: modes.Array.data[1]
       value: 
       objectReference: {fileID: 1078792190}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: colorUpgrade.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: colorUpgrade.b
+      value: 0.6275861
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: colorUpgrade.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: colorPositive.r
+      value: 0.034482718
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: colorPositive.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: colorPositive.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: colorNegative.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: colorNegative.g
+      value: 0.2794118
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: colorNegative.b
+      value: 0.2794118
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: colorNegative.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86d7ed2237397154c927a6f4187bb2d9, type: 2}
   m_IsPrefabParent: 0

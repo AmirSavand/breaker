@@ -45,6 +45,9 @@ public class Utility : MonoBehaviour
     public Color colorStar;
     public Color colorScore;
     public Color colorHitpoint;
+    public Color colorUpgrade;
+    public Color colorPositive;
+    public Color colorNegative;
 
     [Space ()]
 

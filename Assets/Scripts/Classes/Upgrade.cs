@@ -49,8 +49,12 @@ public class Upgrade : MonoBehaviour
      */
     public int maxStock;
 
+    private Utility utility;
+
     void Start ()
     {
+        // Init vars
+        utility = Utility.GetInstance ();
         // Load stock from storage
         stock = Mathf.Clamp (PlayerPrefs.GetInt (getStorageKey ()), 0, maxStock);
     }
@@ -100,6 +104,15 @@ public class Upgrade : MonoBehaviour
     }
 
     /**
+     * Get amount for user display
+     */
+    public string getAmountDisplay ()
+    {
+        string pre = amount > 0 ? "+" : "";
+        return "<color=#" + ColorUtility.ToHtmlStringRGB (utility.colorUpgrade) + ">" + pre + amount + "</color>";
+    }
+
+    /**
      * Calculate the percentage of current stock and max stocks
      */
     public float getStockPercentage ()
@@ -136,6 +149,6 @@ public class Upgrade : MonoBehaviour
      */
     public void popup ()
     {
-        Utility.GetInstance ().createPopup (title, description);
+        Utility.GetInstance ().createPopup (title, getAmountDisplay () + " " + description);
     }
 }
