@@ -100,8 +100,10 @@ public class Player : MonoBehaviour
      */
     public void faceMouse ()
     {
-        Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
         Vector3 pos = ship.transform.position;
+        Vector3 input = Input.mousePosition;
+        input.z = pos.z;
+        Vector3 mouse = Camera.main.ScreenToWorldPoint (input);
         ship.transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 (mouse.y - pos.y, mouse.x - pos.x) * Mathf.Rad2Deg - 90);
     }
 }
