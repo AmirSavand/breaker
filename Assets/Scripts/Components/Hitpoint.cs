@@ -184,7 +184,7 @@ public class Hitpoint : MonoBehaviour
 
                 // If has explosion particle
                 if (explosionParticle) {
-                    Instantiate (explosionParticle, transform.position, transform.rotation);
+                    Instantiate (explosionParticle, transform.position, new Quaternion ());
                 }
 
                 // If jas destroy model
@@ -219,9 +219,11 @@ public class Hitpoint : MonoBehaviour
         updateHitpoinText ();
     }
 
+    /**
+     * Set max hitpoints and current hitpoins to value
+     */
     public void setMaxHitpoints (float value)
     {
-        // Set max hitpoints and current hitpoins to value
         maxHitpoints = value;
         hitpoints = value;
     }
@@ -236,11 +238,11 @@ public class Hitpoint : MonoBehaviour
         }   
     }
 
-    private void revertColor ()
+    /**
+     * Set to original color
+     */
+    void revertColor ()
     {
-        // Set to original color
-        if (!isDead) {
-            spriteRenderer.color = spriteColor;
-        }
+        spriteRenderer.color = spriteColor;
     }
 }

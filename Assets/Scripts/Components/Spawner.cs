@@ -186,9 +186,8 @@ public class Spawner : MonoBehaviour
     void increaseHitpoints ()
     {
         if (!spawnDisabled) {
-            return;
+            spawnHitpoints = Mathf.Clamp (spawnHitpoints + increaseHitpointsFactor, spawnHitpoints, increaseHitpointsFactorMax);
         }
-        spawnHitpoints = Mathf.Clamp (spawnHitpoints + increaseHitpointsFactor, spawnHitpoints, increaseHitpointsFactorMax);
     }
 
     /**

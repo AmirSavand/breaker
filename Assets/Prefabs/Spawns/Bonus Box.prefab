@@ -38,8 +38,8 @@ GameObject:
   - component: {fileID: 50356963252485270}
   - component: {fileID: 82460324025931914}
   - component: {fileID: 114992933811100340}
-  - component: {fileID: 114778053961182416}
   - component: {fileID: 114222516476337870}
+  - component: {fileID: 114778053961182416}
   m_Layer: 0
   m_Name: Bonus Box
   m_TagString: Untagged
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 0
-  maxHitpoints: 50
+  maxHitpoints: 0
   isInvulnerable: 0
   isDead: 0
   hitColor: {r: 1, g: 0, b: 0, a: 1}
@@ -367,6 +367,7 @@ MonoBehaviour:
   deathSound: {fileID: 82214390096510660}
   shakeOnDeathDuration: 0
   vibrateOnDeath: 0
+  destroyModel: {fileID: 0}
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1
   explosionParticle: {fileID: 1293394142670344, guid: b484658958b155143834e49c3cc971a4,
@@ -379,6 +380,11 @@ MonoBehaviour:
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 0
   updatesGlobalHitpointText: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &212912817033485922
 SpriteRenderer:
   m_ObjectHideFlags: 1

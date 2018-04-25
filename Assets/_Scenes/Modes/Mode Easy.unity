@@ -364,7 +364,7 @@ RectTransform:
   - {fileID: 733927013}
   - {fileID: 1729350100}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1147,7 +1147,7 @@ Transform:
   m_Children:
   - {fileID: 1433501784}
   m_Father: {fileID: 910219887}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &369167049
 MonoBehaviour:
@@ -1163,20 +1163,20 @@ MonoBehaviour:
   spawnAfter: 15
   spawnTimer: 15
   spawnSpeed: 2
-  spawnHitpoints: 0
+  spawnHitpoints: 50
   spawnDeathStars: 0
   spawnDisabled: 0
   disableSpawnersDuration: 0
   disableSpawners: []
-  decreaseSpawnTimer: 25
+  decreaseSpawnTimer: 30
   decreaseSpawnFactor: 0.5
-  decreaseSpawnFactorMin: 4
+  decreaseSpawnFactorMin: 5
   increaseSpeedTimer: 30
   increaseSpeedFactor: 0.25
   increaseSpeedFactorMax: 8
   increaseHitpointsTimer: 30
-  increaseHitpointsFactor: 25
-  increaseHitpointsFactorMax: 475
+  increaseHitpointsFactor: 15
+  increaseHitpointsFactorMax: 500
   increaseDeathStarsTimer: 0
   increaseDeathStarsFactor: 0
   increaseDeathStarsFactorMax: 0
@@ -1420,23 +1420,23 @@ MonoBehaviour:
   spawnAfter: 0
   spawnTimer: 2.5
   spawnSpeed: 2
-  spawnHitpoints: 0
+  spawnHitpoints: 50
   spawnDeathStars: 0
   spawnDisabled: 0
   disableSpawnersDuration: 0
   disableSpawners: []
-  decreaseSpawnTimer: 25
+  decreaseSpawnTimer: 30
   decreaseSpawnFactor: 0.2
-  decreaseSpawnFactorMin: 0.5
+  decreaseSpawnFactorMin: 0.6
   increaseSpeedTimer: 30
-  increaseSpeedFactor: 0.25
-  increaseSpeedFactorMax: 10
-  increaseHitpointsTimer: 15
-  increaseHitpointsFactor: 25
-  increaseHitpointsFactorMax: 450
-  increaseDeathStarsTimer: 20
-  increaseDeathStarsFactor: 1
-  increaseDeathStarsFactorMax: 30
+  increaseSpeedFactor: 0.3
+  increaseSpeedFactorMax: 6
+  increaseHitpointsTimer: 30
+  increaseHitpointsFactor: 50
+  increaseHitpointsFactorMax: 2000
+  increaseDeathStarsTimer: 30
+  increaseDeathStarsFactor: 2
+  increaseDeathStarsFactorMax: 10
   spawnRandomBonus: 0
   spawnRandomRotation: 1
   spawnRandomColor: 1
@@ -2793,8 +2793,8 @@ Transform:
   - {fileID: 1960053426}
   - {fileID: 575772955}
   - {fileID: 471335203}
-  - {fileID: 1180057443}
   - {fileID: 369167048}
+  - {fileID: 1180057443}
   - {fileID: 904113207}
   - {fileID: 1889984185}
   - {fileID: 1340598689}
@@ -3332,7 +3332,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160323825
 GameObject:
@@ -3466,7 +3466,7 @@ Transform:
   - {fileID: 2039137630}
   - {fileID: 1481288178}
   m_Father: {fileID: 910219887}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1180057444
 MonoBehaviour:
@@ -3481,21 +3481,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnAfter: 0
   spawnTimer: 20
-  spawnSpeed: 2
-  spawnHitpoints: 0
+  spawnSpeed: 1
+  spawnHitpoints: 50
   spawnDeathStars: 0
   spawnDisabled: 0
   disableSpawnersDuration: 0
   disableSpawners: []
-  decreaseSpawnTimer: 40
-  decreaseSpawnFactor: 0.5
+  decreaseSpawnTimer: 30
+  decreaseSpawnFactor: 1.5
   decreaseSpawnFactorMin: 10
-  increaseSpeedTimer: 40
+  increaseSpeedTimer: 30
   increaseSpeedFactor: 0.25
   increaseSpeedFactorMax: 6
-  increaseHitpointsTimer: 15
-  increaseHitpointsFactor: 10
-  increaseHitpointsFactorMax: 435
+  increaseHitpointsTimer: 30
+  increaseHitpointsFactor: 15
+  increaseHitpointsFactorMax: 500
   increaseDeathStarsTimer: 0
   increaseDeathStarsFactor: 0
   increaseDeathStarsFactorMax: 0
@@ -5301,7 +5301,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
 --- !u!1 &1761254588
 GameObject:
@@ -5364,7 +5364,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1
+  far clip plane: 10
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -5484,7 +5484,7 @@ Transform:
   - {fileID: 910219887}
   - {fileID: 1814590446}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1832576427
 GameObject:

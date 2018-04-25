@@ -322,23 +322,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 0
-  maxHitpoints: 50
+  maxHitpoints: 0
+  isInvulnerable: 0
   isDead: 0
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
   audioHolder: {fileID: 0}
   hitSound: {fileID: 0}
   deathSound: {fileID: 82171205331880974}
   shakeOnDeathDuration: 0
   vibrateOnDeath: 0
+  destroyModel: {fileID: 0}
   destroyObjectOnDeath: {fileID: 1284953917083956}
   destroySelfOnDeath: 0
   explosionParticle: {fileID: 0}
   pieces: {fileID: 0}
   piecesForce: 50
+  deathBonus: {fileID: 0}
   deathStars: 0
   deathScore: 500
   deathTextFloatOffset: {x: -1, y: 0, z: 0}
   enableDamageTextFloat: 0
-  updateHitpointText: 0
+  updatesGlobalHitpointText: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114552575704218096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -351,23 +360,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 0
-  maxHitpoints: 50
+  maxHitpoints: 0
+  isInvulnerable: 0
   isDead: 0
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
   audioHolder: {fileID: 0}
   hitSound: {fileID: 0}
   deathSound: {fileID: 82171205331880974}
   shakeOnDeathDuration: 0
   vibrateOnDeath: 0
+  destroyModel: {fileID: 0}
   destroyObjectOnDeath: {fileID: 1284953917083956}
   destroySelfOnDeath: 0
   explosionParticle: {fileID: 0}
   pieces: {fileID: 0}
   piecesForce: 50
+  deathBonus: {fileID: 0}
   deathStars: 0
   deathScore: 500
   deathTextFloatOffset: {x: 1, y: 0, z: 0}
   enableDamageTextFloat: 0
-  updateHitpointText: 0
+  updatesGlobalHitpointText: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114725976541283834
 MonoBehaviour:
   m_ObjectHideFlags: 1
