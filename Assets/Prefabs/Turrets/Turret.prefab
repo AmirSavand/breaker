@@ -637,7 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePower: 16
-  fireDamage: 30
+  fireDamage: 45
   fireRate: 3
   fireFrom: {fileID: 4203126142493354}
   fireBullet: {fileID: 1367957280285760, guid: cea6344a6e315f2478de0f8dffd3fe5e, type: 2}

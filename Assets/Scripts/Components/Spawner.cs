@@ -110,10 +110,25 @@ public class Spawner : MonoBehaviour
         // Spawn object on spawn point
         GameObject instance = Instantiate (spawnObject, spawnPoint.position, spawnPoint.rotation) as GameObject;
         Hitpoint instanceHitpoint = instance.GetComponent<Hitpoint> ();
+        Spawner instanceSpawner = instance.GetComponentInChildren<Spawner> ();
 
-        // Set speed
+        // Set speed and spawners speed inside it
         if (spawnSpeed > 0) {
             instance.GetComponent<Move> ().directionSpeed.y = -spawnSpeed;
+            if (instanceSpawner) {
+                instanceSpawner.spawnSpeed = spawnSpeed;
+            }
+        }
+
+        // Set hitpoints
+        if (spawnHitpoints > 0) {
+
+            // Find all hitpoints
+            foreach (Hitpoint hitpoint in instance.GetComponentsInChildren<Hitpoint>()) {
+
+                // Set hitpoints to current spawn hitpoints
+                hitpoint.setMaxHitpoints (hitpoint.maxHitpoints + spawnHitpoints);
+            }
         }
 
         // Set hitpoints
