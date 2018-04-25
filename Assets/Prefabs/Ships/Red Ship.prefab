@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212182078347262714}
   - component: {fileID: 50203295419848560}
   - component: {fileID: 61460163654680432}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4682440730746216}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Attachments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4512368830924150}
   - component: {fileID: 82017891203547392}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 212852507443475326}
   - component: {fileID: 50928711196032454}
   - component: {fileID: 61497973009756404}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 114716263532753976}
   - component: {fileID: 114725652341912138}
   - component: {fileID: 114824426935516994}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Red Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 212283587314828450}
   - component: {fileID: 50430951912511430}
   - component: {fileID: 61875306475784450}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 212393422048840592}
   - component: {fileID: 50048444024425926}
   - component: {fileID: 61935557115096412}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 212246793170319542}
   - component: {fileID: 50468866777519458}
   - component: {fileID: 61905979361007468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 212195705619465986}
   - component: {fileID: 50287612734977648}
   - component: {fileID: 61929442230756580}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 212536932116048794}
   - component: {fileID: 50474247725294696}
   - component: {fileID: 61418422386086154}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4195886802721330}
   - component: {fileID: 212991808102499138}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pieces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 212555326364248922}
   - component: {fileID: 50903845710962294}
   - component: {fileID: 61161918687877840}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 212337605737440200}
   - component: {fileID: 50392416594229938}
   - component: {fileID: 61339181473960550}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 212584830429992190}
   - component: {fileID: 50538410554006478}
   - component: {fileID: 61467813978838326}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 212133625662000150}
   - component: {fileID: 50380823954078792}
   - component: {fileID: 61153305692318372}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4857267954178394}
   - component: {fileID: 212096789943352448}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4661130878153756}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 212474227407428838}
   - component: {fileID: 50669867048535698}
   - component: {fileID: 61842951339817408}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 4311782632877128}
   - component: {fileID: 212463809501402158}
   - component: {fileID: 114215519295422768}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engine (L)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 82544119791059934}
   - component: {fileID: 114363467048476710}
   - component: {fileID: 114549437597567104}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 212654290676566056}
   - component: {fileID: 50630898551975568}
   - component: {fileID: 61999797982341838}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4154315227224576}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire From
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 4120006334314594}
   - component: {fileID: 212861575627552902}
   - component: {fileID: 114448760800266152}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engine (R)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 212494274374667906}
   - component: {fileID: 50119748948657062}
   - component: {fileID: 61214944420877860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1861,6 +1861,7 @@ MonoBehaviour:
   deathSound: {fileID: 0}
   shakeOnDeathDuration: 0.1
   vibrateOnDeath: 0
+  destroyModel: {fileID: 0}
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1
   explosionParticle: {fileID: 0}
@@ -1921,6 +1922,7 @@ MonoBehaviour:
   deathSound: {fileID: 82017891203547392}
   shakeOnDeathDuration: 0.2
   vibrateOnDeath: 1
+  destroyModel: {fileID: 0}
   destroyObjectOnDeath: {fileID: 0}
   destroySelfOnDeath: 1
   explosionParticle: {fileID: 1794217032749808, guid: 8586a4a905597bf4bbdc69a36f5dca2b,

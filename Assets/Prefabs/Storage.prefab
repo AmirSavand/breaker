@@ -1221,8 +1221,8 @@ MonoBehaviour:
   modeName: Easy
   highScore: 0
   scoreBronze: 50000
-  scoreSilver: 75000
-  scoreGold: 100000
+  scoreSilver: 10000
+  scoreGold: 20000
   isUnlocked: 1
 --- !u!114 &114800937046451412
 MonoBehaviour:

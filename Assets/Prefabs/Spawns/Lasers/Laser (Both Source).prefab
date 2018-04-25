@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212810790263743980}
   - component: {fileID: 58314197243940832}
   - component: {fileID: 114499660089058962}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 50446216032208700}
   - component: {fileID: 82171205331880974}
   - component: {fileID: 114725976541283834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Laser (Both Source)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 212520231766931904}
   - component: {fileID: 58505288233831718}
   - component: {fileID: 114552575704218096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 212758290265452316}
   - component: {fileID: 61442383796494472}
   - component: {fileID: 114376219592666246}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1287,7 +1287,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294966527
+    m_Bits: 4294965503
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2371,7 +2371,7 @@ MonoBehaviour:
   time: 0
   stars: 0
   score: 0
-  timeScoreFactor: 10
+  timeScoreFactor: 50
   runUI: {fileID: 733927012}
   pauseUI: {fileID: 292704591}
   loseUI: {fileID: 1531722812}
@@ -2987,7 +2987,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3547,7 +3547,7 @@ MonoBehaviour:
   spawnAfter: 0
   spawnTimer: 20
   spawnSpeed: 1
-  spawnHitpoints: 50
+  spawnHitpoints: 10
   spawnDeathStars: 0
   spawnDisabled: 0
   disableSpawnersDuration: 0
@@ -5042,7 +5042,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4870433807392264, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114259934531651236, guid: fea3bbee2c6b29e409df48228d3bf2a5,
         type: 2}
@@ -5549,7 +5549,7 @@ Transform:
   - {fileID: 910219887}
   - {fileID: 1814590446}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1832576427
 GameObject:

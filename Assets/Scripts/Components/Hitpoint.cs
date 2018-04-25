@@ -53,13 +53,18 @@ public class Hitpoint : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color spriteColor;
 
-    void Start ()
+    void Awake ()
     {
         // Set HP to max HP
         hitpoints = maxHitpoints;
 
-        // Get inits
+        // Init var
         utility = Utility.GetInstance ();
+    }
+
+    void Start ()
+    {
+        // Init vars
         spriteRenderer = GetComponentInChildren<SpriteRenderer> ();
         spriteColor = spriteRenderer.color;
     }

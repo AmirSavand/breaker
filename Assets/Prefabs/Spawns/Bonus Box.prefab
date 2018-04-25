@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4029335871873010}
   - component: {fileID: 82214390096510660}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114992933811100340}
   - component: {fileID: 114222516476337870}
   - component: {fileID: 114778053961182416}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bonus Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4202395947051318}
   - component: {fileID: 212912817033485922}
   - component: {fileID: 60751729282142304}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

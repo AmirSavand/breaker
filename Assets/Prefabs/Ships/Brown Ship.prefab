@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212962979008474132}
   - component: {fileID: 50106887877884388}
   - component: {fileID: 61986095688635490}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 212042644697496086}
   - component: {fileID: 50289848179518186}
   - component: {fileID: 61999531176395568}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 212204717020084676}
   - component: {fileID: 50806147523756230}
   - component: {fileID: 61300669720724124}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4711940325070424}
   - component: {fileID: 212490073791837896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 82130308826064670}
   - component: {fileID: 114707247759686960}
   - component: {fileID: 114982998743099526}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 212899078487878086}
   - component: {fileID: 50551754499625030}
   - component: {fileID: 61560171486138608}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 212076326109880158}
   - component: {fileID: 50726044830848972}
   - component: {fileID: 61757000573296770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 114137050538759638}
   - component: {fileID: 114482102149025562}
   - component: {fileID: 114804275367800296}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Brown Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 212914455847755976}
   - component: {fileID: 50786318533719436}
   - component: {fileID: 61132294227737660}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 4290921251443882}
   - component: {fileID: 212957658366046744}
   - component: {fileID: 114439305404448174}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 212479857242693368}
   - component: {fileID: 50361409917517594}
   - component: {fileID: 61674363854660464}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4183860139463020}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Attachments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 212600116655615064}
   - component: {fileID: 50806768216043980}
   - component: {fileID: 61846578825193404}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 212221213834581170}
   - component: {fileID: 50669286760543994}
   - component: {fileID: 61485852560378424}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 212576424908860888}
   - component: {fileID: 50760719945032834}
   - component: {fileID: 61465785882453528}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4645252747875420}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire From
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 212902984375756822}
   - component: {fileID: 50971164128025120}
   - component: {fileID: 61929654831062714}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 212614145493305664}
   - component: {fileID: 50416142217488276}
   - component: {fileID: 61721228790534144}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 212273772702113708}
   - component: {fileID: 50611138987077328}
   - component: {fileID: 61862724615510538}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4381159752173828}
   - component: {fileID: 212736396948137354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pieces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 212128235746866530}
   - component: {fileID: 50570430163580106}
   - component: {fileID: 61781063900871152}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ship Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4501734107804098}
   - component: {fileID: 82459868399872928}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}

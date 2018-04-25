@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 58882506331513656}
   - component: {fileID: 114485916491470242}
   - component: {fileID: 114259934531651236}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4837596756836976}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Texts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4655194764133244}
   - component: {fileID: 23630973092571730}
   - component: {fileID: 102650071340239652}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bonus Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4826141281591088}
   - component: {fileID: 23718977389271070}
   - component: {fileID: 102318790349503048}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shield Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

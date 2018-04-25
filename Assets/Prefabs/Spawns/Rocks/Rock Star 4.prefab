@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212200069598084358}
   - component: {fileID: 50974907909746032}
   - component: {fileID: 58259544546880830}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Piece 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4356938787120114}
   - component: {fileID: 212559273629010330}
   - component: {fileID: 114650605069173096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 212794894638315762}
   - component: {fileID: 50160578204205658}
   - component: {fileID: 58275742093214456}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Piece 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 212612077463731658}
   - component: {fileID: 50632315786737546}
   - component: {fileID: 58931403021111236}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Piece 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 50801177917295956}
   - component: {fileID: 58812807175528938}
   - component: {fileID: 114800408955253404}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Star Pice (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 50819357382093210}
   - component: {fileID: 58852487070290936}
   - component: {fileID: 114126950355659834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Star Pice (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 4244954159539842}
   - component: {fileID: 212115798040631536}
   - component: {fileID: 114994302676839556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 4070721967246342}
   - component: {fileID: 212728699543532472}
   - component: {fileID: 114656483843808386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 212924294417930984}
   - component: {fileID: 50163336729604050}
   - component: {fileID: 58575451103088730}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Piece 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 212821299603038946}
   - component: {fileID: 50581558425768258}
   - component: {fileID: 58609682810175300}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Piece 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 4943456516340610}
   - component: {fileID: 212683657494661080}
   - component: {fileID: 60251652561468768}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 212655051347088986}
   - component: {fileID: 50332850628904902}
   - component: {fileID: 58598158534066822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Piece 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4835634360881954}
   - component: {fileID: 82340162852043780}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 212901015567798402}
   - component: {fileID: 50166135254969990}
   - component: {fileID: 58485322318565040}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Piece 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 212322393648728822}
   - component: {fileID: 50447012737716660}
   - component: {fileID: 58771708523410814}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Piece 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 50227677806617634}
   - component: {fileID: 58917129255897968}
   - component: {fileID: 114625052515484726}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Star Pice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 114027631013921754}
   - component: {fileID: 114835062377059066}
   - component: {fileID: 114270048290946394}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Star 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4252196076250304}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pieces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 4591179818878518}
   - component: {fileID: 212713149275164950}
   - component: {fileID: 114342794405082954}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 50573218453033990}
   - component: {fileID: 58246723213125004}
   - component: {fileID: 114053503070400068}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Star Pice (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 212170047514876408}
   - component: {fileID: 50420426848206732}
   - component: {fileID: 58260156144817964}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Piece 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
