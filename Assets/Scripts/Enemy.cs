@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     private Ship ship;
     private Turret turret;
 
-    void Start ()
+    void Awake ()
     {
         // Init vars
         utility = Utility.GetInstance ();

@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     private Utility utility;
 
-    void Start ()
+    void Awake ()
     {
         // Init vars
         utility = Utility.GetInstance ();
