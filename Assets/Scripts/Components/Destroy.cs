@@ -38,7 +38,7 @@ public class Destroy : MonoBehaviour
             return;
         }
          
-        // Destroy self if has rb
+        // Destroy object if has RB
         if (other.GetComponent<Rigidbody2D> () != null) {
             Destroy (other.gameObject);
         }

@@ -63,7 +63,7 @@ public class Mode : MonoBehaviour
         startMessageTextMesh.text = startMessages [Random.Range (0, startMessages.Length)];
 
         // Random background color
-        Camera.main.backgroundColor = backgroundColors [Random.Range (0, backgroundColors.Length)];
+        utility.touchCamera.backgroundColor = backgroundColors [Random.Range (0, backgroundColors.Length)];
     }
 
     void Update ()

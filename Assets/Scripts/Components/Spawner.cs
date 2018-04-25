@@ -10,6 +10,11 @@ public class Spawner : MonoBehaviour
     public float spawnSpeed = 2;
     public float spawnHitpoints;
     public int spawnDeathStars = 0;
+    public bool spawnDisabled;
+
+    [Header ("Disable spawners")]
+    public float disableSpawnersDuration;
+    public Spawner[] disableSpawners;
 
     [Header ("Spawm time")]
     public float decreaseSpawnTimer;
@@ -39,12 +44,13 @@ public class Spawner : MonoBehaviour
     public GameObject[] spawnObjects;
     public Color[] spawnColors;
 
-    private Transform[] spawnPoints;
+    private List<Transform> spawnPoints = new List<Transform> ();
 
     void Start ()
     {
         // Get spawn points (in children)
-        spawnPoints = GetComponentsInChildren<Transform> ();
+        spawnPoints.AddRange (GetComponentsInChildren<Transform> ());
+        spawnPoints.RemoveAt (spawnPoints.IndexOf (transform));
 
         // Start spawining
         Invoke ("spawn", spawnAfter);
@@ -75,8 +81,30 @@ public class Spawner : MonoBehaviour
      */
     void spawn ()
     {
+        // Respawn again
+        if (spawnTimer > 0) {
+            Invoke ("spawn", spawnTimer);
+        }
+
+        // No spawning if disabled
+        if (spawnDisabled) {
+            return;
+        }
+
+        // If disables other spawners
+        if (disableSpawnersDuration > 0) {
+
+            // Toggle them all
+            foreach (Spawner spawner in disableSpawners) {
+                spawner.spawnDisabled = true;
+            }
+
+            // Revert
+            Invoke ("enableSpawners", disableSpawnersDuration);
+        }
+
         // Get random object and point
-        Transform spawnPoint = spawnPoints [Random.Range (0, spawnPoints.Length)];
+        Transform spawnPoint = spawnPoints [Random.Range (0, spawnPoints.Count)];
         GameObject spawnObject = spawnObjects [Random.Range (0, spawnObjects.Length)];
 
         // Spawn object on spawn point
@@ -120,9 +148,16 @@ public class Spawner : MonoBehaviour
             instanceHitpoint.deathBonus = bonuses [Random.Range (0, bonuses.Length)];
             instance.GetComponentInChildren<SpriteRenderer> ().color = instanceHitpoint.deathBonus.color;
         }
+    }
 
-        // Respawn again
-        Invoke ("spawn", spawnTimer);
+    /**
+     * Enable spawners
+     */
+    void enableSpawners ()
+    {
+        foreach (Spawner spawner in disableSpawners) {
+            spawner.spawnDisabled = false;
+        }
     }
 
     /**
@@ -130,7 +165,9 @@ public class Spawner : MonoBehaviour
      */
     void decreaseSpawn ()
     {
-        spawnTimer = Mathf.Clamp (spawnTimer - decreaseSpawnFactor, decreaseSpawnFactorMin, spawnTimer);
+        if (!spawnDisabled) {
+            spawnTimer = Mathf.Clamp (spawnTimer - decreaseSpawnFactor, decreaseSpawnFactorMin, spawnTimer);
+        }
     }
 
     /**
@@ -138,7 +175,9 @@ public class Spawner : MonoBehaviour
      */
     void increaseSpeed ()
     {
-        spawnSpeed = Mathf.Clamp (spawnSpeed + increaseSpeedFactor, spawnSpeed, increaseSpeedFactorMax);
+        if (!spawnDisabled) {
+            spawnSpeed = Mathf.Clamp (spawnSpeed + increaseSpeedFactor, spawnSpeed, increaseSpeedFactorMax);
+        }
     }
 
     /**
@@ -146,6 +185,9 @@ public class Spawner : MonoBehaviour
      */
     void increaseHitpoints ()
     {
+        if (!spawnDisabled) {
+            return;
+        }
         spawnHitpoints = Mathf.Clamp (spawnHitpoints + increaseHitpointsFactor, spawnHitpoints, increaseHitpointsFactorMax);
     }
 
@@ -154,6 +196,8 @@ public class Spawner : MonoBehaviour
      */
     void increaseDeathStars ()
     {
-        spawnDeathStars = Mathf.Clamp (spawnDeathStars + increaseDeathStarsFactor, spawnDeathStars, increaseDeathStarsFactorMax);
+        if (!spawnDisabled) {
+            spawnDeathStars = Mathf.Clamp (spawnDeathStars + increaseDeathStarsFactor, spawnDeathStars, increaseDeathStarsFactorMax);
+        }
     }
 }

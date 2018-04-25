@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 50384913981484102}
   - component: {fileID: 61026773854710040}
   - component: {fileID: 114089095513025432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4076735063759772}
   - component: {fileID: 212892740327670444}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1825863123
-  m_SortingLayer: -5
+  m_SortingLayer: -7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ba93ddd5a3a4bd64991fd08f24a6fdd0, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.039215688}

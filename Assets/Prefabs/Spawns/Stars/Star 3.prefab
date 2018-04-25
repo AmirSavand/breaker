@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 61655251194807308}
   - component: {fileID: 212209378570427014}
   - component: {fileID: 114132749211787442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4006292270628880}
   - component: {fileID: 50361950971980946}
   - component: {fileID: 114657951491978168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Star 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2077529247
-  m_SortingLayer: 1
+  m_SortingLayer: -8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f3ab198b708d7b740a1c014962ef2dc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}

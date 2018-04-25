@@ -50,6 +50,12 @@ TagManager:
   - name: Shapes
     uniqueID: 2469104173
     locked: 0
+  - name: Stations
+    uniqueID: 1354852857
+    locked: 0
+  - name: Turrets
+    uniqueID: 209472005
+    locked: 0
   - name: Rocks
     uniqueID: 290018689
     locked: 0

@@ -14,6 +14,7 @@ public class Utility : MonoBehaviour
     public Main main;
     public Mode mode;
     public Cam cam;
+    public Camera touchCamera;
 
     [Space ()]
 
@@ -27,6 +28,11 @@ public class Utility : MonoBehaviour
     public Ship[] ships;
     public Ship[] shipsPlayer;
     public Ship[] shipsEnemy;
+
+    [Space ()]
+
+    // Turrets
+    public Turret[] turretsEnemy;
 
     [Space ()]
 

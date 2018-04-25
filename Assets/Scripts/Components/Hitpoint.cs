@@ -25,6 +25,7 @@ public class Hitpoint : MonoBehaviour
     public bool vibrateOnDeath = false;
 
     [Header ("Destroy")]
+    public GameObject destroyModel;
     public GameObject destroyObjectOnDeath;
     public bool destroySelfOnDeath = true;
 
@@ -186,6 +187,12 @@ public class Hitpoint : MonoBehaviour
                     Instantiate (explosionParticle, transform.position, transform.rotation);
                 }
 
+                // If jas destroy model
+                if (destroyModel) {
+                    destroyModel.SetActive (true);
+                    destroyModel.transform.parent = null;
+                }
+
                 // Destroy self
                 Destroy (gameObject);
             }
@@ -232,6 +239,8 @@ public class Hitpoint : MonoBehaviour
     private void revertColor ()
     {
         // Set to original color
-        spriteRenderer.color = spriteColor;
+        if (!isDead) {
+            spriteRenderer.color = spriteColor;
+        }
     }
 }

@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public Transform movePointLeft;
     public Transform movePointRight;
 
+    public Camera touchCamera;
+
     private Utility utility;
 
     void Start ()
@@ -26,6 +28,11 @@ public class Player : MonoBehaviour
 
         // Set ship vars
         ship.shield.text = shieldText;
+
+        // Get camera to capture touch
+        if (!touchCamera) {
+            touchCamera = Camera.main;
+        }
     }
 
     void LateUpdate ()
@@ -90,7 +97,7 @@ public class Player : MonoBehaviour
      */
     public bool isMouseOver ()
     {
-        Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+        Vector3 mouse = touchCamera.ScreenToWorldPoint (Input.mousePosition);
         mouse.z = transform.position.z;
         return GetComponent<Collider2D> ().bounds.Contains (mouse) && Input.GetMouseButton (0);
     }
@@ -103,7 +110,7 @@ public class Player : MonoBehaviour
         Vector3 pos = ship.transform.position;
         Vector3 input = Input.mousePosition;
         input.z = pos.z;
-        Vector3 mouse = Camera.main.ScreenToWorldPoint (input);
+        Vector3 mouse = touchCamera.ScreenToWorldPoint (input);
         ship.transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 (mouse.y - pos.y, mouse.x - pos.x) * Mathf.Rad2Deg - 90);
     }
 }
