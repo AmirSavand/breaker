@@ -5042,7 +5042,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4870433807392264, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114259934531651236, guid: fea3bbee2c6b29e409df48228d3bf2a5,
         type: 2}
@@ -5549,7 +5549,7 @@ Transform:
   - {fileID: 910219887}
   - {fileID: 1814590446}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1832576427
 GameObject:

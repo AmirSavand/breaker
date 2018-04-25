@@ -295,3 +295,4 @@ MonoBehaviour:
   movePointMiddle: {fileID: 0}
   movePointLeft: {fileID: 0}
   movePointRight: {fileID: 0}
+  touchCamera: {fileID: 0}

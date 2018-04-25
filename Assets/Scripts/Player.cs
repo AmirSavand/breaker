@@ -28,11 +28,6 @@ public class Player : MonoBehaviour
 
         // Set ship vars
         ship.shield.text = shieldText;
-
-        // Get camera to capture touch
-        if (!touchCamera) {
-            touchCamera = Camera.main;
-        }
     }
 
     void LateUpdate ()
