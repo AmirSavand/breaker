@@ -148,9 +148,11 @@ public class Hitpoint : MonoBehaviour
                 onDeath.Invoke ();
             }
 
-            // If should shake camera on death
+            // If should shake camera(s) on death
             if (shakeOnDeathDuration > 0) {
-                utility.cam.shake (shakeOnDeathDuration, vibrateOnDeath);
+                foreach (Cam cam in utility.mode.cams) {
+                    cam.shake (shakeOnDeathDuration, vibrateOnDeath);
+                }
             }
 
             // If has death piece

@@ -2367,6 +2367,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1306549050}
   state: 0
+  cams:
+  - {fileID: 1771452165}
+  - {fileID: 397082680}
+  - {fileID: 966230355}
+  touchCamera: {fileID: 1771452167}
   spawners: {fileID: 910219886}
   time: 0
   stars: 0
@@ -2419,6 +2424,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: cams.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
         type: 2}
       propertyPath: modes.Array.size
@@ -2512,6 +2522,21 @@ Prefab:
       propertyPath: touchCamera
       value: 
       objectReference: {fileID: 1771452167}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: cams.Array.data[0]
+      value: 
+      objectReference: {fileID: 1771452165}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: cams.Array.data[1]
+      value: 
+      objectReference: {fileID: 397082680}
+    - target: {fileID: 114375563544350866, guid: 86d7ed2237397154c927a6f4187bb2d9,
+        type: 2}
+      propertyPath: cams.Array.data[2]
+      value: 
+      objectReference: {fileID: 966230355}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86d7ed2237397154c927a6f4187bb2d9, type: 2}
   m_IsPrefabParent: 0
@@ -2711,7 +2736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAfter: 0
+  spawnAfter: 15
   spawnTimer: 15
   spawnSpeed: 0
   spawnHitpoints: 100
@@ -2956,6 +2981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 966230354}
   - component: {fileID: 966230353}
+  - component: {fileID: 966230355}
   m_Layer: 0
   m_Name: 2D Camera (Foreground)
   m_TagString: Untagged
@@ -3012,6 +3038,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &966230355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 966230352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac65d2fcbbf57e46856c1b4c731c680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0
+  shakeAmount: 0.7
+  decreaseFactor: 1
 --- !u!1 &967017628
 GameObject:
   m_ObjectHideFlags: 0
@@ -5405,6 +5445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1771452168}
   - component: {fileID: 1771452167}
+  - component: {fileID: 1771452165}
   m_Layer: 0
   m_Name: 2D Camera (Background)
   m_TagString: Untagged
@@ -5412,6 +5453,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1771452165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1771452164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac65d2fcbbf57e46856c1b4c731c680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0
+  shakeAmount: 0.7
+  decreaseFactor: 1
 --- !u!20 &1771452167
 Camera:
   m_ObjectHideFlags: 0

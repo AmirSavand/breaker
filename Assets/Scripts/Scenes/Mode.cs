@@ -18,6 +18,8 @@ public class Mode : MonoBehaviour
 {
     public Player player;
     public ModeStates state;
+    public Cam[] cams;
+    public Camera touchCamera;
     public GameObject spawners;
 
     [Space ()]
@@ -63,7 +65,7 @@ public class Mode : MonoBehaviour
         startMessageTextMesh.text = startMessages [Random.Range (0, startMessages.Length)];
 
         // Random background color
-        utility.touchCamera.backgroundColor = backgroundColors [Random.Range (0, backgroundColors.Length)];
+        touchCamera.backgroundColor = backgroundColors [Random.Range (0, backgroundColors.Length)];
     }
 
     void Update ()
@@ -190,8 +192,10 @@ public class Mode : MonoBehaviour
         // Stop time
         Time.timeScale = 0;
 
-        // Stop camera shake
-        utility.cam.shakeDuration = 0;
+        // Stop camera(s) shake
+        foreach (Cam cam in cams) {
+            cam.shakeDuration = 0;
+        }
 
         // Pause music
         utility.sceneMusic.Pause ();

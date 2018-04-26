@@ -13,8 +13,6 @@ public class Utility : MonoBehaviour
     // Scripts
     public Main main;
     public Mode mode;
-    public Cam cam;
-    public Camera touchCamera;
 
     [Space ()]
 
