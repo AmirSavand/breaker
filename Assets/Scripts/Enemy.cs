@@ -40,6 +40,9 @@ public class Enemy : MonoBehaviour
 
             // Init enemy turret
             turret = Instantiate (utility.turretsEnemy [Random.Range (0, utility.turretsEnemy.Length)].gameObject, transform).GetComponent<Turret> ();
+
+            // Set move speed of destroyed object to current speed
+            turret.transform.Find ("Model (Dead)").GetComponent<Move> ().directionSpeed = GetComponent<Move> ().directionSpeed;
         }
     }
 
