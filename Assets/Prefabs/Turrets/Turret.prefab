@@ -73,9 +73,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4952690688400588}
   - component: {fileID: 212294399684377402}
-  - component: {fileID: 114229945382569486}
   - component: {fileID: 50252653317572920}
   - component: {fileID: 61022408935810828}
+  - component: {fileID: 114229945382569486}
   m_Layer: 0
   m_Name: Model (Dead)
   m_TagString: Untagged
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e3304902ec66549a194a16312ce61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionSpeed: {x: 0, y: -1}
+  directionSpeed: {x: 0, y: 0}
   startAfter: 0
   stopAfter: 0
   stopMoving: 0
