@@ -26,6 +26,10 @@ MonoBehaviour:
     m_Color: {r: 0.20392157, g: 0.28627452, b: 0.36862746, a: 1}
   - m_Name: Background 5
     m_Color: {r: 0.60784316, g: 0.34901962, b: 0.7137255, a: 1}
+  - m_Name: Background 5 (Glass)
+    m_Color: {r: 0.60784316, g: 0.34901962, b: 0.7137255, a: 0.5882353}
+  - m_Name: Background 5 (Text)
+    m_Color: {r: 0.92528456, g: 0.74264705, b: 1, a: 1}
   - m_Name: Hitpoint
     m_Color: {r: 1, g: 0.2794118, b: 0.2794118, a: 1}
   - m_Name: Star
