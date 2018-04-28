@@ -31,8 +31,8 @@ public class Cam : MonoBehaviour
         // Set shake duration
         shakeDuration = duration;
 
-        // Vibrate
-        if (vibrate) {
+        // Vibrate (if should, supported and enabled in options)
+        if (vibrate && SystemInfo.supportsVibration && Storage.EnableVibrate) {
             Handheld.Vibrate ();
         }
     }

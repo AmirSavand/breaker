@@ -34,11 +34,15 @@ public class Storage : MonoBehaviour
      */
     public static int VolumEffects;
 
-    
     /**
      * Volume of Menu audio mixer group.
      */
     public static int VolumeMenu;
+
+    /**
+     * Enable vibrate (used when loss)
+     */
+    public static bool EnableVibrate;
 
     void Awake ()
     {
@@ -60,6 +64,9 @@ public class Storage : MonoBehaviour
         VolumeMusic = PlayerPrefs.GetInt ("volume-music");
         VolumEffects = PlayerPrefs.GetInt ("volume-effects");
         VolumeMenu = PlayerPrefs.GetInt ("volume-menu");
+
+        // Load switches (bools)
+        EnableVibrate = PlayerPrefs.GetInt ("enable-vibrate", 1) == 1;
     }
 
     /**
@@ -77,6 +84,9 @@ public class Storage : MonoBehaviour
         PlayerPrefs.SetInt ("volume-music", VolumeMusic);
         PlayerPrefs.SetInt ("volume-effects", VolumEffects);
         PlayerPrefs.SetInt ("volume-menu", VolumeMenu);
+
+        // Set switches
+        PlayerPrefs.SetInt ("enable-vibrate", EnableVibrate ? 1 : 0);
 
         // Save to disk
         PlayerPrefs.Save ();
