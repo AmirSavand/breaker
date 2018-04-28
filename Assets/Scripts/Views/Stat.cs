@@ -16,30 +16,47 @@ public class Stat : MonoBehaviour
     public Text shipFirePower;
     public Text shipShield;
 
+    private Utility utility;
     private Ship ship;
+
+    void Awake ()
+    {
+        // Get inits
+        utility = Utility.GetInstance ();
+
+        // Show stats
+        updateStats ();
+    }
 
     void OnEnable ()
     {
-        // Show stats
-        updateStats ();
+        // Current ship is changed
+        if (ship != utility.getSelectedShip ()) {
+
+            // Get current ship and setup upgrade items
+            ship = utility.getSelectedShip ();
+            setupShipStats ();
+        }
     }
 
     /**
      * Show/update stats
      */
-    public void updateStats ()
+    void updateStats ()
     {
-        // Set vars
         starsText.text = Storage.Stars.ToString ();
         highScoreText.text = Storage.HighScore.ToString ();
+    }
 
-        // Get current ship
-        ship = Utility.GetInstance ().getSelectedShip ();
-
+    /**
+     * Show/update current (selected) ship stats
+     */
+    void setupShipStats ()
+    {
         // Load ship upgrades
         ship.loadUpgrades ();
 
-        // Set ship vars
+        // Set ship properties
         shipText.text = ship.GetComponentInChildren<SpriteRenderer> ().sprite.name;
         shipModelImage.sprite = ship.GetComponentInChildren<SpriteRenderer> ().sprite;
         shipHitpoints.text = (ship.hitpoint.maxHitpoints + ship.getUpgrade ("hitpoint").getAmount ()).ToString ();
@@ -47,5 +64,7 @@ public class Stat : MonoBehaviour
         shipFireRate.text = (ship.fireRate + ship.getUpgrade ("fire-rate").getAmount ()).ToString ();
         shipFirePower.text = (ship.firePower + ship.getUpgrade ("fire-power").getAmount ()).ToString ();
         shipShield.text = ship.shield.maxDuration + " Sec";
+
+        Debug.Log ("Loaded ship stats");
     }
 }
