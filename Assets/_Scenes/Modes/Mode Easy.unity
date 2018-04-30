@@ -270,6 +270,7 @@ MonoBehaviour:
   destroyExitTriggersTagOnly: 
   destroyObjectOnClick: {fileID: 0}
   button: {fileID: 0}
+  destroyClips: []
 --- !u!61 &88132237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -790,6 +791,7 @@ MonoBehaviour:
   destroyExitTriggersTagOnly: Bullet
   destroyObjectOnClick: {fileID: 0}
   button: {fileID: 0}
+  destroyClips: []
 --- !u!61 &274327359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2312,6 +2314,7 @@ MonoBehaviour:
   sliderHitpoints: {fileID: 1694371375}
   sliderShield: {fileID: 800668863}
   sliderBonus: {fileID: 659673989}
+  prefabStar: {fileID: 1718802676053156, guid: 97d5d5be189839c4d85b6004ef819df5, type: 2}
   backgroundColors:
   - {r: 0.07058824, g: 0.0627451, b: 0.07058824, a: 1}
   - {r: 0.16470589, g: 0.1764706, b: 0.2, a: 1}

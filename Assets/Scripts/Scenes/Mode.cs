@@ -48,6 +48,10 @@ public class Mode : MonoBehaviour
 
     [Space ()]
 
+    public GameObject prefabStar;
+
+    [Space ()]
+
     public Color[] backgroundColors;
 
     [Space ()]
@@ -255,6 +259,16 @@ public class Mode : MonoBehaviour
 
         // Text float
         utility.createTextFloat ("+" + amount, utility.colorStar, position);
+
+        // Spawn star objects for player
+        for (int i = 0; i <= amount; i++) {
+
+            // Spawn star
+            Rigidbody2D instance = Instantiate (prefabStar, position, new Quaternion ()).GetComponent<Rigidbody2D> ();
+
+            // Add random force to it
+            instance.AddForce (new Vector2 (Random.Range (-5, 5), Random.Range (-5, 5)) * 50);
+        }
     }
 
     /**
