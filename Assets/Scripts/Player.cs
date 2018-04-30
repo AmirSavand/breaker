@@ -46,16 +46,15 @@ public class Player : MonoBehaviour
             // Activate shield if has at least 1 second duration and mouse is over it
             ship.shield.active = isMouseOver () && ship.shield.duration > 0;
 
-            // Has a bonus currently
-            if (ship.currentBonus) {
-
-                // Show bonus text
-                bonusText.text = ship.currentBonus.title;
-                bonusText.color = ship.currentBonus.color;
+            // Update bonus slider (minus 1 to improve performance)
+            if (ship.bonusDurationLeft > 0) {
+                utility.mode.sliderBonus.value = (int)(ship.bonusDurationLeft / ship.currentBonus.duration * 100) - 1;
             }
 
-            // Show bonus text if has one currently
-            bonusText.gameObject.SetActive (ship.currentBonus);
+            // Update shield slider (add 1 to improve performance)
+            if (ship.shield.getDurationPercentage () != 100) {
+                utility.mode.sliderShield.value = ship.shield.getDurationPercentage () + 1;
+            }
 
             /**
              * This features is disabled for now till next update.
@@ -74,9 +73,6 @@ public class Player : MonoBehaviour
             GetComponent<MoveTo> ().target = movePoint;
             */
         }
-
-        // Hide attachment texts if lost
-        texts.SetActive (utility.mode.state != ModeStates.Lose);
     }
 
     void FixedUpdate ()

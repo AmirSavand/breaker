@@ -28,6 +28,7 @@ public class Ship : MonoBehaviour
 
     // Bonus
     public Bonus currentBonus;
+    public float bonusDurationLeft;
     private float bonusRevertValue;
 
     void Awake ()
@@ -36,6 +37,21 @@ public class Ship : MonoBehaviour
         if (useUpgrades) {
             loadUpgrades ();
             applyUpgrades ();
+        }
+    }
+
+    void Update ()
+    {
+        // Bonus duration
+        if (bonusDurationLeft > 0) {
+
+            // Decrease duration
+            bonusDurationLeft -= Time.deltaTime;
+
+            // Bonus duration finished, revert bonus
+            if (bonusDurationLeft <= 0) {
+                revertBonus ();
+            }
         }
     }
 
@@ -128,7 +144,6 @@ public class Ship : MonoBehaviour
     {
         // Revert the current bonus first if it's a duration bonus
         if (currentBonus && bonus.type == BonusType.Duration) {
-            CancelInvoke ();
             revertBonus ();
         }
 
@@ -158,9 +173,9 @@ public class Ship : MonoBehaviour
         // Duration bonus
         if (bonus.type == BonusType.Duration) {
 
-            // Store it and invoke revert
+            // Store it and set time
             currentBonus = bonus;
-            Invoke ("revertBonus", bonus.duration);
+            bonusDurationLeft = bonus.duration;
         }
     }
 

@@ -241,7 +241,7 @@ public class Hitpoint : MonoBehaviour
     public void updateHitpoinText ()
     {
         if (updatesGlobalHitpointText) {
-            utility.mode.hitpointsText.text = Mathf.FloorToInt (hitpoints / maxHitpoints * 100).ToString ();
+            utility.mode.sliderHitpoints.value = (int)(hitpoints / maxHitpoints * 100);
         }   
     }
 

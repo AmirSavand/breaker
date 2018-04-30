@@ -40,9 +40,11 @@ public class Mode : MonoBehaviour
 
     [Space ()]
 
-    public Text timeText;
-    public Text starsText;
-    public Text hitpointsText;
+    public Text textTime;
+
+    public Slider sliderHitpoints;
+    public Slider sliderShield;
+    public Slider sliderBonus;
 
     [Space ()]
 
@@ -82,7 +84,7 @@ public class Mode : MonoBehaviour
             time += Time.deltaTime;
 
             // Update time text (UI)
-            timeText.text = getTimeFormat ();
+            textTime.text = getTimeFormat ();
         }
 
         // If player's ship is destroyed
@@ -250,9 +252,6 @@ public class Mode : MonoBehaviour
     {
         // Add stars
         stars += amount;
-
-        // Update UI
-        starsText.text = stars.ToString ();
 
         // Text float
         utility.createTextFloat ("+" + amount, utility.colorStar, position);
