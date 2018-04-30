@@ -520,7 +520,6 @@ MonoBehaviour:
   destroyExitTriggersTagOnly: Bullet
   destroyObjectOnClick: {fileID: 0}
   button: {fileID: 0}
-  destroyClips: []
 --- !u!61 &229404402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -592,7 +591,6 @@ MonoBehaviour:
   destroyExitTriggersTagOnly: 
   destroyObjectOnClick: {fileID: 0}
   button: {fileID: 0}
-  destroyClips: []
 --- !u!61 &360646986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -667,6 +665,7 @@ MonoBehaviour:
   stopRange: 0.01
   destroyTargetOnRange: 0
   destroySelfOnRange: 0
+  rangeClips: []
   resetVelocity: 0
 --- !u!1 &477181557
 GameObject:
@@ -1512,31 +1511,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114267629917462850, guid: e6c2f3f4c1b04d1448be842cfdebce5b,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 778065187}
-    - target: {fileID: 114172704191326626, guid: e6c2f3f4c1b04d1448be842cfdebce5b,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 778065187}
-    - target: {fileID: 114191947625218618, guid: e6c2f3f4c1b04d1448be842cfdebce5b,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 778065187}
-    - target: {fileID: 114818488307452012, guid: e6c2f3f4c1b04d1448be842cfdebce5b,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 778065187}
-    - target: {fileID: 114020903000624030, guid: e6c2f3f4c1b04d1448be842cfdebce5b,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 778065187}
     - target: {fileID: 224724550527698484, guid: e6c2f3f4c1b04d1448be842cfdebce5b,
         type: 2}
       propertyPath: m_AnchorMax.x
@@ -1561,6 +1535,31 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308907584709420, guid: e6c2f3f4c1b04d1448be842cfdebce5b,
+        type: 2}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114663215356187288, guid: e6c2f3f4c1b04d1448be842cfdebce5b,
+        type: 2}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107044881403714, guid: e6c2f3f4c1b04d1448be842cfdebce5b,
+        type: 2}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114043623300786058, guid: e6c2f3f4c1b04d1448be842cfdebce5b,
+        type: 2}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114341362139610480, guid: e6c2f3f4c1b04d1448be842cfdebce5b,
+        type: 2}
+      propertyPath: m_Type
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6c2f3f4c1b04d1448be842cfdebce5b, type: 2}
@@ -2129,6 +2128,7 @@ MonoBehaviour:
   stopRange: 0.01
   destroyTargetOnRange: 0
   destroySelfOnRange: 0
+  rangeClips: []
   resetVelocity: 0
 --- !u!1 &1230921458
 GameObject:
@@ -3340,6 +3340,7 @@ MonoBehaviour:
   stopRange: 0.01
   destroyTargetOnRange: 0
   destroySelfOnRange: 0
+  rangeClips: []
   resetVelocity: 0
 --- !u!1 &1726309499
 GameObject:
@@ -4551,6 +4552,7 @@ MonoBehaviour:
   stopRange: 0.05
   destroyTargetOnRange: 1
   destroySelfOnRange: 0
+  rangeClips: []
   resetVelocity: 0
 --- !u!1 &2055006489
 GameObject:
