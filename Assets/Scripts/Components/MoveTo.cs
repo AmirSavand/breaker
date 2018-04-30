@@ -11,6 +11,7 @@ public class MoveTo : MonoBehaviour
     public float stopRange = 0.1f;
     public bool destroyTargetOnRange = true;
     public bool destroySelfOnRange = false;
+    public AudioClip[] rangeClips;
     public bool resetVelocity = false;
 
     private float startTime;
@@ -51,18 +52,25 @@ public class MoveTo : MonoBehaviour
         // Stop at a certain distance
         if (Vector2.Distance (transform.position, target.position) <= stopRange) {
 
+            // Play reach clip
+            if (rangeClips.Length > 0) {
+                AudioSource.PlayClipAtPoint (rangeClips [Random.Range (0, rangeClips.Length)], transform.position);
+            }
+
             // Destroy target if should
             if (destroyTargetOnRange) {
                 Destroy (target.gameObject);
             }
 
             // Destroy self if should
-            if (destroySelfOnRange) {
+            else if (destroySelfOnRange) {
                 Destroy (gameObject);
             }
 
             // Set position to target instantly
-            transform.position = target.position;
+            else {
+                transform.position = target.position;
+            }
         }
     }
 }

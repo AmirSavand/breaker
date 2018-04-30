@@ -143,8 +143,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4104310706686656}
-  - component: {fileID: 114430491654356500}
   - component: {fileID: 50280782023812790}
+  - component: {fileID: 114430491654356500}
   m_Layer: 0
   m_Name: Station
   m_TagString: Untagged
@@ -399,6 +399,8 @@ MonoBehaviour:
   spawnRandomColor: 0
   spawnObjects:
   - {fileID: 1073860688883112, guid: b7eae588c55ccaf4a8faeb84f81d8a54, type: 2}
+  - {fileID: 1073860688883112, guid: b7eae588c55ccaf4a8faeb84f81d8a54, type: 2}
+  - {fileID: 1623354872838008, guid: d3ccbd1ebeab2c74484876e113aba41c, type: 2}
   spawnColors: []
 --- !u!114 &114430491654356500
 MonoBehaviour:

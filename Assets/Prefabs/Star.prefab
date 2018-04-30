@@ -107,6 +107,10 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  rangeClips:
+  - {fileID: 8300000, guid: 2dddbf23fd3e8334da122ee75c61d355, type: 3}
+  - {fileID: 8300000, guid: c8be92041001efc4da53a88891f93f25, type: 3}
+  - {fileID: 8300000, guid: 7b37dbf521973904cb29c855e22b1ce0, type: 3}
   resetVelocity: 1
 --- !u!114 &114827236557955332
 MonoBehaviour:
@@ -124,10 +128,6 @@ MonoBehaviour:
   destroyExitTriggersTagOnly: 
   destroyObjectOnClick: {fileID: 0}
   button: {fileID: 0}
-  destroyClips:
-  - {fileID: 8300000, guid: 2dddbf23fd3e8334da122ee75c61d355, type: 3}
-  - {fileID: 8300000, guid: c8be92041001efc4da53a88891f93f25, type: 3}
-  - {fileID: 8300000, guid: 7b37dbf521973904cb29c855e22b1ce0, type: 3}
 --- !u!212 &212717768760891362
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -270,7 +270,6 @@ MonoBehaviour:
   destroyExitTriggersTagOnly: 
   destroyObjectOnClick: {fileID: 0}
   button: {fileID: 0}
-  destroyClips: []
 --- !u!61 &88132237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -437,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAfter: 60
+  spawnAfter: 0
   spawnTimer: 60
   spawnSpeed: 1.5
   spawnHitpoints: 0
@@ -791,7 +790,6 @@ MonoBehaviour:
   destroyExitTriggersTagOnly: Bullet
   destroyObjectOnClick: {fileID: 0}
   button: {fileID: 0}
-  destroyClips: []
 --- !u!61 &274327359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4426,7 +4424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAfter: 60
+  spawnAfter: 0
   spawnTimer: 60
   spawnSpeed: 1.5
   spawnHitpoints: 0
@@ -6350,7 +6348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAfter: 60
+  spawnAfter: 0
   spawnTimer: 60
   spawnSpeed: 1.5
   spawnHitpoints: 0
@@ -7042,6 +7040,7 @@ MonoBehaviour:
   stopRange: 0.05
   destroyTargetOnRange: 1
   destroySelfOnRange: 0
+  rangeClips: []
   resetVelocity: 0
 --- !u!1 &2044147495
 GameObject:

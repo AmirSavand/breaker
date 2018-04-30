@@ -66,7 +66,9 @@ public class Hitpoint : MonoBehaviour
     {
         // Init vars
         spriteRenderer = GetComponentInChildren<SpriteRenderer> ();
-        spriteColor = spriteRenderer.color;
+        if (spriteRenderer) {
+            spriteColor = spriteRenderer.color;
+        }
     }
 
     public void damage (float amount)
@@ -74,11 +76,14 @@ public class Hitpoint : MonoBehaviour
         // Has HP (alive)
         if (hitpoints > 0) {
 		
-            // Change color to red
-            spriteRenderer.color = hitColor;
+            if (spriteRenderer) {
+                
+                // Change color to red
+                spriteRenderer.color = hitColor;
 
-            // Revert to original color
-            Invoke ("revertColor", 0.05f);
+                // Revert to original color
+                Invoke ("revertColor", 0.05f);
+            }
 
             // Hit sound
             if (hitSound) {

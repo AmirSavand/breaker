@@ -264,7 +264,7 @@ public class Mode : MonoBehaviour
             Rigidbody2D instance = Instantiate (prefabStar, position, new Quaternion ()).GetComponent<Rigidbody2D> ();
 
             // Add random force to it
-            instance.AddForce (new Vector2 (Random.Range (-5, 5), Random.Range (-5, 5)) * 50);
+            instance.AddForce (new Vector2 (Random.Range (-5, 5), Random.Range (-5, 5)) * 30);
         }
     }
 

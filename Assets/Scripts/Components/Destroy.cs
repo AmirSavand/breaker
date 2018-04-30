@@ -13,8 +13,6 @@ public class Destroy : MonoBehaviour
     public GameObject destroyObjectOnClick;
     public Button button;
 
-    public AudioClip[] destroyClips;
-
     void Start ()
     {
         // Destroy after particle duration
@@ -48,14 +46,6 @@ public class Destroy : MonoBehaviour
         // Destroy parent (rigidbody is there)
         else {
             Destroy (other.transform.parent.gameObject);
-        }
-    }
-
-    void OnDestroy ()
-    {
-        // Play random clip on destroy
-        if (destroyClips.Length > 0) {
-            AudioSource.PlayClipAtPoint (destroyClips [Random.Range (0, destroyClips.Length)], transform.position);
         }
     }
 
