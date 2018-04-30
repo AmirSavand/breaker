@@ -250,15 +250,12 @@ public class Mode : MonoBehaviour
     }
 
     /**
-     * Give star and create a text float
+     * Give stars with star objects
      */
     public void giveStar (int amount, Vector3 position)
     {
         // Add stars
         stars += amount;
-
-        // Text float
-        utility.createTextFloat ("+" + amount, utility.colorStar, position);
 
         // Spawn star objects for player
         for (int i = 0; i <= amount; i++) {
