@@ -641,7 +641,7 @@ PlayerSettings:
   cloudServicesEnabled:
     Build: 0
     Collab: 0
-    UNet: 1
+    UNet: 0
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: e3fe6406-1eea-4dc5-8c58-bc634c5c65ba
