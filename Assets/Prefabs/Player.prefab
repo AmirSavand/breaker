@@ -75,6 +75,7 @@ MonoBehaviour:
   stopRange: 0
   destroyTargetOnRange: 0
   destroySelfOnRange: 0
+  rangeClips: []
   resetVelocity: 0
 --- !u!114 &114485916491470242
 MonoBehaviour:

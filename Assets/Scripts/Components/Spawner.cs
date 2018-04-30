@@ -112,9 +112,15 @@ public class Spawner : MonoBehaviour
         Hitpoint instanceHitpoint = instance.GetComponentInChildren<Hitpoint> ();
         Spawner instanceSpawner = instance.GetComponentInChildren<Spawner> ();
 
-        // Set speed and spawners speed inside it
+        // Set speed of instance, its child and its spawner
         if (spawnSpeed > 0) {
-            instance.GetComponent<Move> ().directionSpeed.y = -spawnSpeed;
+
+            // Set instance child speed
+            foreach (Move instanceMove in instance.GetComponentsInChildren<Move>(true)) {
+                instanceMove.directionSpeed.y = -spawnSpeed;
+            }
+
+            // Set instance spawner speed
             if (instanceSpawner) {
                 instanceSpawner.spawnSpeed = spawnSpeed;
             }
