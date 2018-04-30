@@ -2436,6 +2436,7 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  rangeClips: []
   resetVelocity: 1
 --- !u!114 &114137050538759638
 MonoBehaviour:
@@ -2460,6 +2461,7 @@ MonoBehaviour:
   hitpoint: {fileID: 114482102149025562}
   useUpgrades: 0
   currentBonus: {fileID: 0}
+  bonusDurationLeft: 0
 --- !u!114 &114263568757174252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2478,6 +2480,7 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  rangeClips: []
   resetVelocity: 1
 --- !u!114 &114375410114334656
 MonoBehaviour:
@@ -2497,6 +2500,7 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  rangeClips: []
   resetVelocity: 1
 --- !u!114 &114396753116554364
 MonoBehaviour:
@@ -2516,6 +2520,7 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  rangeClips: []
   resetVelocity: 1
 --- !u!114 &114439305404448174
 MonoBehaviour:
@@ -2552,6 +2557,7 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  rangeClips: []
   resetVelocity: 1
 --- !u!114 &114482102149025562
 MonoBehaviour:
@@ -2582,7 +2588,7 @@ MonoBehaviour:
   pieces: {fileID: 1900952105498716}
   piecesForce: 60
   deathBonus: {fileID: 0}
-  deathStars: 10
+  deathStars: 0
   deathScore: 0
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 0
@@ -2610,6 +2616,7 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  rangeClips: []
   resetVelocity: 1
 --- !u!114 &114707247759686960
 MonoBehaviour:
@@ -2662,6 +2669,7 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  rangeClips: []
   resetVelocity: 1
 --- !u!114 &114868232410906694
 MonoBehaviour:
@@ -2681,6 +2689,7 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  rangeClips: []
   resetVelocity: 1
 --- !u!114 &114933692817131268
 MonoBehaviour:
@@ -2700,6 +2709,7 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  rangeClips: []
   resetVelocity: 1
 --- !u!114 &114965859479221448
 MonoBehaviour:
@@ -2719,6 +2729,7 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  rangeClips: []
   resetVelocity: 1
 --- !u!114 &114982998743099526
 MonoBehaviour:

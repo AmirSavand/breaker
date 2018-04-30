@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAfter: 0
+  spawnAfter: 60
   spawnTimer: 60
   spawnSpeed: 1.5
   spawnHitpoints: 0
@@ -1103,7 +1103,7 @@ Transform:
   m_Children:
   - {fileID: 1433501784}
   m_Father: {fileID: 910219887}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &369167049
 MonoBehaviour:
@@ -1360,7 +1360,7 @@ Transform:
   - {fileID: 128841490}
   - {fileID: 2092974327}
   m_Father: {fileID: 910219887}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &471335204
 MonoBehaviour:
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   increaseHitpointsFactor: 20
   increaseHitpointsFactorMax: 2000
   increaseDeathStarsTimer: 30
-  increaseDeathStarsFactor: 2
+  increaseDeathStarsFactor: 1
   increaseDeathStarsFactorMax: 10
   spawnRandomBonus: 0
   spawnRandomRotation: 1
@@ -2148,7 +2148,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4870433807392264, guid: fea3bbee2c6b29e409df48228d3bf2a5, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114259934531651236, guid: fea3bbee2c6b29e409df48228d3bf2a5,
         type: 2}
@@ -3011,7 +3011,7 @@ Transform:
   - {fileID: 1040666218}
   - {fileID: 350323673}
   m_Father: {fileID: 910219887}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &904113208
 MonoBehaviour:
@@ -3028,9 +3028,9 @@ MonoBehaviour:
   spawnTimer: 15
   spawnSpeed: 0
   spawnHitpoints: 100
-  spawnDeathStars: 0
+  spawnDeathStars: 5
   spawnDisabled: 0
-  disableSpawnersDuration: 8
+  disableSpawnersDuration: 0
   disableSpawners: []
   decreaseSpawnTimer: 30
   decreaseSpawnFactor: 1
@@ -3042,8 +3042,8 @@ MonoBehaviour:
   increaseHitpointsFactor: 25
   increaseHitpointsFactorMax: 4000
   increaseDeathStarsTimer: 30
-  increaseDeathStarsFactor: 5
-  increaseDeathStarsFactorMax: 40
+  increaseDeathStarsFactor: 2
+  increaseDeathStarsFactorMax: 20
   spawnRandomBonus: 0
   spawnRandomRotation: 0
   spawnRandomColor: 0
@@ -3105,10 +3105,10 @@ Transform:
   m_Children:
   - {fileID: 1960053426}
   - {fileID: 575772955}
-  - {fileID: 471335203}
   - {fileID: 369167048}
-  - {fileID: 1180057443}
+  - {fileID: 471335203}
   - {fileID: 904113207}
+  - {fileID: 1180057443}
   - {fileID: 1889984185}
   - {fileID: 1340598689}
   - {fileID: 198241353}
@@ -4153,7 +4153,7 @@ Transform:
   - {fileID: 2039137630}
   - {fileID: 1481288178}
   m_Father: {fileID: 910219887}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1180057444
 MonoBehaviour:
@@ -4409,7 +4409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAfter: 0
+  spawnAfter: 60
   spawnTimer: 60
   spawnSpeed: 1.5
   spawnHitpoints: 0
@@ -6206,7 +6206,7 @@ Transform:
   - {fileID: 910219887}
   - {fileID: 1814590446}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1832576427
 GameObject:
@@ -6333,7 +6333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAfter: 0
+  spawnAfter: 60
   spawnTimer: 60
   spawnSpeed: 1.5
   spawnHitpoints: 0

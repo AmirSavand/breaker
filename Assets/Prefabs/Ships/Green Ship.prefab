@@ -1831,7 +1831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 0
-  maxHitpoints: 50
+  maxHitpoints: 0
   isInvulnerable: 0
   isDead: 0
   hitColor: {r: 1, g: 0, b: 0, a: 1}
@@ -1849,7 +1849,7 @@ MonoBehaviour:
   piecesForce: 100
   deathBonus: {fileID: 0}
   deathStars: 0
-  deathScore: 0
+  deathScore: 200
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 1
   updatesGlobalHitpointText: 1
@@ -1967,6 +1967,7 @@ MonoBehaviour:
   hitpoint: {fileID: 114445806617768746}
   useUpgrades: 1
   currentBonus: {fileID: 0}
+  bonusDurationLeft: 0
 --- !u!212 &212025437310944460
 SpriteRenderer:
   m_ObjectHideFlags: 1

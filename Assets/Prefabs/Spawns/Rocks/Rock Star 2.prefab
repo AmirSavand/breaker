@@ -1122,7 +1122,7 @@ MonoBehaviour:
   piecesForce: 40
   deathBonus: {fileID: 0}
   deathStars: 2
-  deathScore: 0
+  deathScore: 100
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 0
   updatesGlobalHitpointText: 0

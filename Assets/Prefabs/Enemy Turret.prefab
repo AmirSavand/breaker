@@ -70,4 +70,4 @@ MonoBehaviour:
   isShip: 0
   isTurret: 1
   switchMoveTimer: 0
-  awareDistance: 8
+  awareDistance: 9

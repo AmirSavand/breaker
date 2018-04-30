@@ -867,7 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 0
-  maxHitpoints: 100
+  maxHitpoints: 500
   isInvulnerable: 0
   isDead: 0
   hitColor: {r: 1, g: 0, b: 0, a: 1}
@@ -885,7 +885,7 @@ MonoBehaviour:
   piecesForce: 50
   deathBonus: {fileID: 0}
   deathStars: 50
-  deathScore: 100
+  deathScore: 200
   deathTextFloatOffset: {x: 0, y: 0, z: 0}
   enableDamageTextFloat: 0
   updatesGlobalHitpointText: 0

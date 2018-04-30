@@ -276,7 +276,7 @@ MonoBehaviour:
   piecesForce: 50
   deathBonus: {fileID: 0}
   deathStars: 0
-  deathScore: 500
+  deathScore: 300
   deathTextFloatOffset: {x: 1, y: 0, z: 0}
   enableDamageTextFloat: 0
   updatesGlobalHitpointText: 0
