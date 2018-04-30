@@ -115,6 +115,7 @@ public class Shop : MonoBehaviour
     {
         // Get button
         Button button = upgradeObject.GetComponentInChildren<Button> ();
+        bool isLocked = !currentShip.isUnlocked () || upgrade.title == "Locked";
 
         // Set price, bar and icon
         upgradeObject.GetComponentInChildren<Text> ().text = upgrade.getPrice ().ToString ();
@@ -122,9 +123,9 @@ public class Shop : MonoBehaviour
         upgradeObject.transform.Find ("Container/Icon").GetComponent<Image> ().sprite = upgrade.icon;
 
         // Shop the right button text
-        button.transform.Find ("Cost").gameObject.SetActive (currentShip.isUnlocked () && !upgrade.isOutOfStock ());
-        button.transform.Find ("Full").gameObject.SetActive (currentShip.isUnlocked () && upgrade.isOutOfStock ());
-        button.transform.Find ("Lock").gameObject.SetActive (!currentShip.isUnlocked ());
+        button.transform.Find ("Cost").gameObject.SetActive (!isLocked && !upgrade.isOutOfStock ());
+        button.transform.Find ("Full").gameObject.SetActive (!isLocked && upgrade.isOutOfStock ());
+        button.transform.Find ("Lock").gameObject.SetActive (isLocked);
     }
 
     /**
@@ -140,7 +141,7 @@ public class Shop : MonoBehaviour
             Upgrade upgrade = item.Value;
             ColorBlock colors = button.colors;
 
-            // Is fully upgraded
+            // Is fully upgraded or locked
             if (upgrade.isOutOfStock ()) {
 
                 // Disable click
@@ -151,7 +152,7 @@ public class Shop : MonoBehaviour
             }
 
             // Is not affordable or not unlocked
-            else if (!upgrade.isAffordable () || !currentShip.isUnlocked ()) {
+            else if (!upgrade.isAffordable () || !currentShip.isUnlocked () || upgrade.title == "Locked") {
 
                 // Disable click
                 button.interactable = false;

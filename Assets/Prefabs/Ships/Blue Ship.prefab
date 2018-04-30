@@ -1825,6 +1825,7 @@ MonoBehaviour:
   hitpoint: {fileID: 114562265760396212}
   useUpgrades: 1
   currentBonus: {fileID: 0}
+  bonusDurationLeft: 0
 --- !u!114 &114315075090626536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1840,7 +1841,7 @@ MonoBehaviour:
   active: 0
   protecting: 0
   duration: 0
-  maxDuration: 3
+  maxDuration: 2
   durationRestoreFactor: 0.2
   durationCriticalPercentage: 10
   text: {fileID: 0}

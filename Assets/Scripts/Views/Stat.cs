@@ -63,6 +63,6 @@ public class Stat : MonoBehaviour
         shipDamage.text = (ship.fireDamage + ship.getUpgrade ("damage").getAmount ()).ToString ();
         shipFireRate.text = (ship.fireRate + ship.getUpgrade ("fire-rate").getAmount ()).ToString ();
         shipFirePower.text = (ship.firePower + ship.getUpgrade ("fire-power").getAmount ()).ToString ();
-        shipShield.text = ship.shield.maxDuration + " Sec";
+        shipShield.text = (ship.shield.maxDuration + ship.getUpgrade ("shield-duration").getAmount ()) + " Sec";
     }
 }

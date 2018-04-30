@@ -87,6 +87,7 @@ public class Ship : MonoBehaviour
         firePower += getUpgrade ("fire-power").getAmount ();
         fireRate += getUpgrade ("fire-rate").getAmount ();
         hitpoint.maxHitpoints += getUpgrade ("hitpoint").getAmount ();
+        shield.maxDuration += getUpgrade ("shield-duration").getAmount ();
     }
 
     /**

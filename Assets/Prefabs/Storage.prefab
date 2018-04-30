@@ -137,6 +137,38 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1279091845659970
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4940255301068004}
+  - component: {fileID: 114558026189963356}
+  m_Layer: 0
+  m_Name: Locked
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1356621002202078
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4149543464707888}
+  - component: {fileID: 114313279890843592}
+  m_Layer: 0
+  m_Name: Locked
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1360800892620968
 GameObject:
   m_ObjectHideFlags: 1
@@ -214,6 +246,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1415161285976076
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4016082915065546}
+  - component: {fileID: 114373245238313902}
+  m_Layer: 0
+  m_Name: Shield Duration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1435046635158640
 GameObject:
   m_ObjectHideFlags: 1
@@ -246,6 +294,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1523582461530756
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4468698230425756}
+  - component: {fileID: 114204593543087580}
+  m_Layer: 0
+  m_Name: Shield Duration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1570367936497430
 GameObject:
   m_ObjectHideFlags: 1
@@ -257,6 +321,22 @@ GameObject:
   - component: {fileID: 114563563145915158}
   m_Layer: 0
   m_Name: Fire Rate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1626417153478846
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4389273658785098}
+  - component: {fileID: 114647199138208848}
+  m_Layer: 0
+  m_Name: Locked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,6 +368,22 @@ GameObject:
   - component: {fileID: 114451336803339530}
   m_Layer: 0
   m_Name: Fire Rate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1773597971035904
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4756475283956966}
+  - component: {fileID: 114010484692497914}
+  m_Layer: 0
+  m_Name: Shield Duration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,6 +564,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4016082915065546
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1415161285976076}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4086557727002636}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4032519029138694
 Transform:
   m_ObjectHideFlags: 1
@@ -534,6 +643,8 @@ Transform:
   - {fileID: 4951432198275128}
   - {fileID: 4314399275482066}
   - {fileID: 4822724661099938}
+  - {fileID: 4016082915065546}
+  - {fileID: 4940255301068004}
   m_Father: {fileID: 4660729199452960}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -550,6 +661,19 @@ Transform:
   m_Father: {fileID: 4800895049236266}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4149543464707888
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356621002202078}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4162416987227546}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4162416987227546
 Transform:
   m_ObjectHideFlags: 1
@@ -564,6 +688,8 @@ Transform:
   - {fileID: 4170850997549326}
   - {fileID: 4637103604992278}
   - {fileID: 4751476998977116}
+  - {fileID: 4468698230425756}
+  - {fileID: 4149543464707888}
   m_Father: {fileID: 4660729199452960}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -636,6 +762,19 @@ Transform:
   m_Father: {fileID: 4718110167771060}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4389273658785098
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626417153478846}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4431126196546966}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4398756466845614
 Transform:
   m_ObjectHideFlags: 1
@@ -663,8 +802,23 @@ Transform:
   - {fileID: 4930872487735080}
   - {fileID: 4056863694880750}
   - {fileID: 4829422271584612}
+  - {fileID: 4756475283956966}
+  - {fileID: 4389273658785098}
   m_Father: {fileID: 4660729199452960}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4468698230425756
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1523582461530756}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4162416987227546}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4515281550647632
 Transform:
@@ -792,6 +946,19 @@ Transform:
   m_Father: {fileID: 4162416987227546}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4756475283956966
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1773597971035904}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4431126196546966}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4800895049236266
 Transform:
   m_ObjectHideFlags: 1
@@ -860,6 +1027,19 @@ Transform:
   m_Father: {fileID: 4431126196546966}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4940255301068004
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279091845659970}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4086557727002636}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4951432198275128
 Transform:
   m_ObjectHideFlags: 1
@@ -886,7 +1066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: green-ship-fire-power
   title: Fire Power
-  description: 'Ship fire projectile speed.
+  description: 'Breaker fire projectile speed.
 
 
     Upgrade this to shoot faster bullets.'
@@ -896,6 +1076,29 @@ MonoBehaviour:
   pricePerStock: 50
   stock: 0
   maxStock: 24
+--- !u!114 &114010484692497914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1773597971035904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: red-ship-shield-duration
+  title: Shield Duration
+  description: 'Breaker shield duration.
+
+
+    Upgrade this for longer shield duration.'
+  icon: {fileID: 21300000, guid: 0386ddc9025dddf4a8e0274395bc23ac, type: 3}
+  amount: 0.1
+  price: 300
+  pricePerStock: 150
+  stock: 0
+  maxStock: 30
 --- !u!114 &114106627680909228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -909,7 +1112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: green-ship-hitpoint
   title: Hitpoints
-  description: 'Ship hitpoints.
+  description: 'Breaker hitpoints.
 
 
     Upgrade this to survive incoming damages.'
@@ -948,7 +1151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: red-ship-fire-power
   title: Fire Power
-  description: 'Ship fire projectile speed.
+  description: 'Breaker fire projectile speed.
 
 
     Upgrade this to shoot faster bullets.'
@@ -985,6 +1188,29 @@ MonoBehaviour:
   description: Fast shooter but weaker in damage and hitpoint.
   icon: {fileID: 21300000, guid: 03a0812aae466274cba279632bd41908, type: 3}
   unlocked: 0
+--- !u!114 &114204593543087580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1523582461530756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: green-ship-shield-duration
+  title: Shield Duration
+  description: 'Breaker shield duration.
+
+
+    Upgrade this for longer shield duration.'
+  icon: {fileID: 21300000, guid: 0386ddc9025dddf4a8e0274395bc23ac, type: 3}
+  amount: 0.1
+  price: 300
+  pricePerStock: 150
+  stock: 0
+  maxStock: 30
 --- !u!114 &114281473645930238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1002,6 +1228,52 @@ MonoBehaviour:
   floatText: +Damge
   duration: 5
   amount: 800
+--- !u!114 &114313279890843592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356621002202078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: green-ship-locked
+  title: Locked
+  description: 'Hidden stat.
+
+
+    This upgrade is locked.'
+  icon: {fileID: 21300000, guid: 38fd9799612f45e4c80cfc6d8483d55d, type: 3}
+  amount: 0
+  price: 0
+  pricePerStock: 0
+  stock: 0
+  maxStock: 10
+--- !u!114 &114373245238313902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1415161285976076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: blue-ship-shield-duration
+  title: Shield Duration
+  description: 'Breaker shield duration.
+
+
+    Upgrade this for longer shield duration.'
+  icon: {fileID: 21300000, guid: 0386ddc9025dddf4a8e0274395bc23ac, type: 3}
+  amount: 0.1
+  price: 300
+  pricePerStock: 150
+  stock: 0
+  maxStock: 30
 --- !u!114 &114434937168900856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1015,7 +1287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: green-ship-damage
   title: Damage
-  description: 'Ship bullet damage.
+  description: 'Breaker bullet damage.
 
 
     Upgrade this to deal more damage to threats.'
@@ -1038,7 +1310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: blue-ship-fire-rate
   title: Fire Rate
-  description: 'Ship firing speed.
+  description: 'Breaker firing speed.
 
 
     Upgrade this to shoot faster.'
@@ -1061,7 +1333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: blue-ship-fire-power
   title: Fire Power
-  description: 'Ship fire projectile speed.
+  description: 'Breaker fire projectile speed.
 
 
     Upgrade this to shoot faster bullets.'
@@ -1084,7 +1356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: red-ship-hitpoint
   title: Hitpoints
-  description: 'Ship hitpoints.
+  description: 'Breaker hitpoints.
 
 
     Upgrade this to survive incoming damages.'
@@ -1107,7 +1379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: red-ship-damage
   title: Damage
-  description: 'Ship bullet damage.
+  description: 'Breaker bullet damage.
 
 
     Upgrade this to deal more damage to threats.'
@@ -1117,6 +1389,29 @@ MonoBehaviour:
   pricePerStock: 75
   stock: 0
   maxStock: 30
+--- !u!114 &114558026189963356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279091845659970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: blue-ship-locked
+  title: Locked
+  description: 'Hidden stat.
+
+
+    This upgrade is locked.'
+  icon: {fileID: 21300000, guid: 38fd9799612f45e4c80cfc6d8483d55d, type: 3}
+  amount: 0
+  price: 0
+  pricePerStock: 0
+  stock: 0
+  maxStock: 10
 --- !u!114 &114563563145915158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1130,7 +1425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: green-ship-fire-rate
   title: Fire Rate
-  description: 'Ship firing speed.
+  description: 'Breaker firing speed.
 
 
     Upgrade this to shoot faster.'
@@ -1153,7 +1448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: blue-ship-hitpoint
   title: Hitpoints
-  description: 'Ship hitpoints.
+  description: 'Breaker hitpoints.
 
 
     Upgrade this to survive incoming damages.'
@@ -1176,7 +1471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: red-ship-fire-rate
   title: Fire Rate
-  description: 'Ship firing speed.
+  description: 'Breaker firing speed.
 
 
     Upgrade this to shoot faster.'
@@ -1186,6 +1481,29 @@ MonoBehaviour:
   pricePerStock: 300
   stock: 0
   maxStock: 8
+--- !u!114 &114647199138208848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626417153478846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df2e4bc3696a6245ad5f44fa193b78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slug: red-ship-locked
+  title: Locked
+  description: 'Hidden stat.
+
+
+    This upgrade is locked.'
+  icon: {fileID: 21300000, guid: 38fd9799612f45e4c80cfc6d8483d55d, type: 3}
+  amount: 0
+  price: 0
+  pricePerStock: 0
+  stock: 0
+  maxStock: 10
 --- !u!114 &114762465635556894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1306,7 +1624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slug: blue-ship-damage
   title: Damage
-  description: 'Ship bullet damage.
+  description: 'Breaker bullet damage.
 
 
     Upgrade this to deal more damage to threats.'

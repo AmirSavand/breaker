@@ -2647,7 +2647,7 @@ MonoBehaviour:
   active: 0
   protecting: 0
   duration: 0
-  maxDuration: 5
+  maxDuration: 0
   durationRestoreFactor: 0
   durationCriticalPercentage: 10
   text: {fileID: 0}

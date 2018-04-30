@@ -9,11 +9,9 @@ public class Shield : MonoBehaviour
     public bool protecting = false;
 
     public float duration;
-    public float maxDuration = 5;
+    public float maxDuration = 2;
     public float durationRestoreFactor = 1;
     public float durationCriticalPercentage = 10;
-
-    public TextMesh text;
 
     private Hitpoint hitpoint;
     private Vector3 activeScale;
@@ -55,16 +53,6 @@ public class Shield : MonoBehaviour
 
         // Reduce/Gain energy
         duration = Mathf.Clamp (duration + Time.deltaTime * (active ? -1 : durationRestoreFactor), 0, maxDuration);
-
-        // Duration text
-        if (text) {
-
-            // Set percentage
-            text.text = getDurationPercentage ().ToString ();
-
-            // Show the text if duration is critical
-            text.gameObject.SetActive (getDurationPercentage () != 100);
-        }
     }
 
     public int getDurationPercentage ()

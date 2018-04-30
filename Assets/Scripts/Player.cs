@@ -6,10 +6,6 @@ public class Player : MonoBehaviour
 {
     public Ship ship;
 
-    public GameObject texts;
-    public TextMesh shieldText;
-    public TextMesh bonusText;
-
     public Transform movePointMiddle;
     public Transform movePointLeft;
     public Transform movePointRight;
@@ -25,9 +21,6 @@ public class Player : MonoBehaviour
 
         // Load current ship
         ship = Instantiate (utility.getSelectedShip ().gameObject, transform).GetComponent<Ship> ();
-
-        // Set ship vars
-        ship.shield.text = shieldText;
     }
 
     void LateUpdate ()
