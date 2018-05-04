@@ -36,12 +36,14 @@ public class Utility : MonoBehaviour
 
     // Transforms
     public Transform popups;
+    public Transform loading;
 
     [Space ()]
 
     // Prefabs
     public GameObject prefabTextFloat;
     public GameObject prefabPopup;
+
 
     [Space ()]
 
@@ -99,6 +101,10 @@ public class Utility : MonoBehaviour
      */
     public void loadScene (string name)
     {
+        // Show loading screen
+        loading.gameObject.SetActive (true);
+
+        // Load scene
         SceneManager.LoadScene (name);
     }
 
