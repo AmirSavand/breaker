@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4011560904568266}
   - component: {fileID: 108040661042568590}
   m_Layer: 0
-  m_Name: Spotlight
+  m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,9 +611,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 5.5
-  m_Range: 4
-  m_SpotAngle: 80
+  m_Intensity: 10
+  m_Range: 3
+  m_SpotAngle: 50
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
