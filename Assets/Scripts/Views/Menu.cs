@@ -17,7 +17,9 @@ public class Menu : MonoBehaviour
         setupUI ();
 
         // Level up available, play alert sound
-        levelUpAvailableSound.Play ();
+        if (Level.CanLevelUp ()) {
+            levelUpAvailableSound.Play ();
+        }
     }
 
     void setupUI ()
