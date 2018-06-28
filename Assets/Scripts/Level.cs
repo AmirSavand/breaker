@@ -45,6 +45,7 @@ public class Level : MonoBehaviour
             // Reset XP and increase level
             Storage.XP = 0;
             Storage.Level++;
+            Storage.Save ();
 
             // Success
             return true;
