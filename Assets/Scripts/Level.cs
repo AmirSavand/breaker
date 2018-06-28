@@ -7,7 +7,7 @@ public class Level : MonoBehaviour
     /**
      * XP required per level factor
      */
-    public static int XPLevelFactor = 5000;
+    public static int XPLevelFactor = 1000;
 
     /**
      * Give experience points
