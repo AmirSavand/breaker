@@ -61,6 +61,7 @@ public class Utility : MonoBehaviour
     public AudioMixer audioMixer;
     public AudioSource sceneMusic;
     public AudioSource selectSound;
+    public AudioSource levelUpSound;
 
     void Awake ()
     {

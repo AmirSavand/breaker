@@ -10,6 +10,16 @@ public class Storage : MonoBehaviour
     public static int Stars;
 
     /**
+     * Player's experience points
+     */
+    public static int XP;
+
+    /**
+     * Player's current level
+     */
+    public static int Level;
+
+    /**
      * Highest score that player got in a single game.
      */
     public static int HighScore;
@@ -52,12 +62,15 @@ public class Storage : MonoBehaviour
         // Destroy it if it's a duplicate
         if (FindObjectsOfType (GetType ()).Length > 1) {
             Destroy (gameObject);
+            return;
         }
 
         // Load stats
-        Ship = PlayerPrefs.GetInt ("stat-ship");
         Stars = PlayerPrefs.GetInt ("stat-stars");
+        XP = PlayerPrefs.GetInt ("stat-xp");
+        Level = PlayerPrefs.GetInt ("stat-level", 1);
         HighScore = PlayerPrefs.GetInt ("stat-high-score");
+        Ship = PlayerPrefs.GetInt ("stat-ship");
 
         // Load volumes
         VolumeMaster = PlayerPrefs.GetInt ("volume-master");
@@ -75,9 +88,11 @@ public class Storage : MonoBehaviour
     public static void Save ()
     {
         // Set stats
-        PlayerPrefs.SetInt ("stat-ship", Ship);
         PlayerPrefs.SetInt ("stat-stars", Stars);
+        PlayerPrefs.SetInt ("stat-xp", XP);
+        PlayerPrefs.SetInt ("stat-level", Level);
         PlayerPrefs.SetInt ("stat-high-score", HighScore);
+        PlayerPrefs.SetInt ("stat-ship", Ship);
 
         // Set volumes
         PlayerPrefs.SetInt ("volume-master", VolumeMaster);
