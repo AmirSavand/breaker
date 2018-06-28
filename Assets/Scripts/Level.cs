@@ -10,6 +10,11 @@ public class Level : MonoBehaviour
     public static int XPLevelFactor = 1000;
 
     /**
+     * Max level allowed
+     */
+    public static int MaxLevel = 99;
+
+    /**
      * Give experience points
      */
     public static void GiveXP (int amount)
@@ -30,7 +35,7 @@ public class Level : MonoBehaviour
      */
     public static bool CanLevelUp ()
     {
-        return Storage.XP >= GetLevelUpXP ();
+        return Storage.XP >= GetLevelUpXP () && Storage.Level <= Level.MaxLevel;
     }
 
     /**
