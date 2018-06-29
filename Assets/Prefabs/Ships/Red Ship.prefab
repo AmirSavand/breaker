@@ -1957,7 +1957,7 @@ MonoBehaviour:
   protecting: 0
   duration: 0
   maxDuration: 2
-  durationRestoreFactor: 0.2
+  durationRestoreFactor: 0.3
   durationCriticalPercentage: 10
 --- !u!212 &212096789943352448
 SpriteRenderer:

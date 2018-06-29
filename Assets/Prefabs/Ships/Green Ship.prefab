@@ -1816,7 +1816,7 @@ MonoBehaviour:
   protecting: 0
   duration: 0
   maxDuration: 2
-  durationRestoreFactor: 0.2
+  durationRestoreFactor: 0.1
   durationCriticalPercentage: 10
 --- !u!114 &114445806617768746
 MonoBehaviour:
