@@ -362,7 +362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1834653807175600
 GameObject:
   m_ObjectHideFlags: 1
@@ -1818,7 +1818,6 @@ MonoBehaviour:
   maxDuration: 2
   durationRestoreFactor: 0.2
   durationCriticalPercentage: 10
-  text: {fileID: 0}
 --- !u!114 &114445806617768746
 MonoBehaviour:
   m_ObjectHideFlags: 1
