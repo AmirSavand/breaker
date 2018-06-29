@@ -34,7 +34,7 @@ public class Fade : MonoBehaviour
     {
         // Fade toggle smooth color
         if (fadeSmooth) {
-            setColor (Color.Lerp (color, fadeSmoothToColor, Mathf.PingPong (Time.time, 1)));
+            setColor (Color.Lerp (color, fadeSmoothToColor, Mathf.PingPong (Time.time, fadeRate)));
         }
     }
 

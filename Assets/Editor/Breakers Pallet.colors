@@ -54,3 +54,5 @@ MonoBehaviour:
     m_Color: {r: 0.034482718, g: 1, b: 0, a: 1}
   - m_Name: Trophy (Not Earned)
     m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
+  - m_Name: Level
+    m_Color: {r: 1, g: 0, b: 0.55862045, a: 1}

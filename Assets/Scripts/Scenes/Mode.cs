@@ -27,10 +27,13 @@ public class Mode : MonoBehaviour
     public float time;
     public int stars;
     public int score;
+    public int xp;
 
     [Space ()]
 
     public float timeScoreFactor = 10;
+    public float starScoreFactor = 100;
+    public float scoreXpFactor = 0.01f;
 
     [Space ()]
 
@@ -139,20 +142,26 @@ public class Mode : MonoBehaviour
 
         // Calculate score
         score += (int)(time * timeScoreFactor);
-        score += stars * 100;
+        score += (int)(stars * starScoreFactor);
+
+        // Calculate XP
+        xp += (int)(score * scoreXpFactor);
 
         // Update results
         GameObject.Find ("Time Result Text").GetComponent<Text> ().text = "Time\n" + getTimeFormat ();
         GameObject.Find ("Star Result Text").GetComponent<Text> ().text = "Stars\n+" + stars;
         GameObject.Find ("Score Result Text").GetComponent<Text> ().text = score.ToString ();
 
-        // Save stars to storage
+        // Set storage stars
         Storage.Stars += stars;
+
+        // Give xp
+        Level.GiveXP (xp);
 
         // New high score?
         if (Storage.HighScore < score) {
 
-            // Save high score to storage
+            // Set storage high score
             Storage.HighScore = score;
 
             // Set text so player knows
