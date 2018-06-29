@@ -2289,7 +2289,10 @@ MonoBehaviour:
   time: 0
   stars: 0
   score: 0
+  xp: 0
   timeScoreFactor: 50
+  starScoreFactor: 100
+  scoreXpFactor: 0.01
   runUI: {fileID: 733927012}
   pauseUI: {fileID: 292704591}
   loseUI: {fileID: 1531722812}
