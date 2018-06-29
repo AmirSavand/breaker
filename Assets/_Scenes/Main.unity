@@ -5207,7 +5207,7 @@ MonoBehaviour:
   shipsInfo: 'List of all Breakers that can be unlocked.
 
 
-    To unlock Breakers you must break a hidden high score for each.'
+    To unlock Breakers you must reach a certain level for each.'
   starsText: {fileID: 1926255680}
   upgradeList: {fileID: 398214668}
   upgradeObject: {fileID: 1325540706797964, guid: d89138b3072f16f428f5c5b677145b79,
