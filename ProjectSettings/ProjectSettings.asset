@@ -244,7 +244,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/AmirM/Documents/Unity/Breakers Force/alir3z4.keystore
+  AndroidKeystoreName: C:/Workspace/AmirSavand/breakers-force/alir3z4.keystore
   AndroidKeyaliasName: alir3z4 keystore
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
