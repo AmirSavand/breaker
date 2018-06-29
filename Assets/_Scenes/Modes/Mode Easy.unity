@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAfter: 0
+  spawnAfter: 60
   spawnTimer: 60
   spawnSpeed: 1.5
   spawnHitpoints: 0
@@ -4522,7 +4522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAfter: 0
+  spawnAfter: 60
   spawnTimer: 60
   spawnSpeed: 1.5
   spawnHitpoints: 0
@@ -6447,7 +6447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5657931179c80444baf725d1a05c253f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAfter: 0
+  spawnAfter: 60
   spawnTimer: 60
   spawnSpeed: 1.5
   spawnHitpoints: 0
