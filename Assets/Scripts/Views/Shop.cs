@@ -192,8 +192,8 @@ public class Shop : MonoBehaviour
             shipObjects.Add (instance, item);
 
             // Show lock/unlock
-            instance.transform.Find ("Content/Lock").gameObject.SetActive (!item.isUnlocked ());
-            instance.transform.Find ("Content/Unlock").gameObject.SetActive (item.isUnlocked ());
+            instance.transform.Find ("Content/Lock").gameObject.SetActive (!item.unlocked);
+            instance.transform.Find ("Content/Unlock").gameObject.SetActive (item.unlocked);
 
             // Set icon, name and description
             instance.transform.Find ("Content/Icon").GetComponent<Image> ().sprite = item.icon;

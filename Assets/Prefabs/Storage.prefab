@@ -1138,6 +1138,7 @@ MonoBehaviour:
   description: Medium stats with high hitpoints.
   icon: {fileID: 21300000, guid: 965fb3c5368a0f6408dbe98a4fdc7e46, type: 3}
   unlocked: 1
+  unlockLevel: 0
 --- !u!114 &114172932923892172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1188,6 +1189,7 @@ MonoBehaviour:
   description: Fast shooter but weaker in damage and hitpoint.
   icon: {fileID: 21300000, guid: 03a0812aae466274cba279632bd41908, type: 3}
   unlocked: 0
+  unlockLevel: 2
 --- !u!114 &114204593543087580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1611,6 +1613,7 @@ MonoBehaviour:
   description: High damage and fast shooter but low hitpoins.
   icon: {fileID: 21300000, guid: 464b42fd5d6bc1a4e96e256f2482e99b, type: 3}
   unlocked: 0
+  unlockLevel: 5
 --- !u!114 &114946756195535536
 MonoBehaviour:
   m_ObjectHideFlags: 1

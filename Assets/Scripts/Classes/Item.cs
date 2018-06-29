@@ -24,15 +24,21 @@ public class Item : MonoBehaviour
     public Sprite icon;
 
     /**
-     * Current state of item (locked/0 or unlocked/1)
+     * Current state of item
      */
-    public int unlocked;
+    public bool unlocked;
+
+    /**
+     * Player level required to unlock
+     * Can not be unlocked if value is 0
+     */
+    public int unlockLevel;
 
     void Start ()
     {
         // Load value from storage
-        if (!isUnlocked ()) {
-            unlocked = PlayerPrefs.GetInt (getStorageKey ());
+        if (!unlocked) {
+            unlocked = PlayerPrefs.GetInt (getStorageKey ()) == 1 ? true : false;
         }
     }
 
@@ -49,17 +55,27 @@ public class Item : MonoBehaviour
      */
     public void unlock ()
     {
-        unlocked = 1;
-        PlayerPrefs.SetInt (getStorageKey (), unlocked);
+        // Save as unlocked
+        unlocked = true;
+        // PlayerPrefs.SetInt (getStorageKey (), unlocked ? 1 : 0);
         Storage.Save ();
+
+        // Popup
+        string coloredTitle = "<color=#" + ColorUtility.ToHtmlStringRGB (Utility.GetInstance ().colorUpgrade) + ">" + title + "</color>";
+        Utility.GetInstance ().createPopup ("Unlocked", "You've unlocked " + coloredTitle + "!");
     }
 
     /**
-     * Check if item is unlocked
+     * Attempt to unlock item via level
      */
-    public bool isUnlocked ()
+    public void levelUnlock ()
     {
-        return unlocked == 1;
+        // Check if can be unlocked via level
+        if (!unlocked && unlockLevel > 0 && unlockLevel <= Storage.Level) {
+
+            // Unlock it
+            unlock ();
+        }
     }
 
     /**

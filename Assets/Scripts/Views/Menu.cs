@@ -42,7 +42,23 @@ public class Menu : MonoBehaviour
             setupUI ();
 
             // Show popup
-            Utility.GetInstance ().createPopup ("Leveled Up", "You are now level " + Storage.Level + ".");
+            Utility.GetInstance ().createPopup ("Level Up", "You are now level " + Storage.Level + ".");
+
+            // Check for item level ups
+            levelUnlockItems ();
+        }
+    }
+
+    /**
+     * Find all items and level-unlock them
+     */
+    public void levelUnlockItems ()
+    {
+        // Check all items
+        foreach (Item item in Component.FindObjectsOfType<Item>()) {
+
+            // Level-unlock em
+            item.levelUnlock ();
         }
     }
 }

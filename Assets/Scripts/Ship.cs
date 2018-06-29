@@ -95,7 +95,7 @@ public class Ship : MonoBehaviour
      */
     public bool isUnlocked ()
     {
-        return GameObject.Find ("Ship Items/" + name).GetComponent<Item> ().isUnlocked ();
+        return GameObject.Find ("Ship Items/" + name).GetComponent<Item> ().unlocked;
     }
 
     /**
