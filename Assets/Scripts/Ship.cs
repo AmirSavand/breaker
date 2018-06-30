@@ -13,6 +13,7 @@ public class Ship : MonoBehaviour
     public float firePower = 6;
     public float fireDamage = 50;
     public float fireRate = 0.7f;
+    public float fireRange = 1;
     public Transform fireFrom;
     public GameObject fireBullet;
     public AudioSource fireSound;
@@ -114,6 +115,9 @@ public class Ship : MonoBehaviour
         // Create bullet from fire from position
         GameObject bullet = Instantiate (fireBullet, fireFrom.transform.position, transform.rotation);
         Damage bulletDamage = bullet.GetComponent<Damage> ();
+
+        // Set range/accuracy
+        bullet.transform.Rotate (new Vector3 (0, 0, Random.Range (-fireRange, fireRange)));
 
         // Set bullet speed to fire power (up times power)
         bullet.GetComponent<Move> ().directionSpeed = bullet.transform.up * firePower;

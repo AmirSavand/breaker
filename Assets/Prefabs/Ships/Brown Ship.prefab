@@ -2454,6 +2454,7 @@ MonoBehaviour:
   firePower: 6
   fireDamage: 5
   fireRate: 2
+  fireRange: 4
   fireFrom: {fileID: 4645252747875420}
   fireBullet: {fileID: 1514601606241384, guid: 657d4fb863b10634886e06fc30993f55, type: 2}
   fireSound: {fileID: 82417541312951176}
@@ -2650,7 +2651,6 @@ MonoBehaviour:
   maxDuration: 0
   durationRestoreFactor: 0
   durationCriticalPercentage: 10
-  text: {fileID: 0}
 --- !u!114 &114849654800442934
 MonoBehaviour:
   m_ObjectHideFlags: 1
