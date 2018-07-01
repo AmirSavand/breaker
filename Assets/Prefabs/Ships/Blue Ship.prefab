@@ -195,10 +195,12 @@ GameObject:
   - component: {fileID: 50886875706648848}
   - component: {fileID: 82906587101084288}
   - component: {fileID: 82391265723026210}
+  - component: {fileID: 82506347058637402}
   - component: {fileID: 60969588178219650}
   - component: {fileID: 114195875109159520}
   - component: {fileID: 114562265760396212}
   - component: {fileID: 114315075090626536}
+  - component: {fileID: 114747244904264842}
   m_Layer: 10
   m_Name: Blue Ship
   m_TagString: Untagged
@@ -285,6 +287,21 @@ GameObject:
   - component: {fileID: 61400371664497092}
   m_Layer: 10
   m_Name: Ship Piece
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1587029991806048
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4950456070382214}
+  m_Layer: 10
+  m_Name: Missle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,6 +444,21 @@ GameObject:
   - component: {fileID: 212453800851810820}
   m_Layer: 10
   m_Name: Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1955561026443704
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4564690070920528}
+  m_Layer: 10
+  m_Name: Fire From
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -607,6 +639,19 @@ Transform:
   m_Father: {fileID: 4346838261848200}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4564690070920528
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955561026443704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: -0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4950456070382214}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4617408988120786
 Transform:
   m_ObjectHideFlags: 1
@@ -738,7 +783,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4525852523632668}
+  - {fileID: 4950456070382214}
   m_Father: {fileID: 4346838261848200}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4950456070382214
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1587029991806048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4564690070920528}
+  m_Father: {fileID: 4906575786929200}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4970948595364768
@@ -1640,6 +1700,87 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &82506347058637402
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1432264726996372}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243678785651583286, guid: 2e169437230385a488872b06ef3c6109,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 4d0ad030caaf7024695632bf48c10411, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82656972117952326
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1818,6 +1959,7 @@ MonoBehaviour:
   firePower: 6
   fireDamage: 50
   fireRate: 0.7
+  fireRange: 8
   fireFrom: {fileID: 4826415687123432}
   fireBullet: {fileID: 1012319823202368, guid: 60911e2c64914e349b2800fbcd2764b9, type: 2}
   fireSound: {fileID: 82391265723026210}
@@ -1844,7 +1986,6 @@ MonoBehaviour:
   maxDuration: 2
   durationRestoreFactor: 0.2
   durationCriticalPercentage: 10
-  text: {fileID: 0}
 --- !u!114 &114550812044484934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1915,6 +2056,24 @@ MonoBehaviour:
   button: {fileID: 0}
   direction: {x: 0, y: 0, z: 1}
   speed: 400
+--- !u!114 &114747244904264842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1432264726996372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a86e1287aa254a4bb3a7884d4b9ec9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missleSpeed: 0.13
+  missleDamage: 200
+  missleRate: 3
+  missleFrom: {fileID: 4564690070920528}
+  missleObject: {fileID: 1700032183463796, guid: 4afb29ef6c344124b960aa82c2b5e6a1,
+    type: 2}
+  missleSound: {fileID: 82506347058637402}
 --- !u!114 &114781041765724138
 MonoBehaviour:
   m_ObjectHideFlags: 1
