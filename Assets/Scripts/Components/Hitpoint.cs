@@ -199,7 +199,7 @@ public class Hitpoint : MonoBehaviour
                     Instantiate (explosionParticle, transform.position, new Quaternion ());
                 }
 
-                // If jas destroy model
+                // If has destroy model
                 if (destroyModel) {
                     destroyModel.SetActive (true);
                     destroyModel.transform.parent = null;
