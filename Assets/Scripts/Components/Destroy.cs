@@ -7,17 +7,24 @@ public class Destroy : MonoBehaviour
 {
     public bool destroyAfterParticle = false;
 
+    public float destroyAfterTime;
+
     public bool destroyExitTriggers = false;
     public string destroyExitTriggersTagOnly;
 
     public GameObject destroyObjectOnClick;
     public Button button;
 
-    void Start ()
+    void OnEnable ()
     {
         // Destroy after particle duration
         if (destroyAfterParticle) {
             Destroy (gameObject, GetComponent<ParticleSystem> ().main.duration);
+        }
+
+        // Destroy after time
+        if (destroyAfterTime > 0) {
+            Destroy (gameObject, destroyAfterTime);
         }
 
         // Set button to destroy game object
@@ -44,8 +51,13 @@ public class Destroy : MonoBehaviour
         }
 
         // Destroy parent (rigidbody is there)
-        else {
+        else if (other.transform.parent) {
             Destroy (other.transform.parent.gameObject);
+        } 
+
+        // Destroy object alone
+        else {
+            Destroy (other);
         }
     }
 
