@@ -14,6 +14,7 @@ public class Stat : MonoBehaviour
     public Text shipDamage;
     public Text shipFireRate;
     public Text shipFirePower;
+    public Text shipFireAccuracy;
     public Text shipShield;
 
     private Utility utility;
@@ -63,6 +64,7 @@ public class Stat : MonoBehaviour
         shipDamage.text = (ship.fireDamage + ship.getUpgrade ("damage").getAmount ()).ToString ();
         shipFireRate.text = (ship.fireRate + ship.getUpgrade ("fire-rate").getAmount ()).ToString ();
         shipFirePower.text = (ship.firePower + ship.getUpgrade ("fire-power").getAmount ()).ToString ();
+        shipFireAccuracy.text = "%" + (100 - Mathf.RoundToInt (ship.fireRange / 20 * 100));
         shipShield.text = (ship.shield.maxDuration + ship.getUpgrade ("shield-duration").getAmount ()) + " Sec";
     }
 }
