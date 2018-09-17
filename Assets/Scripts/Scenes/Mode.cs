@@ -95,7 +95,7 @@ public class Mode : MonoBehaviour
         }
 
         // If player's ship is destroyed
-        if (!player.ship && state != ModeStates.Lose) {
+        if ((player.Ship == null) && state != ModeStates.Lose) {
 
             // Lose
             lose ();

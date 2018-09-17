@@ -2436,8 +2436,11 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  moveStraightWhenNoTarget: 0
   rangeClips: []
   resetVelocity: 1
+  linear: 0
+  faceTarget: 0
 --- !u!114 &114137050538759638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2453,7 +2456,7 @@ MonoBehaviour:
   shipName: Brown Ship
   firePower: 6
   fireDamage: 5
-  fireRate: 2
+  fireRate: 0.5
   fireRange: 4
   fireFrom: {fileID: 4645252747875420}
   fireBullet: {fileID: 1514601606241384, guid: 657d4fb863b10634886e06fc30993f55, type: 2}
@@ -2481,8 +2484,11 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  moveStraightWhenNoTarget: 0
   rangeClips: []
   resetVelocity: 1
+  linear: 0
+  faceTarget: 0
 --- !u!114 &114375410114334656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2501,8 +2507,11 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  moveStraightWhenNoTarget: 0
   rangeClips: []
   resetVelocity: 1
+  linear: 0
+  faceTarget: 0
 --- !u!114 &114396753116554364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2521,8 +2530,11 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  moveStraightWhenNoTarget: 0
   rangeClips: []
   resetVelocity: 1
+  linear: 0
+  faceTarget: 0
 --- !u!114 &114439305404448174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2558,8 +2570,11 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  moveStraightWhenNoTarget: 0
   rangeClips: []
   resetVelocity: 1
+  linear: 0
+  faceTarget: 0
 --- !u!114 &114482102149025562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2617,8 +2632,11 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  moveStraightWhenNoTarget: 0
   rangeClips: []
   resetVelocity: 1
+  linear: 0
+  faceTarget: 0
 --- !u!114 &114707247759686960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2669,8 +2687,11 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  moveStraightWhenNoTarget: 0
   rangeClips: []
   resetVelocity: 1
+  linear: 0
+  faceTarget: 0
 --- !u!114 &114868232410906694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2689,8 +2710,11 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  moveStraightWhenNoTarget: 0
   rangeClips: []
   resetVelocity: 1
+  linear: 0
+  faceTarget: 0
 --- !u!114 &114933692817131268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2709,8 +2733,11 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  moveStraightWhenNoTarget: 0
   rangeClips: []
   resetVelocity: 1
+  linear: 0
+  faceTarget: 0
 --- !u!114 &114965859479221448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2729,8 +2756,11 @@ MonoBehaviour:
   stopRange: 0.5
   destroyTargetOnRange: 0
   destroySelfOnRange: 1
+  moveStraightWhenNoTarget: 0
   rangeClips: []
   resetVelocity: 1
+  linear: 0
+  faceTarget: 0
 --- !u!114 &114982998743099526
 MonoBehaviour:
   m_ObjectHideFlags: 1

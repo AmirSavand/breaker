@@ -143,7 +143,7 @@ public class Hitpoint : MonoBehaviour
                 if (deathBonus) {
 
                     // Apply bonus to ship
-                    utility.mode.player.ship.applyBonus (deathBonus);
+                    utility.mode.player.Ship.applyBonus (deathBonus);
 
                     // Show text of bonus
                     utility.createTextFloat (deathBonus.floatText, deathBonus.color, transform.position);

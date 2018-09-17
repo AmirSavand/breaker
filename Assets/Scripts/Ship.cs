@@ -12,7 +12,7 @@ public class Ship : MonoBehaviour
     // Fire
     public float firePower = 6;
     public float fireDamage = 50;
-    public float fireRate = 0.7f;
+    public float fireRate = 0.25f;
     public float fireRange = 1;
     public Transform fireFrom;
     public GameObject fireBullet;

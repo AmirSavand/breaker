@@ -2117,7 +2117,7 @@ MonoBehaviour:
   shipName: Green Ship
   firePower: 6
   fireDamage: 50
-  fireRate: 0.7
+  fireRate: 0.25
   fireRange: 12
   fireFrom: {fileID: 4191554620532232}
   fireBullet: {fileID: 1588667070780538, guid: f7191f75c0c67f844b3b0c926470bae0, type: 2}

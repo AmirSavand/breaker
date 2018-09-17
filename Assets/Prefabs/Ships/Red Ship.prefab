@@ -2034,7 +2034,7 @@ MonoBehaviour:
   shipName: Red Ship
   firePower: 6
   fireDamage: 50
-  fireRate: 0.7
+  fireRate: 0.25
   fireRange: 6
   fireFrom: {fileID: 4154315227224576}
   fireBullet: {fileID: 1651295990083628, guid: 29eb9f2fc03ff5142bb8e83ef2058cc4, type: 2}

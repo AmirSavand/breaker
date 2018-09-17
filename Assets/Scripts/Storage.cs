@@ -61,7 +61,7 @@ public class Storage : MonoBehaviour
 
         // Destroy it if it's a duplicate
         if (FindObjectsOfType (GetType ()).Length > 1) {
-            Destroy (gameObject);
+            Destroy(gameObject);
             return;
         }
 
