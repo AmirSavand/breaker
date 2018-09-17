@@ -1,52 +1,127 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Player class
+/// </summary>
 public class Player : MonoBehaviour
 {
-    public Ship ship;
+    /// <summary>
+    /// Rotation smooth time
+    /// </summary>
+    [SerializeField]
+    private float rotationSmoothTime = 1.0f;
 
-    public Transform movePointMiddle;
-    public Transform movePointLeft;
-    public Transform movePointRight;
+    /// <summary>
+    /// Move smooth time
+    /// </summary>
+    [SerializeField]
+    private float moveSmoothTime = 1.0f;
 
-    public Camera touchCamera;
+    /// <summary>
+    /// Ship
+    /// </summary>
+    [SerializeField]
+    private Ship ship;
 
+    /// <summary>
+    /// Move point middle
+    /// </summary>
+    [SerializeField]
+    private Transform movePointMiddle;
+
+    /// <summary>
+    /// Move point left
+    /// </summary>
+    [SerializeField]
+    private Transform movePointLeft;
+
+    /// <summary>
+    /// Move point right
+    /// </summary>
+    [SerializeField]
+    private Transform movePointRight;
+
+    /// <summary>
+    /// Touch camera
+    /// </summary>
+    [SerializeField]
+    private Camera touchCamera;
+
+    /// <summary>
+    /// Utility
+    /// </summary>
     private Utility utility;
 
-    void Awake ()
-    {
-        // Init vars
-        utility = Utility.GetInstance ();
+    /// <summary>
+    /// Last aim position
+    /// </summary>
+    private Vector3 lastAimPosition = Vector3.zero;
 
-        // Load current ship
-        ship = Instantiate (utility.getSelectedShip ().gameObject, transform).GetComponent<Ship> ();
+    /// <summary>
+    /// Ship
+    /// </summary>
+    public Ship Ship
+    {
+        get
+        {
+            return ship;
+        }
     }
 
-    void LateUpdate ()
+    /// <summary>
+    /// Awake
+    /// </summary>
+    private void Awake()
+    {
+        // Init vars
+        utility = Utility.GetInstance();
+
+        // Load current ship
+        ship = Instantiate(utility.getSelectedShip().gameObject, transform).GetComponent<Ship>();
+    }
+
+    /// <summary>
+    /// Start
+    /// </summary>
+    private void Start()
+    {
+        if (ship != null)
+        {
+            lastAimPosition = ship.transform.position + Vector3.up;
+        }
+    }
+
+    /// <summary>
+    /// Late update
+    /// </summary>
+    private void LateUpdate()
     {
         // Game is running
-        if (utility.mode.state == ModeStates.Run) {
+        if (utility.mode.state == ModeStates.Run)
+        {
 
             // On mouse click and not on ship
-            if (Input.GetMouseButton (0) && !isMouseOver ()) {
+            if (Input.GetMouseButton(0) && !IsMouseOver())
+            {
 
                 // Ship faces mouse and shoots
-                faceMouse ();
-                ship.fire ();
+                FaceMouse();
+                ship.fire();
             }
 
             // Activate shield if has at least 1 second duration and mouse is over it
-            ship.shield.active = isMouseOver () && ship.shield.duration > 0;
+            ship.shield.active = IsMouseOver() && ship.shield.duration > 0;
 
             // Update bonus slider (minus 1 to improve performance)
-            if (ship.bonusDurationLeft > 0) {
+            if (ship.bonusDurationLeft > 0)
+            {
                 utility.mode.sliderBonus.value = (int)(ship.bonusDurationLeft / ship.currentBonus.duration * 100) - 1;
             }
 
             // Update shield slider (add 1 to improve performance)
-            if (ship.shield.getDurationPercentage () != 100) {
-                utility.mode.sliderShield.value = ship.shield.getDurationPercentage () + 1;
+            if (ship.shield.getDurationPercentage() != 100)
+            {
+                utility.mode.sliderShield.value = ship.shield.getDurationPercentage() + 1;
             }
 
             /**
@@ -68,33 +143,39 @@ public class Player : MonoBehaviour
         }
     }
 
-    void FixedUpdate ()
+    /// <summary>
+    /// Fixed update
+    /// </summary>
+    private void FixedUpdate()
     {
-        // Face up 
-        if (ship) {
-            ship.transform.rotation = Quaternion.Lerp (ship.transform.rotation, Quaternion.Euler (0, 0, 0), Time.deltaTime);
+        // Face up and move
+        if (ship != null)
+        {
+            ship.transform.rotation = Quaternion.Lerp(ship.transform.rotation, Quaternion.identity, rotationSmoothTime * Time.fixedDeltaTime);
+            ship.transform.position = new Vector3(Mathf.Lerp(ship.transform.position.x, lastAimPosition.x, moveSmoothTime * Time.fixedDeltaTime), ship.transform.position.y, ship.transform.position.z);
         }
     }
 
-    /**
-     * Check if player mouse/finger is on the ship
-     */
-    public bool isMouseOver ()
+    /// <summary>
+    /// Check if player mouse or finger is on the ship
+    /// </summary>
+    /// <returns>"true" if player mouse or finger is on the ship, otherwise "false"</returns>
+    public bool IsMouseOver()
     {
-        Vector3 mouse = touchCamera.ScreenToWorldPoint (Input.mousePosition);
+        Vector3 mouse = touchCamera.ScreenToWorldPoint(Input.mousePosition);
         mouse.z = transform.position.z;
-        return GetComponent<Collider2D> ().bounds.Contains (mouse) && Input.GetMouseButton (0);
+        return GetComponent<Collider2D>().bounds.Contains(mouse) && Input.GetMouseButton(0);
     }
 
-    /**
-     * Instantly turn and face where mouse/finger is
-     */
-    public void faceMouse ()
+    /// <summary>
+    /// Instantly turn and face where mouse and finger is
+    /// </summary>
+    public void FaceMouse()
     {
         Vector3 pos = ship.transform.position;
         Vector3 input = Input.mousePosition;
         input.z = pos.z;
-        Vector3 mouse = touchCamera.ScreenToWorldPoint (input);
-        ship.transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 (mouse.y - pos.y, mouse.x - pos.x) * Mathf.Rad2Deg - 90);
+        lastAimPosition = touchCamera.ScreenToWorldPoint(input);
+        ship.transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(lastAimPosition.y - pos.y, lastAimPosition.x - pos.x) - (Mathf.PI * 0.5f)) * 180.0f / Mathf.PI, Vector3.forward);
     }
 }

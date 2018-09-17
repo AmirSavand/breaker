@@ -58,16 +58,16 @@ public class Enemy : MonoBehaviour
         if (utility.mode.state == ModeStates.Run) {
 
             // Is in awareness distance?
-            bool isAware = awareDistance > Vector2.Distance (utility.mode.player.ship.transform.position, transform.position);
+            bool isAware = awareDistance > Vector2.Distance (utility.mode.player.Ship.transform.position, transform.position);
 
             // Look at player and keep shooting (shoot if aware)
             if (isShip) {
-                ship.lookAt (utility.mode.player.ship.transform);
+                ship.lookAt (utility.mode.player.Ship.transform);
                 if (isAware) {
                     ship.fire ();
                 }
             } else if (isTurret) {
-                turret.lookAt (utility.mode.player.ship.transform);
+                turret.lookAt (utility.mode.player.Ship.transform);
                 if (isAware) {
                     turret.fire ();
                 }

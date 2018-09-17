@@ -1958,7 +1958,7 @@ MonoBehaviour:
   shipName: Blue Ship
   firePower: 6
   fireDamage: 50
-  fireRate: 0.7
+  fireRate: 0.25
   fireRange: 8
   fireFrom: {fileID: 4826415687123432}
   fireBullet: {fileID: 1012319823202368, guid: 60911e2c64914e349b2800fbcd2764b9, type: 2}

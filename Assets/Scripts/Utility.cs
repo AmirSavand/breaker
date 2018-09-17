@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /**
  * Handles all scenes and stages of the game.
@@ -14,38 +12,38 @@ public class Utility : MonoBehaviour
     public Main main;
     public Mode mode;
 
-    [Space ()]
+    [Space()]
 
     // Scenes
     public string sceneActive;
     public string sceneMain;
 
-    [Space ()]
+    [Space()]
 
     // Ships
     public Ship[] ships;
     public Ship[] shipsPlayer;
     public Ship[] shipsEnemy;
 
-    [Space ()]
+    [Space()]
 
     // Turrets
     public Turret[] turretsEnemy;
 
-    [Space ()]
+    [Space()]
 
     // Transforms
     public Transform popups;
     public Transform loading;
 
-    [Space ()]
+    [Space()]
 
     // Prefabs
     public GameObject prefabTextFloat;
     public GameObject prefabPopup;
 
 
-    [Space ()]
+    [Space()]
 
     // Colors
     public Color colorStar;
@@ -55,7 +53,7 @@ public class Utility : MonoBehaviour
     public Color colorPositive;
     public Color colorNegative;
 
-    [Space ()]
+    [Space()]
 
     // Other
     public AudioMixer audioMixer;
@@ -63,67 +61,86 @@ public class Utility : MonoBehaviour
     public AudioSource selectSound;
     public AudioSource levelUpSound;
 
-    void Awake ()
+
+
+    /// <summary>
+    /// Quit
+    /// </summary>
+    public static void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
+    void Awake()
     {
         // Get current scene
-        sceneActive = SceneManager.GetActiveScene ().name;
+        sceneActive = SceneManager.GetActiveScene().name;
 
         // Reset time scale
         Time.timeScale = 1;
     }
 
-    void Start ()
+    void Start()
     {
         // Load audio mixer values from storage
-        audioMixer.SetFloat ("masterVol", (float)Storage.VolumeMaster);
-        audioMixer.SetFloat ("musicVol", (float)Storage.VolumeMusic);
-        audioMixer.SetFloat ("effectsVol", (float)Storage.VolumEffects);
-        audioMixer.SetFloat ("menuVol", (float)Storage.VolumeMenu);
+        audioMixer.SetFloat("masterVol", (float)Storage.VolumeMaster);
+        audioMixer.SetFloat("musicVol", (float)Storage.VolumeMusic);
+        audioMixer.SetFloat("effectsVol", (float)Storage.VolumEffects);
+        audioMixer.SetFloat("menuVol", (float)Storage.VolumeMenu);
     }
 
-    void Update ()
+    void Update()
     {
         // If press PageUp take a screenshot
-        if (Input.GetKeyDown (KeyCode.PageUp)) {
-            takeScreenshot ();
+        if (Input.GetKeyDown(KeyCode.PageUp))
+        {
+            takeScreenshot();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Quit();
         }
     }
 
     /**
      * Get instance of Utility in scene
      */
-    public static Utility GetInstance ()
+    public static Utility GetInstance()
     {
-        return FindObjectOfType (typeof(Utility)) as Utility;
+        return FindObjectOfType(typeof(Utility)) as Utility;
     }
 
     /**
      * Load a scene by name.
      */
-    public void loadScene (string name)
+    public void loadScene(string name)
     {
         // Show loading screen
-        loading.gameObject.SetActive (true);
+        loading.gameObject.SetActive(true);
 
         // Load scene
-        SceneManager.LoadScene (name);
+        SceneManager.LoadScene(name);
     }
 
     /**
      * Get the ship script (via game) of the selected ship (via storage)
      */
-    public Ship getSelectedShip ()
+    public Ship getSelectedShip()
     {
-        return shipsPlayer [Storage.Ship];
+        return shipsPlayer[Storage.Ship];
     }
 
     /**
      * Instantiate a text float.
      */
-    public void createTextFloat (string text, Color color, Vector3 position)
+    public void createTextFloat(string text, Color color, Vector3 position)
     {
         // Instantiate from prefab
-        TextMesh instance = Instantiate (prefabTextFloat).GetComponent<TextMesh> ();
+        TextMesh instance = Instantiate(prefabTextFloat).GetComponent<TextMesh>();
 
         // Set properties
         instance.color = color;
@@ -134,25 +151,25 @@ public class Utility : MonoBehaviour
     /**
      * Instantiate a modal in modals with sound.
      */
-    public void createPopup (string title, string content)
+    public void createPopup(string title, string content)
     {
         // Instantiate from prefab
-        Transform instance = Instantiate (prefabPopup, popups).GetComponent<Transform> ();
+        Transform instance = Instantiate(prefabPopup, popups).GetComponent<Transform>();
 
         // Set properties
-        instance.transform.Find ("Dialog/Header/Text").GetComponent<Text> ().text = title;
-        instance.transform.Find ("Dialog/Content/Text").GetComponent<Text> ().text = content;
+        instance.transform.Find("Dialog/Header/Text").GetComponent<Text>().text = title;
+        instance.transform.Find("Dialog/Content/Text").GetComponent<Text>().text = content;
 
         // Play sound
-        selectSound.Play ();
+        selectSound.Play();
     }
 
     /**
      * Take a screenshot and open it (Works in standalone only).
      */
-    public void takeScreenshot ()
+    public void takeScreenshot()
     {
-        string fileName = "screenshot-" + System.DateTime.Now.ToString ("HH-mm-ss") + ".png";
-        ScreenCapture.CaptureScreenshot (System.IO.Path.Combine (Application.persistentDataPath, fileName));
+        string fileName = "screenshot-" + System.DateTime.Now.ToString("HH-mm-ss") + ".png";
+        ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(Application.persistentDataPath, fileName));
     }
 }
