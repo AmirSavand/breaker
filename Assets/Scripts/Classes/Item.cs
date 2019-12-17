@@ -57,7 +57,7 @@ public class Item : MonoBehaviour
     {
         // Save as unlocked
         unlocked = true;
-        // PlayerPrefs.SetInt (getStorageKey (), unlocked ? 1 : 0);
+        PlayerPrefs.SetInt (getStorageKey (), unlocked ? 1 : 0);
         Storage.Save ();
 
         // Popup
@@ -86,4 +86,3 @@ public class Item : MonoBehaviour
         Utility.GetInstance ().createPopup (title, description);
     }
 }
-
